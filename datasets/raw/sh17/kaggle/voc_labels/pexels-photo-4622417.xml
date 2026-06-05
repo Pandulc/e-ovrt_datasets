@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-4622417.jpeg</filename>
+	<size>
+		<width>2333</width>
+		<height>3500</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>hands</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>315</xmin>
+			<xmax>1332</xmax>
+			<ymin>1181</ymin>
+			<ymax>2725</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>921</xmin>
+			<xmax>2333</xmax>
+			<ymin>1144</ymin>
+			<ymax>1625</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>268</xmin>
+			<xmax>1330</xmax>
+			<ymin>1135</ymin>
+			<ymax>3500</ymax>
+		</bndbox>
+	</object>
+</annotation>

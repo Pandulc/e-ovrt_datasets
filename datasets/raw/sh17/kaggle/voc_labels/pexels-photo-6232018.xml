@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-6232018.jpeg</filename>
+	<size>
+		<width>3360</width>
+		<height>5040</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>head</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>927</xmin>
+			<xmax>2297</xmax>
+			<ymin>1565</ymin>
+			<ymax>2956</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>face</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1558</xmin>
+			<xmax>2293</xmax>
+			<ymin>2007</ymin>
+			<ymax>2958</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>661</xmin>
+			<xmax>2393</xmax>
+			<ymin>1568</ymin>
+			<ymax>5040</ymax>
+		</bndbox>
+	</object>
+</annotation>

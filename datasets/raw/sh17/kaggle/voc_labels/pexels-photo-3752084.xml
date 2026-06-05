@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-3752084.jpeg</filename>
+	<size>
+		<width>5104</width>
+		<height>3828</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>hands</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2347</xmin>
+			<xmax>3619</xmax>
+			<ymin>1971</ymin>
+			<ymax>3668</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>glasses</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2101</xmin>
+			<xmax>3741</xmax>
+			<ymin>1242</ymin>
+			<ymax>2454</ymax>
+		</bndbox>
+	</object>
+</annotation>

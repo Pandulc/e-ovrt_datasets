@@ -1,0 +1,464 @@
+- id: sh17
+  name: SH17
+  priority: alta
+  source_url: https://github.com/ahmadmughees/SH17dataset
+  download_url: https://www.kaggle.com/datasets/mugheesahmad/sh17-dataset-for-ppe-detection
+  local_raw_dir: datasets/raw/sh17
+  downloaded_at: '2026-06-05'
+  original_format: yolo + pascal_voc
+  target_formats:
+  - coco
+  - yolo
+  - odvg
+  license: CC BY-NC-SA 4.0
+  file_count: 32410
+  image_count: 8099
+  annotation_count_yolo: 8099
+  annotation_count_xml: 8099
+  metadata_count_json: 8099
+  object_count: 75994
+  url_count: 8099
+  archive:
+    path: datasets/raw/sh17/sh17-kaggle.zip
+    size_bytes: 14096291832
+    size: 14G
+    sha256: 4747f51cac891a59a55c354a7b0f3c3addb4478ab214e74c16f26a6a205abf73
+  repository_snapshot:
+    path: datasets/raw/sh17/SH17dataset-master
+    archive:
+      path: datasets/raw/sh17/SH17dataset-master.zip
+      size: 5.2M
+      sha256: 8d9c3660e1b496aa20ea677434d2a91feaff8867435d3522c63ebe51cde5658f
+    includes:
+    - README.md
+    - sh17.yaml
+    - data/list_of_all_urls.csv
+    - data/download_from_pexels.py
+    - data/update_train_test_files.py
+  extracted_dataset_dir: datasets/raw/sh17/kaggle
+  official_split:
+    train_images: 6479
+    val_images: 1620
+    test_images: 0
+  validation:
+    image_count: 8099
+    yolo_label_count: 8099
+    voc_xml_count: 8099
+    metadata_json_count: 8099
+    missing_yolo: 0
+    missing_voc: 0
+    missing_metadata: 0
+    bad_yolo_lines: 0
+    invalid_voc_boxes: 2
+    bad_images: 0
+    notes:
+    - 'VOC bbox exceeds image bounds in voc_labels/pexels-photo-258626.xml: person
+      [1725,4430,1874,4664] for image size 3456x4608.'
+    - 'VOC bbox exceeds image bounds in voc_labels/pexels-photo-259265.xml: tools
+      [1559,123,3509,1358] for image size 3504x2336.'
+    - YOLO labels validated without out-of-range boxes.
+  classes_original:
+  - person
+  - ear
+  - ear-mufs
+  - face
+  - face-guard
+  - face-mask
+  - foot
+  - tool
+  - glasses
+  - gloves
+  - helmet
+  - hands
+  - head
+  - medical-suit
+  - shoes
+  - safety-suit
+  - safety-vest
+  class_distribution_instances_yolo:
+    person: 13802
+    ear: 7730
+    ear-mufs: 318
+    face: 8950
+    face-guard: 134
+    face-mask: 670
+    foot: 759
+    tool: 4647
+    glasses: 1945
+    gloves: 2790
+    helmet: 927
+    hands: 15850
+    head: 11985
+    medical-suit: 157
+    shoes: 4560
+    safety-suit: 240
+    safety-vest: 530
+  class_name_differences:
+    yolo_face-mask: VOC uses face-mask-medical
+    yolo_tool: VOC uses tools
+  classes_mapped:
+    person:
+    - person
+    helmet:
+    - helmet
+    vest:
+    - safety-vest
+    no_helmet:
+    - head
+    - face
+    no_vest: []
+  covered_conditions:
+  - CR-01
+  - CR-02
+  split_policy: official
+  split_seed: 42
+  status: downloaded_basic_validated
+  notes: Kaggle download completed with configured ~/.kaggle/kaggle.json. Dataset
+    contains images, YOLO labels, Pascal VOC labels, metadata JSON and official train/val
+    split. Use YOLO labels as primary source unless conversion requires clipping the
+    two VOC boxes listed in validation.
+  conversion_status: converted_coco_yolo_odvg
+  conversion_views:
+  - original
+  - canonical_cr01_cr02
+  conversion_report: datasets/registry/conversion_report.md
+  processed_outputs:
+    coco: datasets/processed/coco/{view}/sh17
+    yolo: datasets/processed/yolo/{view}/sh17
+    odvg: datasets/processed/odvg/{view}/sh17
+- id: shel5k
+  name: SHEL5K
+  priority: alta
+  source_url: https://data.mendeley.com/datasets/9rcv8mm682/4
+  download_url: https://data.mendeley.com/datasets/9rcv8mm682/4
+  local_raw_dir: datasets/raw/shel5k
+  downloaded_at: '2026-06-05'
+  original_format: pascal_voc
+  target_formats:
+  - coco
+  - yolo
+  - odvg
+  license: CC BY 4.0
+  file_count: 10001
+  image_count: 5000
+  annotation_count_xml: 5000
+  object_count: 75578
+  archive:
+    path: datasets/raw/shel5k/9rcv8mm682-4.zip
+    size_bytes: 1315872985
+    size: 1.3G
+    sha256: dfba1d3ce01af69d791020cdfdfdbc25904b41724d11160361e7a4cd164e7a7a
+  extracted_dataset_dir: datasets/raw/shel5k/9rcv8mm682-4/Safety Helmet Wearing Dataset
+  official_split: null
+  validation:
+    xml_count: 5000
+    image_count: 5000
+    missing_images: 0
+    missing_size: 0
+    invalid_boxes: 0
+    bad_images: 0
+  classes_original:
+  - helmet
+  - head_with_helmet
+  - person_with_helmet
+  - head
+  - person_no_helmet
+  - face
+  - person
+  class_distribution_instances:
+    helmet: 19252
+    head_with_helmet: 16048
+    person_with_helmet: 14767
+    face: 14135
+    head: 6120
+    person_no_helmet: 5248
+    person: 8
+  classes_mapped:
+    person:
+    - person_with_helmet
+    - person_no_helmet
+    - person
+    helmet:
+    - helmet
+    - head_with_helmet
+    vest: []
+    no_helmet:
+    - person_no_helmet
+    - head
+    - face
+    no_vest: []
+  covered_conditions:
+  - CR-01
+  split_policy: custom_seeded
+  split_seed: 42
+  status: downloaded_basic_validated
+  notes: Manual Mendeley download completed. Dataset contains 5000 PNG images and
+    5000 Pascal VOC XML annotations. No official split files found; generate reproducible
+    custom split before training/evaluation.
+  conversion_status: converted_coco_yolo_odvg
+  conversion_views:
+  - original
+  - canonical_cr01_cr02
+  conversion_report: datasets/registry/conversion_report.md
+  processed_outputs:
+    coco: datasets/processed/coco/{view}/shel5k
+    yolo: datasets/processed/yolo/{view}/shel5k
+    odvg: datasets/processed/odvg/{view}/shel5k
+- id: chv
+  name: CHV - Color Helmet and Vest
+  priority: alta
+  source_url: https://github.com/ZijianWang-ZW/PPE_detection
+  download_url: https://drive.google.com/file/d/1fdGn67W0B7ShpBDbbQpUF0ScPQa4DR0a/view?usp=sharing
+  local_raw_dir: datasets/raw/chv
+  downloaded_at: '2026-06-05'
+  original_format: yolo
+  target_formats:
+  - coco
+  - yolo
+  - odvg
+  license: open/free use per repository; verify redistribution terms
+  file_count_excluding_macosx: 2665
+  image_count: 1330
+  annotation_count_txt: 1330
+  archive:
+    path: datasets/raw/chv/CHV_dataset.zip
+    size: 420M
+    sha256: e2a2ebef7b9a69fd2d7f5152eb808b14a3a0a76de015c802f3f187c437a8e577
+  official_split:
+    train_images: 1064
+    val_images: 133
+    test_images: 133
+  classes_original:
+  - person
+  - vest
+  - blue helmet
+  - red helmet
+  - white helmet
+  - yellow helmet
+  class_distribution_instances:
+    person: 3887
+    vest: 1784
+    blue_helmet: 508
+    red_helmet: 536
+    white_helmet: 1195
+    yellow_helmet: 1299
+  classes_mapped:
+    person:
+    - person
+    helmet:
+    - blue helmet
+    - red helmet
+    - white helmet
+    - yellow helmet
+    vest:
+    - vest
+    no_helmet: []
+    no_vest: []
+  covered_conditions:
+  - CR-01
+  - CR-02
+  split_policy: official
+  split_seed: 42
+  status: downloaded_basic_validated
+  notes: Google Drive archive downloaded and extracted. Ignore __MACOSX artifacts.
+    Annotation README confirms YOLO format and class ids 0-person, 1-vest, 2-blue
+    helmet, 3-red helmet, 4-white helmet, 5-yellow helmet.
+  conversion_status: converted_coco_yolo_odvg
+  conversion_views:
+  - original
+  - canonical_cr01_cr02
+  conversion_report: datasets/registry/conversion_report.md
+  processed_outputs:
+    coco: datasets/processed/coco/{view}/chv
+    yolo: datasets/processed/yolo/{view}/chv
+    odvg: datasets/processed/odvg/{view}/chv
+- id: construction_ppe
+  name: Construction-PPE
+  priority: alta
+  source_url: https://docs.ultralytics.com/datasets/detect/construction-ppe/
+  download_url: https://github.com/ultralytics/assets/releases/download/v0.0.0/construction-ppe.zip
+  local_raw_dir: datasets/raw/construction_ppe
+  downloaded_at: '2026-06-05'
+  original_format: yolo
+  target_formats:
+  - coco
+  - yolo
+  - odvg
+  license: AGPL-3.0
+  file_count: 2845
+  image_count: 1416
+  annotation_count_txt: 1426
+  archive:
+    path: datasets/raw/construction_ppe/construction-ppe.zip
+    size: 170M
+    sha256: bef8dcb599aa4e9d9f5e602cb6fa7143d3c84d7f6a0ff40463d7f2a4c2632ccc
+  official_split:
+    train_images: 1132
+    val_images: 143
+    test_images: 141
+  classes_original:
+  - helmet
+  - gloves
+  - vest
+  - boots
+  - goggles
+  - none
+  - Person
+  - no_helmet
+  - no_goggle
+  - no_gloves
+  - no_boots
+  classes_mapped:
+    person:
+    - Person
+    helmet:
+    - helmet
+    vest:
+    - vest
+    no_helmet:
+    - no_helmet
+    no_vest: []
+  covered_conditions:
+  - CR-01
+  - CR-02
+  split_policy: official
+  split_seed: 42
+  status: downloaded_unvalidated
+  notes: Incluye clases explicitas de EPP faltante. Licencia AGPL-3.0 presente en
+    LICENSE descargado; documentar implicancias antes de redistribucion.
+  conversion_status: converted_coco_yolo_odvg
+  conversion_views:
+  - original
+  - canonical_cr01_cr02
+  conversion_report: datasets/registry/conversion_report.md
+  processed_outputs:
+    coco: datasets/processed/coco/{view}/construction_ppe
+    yolo: datasets/processed/yolo/{view}/construction_ppe
+    odvg: datasets/processed/odvg/{view}/construction_ppe
+- id: gdut_hwd
+  name: GDUT-HWD
+  priority: media-alta
+  source_url: https://github.com/wujixiu/helmet-detection
+  download_url: https://drive.google.com/drive/folders/12WtXQyM-7jWvWPtCXZlnycsIK72ClHgu?usp=sharing
+  local_raw_dir: datasets/raw/gdut_hwd
+  downloaded_at: null
+  original_format: verificar
+  target_formats:
+  - coco
+  - yolo
+  license: verificar contra fuente descargada
+  classes_original: []
+  classes_mapped:
+    person: []
+    helmet: []
+    vest: []
+    no_helmet: []
+    no_vest: []
+  covered_conditions:
+  - CR-01
+  split_policy: official / custom_seeded
+  split_seed: 42
+  status: pending_download
+  notes: Refuerzo para casco/color/ausencia.
+- id: shwd
+  name: SHWD - Safety Helmet Wearing Dataset
+  priority: media-alta
+  source_url: https://github.com/njvisionpower/Safety-Helmet-Wearing-Dataset
+  download_url: https://drive.google.com/file/d/1qWm7rrwvjAWs1slymbrLaCf7Q-wnGLEX/view?usp=drive_open
+  local_raw_dir: datasets/raw/shwd
+  downloaded_at: null
+  original_format: pascal_voc / verificar
+  target_formats:
+  - coco
+  - yolo
+  license: verificar contra fuente descargada
+  classes_original: []
+  classes_mapped:
+    person: []
+    helmet: []
+    vest: []
+    no_helmet: []
+    no_vest: []
+  covered_conditions:
+  - CR-01
+  split_policy: official / custom_seeded
+  split_seed: 42
+  status: pending_download
+  notes: Apoyo para casco vs cabeza/persona sin casco.
+- id: soda
+  name: SODA - Site Object Detection dAtaset
+  priority: media
+  source_url: https://linjiarui.net/en/portfolio/2022-02-22-SODA-site-object-detection-dataset-for-deep-learning-in-construction
+  download_url: https://hkustconnect-my.sharepoint.com/:f:/g/personal/ycdeng_connect_ust_hk/EiQLht3OhstGnKXrjFXyRZYBIXFjUC43jUUNVBXfM_kkKg?e=jJ2Nhv
+  local_raw_dir: datasets/raw/soda
+  downloaded_at: null
+  original_format: verificar
+  target_formats:
+  - coco
+  - yolo
+  license: verificar contra fuente descargada
+  classes_original: []
+  classes_mapped:
+    person: []
+    helmet: []
+    vest: []
+    no_helmet: []
+    no_vest: []
+  covered_conditions:
+  - CR-05
+  - CR-06
+  split_policy: separar_de_corpus_cr01_cr02
+  split_seed: 42
+  status: pending_download
+  notes: Contextual; no mezclar con corpus obligatorio CR-01/CR-02.
+- id: pictor_ppe
+  name: Pictor-PPE / Pictor-v3
+  priority: condicionada
+  source_url: https://github.com/ciber-lab/pictor-ppe
+  download_url: https://drive.google.com/drive/folders/1akhyTNVrkqMMcIFUQCEbW5ehfmG0CdYH?usp=sharing
+  local_raw_dir: datasets/raw/pictor_ppe
+  downloaded_at: null
+  original_format: verificar
+  target_formats:
+  - coco
+  - yolo
+  license: verificar antes de usar
+  classes_original: []
+  classes_mapped:
+    person: []
+    helmet: []
+    vest: []
+    no_helmet: []
+    no_vest: []
+  covered_conditions:
+  - CR-01
+  - CR-02
+  split_policy: blocked_until_license_verified
+  split_seed: 42
+  status: pending_license_review
+  notes: Condicionado por licencia, permisos y formato real de anotaciones.
+- id: mocs
+  name: MOCS - Moving Objects in Construction Sites
+  priority: condicionada
+  source_url: https://www.anlab340.com/Archives/IndexArctype/index/t_id/17.html
+  download_url: https://www.anlab340.com/Archives/IndexArctype/index/t_id/17.html
+  local_raw_dir: datasets/raw/mocs
+  downloaded_at: null
+  original_format: verificar
+  target_formats:
+  - coco
+  - yolo
+  license: verificar antes de usar
+  classes_original: []
+  classes_mapped:
+    person: []
+    helmet: []
+    vest: []
+    no_helmet: []
+    no_vest: []
+  covered_conditions:
+  - CR-05
+  split_policy: blocked_until_access_verified
+  split_seed: 42
+  status: pending_access_review
+  notes: Extension condicionada para maquinaria, vehiculos y trabajadores.

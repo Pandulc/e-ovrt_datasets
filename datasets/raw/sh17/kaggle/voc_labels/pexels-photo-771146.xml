@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-771146.jpeg</filename>
+	<size>
+		<width>5475</width>
+		<height>3500</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>head</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2314</xmin>
+			<xmax>2414</xmax>
+			<ymin>821</ymin>
+			<ymax>968</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2256</xmin>
+			<xmax>2411</xmax>
+			<ymin>815</ymin>
+			<ymax>1217</ymax>
+		</bndbox>
+	</object>
+</annotation>

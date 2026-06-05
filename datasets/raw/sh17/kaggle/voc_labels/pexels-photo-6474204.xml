@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-6474204.jpeg</filename>
+	<size>
+		<width>6000</width>
+		<height>4000</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>glasses</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2324</xmin>
+			<xmax>2982</xmax>
+			<ymin>1513</ymin>
+			<ymax>1742</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>face-guard</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2155</xmin>
+			<xmax>3421</xmax>
+			<ymin>1770</ymin>
+			<ymax>2617</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1757</xmin>
+			<xmax>5404</xmax>
+			<ymin>943</ymin>
+			<ymax>4000</ymax>
+		</bndbox>
+	</object>
+</annotation>

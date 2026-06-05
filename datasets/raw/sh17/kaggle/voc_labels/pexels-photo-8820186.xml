@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-8820186.jpeg</filename>
+	<size>
+		<width>5472</width>
+		<height>3648</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>gloves</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2722</xmin>
+			<xmax>3784</xmax>
+			<ymin>2217</ymin>
+			<ymax>3388</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>gloves</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2972</xmin>
+			<xmax>3921</xmax>
+			<ymin>176</ymin>
+			<ymax>993</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2551</xmin>
+			<xmax>4952</xmax>
+			<ymin>419</ymin>
+			<ymax>3648</ymax>
+		</bndbox>
+	</object>
+</annotation>

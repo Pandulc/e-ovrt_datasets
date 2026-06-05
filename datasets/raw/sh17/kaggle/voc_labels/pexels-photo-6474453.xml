@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-6474453.jpeg</filename>
+	<size>
+		<width>6000</width>
+		<height>4000</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>ear</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3634</xmin>
+			<xmax>3763</xmax>
+			<ymin>1683</ymin>
+			<ymax>2061</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>ear</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2448</xmin>
+			<xmax>2587</xmax>
+			<ymin>1625</ymin>
+			<ymax>2013</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1389</xmin>
+			<xmax>4912</xmax>
+			<ymin>324</ymin>
+			<ymax>4000</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-977526.jpeg</filename>
+	<size>
+		<width>3613</width>
+		<height>2710</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>gloves</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2169</xmin>
+			<xmax>3613</xmax>
+			<ymin>0</ymin>
+			<ymax>1040</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>47</xmin>
+			<xmax>2229</xmax>
+			<ymin>0</ymin>
+			<ymax>1077</ymax>
+		</bndbox>
+	</object>
+</annotation>

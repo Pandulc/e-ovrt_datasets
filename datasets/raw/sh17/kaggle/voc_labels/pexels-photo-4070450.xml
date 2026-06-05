@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-4070450.jpeg</filename>
+	<size>
+		<width>3012</width>
+		<height>4441</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>head</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1409</xmin>
+			<xmax>1497</xmax>
+			<ymin>2389</ymin>
+			<ymax>2504</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>face</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1418</xmin>
+			<xmax>1483</xmax>
+			<ymin>2409</ymin>
+			<ymax>2504</ymax>
+		</bndbox>
+	</object>
+</annotation>

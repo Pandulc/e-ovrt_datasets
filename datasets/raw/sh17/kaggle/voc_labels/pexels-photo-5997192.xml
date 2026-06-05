@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-5997192.jpeg</filename>
+	<size>
+		<width>5445</width>
+		<height>3630</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>head</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1923</xmin>
+			<xmax>2700</xmax>
+			<ymin>520</ymin>
+			<ymax>1564</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>face</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2014</xmin>
+			<xmax>2541</xmax>
+			<ymin>870</ymin>
+			<ymax>1564</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1482</xmin>
+			<xmax>3312</xmax>
+			<ymin>519</ymin>
+			<ymax>3630</ymax>
+		</bndbox>
+	</object>
+</annotation>

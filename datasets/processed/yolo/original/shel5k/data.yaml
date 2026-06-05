@@ -1,0 +1,13 @@
+path: datasets/processed/yolo/original/shel5k
+train: datasets/processed/yolo/original/shel5k/image_lists/train.txt
+val: datasets/processed/yolo/original/shel5k/image_lists/val.txt
+test: datasets/processed/yolo/original/shel5k/image_lists/test.txt
+nc: 7
+names:
+  0: helmet
+  1: head_with_helmet
+  2: person_with_helmet
+  3: head
+  4: person_no_helmet
+  5: face
+  6: person

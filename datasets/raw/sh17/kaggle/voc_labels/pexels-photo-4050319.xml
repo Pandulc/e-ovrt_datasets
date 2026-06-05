@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-4050319.jpeg</filename>
+	<size>
+		<width>6327</width>
+		<height>4218</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>hands</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1849</xmin>
+			<xmax>2208</xmax>
+			<ymin>1498</ymin>
+			<ymax>2571</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>hands</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2900</xmin>
+			<xmax>3729</xmax>
+			<ymin>2743</ymin>
+			<ymax>3595</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1245</xmin>
+			<xmax>4028</xmax>
+			<ymin>1533</ymin>
+			<ymax>4218</ymax>
+		</bndbox>
+	</object>
+</annotation>

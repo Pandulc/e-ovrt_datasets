@@ -1,0 +1,280 @@
+{
+  "dataset_id": "shel5k",
+  "source_format": "voc",
+  "raw_image_count": 5000,
+  "splits": {
+    "train": 3500,
+    "val": 750,
+    "test": 750
+  },
+  "views": {
+    "original": {
+      "coco": {
+        "train": {
+          "file": "datasets/processed/coco/original/shel5k/train.json",
+          "images": 3500,
+          "annotations": 53203,
+          "class_counts": {
+            "helmet": 13602,
+            "head_with_helmet": 11278,
+            "head": 4299,
+            "person_with_helmet": 10435,
+            "face": 9928,
+            "person_no_helmet": 3656,
+            "person": 5
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "file": "datasets/processed/coco/original/shel5k/val.json",
+          "images": 750,
+          "annotations": 11068,
+          "class_counts": {
+            "helmet": 2780,
+            "head_with_helmet": 2360,
+            "person_with_helmet": 2117,
+            "head": 894,
+            "person_no_helmet": 785,
+            "face": 2130,
+            "person": 2
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "file": "datasets/processed/coco/original/shel5k/test.json",
+          "images": 750,
+          "annotations": 11307,
+          "class_counts": {
+            "helmet": 2870,
+            "head_with_helmet": 2410,
+            "person_with_helmet": 2215,
+            "face": 2077,
+            "person_no_helmet": 807,
+            "head": 927,
+            "person": 1
+          },
+          "dropped_source_classes": {}
+        }
+      },
+      "yolo": {
+        "train": {
+          "labels_dir": "datasets/processed/yolo/original/shel5k/labels/train",
+          "image_list": "datasets/processed/yolo/original/shel5k/image_lists/train.txt",
+          "data_yaml": "datasets/processed/yolo/original/shel5k/data.yaml",
+          "images": 3500,
+          "annotations": 53203,
+          "class_counts": {
+            "helmet": 13602,
+            "head_with_helmet": 11278,
+            "head": 4299,
+            "person_with_helmet": 10435,
+            "face": 9928,
+            "person_no_helmet": 3656,
+            "person": 5
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "labels_dir": "datasets/processed/yolo/original/shel5k/labels/val",
+          "image_list": "datasets/processed/yolo/original/shel5k/image_lists/val.txt",
+          "data_yaml": "datasets/processed/yolo/original/shel5k/data.yaml",
+          "images": 750,
+          "annotations": 11068,
+          "class_counts": {
+            "helmet": 2780,
+            "head_with_helmet": 2360,
+            "person_with_helmet": 2117,
+            "head": 894,
+            "person_no_helmet": 785,
+            "face": 2130,
+            "person": 2
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "labels_dir": "datasets/processed/yolo/original/shel5k/labels/test",
+          "image_list": "datasets/processed/yolo/original/shel5k/image_lists/test.txt",
+          "data_yaml": "datasets/processed/yolo/original/shel5k/data.yaml",
+          "images": 750,
+          "annotations": 11307,
+          "class_counts": {
+            "helmet": 2870,
+            "head_with_helmet": 2410,
+            "person_with_helmet": 2215,
+            "face": 2077,
+            "person_no_helmet": 807,
+            "head": 927,
+            "person": 1
+          },
+          "dropped_source_classes": {}
+        }
+      },
+      "odvg": {
+        "train": {
+          "file": "datasets/processed/odvg/original/shel5k/train.jsonl",
+          "label_map": "datasets/processed/odvg/original/shel5k/label_map.json",
+          "images": 3500,
+          "annotations": 53203,
+          "class_counts": {
+            "helmet": 13602,
+            "head_with_helmet": 11278,
+            "head": 4299,
+            "person_with_helmet": 10435,
+            "face": 9928,
+            "person_no_helmet": 3656,
+            "person": 5
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "file": "datasets/processed/odvg/original/shel5k/val.jsonl",
+          "label_map": "datasets/processed/odvg/original/shel5k/label_map.json",
+          "images": 750,
+          "annotations": 11068,
+          "class_counts": {
+            "helmet": 2780,
+            "head_with_helmet": 2360,
+            "person_with_helmet": 2117,
+            "head": 894,
+            "person_no_helmet": 785,
+            "face": 2130,
+            "person": 2
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "file": "datasets/processed/odvg/original/shel5k/test.jsonl",
+          "label_map": "datasets/processed/odvg/original/shel5k/label_map.json",
+          "images": 750,
+          "annotations": 11307,
+          "class_counts": {
+            "helmet": 2870,
+            "head_with_helmet": 2410,
+            "person_with_helmet": 2215,
+            "face": 2077,
+            "person_no_helmet": 807,
+            "head": 927,
+            "person": 1
+          },
+          "dropped_source_classes": {}
+        }
+      }
+    },
+    "canonical_cr01_cr02": {
+      "coco": {
+        "train": {
+          "file": "datasets/processed/coco/canonical_cr01_cr02/shel5k/train.json",
+          "images": 3500,
+          "annotations": 53203,
+          "class_counts": {
+            "helmet": 24880,
+            "no_helmet": 17883,
+            "person": 10440
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "file": "datasets/processed/coco/canonical_cr01_cr02/shel5k/val.json",
+          "images": 750,
+          "annotations": 11068,
+          "class_counts": {
+            "helmet": 5140,
+            "person": 2119,
+            "no_helmet": 3809
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "file": "datasets/processed/coco/canonical_cr01_cr02/shel5k/test.json",
+          "images": 750,
+          "annotations": 11307,
+          "class_counts": {
+            "helmet": 5280,
+            "person": 2216,
+            "no_helmet": 3811
+          },
+          "dropped_source_classes": {}
+        }
+      },
+      "yolo": {
+        "train": {
+          "labels_dir": "datasets/processed/yolo/canonical_cr01_cr02/shel5k/labels/train",
+          "image_list": "datasets/processed/yolo/canonical_cr01_cr02/shel5k/image_lists/train.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_cr01_cr02/shel5k/data.yaml",
+          "images": 3500,
+          "annotations": 53203,
+          "class_counts": {
+            "helmet": 24880,
+            "no_helmet": 17883,
+            "person": 10440
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "labels_dir": "datasets/processed/yolo/canonical_cr01_cr02/shel5k/labels/val",
+          "image_list": "datasets/processed/yolo/canonical_cr01_cr02/shel5k/image_lists/val.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_cr01_cr02/shel5k/data.yaml",
+          "images": 750,
+          "annotations": 11068,
+          "class_counts": {
+            "helmet": 5140,
+            "person": 2119,
+            "no_helmet": 3809
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "labels_dir": "datasets/processed/yolo/canonical_cr01_cr02/shel5k/labels/test",
+          "image_list": "datasets/processed/yolo/canonical_cr01_cr02/shel5k/image_lists/test.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_cr01_cr02/shel5k/data.yaml",
+          "images": 750,
+          "annotations": 11307,
+          "class_counts": {
+            "helmet": 5280,
+            "person": 2216,
+            "no_helmet": 3811
+          },
+          "dropped_source_classes": {}
+        }
+      },
+      "odvg": {
+        "train": {
+          "file": "datasets/processed/odvg/canonical_cr01_cr02/shel5k/train.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_cr01_cr02/shel5k/label_map.json",
+          "images": 3500,
+          "annotations": 53203,
+          "class_counts": {
+            "helmet": 24880,
+            "no_helmet": 17883,
+            "person": 10440
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "file": "datasets/processed/odvg/canonical_cr01_cr02/shel5k/val.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_cr01_cr02/shel5k/label_map.json",
+          "images": 750,
+          "annotations": 11068,
+          "class_counts": {
+            "helmet": 5140,
+            "person": 2119,
+            "no_helmet": 3809
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "file": "datasets/processed/odvg/canonical_cr01_cr02/shel5k/test.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_cr01_cr02/shel5k/label_map.json",
+          "images": 750,
+          "annotations": 11307,
+          "class_counts": {
+            "helmet": 5280,
+            "person": 2216,
+            "no_helmet": 3811
+          },
+          "dropped_source_classes": {}
+        }
+      }
+    }
+  }
+}

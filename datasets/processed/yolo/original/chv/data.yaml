@@ -1,0 +1,12 @@
+path: datasets/processed/yolo/original/chv
+train: datasets/processed/yolo/original/chv/image_lists/train.txt
+val: datasets/processed/yolo/original/chv/image_lists/val.txt
+test: datasets/processed/yolo/original/chv/image_lists/test.txt
+nc: 6
+names:
+  0: person
+  1: vest
+  2: blue helmet
+  3: red helmet
+  4: white helmet
+  5: yellow helmet

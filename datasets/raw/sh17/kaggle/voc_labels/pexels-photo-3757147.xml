@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-3757147.jpeg</filename>
+	<size>
+		<width>2879</width>
+		<height>4319</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>shoes</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1339</xmin>
+			<xmax>1586</xmax>
+			<ymin>2283</ymin>
+			<ymax>2961</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>shoes</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1575</xmin>
+			<xmax>1861</xmax>
+			<ymin>2614</ymin>
+			<ymax>3336</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>203</xmin>
+			<xmax>2879</xmax>
+			<ymin>2210</ymin>
+			<ymax>4319</ymax>
+		</bndbox>
+	</object>
+</annotation>

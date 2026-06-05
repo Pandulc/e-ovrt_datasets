@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-7141193.jpeg</filename>
+	<size>
+		<width>5112</width>
+		<height>3408</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>hands</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1493</xmin>
+			<xmax>3276</xmax>
+			<ymin>939</ymin>
+			<ymax>2560</ymax>
+		</bndbox>
+	</object>
+</annotation>

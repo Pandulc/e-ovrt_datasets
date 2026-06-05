@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-5691606.jpeg</filename>
+	<size>
+		<width>2537</width>
+		<height>3800</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>glasses</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>389</xmin>
+			<xmax>1239</xmax>
+			<ymin>1244</ymin>
+			<ymax>2606</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>853</xmin>
+			<xmax>1481</xmax>
+			<ymin>771</ymin>
+			<ymax>2515</ymax>
+		</bndbox>
+	</object>
+</annotation>

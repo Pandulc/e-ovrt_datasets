@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-4691418.jpeg</filename>
+	<size>
+		<width>3648</width>
+		<height>2432</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>gloves</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2870</xmin>
+			<xmax>3002</xmax>
+			<ymin>1655</ymin>
+			<ymax>1789</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2684</xmin>
+			<xmax>3281</xmax>
+			<ymin>1232</ymin>
+			<ymax>2130</ymax>
+		</bndbox>
+	</object>
+</annotation>

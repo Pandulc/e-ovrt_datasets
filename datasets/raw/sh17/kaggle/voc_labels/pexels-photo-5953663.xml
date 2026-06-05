@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-5953663.jpeg</filename>
+	<size>
+		<width>5944</width>
+		<height>3963</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>gloves</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1318</xmin>
+			<xmax>2223</xmax>
+			<ymin>1716</ymin>
+			<ymax>2382</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>gloves</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4946</xmin>
+			<xmax>5456</xmax>
+			<ymin>1780</ymin>
+			<ymax>2297</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1317</xmin>
+			<xmax>5944</xmax>
+			<ymin>5</ymin>
+			<ymax>3146</ymax>
+		</bndbox>
+	</object>
+</annotation>

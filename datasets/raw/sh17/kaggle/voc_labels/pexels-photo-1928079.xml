@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-1928079.jpeg</filename>
+	<size>
+		<width>5333</width>
+		<height>4000</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>head</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3631</xmin>
+			<xmax>4046</xmax>
+			<ymin>1037</ymin>
+			<ymax>1598</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>gloves</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3262</xmin>
+			<xmax>3371</xmax>
+			<ymin>3549</ymin>
+			<ymax>3809</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3267</xmin>
+			<xmax>4571</xmax>
+			<ymin>1035</ymin>
+			<ymax>4000</ymax>
+		</bndbox>
+	</object>
+</annotation>

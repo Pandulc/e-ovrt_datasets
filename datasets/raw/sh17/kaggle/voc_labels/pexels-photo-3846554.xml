@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-3846554.jpeg</filename>
+	<size>
+		<width>7680</width>
+		<height>5120</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>6424</xmin>
+			<xmax>7680</xmax>
+			<ymin>1995</ymin>
+			<ymax>3598</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>glasses</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5022</xmin>
+			<xmax>6433</xmax>
+			<ymin>3785</ymin>
+			<ymax>4406</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5970</xmin>
+			<xmax>6952</xmax>
+			<ymin>3090</ymin>
+			<ymax>3579</ymax>
+		</bndbox>
+	</object>
+</annotation>

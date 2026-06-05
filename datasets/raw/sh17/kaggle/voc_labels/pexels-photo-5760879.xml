@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-5760879.jpeg</filename>
+	<size>
+		<width>6115</width>
+		<height>4077</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1462</xmin>
+			<xmax>2075</xmax>
+			<ymin>533</ymin>
+			<ymax>1704</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1679</xmin>
+			<xmax>1809</xmax>
+			<ymin>0</ymin>
+			<ymax>1839</ymax>
+		</bndbox>
+	</object>
+</annotation>

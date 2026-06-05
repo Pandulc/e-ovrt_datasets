@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-1319458.jpeg</filename>
+	<size>
+		<width>6000</width>
+		<height>4000</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3974</xmin>
+			<xmax>5202</xmax>
+			<ymin>167</ymin>
+			<ymax>4000</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3404</xmin>
+			<xmax>4294</xmax>
+			<ymin>312</ymin>
+			<ymax>4000</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4790</xmin>
+			<xmax>5992</xmax>
+			<ymin>267</ymin>
+			<ymax>4000</ymax>
+		</bndbox>
+	</object>
+</annotation>

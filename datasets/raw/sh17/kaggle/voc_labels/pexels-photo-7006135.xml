@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-7006135.jpeg</filename>
+	<size>
+		<width>5716</width>
+		<height>3811</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>head</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2156</xmin>
+			<xmax>3499</xmax>
+			<ymin>616</ymin>
+			<ymax>2423</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>face</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2158</xmin>
+			<xmax>3138</xmax>
+			<ymin>966</ymin>
+			<ymax>2426</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1116</xmin>
+			<xmax>4772</xmax>
+			<ymin>423</ymin>
+			<ymax>3811</ymax>
+		</bndbox>
+	</object>
+</annotation>

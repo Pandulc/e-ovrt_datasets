@@ -1,0 +1,271 @@
+{
+  "dataset_id": "chv",
+  "source_format": "yolo",
+  "raw_image_count": 1330,
+  "splits": {
+    "train": 1064,
+    "val": 133,
+    "test": 133
+  },
+  "views": {
+    "original": {
+      "coco": {
+        "train": {
+          "file": "datasets/processed/coco/original/chv/train.json",
+          "images": 1064,
+          "annotations": 7208,
+          "class_counts": {
+            "yellow helmet": 989,
+            "vest": 1396,
+            "person": 3050,
+            "white helmet": 920,
+            "blue helmet": 415,
+            "red helmet": 438
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "file": "datasets/processed/coco/original/chv/val.json",
+          "images": 133,
+          "annotations": 917,
+          "class_counts": {
+            "yellow helmet": 163,
+            "person": 387,
+            "vest": 171,
+            "white helmet": 99,
+            "blue helmet": 49,
+            "red helmet": 48
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "file": "datasets/processed/coco/original/chv/test.json",
+          "images": 133,
+          "annotations": 1084,
+          "class_counts": {
+            "white helmet": 176,
+            "red helmet": 50,
+            "vest": 217,
+            "person": 450,
+            "yellow helmet": 147,
+            "blue helmet": 44
+          },
+          "dropped_source_classes": {}
+        }
+      },
+      "yolo": {
+        "train": {
+          "labels_dir": "datasets/processed/yolo/original/chv/labels/train",
+          "image_list": "datasets/processed/yolo/original/chv/image_lists/train.txt",
+          "data_yaml": "datasets/processed/yolo/original/chv/data.yaml",
+          "images": 1064,
+          "annotations": 7208,
+          "class_counts": {
+            "yellow helmet": 989,
+            "vest": 1396,
+            "person": 3050,
+            "white helmet": 920,
+            "blue helmet": 415,
+            "red helmet": 438
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "labels_dir": "datasets/processed/yolo/original/chv/labels/val",
+          "image_list": "datasets/processed/yolo/original/chv/image_lists/val.txt",
+          "data_yaml": "datasets/processed/yolo/original/chv/data.yaml",
+          "images": 133,
+          "annotations": 917,
+          "class_counts": {
+            "yellow helmet": 163,
+            "person": 387,
+            "vest": 171,
+            "white helmet": 99,
+            "blue helmet": 49,
+            "red helmet": 48
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "labels_dir": "datasets/processed/yolo/original/chv/labels/test",
+          "image_list": "datasets/processed/yolo/original/chv/image_lists/test.txt",
+          "data_yaml": "datasets/processed/yolo/original/chv/data.yaml",
+          "images": 133,
+          "annotations": 1084,
+          "class_counts": {
+            "white helmet": 176,
+            "red helmet": 50,
+            "vest": 217,
+            "person": 450,
+            "yellow helmet": 147,
+            "blue helmet": 44
+          },
+          "dropped_source_classes": {}
+        }
+      },
+      "odvg": {
+        "train": {
+          "file": "datasets/processed/odvg/original/chv/train.jsonl",
+          "label_map": "datasets/processed/odvg/original/chv/label_map.json",
+          "images": 1064,
+          "annotations": 7208,
+          "class_counts": {
+            "yellow helmet": 989,
+            "vest": 1396,
+            "person": 3050,
+            "white helmet": 920,
+            "blue helmet": 415,
+            "red helmet": 438
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "file": "datasets/processed/odvg/original/chv/val.jsonl",
+          "label_map": "datasets/processed/odvg/original/chv/label_map.json",
+          "images": 133,
+          "annotations": 917,
+          "class_counts": {
+            "yellow helmet": 163,
+            "person": 387,
+            "vest": 171,
+            "white helmet": 99,
+            "blue helmet": 49,
+            "red helmet": 48
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "file": "datasets/processed/odvg/original/chv/test.jsonl",
+          "label_map": "datasets/processed/odvg/original/chv/label_map.json",
+          "images": 133,
+          "annotations": 1084,
+          "class_counts": {
+            "white helmet": 176,
+            "red helmet": 50,
+            "vest": 217,
+            "person": 450,
+            "yellow helmet": 147,
+            "blue helmet": 44
+          },
+          "dropped_source_classes": {}
+        }
+      }
+    },
+    "canonical_cr01_cr02": {
+      "coco": {
+        "train": {
+          "file": "datasets/processed/coco/canonical_cr01_cr02/chv/train.json",
+          "images": 1064,
+          "annotations": 7208,
+          "class_counts": {
+            "helmet": 2762,
+            "vest": 1396,
+            "person": 3050
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "file": "datasets/processed/coco/canonical_cr01_cr02/chv/val.json",
+          "images": 133,
+          "annotations": 917,
+          "class_counts": {
+            "helmet": 359,
+            "person": 387,
+            "vest": 171
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "file": "datasets/processed/coco/canonical_cr01_cr02/chv/test.json",
+          "images": 133,
+          "annotations": 1084,
+          "class_counts": {
+            "helmet": 417,
+            "vest": 217,
+            "person": 450
+          },
+          "dropped_source_classes": {}
+        }
+      },
+      "yolo": {
+        "train": {
+          "labels_dir": "datasets/processed/yolo/canonical_cr01_cr02/chv/labels/train",
+          "image_list": "datasets/processed/yolo/canonical_cr01_cr02/chv/image_lists/train.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_cr01_cr02/chv/data.yaml",
+          "images": 1064,
+          "annotations": 7208,
+          "class_counts": {
+            "helmet": 2762,
+            "vest": 1396,
+            "person": 3050
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "labels_dir": "datasets/processed/yolo/canonical_cr01_cr02/chv/labels/val",
+          "image_list": "datasets/processed/yolo/canonical_cr01_cr02/chv/image_lists/val.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_cr01_cr02/chv/data.yaml",
+          "images": 133,
+          "annotations": 917,
+          "class_counts": {
+            "helmet": 359,
+            "person": 387,
+            "vest": 171
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "labels_dir": "datasets/processed/yolo/canonical_cr01_cr02/chv/labels/test",
+          "image_list": "datasets/processed/yolo/canonical_cr01_cr02/chv/image_lists/test.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_cr01_cr02/chv/data.yaml",
+          "images": 133,
+          "annotations": 1084,
+          "class_counts": {
+            "helmet": 417,
+            "vest": 217,
+            "person": 450
+          },
+          "dropped_source_classes": {}
+        }
+      },
+      "odvg": {
+        "train": {
+          "file": "datasets/processed/odvg/canonical_cr01_cr02/chv/train.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_cr01_cr02/chv/label_map.json",
+          "images": 1064,
+          "annotations": 7208,
+          "class_counts": {
+            "helmet": 2762,
+            "vest": 1396,
+            "person": 3050
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "file": "datasets/processed/odvg/canonical_cr01_cr02/chv/val.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_cr01_cr02/chv/label_map.json",
+          "images": 133,
+          "annotations": 917,
+          "class_counts": {
+            "helmet": 359,
+            "person": 387,
+            "vest": 171
+          },
+          "dropped_source_classes": {}
+        },
+        "test": {
+          "file": "datasets/processed/odvg/canonical_cr01_cr02/chv/test.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_cr01_cr02/chv/label_map.json",
+          "images": 133,
+          "annotations": 1084,
+          "class_counts": {
+            "helmet": 417,
+            "vest": 217,
+            "person": 450
+          },
+          "dropped_source_classes": {}
+        }
+      }
+    }
+  }
+}

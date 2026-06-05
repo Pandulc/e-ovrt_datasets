@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-5410148.jpeg</filename>
+	<size>
+		<width>3790</width>
+		<height>5750</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>head</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>723</xmin>
+			<xmax>2342</xmax>
+			<ymin>1</ymin>
+			<ymax>1911</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>ear</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1309</xmin>
+			<xmax>1670</xmax>
+			<ymin>737</ymin>
+			<ymax>1363</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>615</xmin>
+			<xmax>3786</xmax>
+			<ymin>1</ymin>
+			<ymax>5719</ymax>
+		</bndbox>
+	</object>
+</annotation>

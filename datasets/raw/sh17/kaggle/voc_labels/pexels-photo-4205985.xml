@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-4205985.jpeg</filename>
+	<size>
+		<width>4480</width>
+		<height>6720</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>555</xmin>
+			<xmax>2535</xmax>
+			<ymin>667</ymin>
+			<ymax>3697</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>safety-suit</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>0</xmin>
+			<xmax>1279</xmax>
+			<ymin>0</ymin>
+			<ymax>3535</ymax>
+		</bndbox>
+	</object>
+</annotation>

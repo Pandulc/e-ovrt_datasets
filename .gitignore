@@ -1,0 +1,55 @@
+# Python / tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Local secrets and credentials
+.env
+.env.*
+*.secret
+.kaggle/
+kaggle.json
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.part
+*.log
+/tmp/
+tmp/
+
+# Raw dataset media and archives
+# Keep dataset documentation, labels, metadata, scripts and processed outputs versionable.
+datasets/raw/**/*.jpg
+datasets/raw/**/*.jpeg
+datasets/raw/**/*.png
+datasets/raw/**/*.bmp
+datasets/raw/**/*.webp
+datasets/raw/**/*.gif
+datasets/raw/**/*.tif
+datasets/raw/**/*.tiff
+datasets/raw/**/*.mp4
+datasets/raw/**/*.mov
+datasets/raw/**/*.avi
+datasets/raw/**/*.mkv
+datasets/raw/**/*.webm
+datasets/raw/**/*.zip
+datasets/raw/**/*.tar
+datasets/raw/**/*.tar.gz
+datasets/raw/**/*.tgz
+datasets/raw/**/*.7z
+datasets/raw/**/*.rar
+
+# Archive extraction artifacts
+datasets/raw/**/__MACOSX/
+datasets/raw/**/.DS_Store

@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-1267327.jpeg</filename>
+	<size>
+		<width>7373</width>
+		<height>4918</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>head</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3448</xmin>
+			<xmax>3587</xmax>
+			<ymin>2087</ymin>
+			<ymax>2240</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>safety-vest</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3227</xmin>
+			<xmax>3604</xmax>
+			<ymin>2171</ymin>
+			<ymax>2474</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3159</xmin>
+			<xmax>3623</xmax>
+			<ymin>2086</ymin>
+			<ymax>2531</ymax>
+		</bndbox>
+	</object>
+</annotation>

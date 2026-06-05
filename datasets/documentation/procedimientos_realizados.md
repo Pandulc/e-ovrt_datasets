@@ -1,0 +1,179 @@
+# Procedimientos realizados
+
+Fecha de corte: 2026-06-05
+
+## 1. Estructura inicial
+
+Se creo la estructura local definida por el plan:
+
+```text
+datasets/
+  raw/
+  processed/
+    coco/
+    yolo/
+    odvg/
+    reports/
+  splits/
+    cr01_cr02/
+  registry/
+  scripts/
+    download/
+    convert/
+    validate/
+    split/
+  documentation/
+```
+
+Tambien se crearon los registros iniciales:
+
+- `datasets/registry/datasets_metadata.yaml`
+- `datasets/registry/class_mapping.yaml`
+- `datasets/registry/license_registry.md`
+- `datasets/registry/download_log.md`
+- `datasets/splits/cr01_cr02/split_manifest.csv`
+
+## 2. Descarga y registro de datasets prioritarios
+
+### Construction-PPE
+
+Se descargo desde la URL directa de Ultralytics:
+
+```text
+datasets/raw/construction_ppe/construction-ppe.zip
+```
+
+Resultado:
+
+- Formato original: YOLO
+- Imagenes: 1416
+- Labels TXT: 1426
+- Split oficial: train/val/test = 1132/143/141
+- Licencia local verificada: AGPL-3.0
+- SHA256: `bef8dcb599aa4e9d9f5e602cb6fa7143d3c84d7f6a0ff40463d7f2a4c2632ccc`
+
+### CHV
+
+Se descargo desde Google Drive oficial:
+
+```text
+datasets/raw/chv/CHV_dataset.zip
+```
+
+Resultado:
+
+- Formato original: YOLO
+- Imagenes: 1330
+- Labels TXT: 1330
+- Split oficial: train/valid/test = 1064/133/133
+- SHA256: `e2a2ebef7b9a69fd2d7f5152eb808b14a3a0a76de015c802f3f187c437a8e577`
+
+Clases confirmadas por README de anotaciones:
+
+- `person`
+- `vest`
+- `blue helmet`
+- `red helmet`
+- `white helmet`
+- `yellow helmet`
+
+### SHEL5K
+
+La descarga automatica desde Mendeley no fue posible por endpoints no expuestos o autorizacion. Luego se incorporo manualmente:
+
+```text
+datasets/raw/shel5k/9rcv8mm682-4.zip
+```
+
+Resultado:
+
+- Formato original: Pascal VOC
+- Imagenes: 5000
+- XML: 5000
+- Objetos: 75578
+- Split oficial: no encontrado
+- Licencia indicada por Mendeley: CC BY 4.0
+- DOI: `10.17632/9rcv8mm682.4`
+- SHA256: `dfba1d3ce01af69d791020cdfdfdbc25904b41724d11160361e7a4cd164e7a7a`
+
+Validacion basica:
+
+- Imagenes faltantes: 0
+- XML corruptos: 0
+- Boxes invalidas: 0
+- Imagenes corruptas detectadas: 0
+
+### SH17
+
+Primero se descargo el repositorio oficial para conservar scripts, YAML y lista de URLs. Despues se configuro Kaggle con:
+
+```text
+/home/pandulc/.kaggle/kaggle.json
+```
+
+El archivo se dejo con permisos `600`.
+
+Se descargo el dataset completo desde Kaggle:
+
+```text
+datasets/raw/sh17/sh17-kaggle.zip
+```
+
+Resultado:
+
+- Formato original: YOLO + Pascal VOC
+- Imagenes: 8099
+- Labels YOLO: 8099
+- XML VOC: 8099
+- Metadata JSON: 8099
+- Objetos: 75994
+- Split oficial: train/val = 6479/1620
+- Licencia indicada por fuente: CC BY-NC-SA 4.0
+- SHA256: `4747f51cac891a59a55c354a7b0f3c3addb4478ab214e74c16f26a6a205abf73`
+
+Validacion basica:
+
+- Pairs imagen/YOLO/VOC/metadata completos: 8099/8099/8099/8099
+- Lineas YOLO invalidas: 0
+- Imagenes corruptas detectadas: 0
+- Boxes VOC fuera de rango: 2
+
+Decision: usar YOLO como fuente primaria para conversiones de SH17, porque los labels YOLO validaron sin cajas fuera de rango.
+
+## 3. Scripts creados
+
+Descarga:
+
+- `datasets/scripts/download/download_construction_ppe.sh`
+- `datasets/scripts/download/download_chv.sh`
+- `datasets/scripts/download/download_sh17_repo.sh`
+- `datasets/scripts/download/download_sh17_kaggle.py`
+
+Validacion:
+
+- `datasets/scripts/validate/summarize_raw_dataset.sh`
+
+Conversion:
+
+- `datasets/scripts/convert/convert_datasets.py`
+
+## 4. Conversiones realizadas
+
+Se generaron salidas en tres formatos:
+
+- COCO
+- YOLO
+- ODVG para Grounding DINO
+
+Tambien se generaron dos vistas:
+
+- `original`
+- `canonical_cr01_cr02`
+
+Reporte detallado:
+
+```text
+datasets/registry/conversion_report.md
+datasets/processed/reports/conversion_summary.json
+```
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-7937323.jpeg</filename>
+	<size>
+		<width>3871</width>
+		<height>5799</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>helmet</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2042</xmin>
+			<xmax>3847</xmax>
+			<ymin>1101</ymin>
+			<ymax>2462</ymax>
+		</bndbox>
+	</object>
+</annotation>

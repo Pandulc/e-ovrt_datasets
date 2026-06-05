@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-4239123.jpeg</filename>
+	<size>
+		<width>6366</width>
+		<height>4244</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>gloves</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2936</xmin>
+			<xmax>5920</xmax>
+			<ymin>1127</ymin>
+			<ymax>2397</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2366</xmin>
+			<xmax>3506</xmax>
+			<ymin>1498</ymin>
+			<ymax>2412</ymax>
+		</bndbox>
+	</object>
+</annotation>

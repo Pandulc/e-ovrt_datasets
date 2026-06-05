@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-1049691.jpeg</filename>
+	<size>
+		<width>7200</width>
+		<height>4800</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>face</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3761</xmin>
+			<xmax>5100</xmax>
+			<ymin>823</ymin>
+			<ymax>2483</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>head</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3283</xmin>
+			<xmax>5459</xmax>
+			<ymin>464</ymin>
+			<ymax>2487</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2337</xmin>
+			<xmax>6208</xmax>
+			<ymin>419</ymin>
+			<ymax>4800</ymax>
+		</bndbox>
+	</object>
+</annotation>

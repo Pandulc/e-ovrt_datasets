@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-8133251.jpeg</filename>
+	<size>
+		<width>6000</width>
+		<height>4000</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>ear</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5571</xmin>
+			<xmax>6000</xmax>
+			<ymin>2539</ymin>
+			<ymax>2985</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>hands</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2560</xmin>
+			<xmax>3196</xmax>
+			<ymin>1734</ymin>
+			<ymax>2540</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>hands</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4193</xmin>
+			<xmax>4938</xmax>
+			<ymin>1281</ymin>
+			<ymax>1858</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,339 @@
+{
+  "dataset_id": "sh17",
+  "source_format": "yolo",
+  "raw_image_count": 8099,
+  "splits": {
+    "train": 6479,
+    "val": 1620
+  },
+  "views": {
+    "original": {
+      "coco": {
+        "train": {
+          "file": "datasets/processed/coco/original/sh17/train.json",
+          "images": 6479,
+          "annotations": 60636,
+          "class_counts": {
+            "head": 9558,
+            "face": 7095,
+            "hands": 12638,
+            "foot": 610,
+            "ear": 6118,
+            "person": 11068,
+            "tool": 3724,
+            "face-mask": 519,
+            "gloves": 2261,
+            "helmet": 773,
+            "glasses": 1547,
+            "shoes": 3604,
+            "ear-mufs": 269,
+            "face-guard": 110,
+            "safety-vest": 433,
+            "medical-suit": 114,
+            "safety-suit": 195
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "file": "datasets/processed/coco/original/sh17/val.json",
+          "images": 1620,
+          "annotations": 15358,
+          "class_counts": {
+            "hands": 3212,
+            "head": 2427,
+            "face": 1855,
+            "ear": 1612,
+            "glasses": 398,
+            "person": 2734,
+            "tool": 923,
+            "shoes": 956,
+            "gloves": 529,
+            "foot": 149,
+            "ear-mufs": 49,
+            "face-mask": 151,
+            "medical-suit": 43,
+            "safety-suit": 45,
+            "safety-vest": 97,
+            "helmet": 154,
+            "face-guard": 24
+          },
+          "dropped_source_classes": {}
+        }
+      },
+      "yolo": {
+        "train": {
+          "labels_dir": "datasets/processed/yolo/original/sh17/labels/train",
+          "image_list": "datasets/processed/yolo/original/sh17/image_lists/train.txt",
+          "data_yaml": "datasets/processed/yolo/original/sh17/data.yaml",
+          "images": 6479,
+          "annotations": 60636,
+          "class_counts": {
+            "head": 9558,
+            "face": 7095,
+            "hands": 12638,
+            "foot": 610,
+            "ear": 6118,
+            "person": 11068,
+            "tool": 3724,
+            "face-mask": 519,
+            "gloves": 2261,
+            "helmet": 773,
+            "glasses": 1547,
+            "shoes": 3604,
+            "ear-mufs": 269,
+            "face-guard": 110,
+            "safety-vest": 433,
+            "medical-suit": 114,
+            "safety-suit": 195
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "labels_dir": "datasets/processed/yolo/original/sh17/labels/val",
+          "image_list": "datasets/processed/yolo/original/sh17/image_lists/val.txt",
+          "data_yaml": "datasets/processed/yolo/original/sh17/data.yaml",
+          "images": 1620,
+          "annotations": 15358,
+          "class_counts": {
+            "hands": 3212,
+            "head": 2427,
+            "face": 1855,
+            "ear": 1612,
+            "glasses": 398,
+            "person": 2734,
+            "tool": 923,
+            "shoes": 956,
+            "gloves": 529,
+            "foot": 149,
+            "ear-mufs": 49,
+            "face-mask": 151,
+            "medical-suit": 43,
+            "safety-suit": 45,
+            "safety-vest": 97,
+            "helmet": 154,
+            "face-guard": 24
+          },
+          "dropped_source_classes": {}
+        }
+      },
+      "odvg": {
+        "train": {
+          "file": "datasets/processed/odvg/original/sh17/train.jsonl",
+          "label_map": "datasets/processed/odvg/original/sh17/label_map.json",
+          "images": 6479,
+          "annotations": 60636,
+          "class_counts": {
+            "head": 9558,
+            "face": 7095,
+            "hands": 12638,
+            "foot": 610,
+            "ear": 6118,
+            "person": 11068,
+            "tool": 3724,
+            "face-mask": 519,
+            "gloves": 2261,
+            "helmet": 773,
+            "glasses": 1547,
+            "shoes": 3604,
+            "ear-mufs": 269,
+            "face-guard": 110,
+            "safety-vest": 433,
+            "medical-suit": 114,
+            "safety-suit": 195
+          },
+          "dropped_source_classes": {}
+        },
+        "val": {
+          "file": "datasets/processed/odvg/original/sh17/val.jsonl",
+          "label_map": "datasets/processed/odvg/original/sh17/label_map.json",
+          "images": 1620,
+          "annotations": 15358,
+          "class_counts": {
+            "hands": 3212,
+            "head": 2427,
+            "face": 1855,
+            "ear": 1612,
+            "glasses": 398,
+            "person": 2734,
+            "tool": 923,
+            "shoes": 956,
+            "gloves": 529,
+            "foot": 149,
+            "ear-mufs": 49,
+            "face-mask": 151,
+            "medical-suit": 43,
+            "safety-suit": 45,
+            "safety-vest": 97,
+            "helmet": 154,
+            "face-guard": 24
+          },
+          "dropped_source_classes": {}
+        }
+      }
+    },
+    "canonical_cr01_cr02": {
+      "coco": {
+        "train": {
+          "file": "datasets/processed/coco/canonical_cr01_cr02/sh17/train.json",
+          "images": 6479,
+          "annotations": 28927,
+          "class_counts": {
+            "no_helmet": 16653,
+            "person": 11068,
+            "helmet": 773,
+            "vest": 433
+          },
+          "dropped_source_classes": {
+            "hands": 12638,
+            "foot": 610,
+            "ear": 6118,
+            "tool": 3724,
+            "face-mask": 519,
+            "gloves": 2261,
+            "glasses": 1547,
+            "shoes": 3604,
+            "ear-mufs": 269,
+            "face-guard": 110,
+            "medical-suit": 114,
+            "safety-suit": 195
+          }
+        },
+        "val": {
+          "file": "datasets/processed/coco/canonical_cr01_cr02/sh17/val.json",
+          "images": 1620,
+          "annotations": 7267,
+          "class_counts": {
+            "no_helmet": 4282,
+            "person": 2734,
+            "vest": 97,
+            "helmet": 154
+          },
+          "dropped_source_classes": {
+            "hands": 3212,
+            "ear": 1612,
+            "glasses": 398,
+            "tool": 923,
+            "shoes": 956,
+            "gloves": 529,
+            "foot": 149,
+            "ear-mufs": 49,
+            "face-mask": 151,
+            "medical-suit": 43,
+            "safety-suit": 45,
+            "face-guard": 24
+          }
+        }
+      },
+      "yolo": {
+        "train": {
+          "labels_dir": "datasets/processed/yolo/canonical_cr01_cr02/sh17/labels/train",
+          "image_list": "datasets/processed/yolo/canonical_cr01_cr02/sh17/image_lists/train.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_cr01_cr02/sh17/data.yaml",
+          "images": 6479,
+          "annotations": 28927,
+          "class_counts": {
+            "no_helmet": 16653,
+            "person": 11068,
+            "helmet": 773,
+            "vest": 433
+          },
+          "dropped_source_classes": {
+            "hands": 12638,
+            "foot": 610,
+            "ear": 6118,
+            "tool": 3724,
+            "face-mask": 519,
+            "gloves": 2261,
+            "glasses": 1547,
+            "shoes": 3604,
+            "ear-mufs": 269,
+            "face-guard": 110,
+            "medical-suit": 114,
+            "safety-suit": 195
+          }
+        },
+        "val": {
+          "labels_dir": "datasets/processed/yolo/canonical_cr01_cr02/sh17/labels/val",
+          "image_list": "datasets/processed/yolo/canonical_cr01_cr02/sh17/image_lists/val.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_cr01_cr02/sh17/data.yaml",
+          "images": 1620,
+          "annotations": 7267,
+          "class_counts": {
+            "no_helmet": 4282,
+            "person": 2734,
+            "vest": 97,
+            "helmet": 154
+          },
+          "dropped_source_classes": {
+            "hands": 3212,
+            "ear": 1612,
+            "glasses": 398,
+            "tool": 923,
+            "shoes": 956,
+            "gloves": 529,
+            "foot": 149,
+            "ear-mufs": 49,
+            "face-mask": 151,
+            "medical-suit": 43,
+            "safety-suit": 45,
+            "face-guard": 24
+          }
+        }
+      },
+      "odvg": {
+        "train": {
+          "file": "datasets/processed/odvg/canonical_cr01_cr02/sh17/train.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_cr01_cr02/sh17/label_map.json",
+          "images": 6479,
+          "annotations": 28927,
+          "class_counts": {
+            "no_helmet": 16653,
+            "person": 11068,
+            "helmet": 773,
+            "vest": 433
+          },
+          "dropped_source_classes": {
+            "hands": 12638,
+            "foot": 610,
+            "ear": 6118,
+            "tool": 3724,
+            "face-mask": 519,
+            "gloves": 2261,
+            "glasses": 1547,
+            "shoes": 3604,
+            "ear-mufs": 269,
+            "face-guard": 110,
+            "medical-suit": 114,
+            "safety-suit": 195
+          }
+        },
+        "val": {
+          "file": "datasets/processed/odvg/canonical_cr01_cr02/sh17/val.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_cr01_cr02/sh17/label_map.json",
+          "images": 1620,
+          "annotations": 7267,
+          "class_counts": {
+            "no_helmet": 4282,
+            "person": 2734,
+            "vest": 97,
+            "helmet": 154
+          },
+          "dropped_source_classes": {
+            "hands": 3212,
+            "ear": 1612,
+            "glasses": 398,
+            "tool": 923,
+            "shoes": 956,
+            "gloves": 529,
+            "foot": 149,
+            "ear-mufs": 49,
+            "face-mask": 151,
+            "medical-suit": 43,
+            "safety-suit": 45,
+            "face-guard": 24
+          }
+        }
+      }
+    }
+  }
+}

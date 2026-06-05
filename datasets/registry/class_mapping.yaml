@@ -1,0 +1,132 @@
+canonical_classes:
+  person:
+    description: "Persona, trabajador o peaton visible."
+  helmet:
+    description: "Casco de seguridad visible."
+  vest:
+    description: "Chaleco reflectivo o de seguridad visible."
+  no_helmet:
+    description: "Persona/cabeza sin casco, cuando exista etiqueta explicita."
+  no_vest:
+    description: "Persona sin chaleco, cuando exista etiqueta explicita."
+
+dataset_mappings:
+  sh17:
+    person:
+      - person
+    helmet:
+      - helmet
+    vest:
+      - safety-vest
+    no_helmet: []
+    no_vest: []
+
+  shel5k:
+    person:
+      - person with helmet
+      - person without helmet
+    helmet:
+      - helmet
+    vest: []
+    no_helmet:
+      - person without helmet
+      - head
+      - face
+    no_vest: []
+
+  chv:
+    person:
+      - person
+    helmet:
+      - blue helmet
+      - red helmet
+      - white helmet
+      - yellow helmet
+    vest:
+      - vest
+    no_helmet: []
+    no_vest: []
+
+  construction_ppe:
+    person:
+      - Person
+    helmet:
+      - helmet
+    vest:
+      - vest
+    no_helmet:
+      - no_helmet
+    no_vest: []
+
+  gdut_hwd:
+    person: []
+    helmet:
+      - blue
+      - white
+      - yellow
+      - red
+    vest: []
+    no_helmet:
+      - none
+    no_vest: []
+
+  shwd:
+    person:
+      - person
+    helmet:
+      - hat
+    vest: []
+    no_helmet:
+      - person
+    no_vest: []
+
+  soda:
+    person:
+      - Person
+    helmet:
+      - Helmet
+    vest:
+      - Vest
+    no_helmet: []
+    no_vest: []
+
+  pictor_ppe:
+    person:
+      - worker
+    helmet:
+      - hat
+    vest:
+      - vest
+    no_helmet: []
+    no_vest: []
+
+  mocs:
+    person:
+      - Worker
+    helmet: []
+    vest: []
+    no_helmet: []
+    no_vest: []
+
+split_policy:
+  seed: 42
+  train: 0.70
+  val: 0.15
+  test: 0.15
+  constraints:
+    - "train, val y test estrictamente disjuntos"
+    - "test congelado antes de entrenamiento"
+    - "no aplicar data augmentation sobre val/test"
+    - "deduplicacion perceptual antes del split"
+    - "mantener trazabilidad imagen -> dataset origen"
+
+fine_tuning_subset:
+  min_images: 500
+  max_images: 2000
+  conditions:
+    - CR-01
+    - CR-02
+  requirements:
+    - "baseline zero-shot evaluada antes"
+    - "test congelado"
+    - "subset documentado por manifest"

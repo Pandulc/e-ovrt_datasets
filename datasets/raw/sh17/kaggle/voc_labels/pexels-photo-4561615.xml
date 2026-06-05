@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-4561615.jpeg</filename>
+	<size>
+		<width>3456</width>
+		<height>4848</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>gloves</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1696</xmin>
+			<xmax>3456</xmax>
+			<ymin>859</ymin>
+			<ymax>2573</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>face-guard</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>923</xmin>
+			<xmax>3456</xmax>
+			<ymin>5</ymin>
+			<ymax>3147</ymax>
+		</bndbox>
+	</object>
+</annotation>

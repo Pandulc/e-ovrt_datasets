@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-5302901.jpeg</filename>
+	<size>
+		<width>6586</width>
+		<height>4391</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>hands</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2518</xmin>
+			<xmax>4660</xmax>
+			<ymin>1019</ymin>
+			<ymax>3131</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>5687</xmin>
+			<xmax>6586</xmax>
+			<ymin>743</ymin>
+			<ymax>1137</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tools</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>6046</xmin>
+			<xmax>6586</xmax>
+			<ymin>1056</ymin>
+			<ymax>1301</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-8398542.jpeg</filename>
+	<size>
+		<width>2715</width>
+		<height>3780</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>253</xmin>
+			<xmax>286</xmax>
+			<ymin>1767</ymin>
+			<ymax>1948</ymax>
+		</bndbox>
+	</object>
+</annotation>

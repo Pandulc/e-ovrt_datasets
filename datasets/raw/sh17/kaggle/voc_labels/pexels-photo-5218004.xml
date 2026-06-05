@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<annotation>
+	<filename>pexels-photo-5218004.jpeg</filename>
+	<size>
+		<width>4003</width>
+		<height>6004</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>gloves</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1603</xmin>
+			<xmax>3029</xmax>
+			<ymin>3459</ymin>
+			<ymax>6004</ymax>
+		</bndbox>
+	</object>
+</annotation>
