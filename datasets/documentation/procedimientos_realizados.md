@@ -177,3 +177,56 @@ datasets/registry/conversion_report.md
 datasets/processed/reports/conversion_summary.json
 ```
 
+## 5. Correccion de inconsistencias de registry
+
+Se alinearon los registros tecnicos con el comportamiento real del conversor:
+
+- `datasets/registry/class_mapping.yaml` ahora refleja que SH17 mapea `head` y `face` a `no_helmet` en la vista canonica.
+- `datasets/registry/class_mapping.yaml` ahora usa los nombres reales de SHEL5K (`person_with_helmet`, `person_no_helmet`, `head_with_helmet`) en lugar de alias con espacios.
+- Se agregaron notas metodologicas para distinguir `no_helmet` explicito de `no_helmet` inferido o normalizado.
+- `datasets/registry/datasets_metadata.yaml` marca Construction-PPE como `downloaded_basic_validated`, consistente con las conversiones y validaciones ya registradas.
+- El plan de obtencion fue ajustado para describir el mapeo operativo actual y no un mapeo preliminar desactualizado.
+
+## 6. Manifest combinado CR-01/CR-02
+
+Se genero el manifest combinado trazable:
+
+```text
+datasets/splits/cr01_cr02/split_manifest.csv
+```
+
+Criterios aplicados:
+
+- Una fila por imagen.
+- Rutas normalizadas al workspace actual bajo `datasets/raw/...`.
+- Hash SHA256 por imagen.
+- Condicion canonica derivada de las etiquetas YOLO canonicas.
+- CHV, SHEL5K y Construction-PPE conservan `train`, `val` y `test`.
+- SH17 se mantiene solo como `train` y `val` porque no posee split `test` explicito.
+
+Conteo final por split:
+
+| Split | Imagenes |
+|---|---:|
+| train | 12175 |
+| val | 2646 |
+| test | 1024 |
+
+Detalle por dataset:
+
+| Dataset | train | val | test |
+|---|---:|---:|---:|
+| CHV | 1064 | 133 | 133 |
+| SHEL5K | 3500 | 750 | 750 |
+| Construction-PPE | 1132 | 143 | 141 |
+| SH17 | 6479 | 1620 | 0 |
+
+Validaciones realizadas sobre el manifest:
+
+- Total de filas: 15845.
+- Duplicados por `source_image`: 0.
+- Duplicados por `hash_sha256`: 0.
+- Solapamientos entre splits por ruta o hash: 0.
+
+Decision metodologica: `val` queda destinado a calibracion de prompts, umbrales y postproceso; `test` queda congelado para la baseline DBE zero-shot y cualquier comparacion posterior.
+

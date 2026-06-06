@@ -34,3 +34,5 @@ Se generaron dos vistas por dataset:
 - `original`: conserva clases originales.
 - `canonical_cr01_cr02`: normaliza clases utiles para CR-01 y CR-02.
 
+El manifest combinado CR-01/CR-02 ya fue generado en `datasets/splits/cr01_cr02/split_manifest.csv` con 15845 imagenes: 12175 en `train`, 2646 en `val` y 1024 en `test`. SH17 se mantiene solo en `train`/`val` porque no posee split `test` explicito.
+

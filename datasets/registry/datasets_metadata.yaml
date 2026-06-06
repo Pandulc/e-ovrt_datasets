@@ -323,9 +323,10 @@
   - CR-02
   split_policy: official
   split_seed: 42
-  status: downloaded_unvalidated
-  notes: Incluye clases explicitas de EPP faltante. Licencia AGPL-3.0 presente en
-    LICENSE descargado; documentar implicancias antes de redistribucion.
+  status: downloaded_basic_validated
+  notes: Validacion basica y conversion completadas. Incluye clases explicitas de
+    EPP faltante. Licencia AGPL-3.0 presente en LICENSE descargado; documentar
+    implicancias antes de redistribucion.
   conversion_status: converted_coco_yolo_odvg
   conversion_views:
   - original

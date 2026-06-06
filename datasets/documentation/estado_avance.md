@@ -8,14 +8,14 @@ Fecha de corte: 2026-06-05
 |---|---|---|---|
 | Semana 1 | Descarga y registro | Completado para nucleo inicial | SH17, SHEL5K, CHV y Construction-PPE descargados y registrados. |
 | Semana 2 | Conversion y validacion | Completado a nivel basico | COCO, YOLO y ODVG generados para los cuatro datasets prioritarios. |
-| Semana 3 | Mapeo de clases y splits | Parcial | Mapeo canonico generado; falta congelar corpus combinado y manifiesto CR-01/CR-02. |
+| Semana 3 | Mapeo de clases y splits | Parcial avanzado | Mapeo canonico y manifest combinado CR-01/CR-02 generados; falta producir artefactos combinados de entrenamiento/evaluacion si se requieren. |
 | Semana 4 | Baseline inicial | Pendiente | Falta ejecutar baseline zero-shot con Grounding DINO y registrar metricas. |
 
 ## Avance por dataset prioritario
 
 | Dataset | Descarga | Validacion basica | COCO | YOLO | ODVG | Split |
 |---|---|---|---|---|---|---|
-| SH17 | Completa | Completa con observacion VOC | Generado | Generado | Generado | Oficial train/val |
+| SH17 | Completa | Completa con observacion VOC | Generado | Generado | Generado | Oficial train/val, sin test explicito |
 | SHEL5K | Completa | Completa | Generado | Generado | Generado | Custom 70/15/15 seed 42 |
 | CHV | Completa | Completa | Generado | Generado | Generado | Oficial train/val/test |
 | Construction-PPE | Completa | Completa | Generado | Generado | Generado | Oficial train/val/test |
@@ -32,6 +32,25 @@ Fecha de corte: 2026-06-05
 | Construction-PPE | canonical_cr01_cr02 | 1416 | 6082 |
 | SH17 | original | 8099 | 75994 |
 | SH17 | canonical_cr01_cr02 | 8099 | 36194 |
+
+## Manifest combinado CR-01/CR-02
+
+`datasets/splits/cr01_cr02/split_manifest.csv` fue generado con una fila por imagen, rutas normalizadas al workspace actual, hash SHA256 de imagen y condicion canonica derivada de las etiquetas YOLO canonicas. SH17 se mantiene solo en train/val por no tener split test explicito.
+
+| Split | Imagenes |
+|---|---:|
+| train | 12175 |
+| val | 2646 |
+| test | 1024 |
+
+Detalle por dataset:
+
+| Dataset | train | val | test |
+|---|---:|---:|---:|
+| CHV | 1064 | 133 | 133 |
+| SHEL5K | 3500 | 750 | 750 |
+| Construction-PPE | 1132 | 143 | 141 |
+| SH17 | 6479 | 1620 | 0 |
 
 ## Condiciones cubiertas
 
@@ -67,11 +86,5 @@ Estado: cobertura parcial. Para detectar incumplimiento de chaleco probablemente
 
 ## Proximo hito recomendado
 
-Generar el corpus combinado CR-01/CR-02 con manifiesto trazable:
-
-```text
-datasets/splits/cr01_cr02/split_manifest.csv
-```
-
-Despues ejecutar baseline zero-shot con Grounding DINO sobre los splits congelados.
+Ejecutar baseline zero-shot con Grounding DINO sobre el test congelado del manifest combinado CR-01/CR-02 y registrar metricas por dataset, split y condicion.
 

@@ -18,18 +18,21 @@ dataset_mappings:
       - helmet
     vest:
       - safety-vest
-    no_helmet: []
+    no_helmet:
+      - head
+      - face
     no_vest: []
 
   shel5k:
     person:
-      - person with helmet
-      - person without helmet
+      - person_with_helmet
+      - person
     helmet:
       - helmet
+      - head_with_helmet
     vest: []
     no_helmet:
-      - person without helmet
+      - person_no_helmet
       - head
       - face
     no_vest: []
@@ -130,3 +133,10 @@ fine_tuning_subset:
     - "baseline zero-shot evaluada antes"
     - "test congelado"
     - "subset documentado por manifest"
+mapping_notes:
+  no_helmet:
+    - "En Construction-PPE la clase no_helmet existe como etiqueta fuente explicita."
+    - "En SH17 no_helmet es una normalizacion operativa desde head y face; debe reportarse como inferida en evaluaciones."
+    - "En SHEL5K no_helmet combina person_no_helmet, head y face; debe reportarse como mezcla de etiqueta explicita e indicios visuales."
+  no_vest:
+    - "El nucleo actual no contiene una clase no_vest robusta; CR-02 debe evaluarse por presencia/asociacion de vest o con anotacion complementaria."

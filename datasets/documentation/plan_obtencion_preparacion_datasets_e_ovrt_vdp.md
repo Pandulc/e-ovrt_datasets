@@ -288,12 +288,12 @@ canonical_classes:
     description: "Persona sin chaleco, cuando exista etiqueta explícita."
 ```
 
-### Mapeo inicial esperado
+### Mapeo operativo actual
 
-| Dataset | Mapeo preliminar |
+| Dataset | Mapeo operativo |
 |---|---|
-| SH17 | `person`, `helmet`, `safety-vest` → canónicas |
-| SHEL5K | `helmet`, `person with helmet`, `person without helmet`, `head`, `face` |
+| SH17 | `person`, `helmet`, `safety-vest`; `head` y `face` → `no_helmet` inferido |
+| SHEL5K | `helmet`, `head_with_helmet`, `person_with_helmet`, `person_no_helmet`, `head`, `face`, `person` |
 | CHV | `person`, `vest`, `blue helmet`, `red helmet`, `white helmet`, `yellow helmet` |
 | Construction-PPE | `helmet`, `vest`, `Person`, `no_helmet`, otros EPP |
 | GDUT-HWD | `blue`, `white`, `yellow`, `red`, `none` |
