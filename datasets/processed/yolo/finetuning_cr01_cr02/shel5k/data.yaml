@@ -1,0 +1,11 @@
+path: datasets/processed/yolo/finetuning_cr01_cr02/shel5k
+train: datasets/processed/yolo/finetuning_cr01_cr02/shel5k/image_lists/train.txt
+val: datasets/processed/yolo/finetuning_cr01_cr02/shel5k/image_lists/val.txt
+test: datasets/processed/yolo/finetuning_cr01_cr02/shel5k/image_lists/test.txt
+nc: 5
+names:
+  0: person
+  1: helmet
+  2: vest
+  3: no_helmet
+  4: no_vest

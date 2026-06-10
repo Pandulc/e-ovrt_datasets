@@ -252,3 +252,36 @@ Validaciones realizadas sobre el manifest:
 
 Decision metodologica: `val` queda destinado a calibracion de prompts, umbrales y postproceso; `test` queda congelado para la baseline DBE zero-shot y cualquier comparacion posterior.
 
+
+## 7. Realineamiento para fine-tuning
+
+El 2026-06-10 se ajusto el criterio metodologico: los datasets preparados se utilizaran exclusivamente para fine-tuning de modelos. Por lo tanto, se genero una vista curada por combinaciones canonicas aprobadas para fine-tuning:
+
+```text
+datasets/processed/coco/finetuning_cr01_cr02/
+datasets/processed/yolo/finetuning_cr01_cr02/
+datasets/processed/odvg/finetuning_cr01_cr02/
+datasets/splits/cr01_cr02/finetuning_manifest.csv
+datasets/processed/reports/finetuning_cr01_cr02_summary.json
+```
+
+Script usado:
+
+```text
+datasets/scripts/curate/generate_finetuning_cr01_cr02.py
+```
+
+Criterio aplicado:
+
+```text
+label_set in approved_finetuning_combinations
+```
+
+Conteo final:
+
+| Split | Imagenes | Anotaciones |
+|---|---:|---:|
+| train | 10611 | 86586 |
+| val | 2273 | 17946 |
+| test | 943 | 11471 |
+| total | 13827 | 116003 |

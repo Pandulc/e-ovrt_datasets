@@ -1,0 +1,396 @@
+{
+  "view": "finetuning_cr01_cr02",
+  "curation_rule": "Keep only approved fine-tuning label-set combinations.",
+  "manifest": "datasets/splits/cr01_cr02/finetuning_manifest.csv",
+  "total_images": 13827,
+  "total_annotations": 116003,
+  "class_counts": {
+    "helmet": 41202,
+    "vest": 3925,
+    "person": 33313,
+    "no_helmet": 37563
+  },
+  "splits": {
+    "train": {
+      "images": 10611,
+      "annotations": 86586
+    },
+    "val": {
+      "images": 2273,
+      "annotations": 17946
+    },
+    "test": {
+      "images": 943,
+      "annotations": 11471
+    }
+  },
+  "datasets": [
+    {
+      "dataset_id": "chv",
+      "split": "test",
+      "source_file": "datasets/processed/coco/canonical_cr01_cr02/chv/test.json",
+      "coco_file": "datasets/processed/coco/finetuning_cr01_cr02/chv/test.json",
+      "images": 131,
+      "annotations": 1078,
+      "class_counts": {
+        "helmet": 417,
+        "vest": 217,
+        "person": 444
+      },
+      "yolo": {
+        "labels_dir": "datasets/processed/yolo/finetuning_cr01_cr02/chv/labels/test",
+        "image_list": "datasets/processed/yolo/finetuning_cr01_cr02/chv/image_lists/test.txt",
+        "data_yaml": "datasets/processed/yolo/finetuning_cr01_cr02/chv/data.yaml",
+        "class_counts": {
+          "helmet": 417,
+          "vest": 217,
+          "person": 444
+        }
+      },
+      "odvg": {
+        "file": "datasets/processed/odvg/finetuning_cr01_cr02/chv/test.jsonl",
+        "label_map": "datasets/processed/odvg/finetuning_cr01_cr02/chv/label_map.json",
+        "class_counts": {
+          "helmet": 417,
+          "vest": 217,
+          "person": 444
+        }
+      }
+    },
+    {
+      "dataset_id": "chv",
+      "split": "train",
+      "source_file": "datasets/processed/coco/canonical_cr01_cr02/chv/train.json",
+      "coco_file": "datasets/processed/coco/finetuning_cr01_cr02/chv/train.json",
+      "images": 1048,
+      "annotations": 7118,
+      "class_counts": {
+        "helmet": 2762,
+        "vest": 1396,
+        "person": 2960
+      },
+      "yolo": {
+        "labels_dir": "datasets/processed/yolo/finetuning_cr01_cr02/chv/labels/train",
+        "image_list": "datasets/processed/yolo/finetuning_cr01_cr02/chv/image_lists/train.txt",
+        "data_yaml": "datasets/processed/yolo/finetuning_cr01_cr02/chv/data.yaml",
+        "class_counts": {
+          "helmet": 2762,
+          "vest": 1396,
+          "person": 2960
+        }
+      },
+      "odvg": {
+        "file": "datasets/processed/odvg/finetuning_cr01_cr02/chv/train.jsonl",
+        "label_map": "datasets/processed/odvg/finetuning_cr01_cr02/chv/label_map.json",
+        "class_counts": {
+          "helmet": 2762,
+          "vest": 1396,
+          "person": 2960
+        }
+      }
+    },
+    {
+      "dataset_id": "chv",
+      "split": "val",
+      "source_file": "datasets/processed/coco/canonical_cr01_cr02/chv/val.json",
+      "coco_file": "datasets/processed/coco/finetuning_cr01_cr02/chv/val.json",
+      "images": 131,
+      "annotations": 907,
+      "class_counts": {
+        "helmet": 359,
+        "person": 377,
+        "vest": 171
+      },
+      "yolo": {
+        "labels_dir": "datasets/processed/yolo/finetuning_cr01_cr02/chv/labels/val",
+        "image_list": "datasets/processed/yolo/finetuning_cr01_cr02/chv/image_lists/val.txt",
+        "data_yaml": "datasets/processed/yolo/finetuning_cr01_cr02/chv/data.yaml",
+        "class_counts": {
+          "helmet": 359,
+          "person": 377,
+          "vest": 171
+        }
+      },
+      "odvg": {
+        "file": "datasets/processed/odvg/finetuning_cr01_cr02/chv/val.jsonl",
+        "label_map": "datasets/processed/odvg/finetuning_cr01_cr02/chv/label_map.json",
+        "class_counts": {
+          "helmet": 359,
+          "person": 377,
+          "vest": 171
+        }
+      }
+    },
+    {
+      "dataset_id": "construction_ppe",
+      "split": "test",
+      "source_file": "datasets/processed/coco/canonical_cr01_cr02/construction_ppe/test.json",
+      "coco_file": "datasets/processed/coco/finetuning_cr01_cr02/construction_ppe/test.json",
+      "images": 138,
+      "annotations": 641,
+      "class_counts": {
+        "helmet": 192,
+        "person": 231,
+        "vest": 178,
+        "no_helmet": 40
+      },
+      "yolo": {
+        "labels_dir": "datasets/processed/yolo/finetuning_cr01_cr02/construction_ppe/labels/test",
+        "image_list": "datasets/processed/yolo/finetuning_cr01_cr02/construction_ppe/image_lists/test.txt",
+        "data_yaml": "datasets/processed/yolo/finetuning_cr01_cr02/construction_ppe/data.yaml",
+        "class_counts": {
+          "helmet": 192,
+          "person": 231,
+          "vest": 178,
+          "no_helmet": 40
+        }
+      },
+      "odvg": {
+        "file": "datasets/processed/odvg/finetuning_cr01_cr02/construction_ppe/test.jsonl",
+        "label_map": "datasets/processed/odvg/finetuning_cr01_cr02/construction_ppe/label_map.json",
+        "class_counts": {
+          "helmet": 192,
+          "person": 231,
+          "vest": 178,
+          "no_helmet": 40
+        }
+      }
+    },
+    {
+      "dataset_id": "construction_ppe",
+      "split": "train",
+      "source_file": "datasets/processed/coco/canonical_cr01_cr02/construction_ppe/train.json",
+      "coco_file": "datasets/processed/coco/finetuning_cr01_cr02/construction_ppe/train.json",
+      "images": 1113,
+      "annotations": 4765,
+      "class_counts": {
+        "helmet": 1341,
+        "person": 1757,
+        "vest": 1269,
+        "no_helmet": 398
+      },
+      "yolo": {
+        "labels_dir": "datasets/processed/yolo/finetuning_cr01_cr02/construction_ppe/labels/train",
+        "image_list": "datasets/processed/yolo/finetuning_cr01_cr02/construction_ppe/image_lists/train.txt",
+        "data_yaml": "datasets/processed/yolo/finetuning_cr01_cr02/construction_ppe/data.yaml",
+        "class_counts": {
+          "helmet": 1341,
+          "person": 1757,
+          "vest": 1269,
+          "no_helmet": 398
+        }
+      },
+      "odvg": {
+        "file": "datasets/processed/odvg/finetuning_cr01_cr02/construction_ppe/train.jsonl",
+        "label_map": "datasets/processed/odvg/finetuning_cr01_cr02/construction_ppe/label_map.json",
+        "class_counts": {
+          "helmet": 1341,
+          "person": 1757,
+          "vest": 1269,
+          "no_helmet": 398
+        }
+      }
+    },
+    {
+      "dataset_id": "construction_ppe",
+      "split": "val",
+      "source_file": "datasets/processed/coco/canonical_cr01_cr02/construction_ppe/val.json",
+      "coco_file": "datasets/processed/coco/finetuning_cr01_cr02/construction_ppe/val.json",
+      "images": 140,
+      "annotations": 652,
+      "class_counts": {
+        "helmet": 201,
+        "person": 235,
+        "vest": 171,
+        "no_helmet": 45
+      },
+      "yolo": {
+        "labels_dir": "datasets/processed/yolo/finetuning_cr01_cr02/construction_ppe/labels/val",
+        "image_list": "datasets/processed/yolo/finetuning_cr01_cr02/construction_ppe/image_lists/val.txt",
+        "data_yaml": "datasets/processed/yolo/finetuning_cr01_cr02/construction_ppe/data.yaml",
+        "class_counts": {
+          "helmet": 201,
+          "person": 235,
+          "vest": 171,
+          "no_helmet": 45
+        }
+      },
+      "odvg": {
+        "file": "datasets/processed/odvg/finetuning_cr01_cr02/construction_ppe/val.jsonl",
+        "label_map": "datasets/processed/odvg/finetuning_cr01_cr02/construction_ppe/label_map.json",
+        "class_counts": {
+          "helmet": 201,
+          "person": 235,
+          "vest": 171,
+          "no_helmet": 45
+        }
+      }
+    },
+    {
+      "dataset_id": "sh17",
+      "split": "train",
+      "source_file": "datasets/processed/coco/canonical_cr01_cr02/sh17/train.json",
+      "coco_file": "datasets/processed/coco/finetuning_cr01_cr02/sh17/train.json",
+      "images": 5243,
+      "annotations": 27780,
+      "class_counts": {
+        "no_helmet": 16574,
+        "person": 10021,
+        "helmet": 754,
+        "vest": 431
+      },
+      "yolo": {
+        "labels_dir": "datasets/processed/yolo/finetuning_cr01_cr02/sh17/labels/train",
+        "image_list": "datasets/processed/yolo/finetuning_cr01_cr02/sh17/image_lists/train.txt",
+        "data_yaml": "datasets/processed/yolo/finetuning_cr01_cr02/sh17/data.yaml",
+        "class_counts": {
+          "no_helmet": 16574,
+          "person": 10021,
+          "helmet": 754,
+          "vest": 431
+        }
+      },
+      "odvg": {
+        "file": "datasets/processed/odvg/finetuning_cr01_cr02/sh17/train.jsonl",
+        "label_map": "datasets/processed/odvg/finetuning_cr01_cr02/sh17/label_map.json",
+        "class_counts": {
+          "no_helmet": 16574,
+          "person": 10021,
+          "helmet": 754,
+          "vest": 431
+        }
+      }
+    },
+    {
+      "dataset_id": "sh17",
+      "split": "val",
+      "source_file": "datasets/processed/coco/canonical_cr01_cr02/sh17/val.json",
+      "coco_file": "datasets/processed/coco/finetuning_cr01_cr02/sh17/val.json",
+      "images": 1332,
+      "annotations": 7019,
+      "class_counts": {
+        "no_helmet": 4266,
+        "person": 2513,
+        "vest": 92,
+        "helmet": 148
+      },
+      "yolo": {
+        "labels_dir": "datasets/processed/yolo/finetuning_cr01_cr02/sh17/labels/val",
+        "image_list": "datasets/processed/yolo/finetuning_cr01_cr02/sh17/image_lists/val.txt",
+        "data_yaml": "datasets/processed/yolo/finetuning_cr01_cr02/sh17/data.yaml",
+        "class_counts": {
+          "no_helmet": 4266,
+          "person": 2513,
+          "vest": 92,
+          "helmet": 148
+        }
+      },
+      "odvg": {
+        "file": "datasets/processed/odvg/finetuning_cr01_cr02/sh17/val.jsonl",
+        "label_map": "datasets/processed/odvg/finetuning_cr01_cr02/sh17/label_map.json",
+        "class_counts": {
+          "no_helmet": 4266,
+          "person": 2513,
+          "vest": 92,
+          "helmet": 148
+        }
+      }
+    },
+    {
+      "dataset_id": "shel5k",
+      "split": "test",
+      "source_file": "datasets/processed/coco/canonical_cr01_cr02/shel5k/test.json",
+      "coco_file": "datasets/processed/coco/finetuning_cr01_cr02/shel5k/test.json",
+      "images": 674,
+      "annotations": 9752,
+      "class_counts": {
+        "helmet": 5239,
+        "person": 2216,
+        "no_helmet": 2297
+      },
+      "yolo": {
+        "labels_dir": "datasets/processed/yolo/finetuning_cr01_cr02/shel5k/labels/test",
+        "image_list": "datasets/processed/yolo/finetuning_cr01_cr02/shel5k/image_lists/test.txt",
+        "data_yaml": "datasets/processed/yolo/finetuning_cr01_cr02/shel5k/data.yaml",
+        "class_counts": {
+          "helmet": 5239,
+          "person": 2216,
+          "no_helmet": 2297
+        }
+      },
+      "odvg": {
+        "file": "datasets/processed/odvg/finetuning_cr01_cr02/shel5k/test.jsonl",
+        "label_map": "datasets/processed/odvg/finetuning_cr01_cr02/shel5k/label_map.json",
+        "class_counts": {
+          "helmet": 5239,
+          "person": 2216,
+          "no_helmet": 2297
+        }
+      }
+    },
+    {
+      "dataset_id": "shel5k",
+      "split": "train",
+      "source_file": "datasets/processed/coco/canonical_cr01_cr02/shel5k/train.json",
+      "coco_file": "datasets/processed/coco/finetuning_cr01_cr02/shel5k/train.json",
+      "images": 3207,
+      "annotations": 46923,
+      "class_counts": {
+        "helmet": 24699,
+        "no_helmet": 11784,
+        "person": 10440
+      },
+      "yolo": {
+        "labels_dir": "datasets/processed/yolo/finetuning_cr01_cr02/shel5k/labels/train",
+        "image_list": "datasets/processed/yolo/finetuning_cr01_cr02/shel5k/image_lists/train.txt",
+        "data_yaml": "datasets/processed/yolo/finetuning_cr01_cr02/shel5k/data.yaml",
+        "class_counts": {
+          "helmet": 24699,
+          "no_helmet": 11784,
+          "person": 10440
+        }
+      },
+      "odvg": {
+        "file": "datasets/processed/odvg/finetuning_cr01_cr02/shel5k/train.jsonl",
+        "label_map": "datasets/processed/odvg/finetuning_cr01_cr02/shel5k/label_map.json",
+        "class_counts": {
+          "helmet": 24699,
+          "no_helmet": 11784,
+          "person": 10440
+        }
+      }
+    },
+    {
+      "dataset_id": "shel5k",
+      "split": "val",
+      "source_file": "datasets/processed/coco/canonical_cr01_cr02/shel5k/val.json",
+      "coco_file": "datasets/processed/coco/finetuning_cr01_cr02/shel5k/val.json",
+      "images": 670,
+      "annotations": 9368,
+      "class_counts": {
+        "helmet": 5090,
+        "person": 2119,
+        "no_helmet": 2159
+      },
+      "yolo": {
+        "labels_dir": "datasets/processed/yolo/finetuning_cr01_cr02/shel5k/labels/val",
+        "image_list": "datasets/processed/yolo/finetuning_cr01_cr02/shel5k/image_lists/val.txt",
+        "data_yaml": "datasets/processed/yolo/finetuning_cr01_cr02/shel5k/data.yaml",
+        "class_counts": {
+          "helmet": 5090,
+          "person": 2119,
+          "no_helmet": 2159
+        }
+      },
+      "odvg": {
+        "file": "datasets/processed/odvg/finetuning_cr01_cr02/shel5k/val.jsonl",
+        "label_map": "datasets/processed/odvg/finetuning_cr01_cr02/shel5k/label_map.json",
+        "class_counts": {
+          "helmet": 5090,
+          "person": 2119,
+          "no_helmet": 2159
+        }
+      }
+    }
+  ]
+}

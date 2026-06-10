@@ -11,6 +11,8 @@ Fecha de corte: 2026-06-05
 | Semana 3 | Mapeo de clases y splits | Parcial avanzado | Mapeo canonico y manifest combinado CR-01/CR-02 generados; falta producir artefactos combinados de entrenamiento/evaluacion si se requieren. |
 | Semana 4 | Baseline inicial | Pendiente | Falta ejecutar baseline zero-shot con Grounding DINO y registrar metricas. |
 
+Actualizacion 2026-06-10: se realineo el criterio de uso de datasets. Los datasets quedan orientados exclusivamente a fine-tuning y la vista recomendada pasa a ser `finetuning_cr01_cr02`, curada por combinaciones canonicas aprobadas para fine-tuning.
+
 ## Avance por dataset prioritario
 
 | Dataset | Descarga | Validacion basica | COCO | YOLO | ODVG | Split |
@@ -32,6 +34,12 @@ Fecha de corte: 2026-06-05
 | Construction-PPE | canonical_cr01_cr02 | 1416 | 6082 |
 | SH17 | original | 8099 | 75994 |
 | SH17 | canonical_cr01_cr02 | 8099 | 36194 |
+
+Vista curada para fine-tuning:
+
+| Vista | Imagenes | Anotaciones |
+|---|---:|---:|
+| finetuning_cr01_cr02 | 13827 | 116003 |
 
 ## Manifest combinado CR-01/CR-02
 
@@ -115,5 +123,5 @@ Conteo en `train`:
 
 ## Proximo hito recomendado
 
-Ejecutar baseline zero-shot con Grounding DINO sobre el test congelado del manifest combinado CR-01/CR-02 y registrar metricas por dataset, split y condicion.
+Usar `finetuning_cr01_cr02` como entrada curada para los experimentos de fine-tuning y documentar metricas por dataset, split y clase canonica.
 
