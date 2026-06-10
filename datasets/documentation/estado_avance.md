@@ -37,6 +37,8 @@ Fecha de corte: 2026-06-05
 
 `datasets/splits/cr01_cr02/split_manifest.csv` fue generado con una fila por imagen, rutas normalizadas al workspace actual, hash SHA256 de imagen y condicion canonica derivada de las etiquetas YOLO canonicas. SH17 se mantiene solo en train/val por no tener split test explicito.
 
+La vista `canonical_cr01_cr02` normaliza clases al espacio `person`, `helmet`, `vest`, `no_helmet`, `no_vest`, pero no filtra imagenes por condicion positiva. Por lo tanto, puede contener imagenes con clases canonicas de contexto o imagenes que quedan sin anotaciones canonicas luego del remapeo.
+
 | Split | Imagenes |
 |---|---:|
 | train | 12175 |
@@ -82,7 +84,34 @@ Estado: cobertura parcial. Para detectar incumplimiento de chaleco probablemente
 - SHEL5K no trae split oficial; se genero split custom reproducible con seed 42.
 - ODVG fue generado para entrenamiento/uso con Grounding DINO, pero falta validar con la configuracion exacta del framework que se vaya a ejecutar.
 - La vista `canonical_cr01_cr02` reduce clases no relevantes, pero la interpretacion de `no_helmet` en algunos datasets deriva de `head`/`face`; esto debe documentarse en evaluaciones.
+- Se generaron manifests derivados para separar imagenes con condicion positiva, contexto canonico positivo y casos sin anotaciones canonicas.
 - Para CR-02 no hay `no_vest` robusto en el nucleo actual.
+
+## Vistas derivadas CR-01/CR-02
+
+Se generaron manifests derivados en `datasets/splits/cr01_cr02/` para organizar la distribucion sin duplicar ni mover imagenes:
+
+- `view_manifest.csv`: manifest general con columna `view`.
+- `condition_positive_manifest.csv`: imagenes con al menos una anotacion canonica `no_helmet` o `no_vest`.
+- `canonical_positive_context_manifest.csv`: imagenes sin `no_helmet/no_vest`, pero con `person`, `helmet` o `vest`.
+- `no_canonical_annotations_manifest.csv`: imagenes que quedan sin anotaciones canonicas luego del remapeo.
+- `view_summary.json`: resumen de conteos por vista, split y dataset.
+
+Conteo global:
+
+| Vista derivada | Imagenes |
+|---|---:|
+| condition_positive | 11171 |
+| canonical_positive_context | 4241 |
+| no_canonical_annotations | 433 |
+
+Conteo en `train`:
+
+| Vista derivada | Imagenes |
+|---|---:|
+| condition_positive | 8498 |
+| canonical_positive_context | 3337 |
+| no_canonical_annotations | 340 |
 
 ## Proximo hito recomendado
 

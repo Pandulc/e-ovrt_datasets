@@ -1,0 +1,94 @@
+{
+  "total_images": 15845,
+  "view_counts": {
+    "canonical_positive_context": 4241,
+    "condition_positive": 11171,
+    "no_canonical_annotations": 433
+  },
+  "split_view_counts": {
+    "test": {
+      "canonical_positive_context": 363,
+      "condition_positive": 661
+    },
+    "train": {
+      "canonical_positive_context": 3337,
+      "condition_positive": 8498,
+      "no_canonical_annotations": 340
+    },
+    "val": {
+      "canonical_positive_context": 541,
+      "condition_positive": 2012,
+      "no_canonical_annotations": 93
+    }
+  },
+  "dataset_view_counts": {
+    "chv": {
+      "canonical_positive_context": 1330
+    },
+    "construction_ppe": {
+      "canonical_positive_context": 1127,
+      "condition_positive": 283,
+      "no_canonical_annotations": 6
+    },
+    "sh17": {
+      "condition_positive": 6585,
+      "canonical_positive_context": 1087,
+      "no_canonical_annotations": 427
+    },
+    "shel5k": {
+      "condition_positive": 4303,
+      "canonical_positive_context": 697
+    }
+  },
+  "dataset_split_view_counts": {
+    "chv:test": {
+      "canonical_positive_context": 133
+    },
+    "chv:train": {
+      "canonical_positive_context": 1064
+    },
+    "chv:val": {
+      "canonical_positive_context": 133
+    },
+    "construction_ppe:test": {
+      "canonical_positive_context": 117,
+      "condition_positive": 24
+    },
+    "construction_ppe:train": {
+      "canonical_positive_context": 894,
+      "condition_positive": 232,
+      "no_canonical_annotations": 6
+    },
+    "construction_ppe:val": {
+      "canonical_positive_context": 116,
+      "condition_positive": 27
+    },
+    "sh17:train": {
+      "condition_positive": 5255,
+      "canonical_positive_context": 890,
+      "no_canonical_annotations": 334
+    },
+    "sh17:val": {
+      "condition_positive": 1330,
+      "canonical_positive_context": 197,
+      "no_canonical_annotations": 93
+    },
+    "shel5k:test": {
+      "condition_positive": 637,
+      "canonical_positive_context": 113
+    },
+    "shel5k:train": {
+      "condition_positive": 3011,
+      "canonical_positive_context": 489
+    },
+    "shel5k:val": {
+      "condition_positive": 655,
+      "canonical_positive_context": 95
+    }
+  },
+  "view_definitions": {
+    "condition_positive": "Imagen con al menos una anotacion canonica no_helmet o no_vest.",
+    "canonical_positive_context": "Imagen sin no_helmet/no_vest, pero con person, helmet o vest.",
+    "no_canonical_annotations": "Imagen que queda sin anotaciones luego del remapeo canonico CR-01/CR-02."
+  }
+}

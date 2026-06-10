@@ -204,6 +204,28 @@ Criterios aplicados:
 - CHV, SHEL5K y Construction-PPE conservan `train`, `val` y `test`.
 - SH17 se mantiene solo como `train` y `val` porque no posee split `test` explicito.
 
+La vista `canonical_cr01_cr02` no debe interpretarse como un filtrado a imagenes con incumplimiento. Es una vista de normalizacion de clases. Para organizar mejor su uso experimental se agregaron manifests derivados generados por:
+
+```text
+datasets/scripts/split/generate_cr01_cr02_views.py
+```
+
+Artefactos generados:
+
+```text
+datasets/splits/cr01_cr02/view_manifest.csv
+datasets/splits/cr01_cr02/condition_positive_manifest.csv
+datasets/splits/cr01_cr02/canonical_positive_context_manifest.csv
+datasets/splits/cr01_cr02/no_canonical_annotations_manifest.csv
+datasets/splits/cr01_cr02/view_summary.json
+```
+
+Definiciones:
+
+- `condition_positive`: imagen con al menos una anotacion canonica `no_helmet` o `no_vest`.
+- `canonical_positive_context`: imagen sin `no_helmet/no_vest`, pero con `person`, `helmet` o `vest`.
+- `no_canonical_annotations`: imagen que queda sin anotaciones luego del remapeo canonico.
+
 Conteo final por split:
 
 | Split | Imagenes |
