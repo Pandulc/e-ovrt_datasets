@@ -53,3 +53,5 @@ datasets/raw/**/*.rar
 # Archive extraction artifacts
 datasets/raw/**/__MACOSX/
 datasets/raw/**/.DS_Store
+# Generated video-stock PoC artifacts
+datasets/interim/video_stock_poc*/
