@@ -1,0 +1,146 @@
+{
+  "dataset_id": "ppe_siabar",
+  "source_format": "yolo",
+  "raw_image_count": 1607,
+  "splits": {
+    "train": 1120,
+    "val": 326,
+    "test": 161
+  },
+  "views": {
+    "canonical_v2": {
+      "coco": {
+        "train": {
+          "file": "datasets/processed/coco/canonical_v2/ppe_siabar/train.json",
+          "images": 1120,
+          "annotations": 3326,
+          "class_counts": {
+            "vest": 1355,
+            "helmet": 969,
+            "person": 1002
+          },
+          "dropped_source_classes": {
+            "Boots": 1655
+          }
+        },
+        "val": {
+          "file": "datasets/processed/coco/canonical_v2/ppe_siabar/val.json",
+          "images": 326,
+          "annotations": 973,
+          "class_counts": {
+            "helmet": 273,
+            "vest": 398,
+            "person": 302
+          },
+          "dropped_source_classes": {
+            "Boots": 541
+          }
+        },
+        "test": {
+          "file": "datasets/processed/coco/canonical_v2/ppe_siabar/test.json",
+          "images": 161,
+          "annotations": 473,
+          "class_counts": {
+            "vest": 191,
+            "helmet": 144,
+            "person": 138
+          },
+          "dropped_source_classes": {
+            "Boots": 243
+          }
+        }
+      },
+      "yolo": {
+        "train": {
+          "labels_dir": "datasets/processed/yolo/canonical_v2/ppe_siabar/labels/train",
+          "image_list": "datasets/processed/yolo/canonical_v2/ppe_siabar/image_lists/train.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_v2/ppe_siabar/data.yaml",
+          "images": 1120,
+          "annotations": 3326,
+          "class_counts": {
+            "vest": 1355,
+            "helmet": 969,
+            "person": 1002
+          },
+          "dropped_source_classes": {
+            "Boots": 1655
+          }
+        },
+        "val": {
+          "labels_dir": "datasets/processed/yolo/canonical_v2/ppe_siabar/labels/val",
+          "image_list": "datasets/processed/yolo/canonical_v2/ppe_siabar/image_lists/val.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_v2/ppe_siabar/data.yaml",
+          "images": 326,
+          "annotations": 973,
+          "class_counts": {
+            "helmet": 273,
+            "vest": 398,
+            "person": 302
+          },
+          "dropped_source_classes": {
+            "Boots": 541
+          }
+        },
+        "test": {
+          "labels_dir": "datasets/processed/yolo/canonical_v2/ppe_siabar/labels/test",
+          "image_list": "datasets/processed/yolo/canonical_v2/ppe_siabar/image_lists/test.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_v2/ppe_siabar/data.yaml",
+          "images": 161,
+          "annotations": 473,
+          "class_counts": {
+            "vest": 191,
+            "helmet": 144,
+            "person": 138
+          },
+          "dropped_source_classes": {
+            "Boots": 243
+          }
+        }
+      },
+      "odvg": {
+        "train": {
+          "file": "datasets/processed/odvg/canonical_v2/ppe_siabar/train.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_v2/ppe_siabar/label_map.json",
+          "images": 1120,
+          "annotations": 3326,
+          "class_counts": {
+            "vest": 1355,
+            "helmet": 969,
+            "person": 1002
+          },
+          "dropped_source_classes": {
+            "Boots": 1655
+          }
+        },
+        "val": {
+          "file": "datasets/processed/odvg/canonical_v2/ppe_siabar/val.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_v2/ppe_siabar/label_map.json",
+          "images": 326,
+          "annotations": 973,
+          "class_counts": {
+            "helmet": 273,
+            "vest": 398,
+            "person": 302
+          },
+          "dropped_source_classes": {
+            "Boots": 541
+          }
+        },
+        "test": {
+          "file": "datasets/processed/odvg/canonical_v2/ppe_siabar/test.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_v2/ppe_siabar/label_map.json",
+          "images": 161,
+          "annotations": 473,
+          "class_counts": {
+            "vest": 191,
+            "helmet": 144,
+            "person": 138
+          },
+          "dropped_source_classes": {
+            "Boots": 243
+          }
+        }
+      }
+    }
+  }
+}

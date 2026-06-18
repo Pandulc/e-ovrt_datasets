@@ -4,6 +4,9 @@ Registro operativo de licencias, permisos de uso y restricciones de redistribuci
 
 | Dataset | Fuente | Licencia declarada | Estado | Notas |
 |---|---|---|---|---|
+| construction_site_safety | https://universe.roboflow.com/roboflow-universe-projects/construction-site-safety | CC BY 4.0 | Verificada en Roboflow Universe | Habilitado para TRAIN y BENCH. Permite uso académico y redistribución con atribución. |
+| ppe_siabar | https://universe.roboflow.com/siabar/ppe-dataset-for-workplace-safety | CC BY 4.0 | Verificada en Roboflow Universe | Habilitado para TRAIN. Permite uso académico y redistribución con atribución. |
+| construction_safety_hardhat | https://www.kaggle.com/datasets/muhammetzualli/construction-safety-image-classification-system | CC0 (Public Domain) | No disponible | URL inválida al 2026-06-18. Dataset descartado del pipeline v2. |
 | SH17 | https://github.com/ahmadmughees/SH17dataset | CC BY-NC-SA 4.0 | Verificada en README | Dataset completo descargado desde Kaggle; respetar uso no comercial y share-alike. |
 | SHEL5K | https://data.mendeley.com/datasets/9rcv8mm682/4 | CC BY 4.0 | Verificada en pagina Mendeley | Dataset no descargado automaticamente; version 4 / DOI 10.17632/9rcv8mm682.4. |
 | CHV | https://github.com/ZijianWang-ZW/PPE_detection | Open/free use per repository; sin SPDX local | Parcial | README indica descarga libre; no hay archivo LICENSE en ZIP. Verificar redistribucion antes de publicar copias. |

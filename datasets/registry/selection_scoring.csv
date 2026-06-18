@@ -1,0 +1,7 @@
+dataset_id,fuente,url,licencia,imgs,clases_clave,anota_person,negativos_explicitos,calidad_defectos_pct,dominio_obra_civil,split_oficial,gt_persona,puntaje,decision,rol
+construction_site_safety,Roboflow Universe Projects,https://universe.roboflow.com/roboflow-universe-projects/construction-site-safety,CC BY 4.0,2799,Hardhat;NO-Hardhat;Safety Vest;NO-Safety Vest;Person,si,si,8,si,si,si,3,seleccionado,TRAIN+BENCH
+chv,GitHub ZijianWang-ZW,https://github.com/ZijianWang-ZW/PPE_detection,sin-SPDX,1330,person;vest;helmets,si,no,0,parcial,si,no,2,seleccionado,TRAIN
+mocs,Roboflow Universe,https://universe.roboflow.com/mocs/mocs-bowib,CC BY 4.0,1471,Worker,si,no,0,si,si,no,3,descartado,descartado
+construction_ppe_skcet,Roboflow Universe,https://universe.roboflow.com/skcet-g4h72/construction-ppe-rdhzo,CC BY 4.0,8800,helmet;vest;no vest;...,si,si,55,parcial,si,parcial,3,descartado,descartado
+ppe_siabar,Roboflow Universe,https://universe.roboflow.com/siabar/ppe-dataset-for-workplace-safety,CC BY 4.0,1600,Helmet;Vest;Person,si,no,2,no,si,no,2,seleccionado,TRAIN
+construction_safety_hardhat,Kaggle,https://www.kaggle.com/datasets/muhammetzualli/construction-safety-image-classification-system,CC0 (Public Domain),3800,helmet;no-helmet;vest;harness;person,si,si,6,si,si,si,5,no_disponible,descartado

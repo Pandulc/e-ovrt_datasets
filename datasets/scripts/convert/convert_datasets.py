@@ -26,15 +26,17 @@ CANONICAL_CLASSES = ["person", "helmet", "vest", "no_helmet", "no_vest"]
 @dataclass(frozen=True)
 class DatasetConfig:
     dataset_id: str
-    raw_dir: Path
-    image_dir: Path
     source_format: str
-    classes: list[str]
     canonical_map: dict[str, str]
+    raw_dir: Path | None = None
+    image_dir: Path | None = None
+    classes: list[str] | None = None
     yolo_label_dir: Path | None = None
     voc_label_dir: Path | None = None
     splits: dict[str, Path | list[str]] | None = None
     custom_split_seed: int = 42
+    canonical_v2_map: dict[str, str] | None = None
+    negative_classes: dict[str, str] | None = None  # ej: {"NO-Hardhat": "no_helmet", "NO-Safety Vest": "no_vest"}
 
 
 def configs() -> dict[str, DatasetConfig]:
@@ -61,11 +63,103 @@ def configs() -> dict[str, DatasetConfig]:
                 "white helmet": "helmet",
                 "yellow helmet": "helmet",
             },
+            canonical_v2_map={
+                "person": "person",
+                "vest": "vest",
+                "blue helmet": "helmet",
+                "red helmet": "helmet",
+                "white helmet": "helmet",
+                "yellow helmet": "helmet",
+            },
             splits={
                 "train": RAW / "chv" / "CHV_dataset" / "data split" / "train.txt",
                 "val": RAW / "chv" / "CHV_dataset" / "data split" / "valid.txt",
                 "test": RAW / "chv" / "CHV_dataset" / "data split" / "test.txt",
             },
+        ),
+        "construction_site_safety": DatasetConfig(
+            dataset_id="construction_site_safety",
+            raw_dir=RAW / "construction_site_safety",
+            image_dir=RAW / "construction_site_safety",
+            source_format="yolo",
+            yolo_label_dir=RAW / "construction_site_safety",
+            classes=[
+                "Hardhat",
+                "Mask",
+                "NO-Hardhat",
+                "NO-Mask",
+                "NO-Safety Vest",
+                "Person",
+                "Safety Cone",
+                "Safety Vest",
+                "machinery",
+                "vehicle",
+            ],
+            canonical_map={},
+            canonical_v2_map={
+                "Person": "person",
+                "Hardhat": "helmet",
+                "Safety Vest": "vest",
+                "NO-Hardhat": "bare_head",
+            },
+            negative_classes={
+                "NO-Hardhat": "no_helmet",
+                "NO-Safety Vest": "no_vest",
+            },
+            splits={
+                "train": ["train"],
+                "val": ["valid"],
+                "test": ["test"],
+            },
+        ),
+        "ppe_siabar": DatasetConfig(
+            dataset_id="ppe_siabar",
+            raw_dir=RAW / "ppe_siabar",
+            image_dir=RAW / "ppe_siabar",
+            source_format="yolo",
+            yolo_label_dir=RAW / "ppe_siabar",
+            classes=[
+                "Boots",   # [0] from data.yaml
+                "Helmet",  # [1]
+                "Person",  # [2]
+                "Vest",    # [3]
+            ],
+            canonical_map={},
+            canonical_v2_map={
+                "Person": "person",
+                "Helmet": "helmet",
+                "Vest": "vest",
+            },
+            splits={
+                "train": ["train"],
+                "val": ["valid"],
+                "test": ["test"],
+            },
+        ),
+        "construction_safety_hardhat": DatasetConfig(
+            dataset_id="construction_safety_hardhat",
+            raw_dir=RAW / "construction_safety_hardhat",
+            image_dir=RAW / "construction_safety_hardhat",
+            source_format="yolo",
+            yolo_label_dir=RAW / "construction_safety_hardhat",
+            classes=[
+                "helmet",
+                "no-helmet",
+                "vest",
+                "harness",
+                "person",
+            ],
+            canonical_map={},
+            canonical_v2_map={
+                "person": "person",
+                "helmet": "helmet",
+                "vest": "vest",
+                "no-helmet": "bare_head",
+            },
+            negative_classes={
+                "no-helmet": "no_helmet",
+            },
+            splits=None,
         ),
         "construction_ppe": DatasetConfig(
             dataset_id="construction_ppe",
@@ -91,6 +185,12 @@ def configs() -> dict[str, DatasetConfig]:
                 "vest": "vest",
                 "Person": "person",
                 "no_helmet": "no_helmet",
+            },
+            canonical_v2_map={
+                "Person": "person",
+                "helmet": "helmet",
+                "vest": "vest",
+                "no_helmet": "bare_head",
             },
             splits={
                 "train": ["train"],
@@ -130,6 +230,14 @@ def configs() -> dict[str, DatasetConfig]:
                 "face": "no_helmet",
                 "person": "person",
             },
+            canonical_v2_map={
+                "person_with_helmet": "person",
+                "person_no_helmet": "person",
+                "person": "person",
+                "helmet": "helmet",
+                "head_with_helmet": "helmet",
+                # head and face are NOT mapped: bare_head from head/face is forbidden (D9)
+            },
             splits=None,
         ),
         "sh17": DatasetConfig(
@@ -164,6 +272,12 @@ def configs() -> dict[str, DatasetConfig]:
                 "safety-vest": "vest",
                 "head": "no_helmet",
                 "face": "no_helmet",
+            },
+            canonical_v2_map={
+                "person": "person",
+                "helmet": "helmet",
+                "safety-vest": "vest",
+                # head and face are NOT mapped: bare_head from head/face is forbidden (D9)
             },
             splits={
                 "train": RAW / "sh17" / "kaggle" / "train_files.txt",
@@ -226,8 +340,11 @@ def custom_splits(paths: list[Path], seed: int) -> dict[str, list[Path]]:
     }
 
 
+_SUBDIR_SPLIT_DATASETS = {"construction_ppe", "construction_site_safety", "ppe_siabar"}
+
+
 def load_splits(config: DatasetConfig, paths: list[Path]) -> dict[str, list[Path]]:
-    if config.dataset_id == "construction_ppe":
+    if config.dataset_id in _SUBDIR_SPLIT_DATASETS:
         return split_from_subdirs(config)
     if config.splits:
         images_by_stem = stem_to_image(paths)
@@ -242,8 +359,15 @@ def load_splits(config: DatasetConfig, paths: list[Path]) -> dict[str, list[Path
 def yolo_label_path(config: DatasetConfig, image_path: Path) -> Path:
     assert config.yolo_label_dir
     if config.dataset_id == "construction_ppe":
+        # dataset/images/<split>/<stem>.jpg → dataset/labels/<split>/<stem>.txt
         split = image_path.parent.name
         return config.yolo_label_dir / split / f"{image_path.stem}.txt"
+    if config.dataset_id in ("construction_site_safety", "ppe_siabar"):
+        # Roboflow yolov8: dataset/<split>/images/<stem>.jpg → dataset/<split>/labels/<stem>.txt
+        return image_path.parent.parent / "labels" / f"{image_path.stem}.txt"
+    if config.dataset_id == "construction_safety_hardhat":
+        # Kaggle: labels co-located with images (flat or per-class subdirs)
+        return image_path.parent / f"{image_path.stem}.txt"
     return config.yolo_label_dir / f"{image_path.stem}.txt"
 
 
@@ -337,11 +461,27 @@ def xyxy_to_yolo(box: list[float], width: int, height: int) -> list[float]:
     ]
 
 
+_FORBIDDEN_BARE_HEAD_SOURCES = {"head", "face", "head_with_helmet"}
+
+
+def assert_no_derived_bare_head(config: DatasetConfig) -> None:
+    """bare_head solo desde negativos explícitos; nunca desde head/face (spec §3.1)."""
+    v2 = config.canonical_v2_map or {}
+    for src, dst in v2.items():
+        if dst == "bare_head" and src.lower() in _FORBIDDEN_BARE_HEAD_SOURCES:
+            raise ValueError(
+                f"{config.dataset_id}: bare_head derivado de '{src}' está prohibido (D9)."
+            )
+
+
 def category_maps(config: DatasetConfig, view: str) -> tuple[list[str], dict[str, int]]:
     if view == "original":
         names = config.classes
     elif view == "canonical_cr01_cr02":
         names = CANONICAL_CLASSES
+    elif view == "canonical_v2":
+        names = ["person", "helmet", "vest", "bare_head"]
+        return names, {n: i for i, n in enumerate(names)}
     else:
         raise ValueError(f"Unknown view: {view}")
     return names, {name: idx for idx, name in enumerate(names)}
@@ -352,6 +492,8 @@ def transform_category(config: DatasetConfig, category: str, view: str) -> str |
         if config.dataset_id == "shel5k":
             return category if category in config.classes else None
         return category if category in config.classes else None
+    if view == "canonical_v2":
+        return (config.canonical_v2_map or {}).get(category)
     mapped = config.canonical_map.get(category)
     return mapped
 
@@ -548,6 +690,8 @@ def write_yolo(
 
 def convert_dataset(dataset_id: str, views: list[str]) -> dict:
     config = configs()[dataset_id]
+    if "canonical_v2" in views:
+        assert_no_derived_bare_head(config)
     paths = image_files(config.image_dir)
     splits = load_splits(config, paths)
     report = {
@@ -601,7 +745,7 @@ def main() -> None:
         "--views",
         nargs="+",
         default=["original", "canonical_cr01_cr02"],
-        choices=["original", "canonical_cr01_cr02"],
+        choices=["original", "canonical_cr01_cr02", "canonical_v2"],
     )
     args = parser.parse_args()
 

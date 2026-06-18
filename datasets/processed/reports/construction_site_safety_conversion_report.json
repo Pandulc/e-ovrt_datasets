@@ -1,0 +1,200 @@
+{
+  "dataset_id": "construction_site_safety",
+  "source_format": "yolo",
+  "raw_image_count": 2799,
+  "splits": {
+    "train": 2603,
+    "val": 114,
+    "test": 82
+  },
+  "views": {
+    "canonical_v2": {
+      "coco": {
+        "train": {
+          "file": "datasets/processed/coco/canonical_v2/construction_site_safety/train.json",
+          "images": 2603,
+          "annotations": 18527,
+          "class_counts": {
+            "helmet": 3362,
+            "person": 9691,
+            "vest": 3156,
+            "bare_head": 2318
+          },
+          "dropped_source_classes": {
+            "NO-Mask": 3209,
+            "machinery": 5238,
+            "NO-Safety Vest": 3957,
+            "Mask": 1743,
+            "vehicle": 1534,
+            "Safety Cone": 3170
+          }
+        },
+        "val": {
+          "file": "datasets/processed/coco/canonical_v2/construction_site_safety/val.json",
+          "images": 114,
+          "annotations": 355,
+          "class_counts": {
+            "helmet": 79,
+            "person": 166,
+            "vest": 41,
+            "bare_head": 69
+          },
+          "dropped_source_classes": {
+            "NO-Safety Vest": 106,
+            "NO-Mask": 74,
+            "Mask": 21,
+            "Safety Cone": 44,
+            "machinery": 55,
+            "vehicle": 42
+          }
+        },
+        "test": {
+          "file": "datasets/processed/coco/canonical_v2/construction_site_safety/test.json",
+          "images": 82,
+          "annotations": 386,
+          "class_counts": {
+            "helmet": 110,
+            "person": 174,
+            "bare_head": 41,
+            "vest": 61
+          },
+          "dropped_source_classes": {
+            "NO-Mask": 79,
+            "NO-Safety Vest": 90,
+            "Safety Cone": 92,
+            "vehicle": 41,
+            "machinery": 44,
+            "Mask": 28
+          }
+        }
+      },
+      "yolo": {
+        "train": {
+          "labels_dir": "datasets/processed/yolo/canonical_v2/construction_site_safety/labels/train",
+          "image_list": "datasets/processed/yolo/canonical_v2/construction_site_safety/image_lists/train.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_v2/construction_site_safety/data.yaml",
+          "images": 2603,
+          "annotations": 18527,
+          "class_counts": {
+            "helmet": 3362,
+            "person": 9691,
+            "vest": 3156,
+            "bare_head": 2318
+          },
+          "dropped_source_classes": {
+            "NO-Mask": 3209,
+            "machinery": 5238,
+            "NO-Safety Vest": 3957,
+            "Mask": 1743,
+            "vehicle": 1534,
+            "Safety Cone": 3170
+          }
+        },
+        "val": {
+          "labels_dir": "datasets/processed/yolo/canonical_v2/construction_site_safety/labels/val",
+          "image_list": "datasets/processed/yolo/canonical_v2/construction_site_safety/image_lists/val.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_v2/construction_site_safety/data.yaml",
+          "images": 114,
+          "annotations": 355,
+          "class_counts": {
+            "helmet": 79,
+            "person": 166,
+            "vest": 41,
+            "bare_head": 69
+          },
+          "dropped_source_classes": {
+            "NO-Safety Vest": 106,
+            "NO-Mask": 74,
+            "Mask": 21,
+            "Safety Cone": 44,
+            "machinery": 55,
+            "vehicle": 42
+          }
+        },
+        "test": {
+          "labels_dir": "datasets/processed/yolo/canonical_v2/construction_site_safety/labels/test",
+          "image_list": "datasets/processed/yolo/canonical_v2/construction_site_safety/image_lists/test.txt",
+          "data_yaml": "datasets/processed/yolo/canonical_v2/construction_site_safety/data.yaml",
+          "images": 82,
+          "annotations": 386,
+          "class_counts": {
+            "helmet": 110,
+            "person": 174,
+            "bare_head": 41,
+            "vest": 61
+          },
+          "dropped_source_classes": {
+            "NO-Mask": 79,
+            "NO-Safety Vest": 90,
+            "Safety Cone": 92,
+            "vehicle": 41,
+            "machinery": 44,
+            "Mask": 28
+          }
+        }
+      },
+      "odvg": {
+        "train": {
+          "file": "datasets/processed/odvg/canonical_v2/construction_site_safety/train.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_v2/construction_site_safety/label_map.json",
+          "images": 2603,
+          "annotations": 18527,
+          "class_counts": {
+            "helmet": 3362,
+            "person": 9691,
+            "vest": 3156,
+            "bare_head": 2318
+          },
+          "dropped_source_classes": {
+            "NO-Mask": 3209,
+            "machinery": 5238,
+            "NO-Safety Vest": 3957,
+            "Mask": 1743,
+            "vehicle": 1534,
+            "Safety Cone": 3170
+          }
+        },
+        "val": {
+          "file": "datasets/processed/odvg/canonical_v2/construction_site_safety/val.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_v2/construction_site_safety/label_map.json",
+          "images": 114,
+          "annotations": 355,
+          "class_counts": {
+            "helmet": 79,
+            "person": 166,
+            "vest": 41,
+            "bare_head": 69
+          },
+          "dropped_source_classes": {
+            "NO-Safety Vest": 106,
+            "NO-Mask": 74,
+            "Mask": 21,
+            "Safety Cone": 44,
+            "machinery": 55,
+            "vehicle": 42
+          }
+        },
+        "test": {
+          "file": "datasets/processed/odvg/canonical_v2/construction_site_safety/test.jsonl",
+          "label_map": "datasets/processed/odvg/canonical_v2/construction_site_safety/label_map.json",
+          "images": 82,
+          "annotations": 386,
+          "class_counts": {
+            "helmet": 110,
+            "person": 174,
+            "bare_head": 41,
+            "vest": 61
+          },
+          "dropped_source_classes": {
+            "NO-Mask": 79,
+            "NO-Safety Vest": 90,
+            "Safety Cone": 92,
+            "vehicle": 41,
+            "machinery": 44,
+            "Mask": 28
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,142 +1,136 @@
-canonical_classes:
+# Class Mapping — E-OVRT-VDP Vocabulary v2
+#
+# Canonical detection classes (TRAIN, BENCH, DEMO):
+# - person: full body of person/worker
+# - helmet: safety helmet (the equipment), tight bbox around helmet
+# - vest: reflective/safety vest (the equipment), tight bbox around torso
+# - bare_head: head without helmet (from explicit negatives only, not derived from absence)
+#
+# BENCH-only attributes (person-level, from explicit annotations):
+# - has_helmet: binary attribute per person (true/false)
+# - has_vest: binary attribute per person (true/false)
+#
+# NOTE: no_helmet and no_vest are NO LONGER detection classes (v2 change).
+# See section 3 of design spec (2026-06-17-reinicio-seleccion-datasets-design.md).
+#
+# Dataset selection and role assignment determined by
+# datasets/registry/selection_scoring.csv and
+# datasets/registry/annotation_contract_v2.yaml.
+
+detection_classes:
   person:
-    description: "Persona, trabajador o peaton visible."
+    description: "Cuerpo completo visible de la persona/trabajador (incluye cabeza)."
   helmet:
-    description: "Casco de seguridad visible."
+    description: "El casco propiamente dicho (la prenda), caja ceñida al casco."
   vest:
-    description: "Chaleco reflectivo o de seguridad visible."
-  no_helmet:
-    description: "Persona/cabeza sin casco, cuando exista etiqueta explicita."
-  no_vest:
-    description: "Persona sin chaleco, cuando exista etiqueta explicita."
+    description: "El chaleco reflectivo/de seguridad (la prenda), caja ceñida al torso."
+  bare_head:
+    description: |
+      Cabeza descubierta de persona SIN casco.
+      Solo desde etiquetas negativas explícitas (ej. NO-Hardhat anotado).
+      Nunca derivado por resta head - helmet.
+      Mutuamente excluyente con helmet sobre la misma cabeza.
+
+bench_attributes:
+  description: |
+    Person-level attributes, constructed from explicit negative annotations.
+    Used only in the BENCH ground truth (evaluation baseline).
+    Enables measuring approaches E3 (negation by prompt).
+  has_helmet:
+    description: |
+      True if person has helmet annotation or associated helmet detection.
+      False only if explicit NO-Hardhat / NO-Helmet negative annotation.
+      Required for CR-01 (no helmet) risk evaluation.
+  has_vest:
+    description: |
+      True if person has vest annotation or associated vest detection.
+      False only if explicit NO-Vest / NO-Safety-Vest negative annotation.
+      Required for CR-02 (no vest) risk evaluation.
 
 dataset_mappings:
-  sh17:
-    person:
-      - person
-    helmet:
-      - helmet
-    vest:
-      - safety-vest
-    no_helmet:
-      - head
-      - face
-    no_vest: []
+  # 4 datasets selected for v2 (rol: TRAIN or TRAIN+BENCH)
+  # Source class → canonical detection class mapping
+  # See datasets/registry/selection_scoring.csv for decision rationale.
 
-  shel5k:
-    person:
-      - person_with_helmet
-      - person
-    helmet:
-      - helmet
-      - head_with_helmet
-    vest: []
-    no_helmet:
-      - person_no_helmet
-      - head
-      - face
-    no_vest: []
+  construction_site_safety:  # rol: TRAIN + BENCH
+    person: ["Person"]
+    helmet: ["Hardhat"]
+    vest: ["Safety Vest"]
+    bare_head: ["NO-Hardhat"]
 
-  chv:
-    person:
-      - person
-    helmet:
-      - blue helmet
-      - red helmet
-      - white helmet
-      - yellow helmet
-    vest:
-      - vest
-    no_helmet: []
-    no_vest: []
+  chv:  # rol: TRAIN
+    person: ["person"]
+    helmet: ["blue helmet", "red helmet", "white helmet", "yellow helmet"]
+    vest: ["vest"]
+    bare_head: []  # ausente per contract
 
-  construction_ppe:
-    person:
-      - Person
-    helmet:
-      - helmet
-    vest:
-      - vest
-    no_helmet:
-      - no_helmet
-    no_vest: []
+  ppe_siabar:  # rol: TRAIN
+    person: ["Person"]
+    helmet: ["Helmet"]
+    vest: ["Vest"]
+    bare_head: []  # ausente per contract
 
-  gdut_hwd:
-    person: []
-    helmet:
-      - blue
-      - white
-      - yellow
-      - red
-    vest: []
-    no_helmet:
-      - none
-    no_vest: []
+  construction_safety_hardhat:  # rol: TRAIN
+    person: ["person"]
+    helmet: ["helmet"]
+    vest: ["vest"]  # parcial per contract
+    bare_head: ["no-helmet"]
 
-  shwd:
-    person:
-      - person
-    helmet:
-      - hat
-    vest: []
-    no_helmet:
-      - person
-    no_vest: []
-
-  soda:
-    person:
-      - Person
-    helmet:
-      - Helmet
-    vest:
-      - Vest
-    no_helmet: []
-    no_vest: []
-
-  pictor_ppe:
-    person:
-      - worker
-    helmet:
-      - hat
-    vest:
-      - vest
-    no_helmet: []
-    no_vest: []
-
-  mocs:
-    person:
-      - Worker
+  # Discarded candidates (kept for auditability):
+  discarded_mocs:
+    person: ["Worker"]
     helmet: []
     vest: []
-    no_helmet: []
-    no_vest: []
+    bare_head: []
+
+  discarded_construction_ppe_skcet:
+    person: ["person"]
+    helmet: ["helmet"]
+    vest: ["vest"]
+    bare_head: ["no hat"]  # parcial; dataset discarded due to 55% defect rate
 
 split_policy:
   seed: 42
-  train: 0.70
-  val: 0.15
-  test: 0.15
+  by_role:
+    train:
+      proportion: 0.70
+    bench:
+      proportion: 0.15
+      held_out: true
+      description: "Held-out from TRAIN; no shared images/scenes (leakage control, spec §5, D13)."
+    demo:
+      proportion: 0.15
+      description: "High-quality subset for thesis defense; privacy-blurred if needed."
   constraints:
-    - "train, val y test estrictamente disjuntos"
-    - "test congelado antes de entrenamiento"
-    - "no aplicar data augmentation sobre val/test"
-    - "deduplicacion perceptual antes del split"
-    - "mantener trazabilidad imagen -> dataset origen"
+    - "TRAIN, BENCH held-out (disjoint images/scenes)"
+    - "BENCH congelado antes de evaluación"
+    - "no data augmentation sobre BENCH/DEMO"
+    - "deduplicación perceptual antes del split"
+    - "mantener trazabilidad imagen → dataset origen"
+    - "balance de clases: mínimo 150 instancias por clase en TRAIN (spec §7.1)"
+    - "poder estadístico BENCH: ≥150 violadores + ≥150 no-violadores por condición (spec §6.5)"
 
-fine_tuning_subset:
-  min_images: 500
-  max_images: 2000
-  conditions:
-    - CR-01
-    - CR-02
-  requirements:
-    - "baseline zero-shot evaluada antes"
-    - "test congelado"
-    - "subset documentado por manifest"
-mapping_notes:
-  no_helmet:
-    - "En Construction-PPE la clase no_helmet existe como etiqueta fuente explicita."
-    - "En SH17 no_helmet es una normalizacion operativa desde head y face; debe reportarse como inferida en evaluaciones."
-    - "En SHEL5K no_helmet combina person_no_helmet, head y face; debe reportarse como mezcla de etiqueta explicita e indicios visuales."
-  no_vest:
-    - "El nucleo actual no contiene una clase no_vest robusta; CR-02 debe evaluarse por presencia/asociacion de vest o con anotacion complementaria."
+deprecated:
+  description: |
+    DEPRECATED (v1 schema, not deleted yet):
+    - no_helmet: moved from detection class to evaluation attribute (has_helmet).
+    - no_vest: moved from detection class to evaluation attribute (has_vest).
+
+    Motivation: no_helmet/no_vest were noisy in v1 (derived from generic head/face,
+    violating the rule "bare_head only from explicit negatives").
+
+    v2 approach:
+    - Detection trains only on positive classes (person/helmet/vest/bare_head).
+    - BENCH GT includes has_helmet/has_vest attributes for evaluation.
+    - Enables three comparative experiments (E1 spatial logic, E2 visual bare_head, E3 negation prompts).
+
+    See design spec §3, D6, D9, D10.
+
+  old_views:
+    - "canonical_cr01_cr02 — DEPRECATED, vistas CR-01/CR-02 (v1)"
+    - "finetuning_cr01_cr02 — DEPRECATED, fine-tuning subset con clases ruidosas (v1)"
+
+  old_fine_tuning_config: |
+    The legacy fine_tuning_subset (min/max images, CR-01/CR-02 conditions)
+    is not used in v2. Replaced by role-based split (TRAIN/BENCH/DEMO) and
+    per-condition GT attributes (has_helmet/has_vest) in evaluation.

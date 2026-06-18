@@ -1,0 +1,42 @@
+classes:
+  person: "Cuerpo completo visible de la persona/trabajador (incluye cabeza)."
+  helmet: "El casco propiamente dicho (la prenda), caja ceñida al casco."
+  vest: "El chaleco reflectivo/de seguridad (la prenda), caja ceñida al torso."
+  bare_head: "Cabeza descubierta de persona SIN casco. Solo desde negativo explícito."
+
+rules:
+  - "helmet y bare_head son mutuamente excluyentes sobre la misma cabeza."
+  - "Una clase no exhaustiva en una fuente NO se trata como negativo en esa fuente."
+  - "bare_head jamás se deriva por resta head - helmet."
+
+sources:
+  construction_site_safety:
+    person: exhaustiva
+    helmet: exhaustiva
+    vest: exhaustiva
+    bare_head: exhaustiva
+  chv:
+    person: exhaustiva
+    helmet: exhaustiva
+    vest: exhaustiva
+    bare_head: ausente
+  mocs:
+    person: exhaustiva
+    helmet: ausente
+    vest: ausente
+    bare_head: ausente
+  construction_ppe_skcet:
+    person: exhaustiva
+    helmet: parcial
+    vest: parcial
+    bare_head: parcial
+  ppe_siabar:
+    person: exhaustiva
+    helmet: exhaustiva
+    vest: exhaustiva
+    bare_head: ausente
+  construction_safety_hardhat:
+    person: exhaustiva
+    helmet: exhaustiva
+    vest: parcial
+    bare_head: exhaustiva

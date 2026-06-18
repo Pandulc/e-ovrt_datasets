@@ -1,0 +1,31 @@
+{
+  "train": {
+    "images": 5540,
+    "annotations": {
+      "helmet": 8286,
+      "person": 15020,
+      "vest": 6884,
+      "bare_head": 2318
+    }
+  },
+  "bench": {
+    "images": 196,
+    "annotations": {
+      "helmet": 189,
+      "person": 340,
+      "vest": 102,
+      "bare_head": 110
+    }
+  },
+  "demo": {
+    "images": 1064,
+    "annotations": {
+      "helmet": 2762,
+      "vest": 1396,
+      "person": 3050
+    }
+  },
+  "missing_datasets": [
+    "construction_safety_hardhat"
+  ]
+}

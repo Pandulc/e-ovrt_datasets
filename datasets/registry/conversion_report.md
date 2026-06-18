@@ -1,45 +1,70 @@
 # Conversion Report
 
-Fecha: 2026-06-05
-
 Conversor: `datasets/scripts/convert/convert_datasets.py`
 
-## Formatos generados
+## Vista canonical_v2 (activa — v2)
 
-- COCO: `datasets/processed/coco/{view}/{dataset_id}/{split}.json`
-- YOLO: `datasets/processed/yolo/{view}/{dataset_id}/`
-- ODVG: `datasets/processed/odvg/{view}/{dataset_id}/{split}.jsonl`
-- Reportes JSON: `datasets/processed/reports/`
+Clases de detección: `person`, `helmet`, `vest`, `bare_head`  
+Fecha: 2026-06-18
 
-## Vistas generadas
+| Dataset | Splits (imgs) | Anotaciones por clase | Estado |
+|---|---|---|---|
+| construction_site_safety | train=2603 / val=114 / test=82 | bare_head=2428, helmet=3551, person=10031, vest=3258 | convertido ✓ |
+| ppe_siabar | train=1120 / val=326 / test=161 | helmet=1386, person=1442, vest=1944 | convertido ✓ |
+| chv | train=1064 / val=133 / test=133 | helmet=3538, person=3887, vest=1784 | convertido ✓ |
+| construction_safety_hardhat | — | — | no disponible (URL inválida) |
 
-- `original`: conserva las clases originales del dataset.
-- `canonical_cr01_cr02`: normaliza a `person`, `helmet`, `vest`, `no_helmet`, `no_vest` y descarta clases no mapeadas.
+Comando:
+```bash
+python3 datasets/scripts/convert/convert_datasets.py \
+    --datasets construction_site_safety ppe_siabar chv \
+    --views canonical_v2
+```
 
-## Resumen validado
+## Manifests de rol (datasets/splits/v2/)
 
-| Dataset | Splits | Vista | Imagenes | Anotaciones |
-|---|---|---|---:|---:|
-| CHV | train/val/test = 1064/133/133 | original | 1330 | 9209 |
-| CHV | train/val/test = 1064/133/133 | canonical_cr01_cr02 | 1330 | 9209 |
-| SHEL5K | train/val/test = 3500/750/750 | original | 5000 | 75578 |
-| SHEL5K | train/val/test = 3500/750/750 | canonical_cr01_cr02 | 5000 | 75578 |
-| Construction-PPE | train/val/test = 1132/143/141 | original | 1416 | 11521 |
-| Construction-PPE | train/val/test = 1132/143/141 | canonical_cr01_cr02 | 1416 | 6082 |
-| SH17 | train/val = 6479/1620 | original | 8099 | 75994 |
-| SH17 | train/val = 6479/1620 | canonical_cr01_cr02 | 8099 | 36194 |
+| Rol | Imágenes | bare_head | helmet | vest | person |
+|---|---:|---:|---:|---:|---:|
+| TRAIN | 5540 | 2318 | 8286 | 6884 | 17020 |
+| BENCH | 196 | 110 | 189 | 102 | 340 |
+| DEMO | 1064 | 0 | 2762 | 1396 | 3050 |
+
+- **TRAIN**: train split de construction_site_safety + todos los splits de chv y ppe_siabar  
+- **BENCH**: val+test de construction_site_safety (BENCH excluido de TRAIN — sin fuga ✓)  
+- **DEMO**: train de chv (calidad_defectos_pct=0)
+
+vest y bare_head en BENCH por debajo de 150 (102 y 110 resp.) — limitación estructural del dataset v27 (train muy augmentado). Documentado en `bench_gt_audit.md`.
+
+## GT persona-nivel del BENCH
+
+Archivo: `datasets/processed/coco/bench/person_gt.json`  
+Criterio de asignación: center_in_bbox (centro del bbox violation dentro de la región de referencia)
+
+| Métrica | Valor |
+|---|---|
+| Total personas | 340 |
+| CR-01 violadoras (`has_helmet=False`) | 111 |
+| CR-01 conformes (`has_helmet=True`) | 229 |
+| CR-02 violadoras (`has_vest=False`) | 0 (*) |
+
+(*) NO-Safety Vest no es clase canonical_v2 → CR-02 GT requiere raw annotations. Limitación documentada.
+
+## Vistas deprecadas (v1 — no regenerar)
+
+- `canonical_cr01_cr02`: DEPRECATED
+- `finetuning_cr01_cr02`: DEPRECATED
+
+## Resumen v1 (histórico)
+
+| Dataset | Vista | Imágenes | Anotaciones |
+|---|---|---:|---:|
+| CHV | canonical_cr01_cr02 | 1330 | 9209 |
+| SHEL5K | canonical_cr01_cr02 | 5000 | 75578 |
+| Construction-PPE | canonical_cr01_cr02 | 1416 | 6082 |
+| SH17 | canonical_cr01_cr02 | 8099 | 36194 |
 
 ## Notas de formato
 
-- COCO usa `bbox` en formato `[x, y, width, height]`.
-- YOLO usa `class_id x_center y_center width height`, normalizado a `[0, 1]`.
-- ODVG usa JSONL, una imagen por linea, con `detection.instances`; cada instancia usa `bbox` en formato `[x1, y1, x2, y2]`, `label` entero y `category` textual.
-
-## Decisiones
-
-- CHV conserva su split oficial `train/valid/test`; `valid` se normaliza como `val`.
-- SHEL5K no trae split oficial; se genero split custom reproducible 70/15/15 con seed 42.
-- Construction-PPE conserva su split oficial `train/val/test`.
-- SH17 conserva su split oficial `train/val`; no se genero `test` porque el dataset no lo trae.
-- En SH17 se usa YOLO como fuente primaria para conversiones, porque los labels YOLO validaron sin cajas fuera de rango y VOC trae 2 cajas fuera de limites.
-- Las salidas YOLO generadas referencian rutas absolutas a imagenes raw en `image_lists/{split}.txt`; no duplican imagenes.
+- COCO: `bbox` en `[x, y, width, height]`.
+- YOLO: `class_id x_center y_center width height`, normalizado a `[0, 1]`.
+- ODVG: JSONL, una imagen por línea; `bbox` en `[x1, y1, x2, y2]`.

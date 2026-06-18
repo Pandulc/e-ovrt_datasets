@@ -1,3 +1,162 @@
+- id: construction_site_safety
+  name: Construction Site Safety
+  priority: alta
+  role_v2:
+  - TRAIN
+  - BENCH
+  source_url: https://universe.roboflow.com/roboflow-universe-projects/construction-site-safety
+  download_url: "https://api.roboflow.com/roboflow-universe-projects/construction-site-safety/{version}/yolov8?api_key=<ROBOFLOW_API_KEY>"
+  download_script: datasets/scripts/download/download_construction_site_safety.sh
+  local_raw_dir: datasets/raw/construction_site_safety
+  downloaded_at: '2026-06-18'
+  version: 27
+  original_format: yolov8 (roboflow export)
+  target_formats:
+  - coco
+  - yolo
+  - odvg
+  license: CC BY 4.0
+  image_count: 2799
+  splits: {train: 2603, val: 114, test: 82}
+  archive:
+    path: datasets/raw/construction_site_safety/construction-site-safety-v27-yolov8.zip
+    size: 150M
+    sha256: b2aa413f5e3a3691178df94ba0b8000c2bd671791506f945244908311c478adf
+  classes_original:
+  - Hardhat
+  - Mask
+  - NO-Hardhat
+  - NO-Mask
+  - NO-Safety Vest
+  - Person
+  - Safety Cone
+  - Safety Vest
+  - machinery
+  - vehicle
+  classes_mapped_v2:
+    person:
+    - Person
+    helmet:
+    - Hardhat
+    vest:
+    - Safety Vest
+    bare_head:
+    - NO-Hardhat
+  negative_classes_v2:
+    no_helmet: NO-Hardhat
+    no_vest: NO-Safety Vest
+  annotation_contract_v2:
+    person: exhaustiva
+    helmet: exhaustiva
+    vest: exhaustiva
+    bare_head: exhaustiva
+  covered_conditions_v2:
+  - CR-01
+  - CR-02
+  status: converted_canonical_v2
+  bench_splits: [val, test]
+  bench_gt: datasets/processed/coco/bench/construction_site_safety_bench.json
+  person_gt: datasets/processed/coco/bench/person_gt.json
+  bench_gt_stats: {images: 196, persons: 340, cr01_violators: 111, cr01_conformes: 229}
+  notes: "v27 (train augmentado Roboflow). BENCH = val+test (196 imgs). bare_head desde\
+    \ NO-Hardhat (D9 OK). CR-02 limitado: NO-Safety Vest no es clase canonical_v2."
+
+- id: ppe_siabar
+  name: PPE Dataset for Workplace Safety (SIABAR)
+  priority: alta
+  role_v2:
+  - TRAIN
+  source_url: https://universe.roboflow.com/siabar/ppe-dataset-for-workplace-safety
+  download_url: "https://api.roboflow.com/siabar/ppe-dataset-for-workplace-safety/{version}/yolov8?api_key=<ROBOFLOW_API_KEY>"
+  download_script: datasets/scripts/download/download_ppe_siabar.sh
+  local_raw_dir: datasets/raw/ppe_siabar
+  downloaded_at: '2026-06-18'
+  version: 1
+  original_format: yolov8 (roboflow export)
+  target_formats:
+  - coco
+  - yolo
+  - odvg
+  license: CC BY 4.0
+  image_count: 1607
+  splits: {train: 1120, val: 326, test: 161}
+  archive:
+    path: datasets/raw/ppe_siabar/ppe-dataset-for-workplace-safety-v1-yolov8.zip
+    size: 98M
+    sha256: 1e6e6d63e208b5e2fb4588decf1d4b93305d40cea7e6795542e1d806e0852586
+  classes_original:
+  - Boots
+  - Helmet
+  - Person
+  - Vest
+  classes_mapped_v2:
+    person:
+    - Person
+    helmet:
+    - Helmet
+    vest:
+    - Vest
+    bare_head: []
+  annotation_contract_v2:
+    person: exhaustiva
+    helmet: exhaustiva
+    vest: exhaustiva
+    bare_head: ausente
+  covered_conditions_v2:
+  - CR-01
+  - CR-02
+  status: converted_canonical_v2
+  notes: "v1. Calidad alta. Sin negativos explícitos; aporta positivos de alta calidad\
+    \ para TRAIN. Boots ignorado en canonical_v2 (sin mapeo)."
+
+- id: construction_safety_hardhat
+  name: Construction Safety Image Classification System (Kaggle)
+  priority: alta
+  role_v2:
+  - TRAIN
+  source_url: https://www.kaggle.com/datasets/muhammetzualli/construction-safety-image-classification-system
+  download_url: https://www.kaggle.com/api/v1/datasets/download/muhammetzualli/construction-safety-image-classification-system
+  download_script: datasets/scripts/download/download_construction_safety_hardhat.py
+  local_raw_dir: datasets/raw/construction_safety_hardhat
+  downloaded_at: null
+  original_format: yolo (verificar al descargar)
+  target_formats:
+  - coco
+  - yolo
+  - odvg
+  license: CC0 (Public Domain)
+  image_count_approx: 3800
+  archive:
+    path: datasets/raw/construction_safety_hardhat/construction-safety-image-classification-system.zip
+    sha256: null
+  classes_original:
+  - helmet
+  - no-helmet
+  - vest
+  - harness
+  - person
+  classes_mapped_v2:
+    person:
+    - person
+    helmet:
+    - helmet
+    vest:
+    - vest
+    bare_head:
+    - no-helmet
+  annotation_contract_v2:
+    person: exhaustiva
+    helmet: exhaustiva
+    vest: parcial
+    bare_head: exhaustiva
+  covered_conditions_v2:
+  - CR-01
+  covered_conditions_v2_partial:
+  - CR-02
+  status: not_available
+  notes: "Dataset no encontrado en Kaggle (URL inválida al 2026-06-18). Descartado\
+    \ del pipeline v2. TRAIN corre con 3 datasets restantes."
+
 - id: sh17
   name: SH17
   priority: alta
@@ -207,6 +366,9 @@
 - id: chv
   name: CHV - Color Helmet and Vest
   priority: alta
+  role_v2:
+  - TRAIN
+  - DEMO
   source_url: https://github.com/ZijianWang-ZW/PPE_detection
   download_url: https://drive.google.com/file/d/1fdGn67W0B7ShpBDbbQpUF0ScPQa4DR0a/view?usp=sharing
   local_raw_dir: datasets/raw/chv
@@ -242,7 +404,7 @@
     red_helmet: 536
     white_helmet: 1195
     yellow_helmet: 1299
-  classes_mapped:
+  classes_mapped_v2:
     person:
     - person
     helmet:
@@ -252,21 +414,26 @@
     - yellow helmet
     vest:
     - vest
-    no_helmet: []
-    no_vest: []
-  covered_conditions:
+    bare_head: []
+  annotation_contract_v2:
+    person: exhaustiva
+    helmet: exhaustiva
+    vest: exhaustiva
+    bare_head: ausente
+  covered_conditions_v2:
   - CR-01
   - CR-02
   split_policy: official
   split_seed: 42
-  status: downloaded_basic_validated
-  notes: Google Drive archive downloaded and extracted. Ignore __MACOSX artifacts.
-    Annotation README confirms YOLO format and class ids 0-person, 1-vest, 2-blue
-    helmet, 3-red helmet, 4-white helmet, 5-yellow helmet.
-  conversion_status: converted_coco_yolo_odvg
+  status: converted_canonical_v2
+  notes: "Google Drive archive. YOLO format; class ids 0-person, 1-vest, 2-5 colored\
+    \ helmets → mapeados a helmet. Sin negativos explícitos. DEMO = train split (1064\
+    \ imgs, 0 defectos). Ignore __MACOSX artifacts."
+  conversion_status: converted_canonical_v2
   conversion_views:
   - original
   - canonical_cr01_cr02
+  - canonical_v2
   conversion_report: datasets/registry/conversion_report.md
   processed_outputs:
     coco: datasets/processed/coco/{view}/chv

@@ -50,8 +50,27 @@ datasets/raw/**/*.tgz
 datasets/raw/**/*.7z
 datasets/raw/**/*.rar
 
-# Archive extraction artifacts
+# Archive extraction artifacts and browser download artifacts
 datasets/raw/**/__MACOSX/
 datasets/raw/**/.DS_Store
+datasets/raw/**/*.html
+
+# Raw annotation files (bundled en los ZIPs descargados; regenerables)
+datasets/raw/**/labels/
+datasets/raw/chv/CHV_dataset/annotations/
+
+# Legacy raw datasets (v1 — imágenes, labels y anotaciones COCO sin versionar)
+datasets/raw/MOCS/
+datasets/raw/archived/
+
 # Generated video-stock PoC artifacts
 datasets/interim/video_stock_poc*/
+
+# Processed outputs regenerables
+# EXCEPCIÓN: datasets/processed/coco/bench/ se versiona (BENCH GT = artefacto de reproducibilidad)
+datasets/processed/coco/canonical_v2/
+datasets/processed/coco/canonical_cr01_cr02/
+datasets/processed/coco/finetuning_cr01_cr02/
+datasets/processed/coco/original/
+datasets/processed/yolo/
+datasets/processed/odvg/

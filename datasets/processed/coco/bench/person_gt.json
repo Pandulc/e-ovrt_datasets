@@ -1,0 +1,4090 @@
+{
+  "matching": "center_in_bbox",
+  "source_view": "canonical_v2",
+  "note_cr02": "has_vest=True para todos (NO-Safety Vest no es clase canonical_v2; ver raw annotations)",
+  "total_persons": 340,
+  "violators_cr01": 111,
+  "violators_cr02": 0,
+  "records": [
+    {
+      "person_bbox": [
+        41.75,
+        342.75,
+        88.25,
+        458.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 1,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1079-_png_jpg.rf.19092a3937930012f9fd9c1ce57f5a7b.jpg"
+    },
+    {
+      "person_bbox": [
+        382.25,
+        313.75,
+        453.75,
+        521.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 1,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1079-_png_jpg.rf.19092a3937930012f9fd9c1ce57f5a7b.jpg"
+    },
+    {
+      "person_bbox": [
+        516.0,
+        339.75,
+        525.0,
+        361.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 1,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1079-_png_jpg.rf.19092a3937930012f9fd9c1ce57f5a7b.jpg"
+    },
+    {
+      "person_bbox": [
+        546.25,
+        338.0,
+        556.75,
+        363.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 1,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1079-_png_jpg.rf.19092a3937930012f9fd9c1ce57f5a7b.jpg"
+    },
+    {
+      "person_bbox": [
+        585.5,
+        337.0,
+        598.5,
+        366.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 1,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1079-_png_jpg.rf.19092a3937930012f9fd9c1ce57f5a7b.jpg"
+    },
+    {
+      "person_bbox": [
+        28.0,
+        170.25,
+        155.0,
+        538.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 2,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1429-_png_jpg.rf.78a7894e86c79d018d80fa86f4d000f8.jpg"
+    },
+    {
+      "person_bbox": [
+        231.0,
+        318.75,
+        367.0,
+        539.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 2,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1429-_png_jpg.rf.78a7894e86c79d018d80fa86f4d000f8.jpg"
+    },
+    {
+      "person_bbox": [
+        15.75,
+        352.75,
+        142.25,
+        439.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 2,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1429-_png_jpg.rf.78a7894e86c79d018d80fa86f4d000f8.jpg"
+    },
+    {
+      "person_bbox": [
+        184.0,
+        124.5,
+        491.0,
+        578.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 3,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1969-_png_jpg.rf.41dd58ed3ae83df95fb2417c679d581f.jpg"
+    },
+    {
+      "person_bbox": [
+        548.75,
+        161.75,
+        577.25,
+        204.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 4,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1989-_png_jpg.rf.8cb3d6087bb86d08e693b4250fbf96e3.jpg"
+    },
+    {
+      "person_bbox": [
+        580.0,
+        152.0,
+        640.0,
+        435.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 4,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1989-_png_jpg.rf.8cb3d6087bb86d08e693b4250fbf96e3.jpg"
+    },
+    {
+      "person_bbox": [
+        490.5,
+        0.25,
+        570.5,
+        55.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 4,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1989-_png_jpg.rf.8cb3d6087bb86d08e693b4250fbf96e3.jpg"
+    },
+    {
+      "person_bbox": [
+        205.75,
+        170.75,
+        374.25,
+        561.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 4,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1989-_png_jpg.rf.8cb3d6087bb86d08e693b4250fbf96e3.jpg"
+    },
+    {
+      "person_bbox": [
+        468.75,
+        117.75,
+        586.25,
+        581.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 4,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1989-_png_jpg.rf.8cb3d6087bb86d08e693b4250fbf96e3.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        119.0,
+        205.0,
+        584.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 4,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-1989-_png_jpg.rf.8cb3d6087bb86d08e693b4250fbf96e3.jpg"
+    },
+    {
+      "person_bbox": [
+        0.5,
+        0.25,
+        462.5,
+        140.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 5,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-211-_png_jpg.rf.eac228e3993f9027795b6400262811e7.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        143.25,
+        462.0,
+        462.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 5,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-211-_png_jpg.rf.eac228e3993f9027795b6400262811e7.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        506.0,
+        318.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 5,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-211-_png_jpg.rf.eac228e3993f9027795b6400262811e7.jpg"
+    },
+    {
+      "person_bbox": [
+        212.0,
+        115.0,
+        450.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 6,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3154-_png_jpg.rf.f118da2b1c20afb78ff93dc7d558f42c.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        38.0,
+        112.0,
+        104.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        110.25,
+        112.0,
+        175.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        271.0,
+        0.0,
+        397.0,
+        111.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        271.75,
+        112.25,
+        401.25,
+        232.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        454.25,
+        0.0,
+        554.75,
+        95.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        453.25,
+        82.75,
+        547.75,
+        206.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        492.75,
+        0.0,
+        590.25,
+        75.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        573.0,
+        3.5,
+        640.0,
+        91.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        580.0,
+        115.0,
+        640.0,
+        216.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        370.5,
+        155.5,
+        494.5,
+        331.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        138.0,
+        543.0,
+        312.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        133.5,
+        414.25,
+        312.5,
+        522.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        100.5,
+        248.0,
+        233.5,
+        399.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        185.25,
+        260.0,
+        370.75,
+        460.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        440.5,
+        379.25,
+        567.5,
+        540.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        437.25,
+        538.0,
+        563.75,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        356.75,
+        309.25,
+        453.25,
+        424.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        414.0,
+        227.75,
+        556.0,
+        423.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 7,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/-3766-_png_jpg.rf.81ead992d4b8047ec7beb28b7532cf0a.jpg"
+    },
+    {
+      "person_bbox": [
+        94.75,
+        51.5,
+        264.25,
+        575.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 8,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/004424_jpg.rf.0470713b945b08839105cde711db62d9.jpg"
+    },
+    {
+      "person_bbox": [
+        92.5,
+        5.5,
+        396.5,
+        621.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 9,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/005559_jpg.rf.5a5ab91289de227b286efca4418ff73d.jpg"
+    },
+    {
+      "person_bbox": [
+        609.25,
+        121.25,
+        622.75,
+        192.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 10,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/00596_jpg.rf.d030c5d98b937d080d75db1c1b269a84.jpg"
+    },
+    {
+      "person_bbox": [
+        586.5,
+        128.5,
+        601.5,
+        195.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 10,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/00596_jpg.rf.d030c5d98b937d080d75db1c1b269a84.jpg"
+    },
+    {
+      "person_bbox": [
+        42.75,
+        202.0,
+        211.25,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 10,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/00596_jpg.rf.d030c5d98b937d080d75db1c1b269a84.jpg"
+    },
+    {
+      "person_bbox": [
+        189.5,
+        111.0,
+        320.5,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 10,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/00596_jpg.rf.d030c5d98b937d080d75db1c1b269a84.jpg"
+    },
+    {
+      "person_bbox": [
+        338.0,
+        116.0,
+        491.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 10,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/00596_jpg.rf.d030c5d98b937d080d75db1c1b269a84.jpg"
+    },
+    {
+      "person_bbox": [
+        247.75,
+        138.0,
+        429.25,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 11,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/02646_jpg.rf.5c93ba95bdc03808bcf872c7218ac5ef.jpg"
+    },
+    {
+      "person_bbox": [
+        344.0,
+        48.25,
+        467.0,
+        459.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 12,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/1125_jpg.rf.2958d0a57630bdde8c3b5c6c560152af.jpg"
+    },
+    {
+      "person_bbox": [
+        199.75,
+        13.25,
+        429.25,
+        594.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 12,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/1125_jpg.rf.2958d0a57630bdde8c3b5c6c560152af.jpg"
+    },
+    {
+      "person_bbox": [
+        105.5,
+        14.5,
+        287.5,
+        501.5
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 12,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/1125_jpg.rf.2958d0a57630bdde8c3b5c6c560152af.jpg"
+    },
+    {
+      "person_bbox": [
+        84.25,
+        29.0,
+        176.75,
+        324.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 12,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/1125_jpg.rf.2958d0a57630bdde8c3b5c6c560152af.jpg"
+    },
+    {
+      "person_bbox": [
+        3.25,
+        56.0,
+        115.75,
+        479.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 12,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/1125_jpg.rf.2958d0a57630bdde8c3b5c6c560152af.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        69.5,
+        47.0,
+        579.5
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 12,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/1125_jpg.rf.2958d0a57630bdde8c3b5c6c560152af.jpg"
+    },
+    {
+      "person_bbox": [
+        193.25,
+        43.0,
+        639.75,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 14,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/2009_000277_jpg.rf.baccd85360fb8011e7c303066ceac286.jpg"
+    },
+    {
+      "person_bbox": [
+        168.0,
+        29.25,
+        519.0,
+        581.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 15,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/2009_000461_jpg.rf.43a28e2d6f1f9d399c92e18ccc9f0bf1.jpg"
+    },
+    {
+      "person_bbox": [
+        268.0,
+        311.25,
+        283.0,
+        331.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 16,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/2009_002778_jpg.rf.7c8977ed190a2ce4211ef58f66864066.jpg"
+    },
+    {
+      "person_bbox": [
+        206.75,
+        94.5,
+        387.25,
+        557.5
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 17,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/2009_003991_jpg.rf.c4fadb57b5579062cd4db5463ec3ba74.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        21.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 18,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/2009_004100_jpg.rf.6eb0dc058fc0d307a6b0f7f579945e24.jpg"
+    },
+    {
+      "person_bbox": [
+        629.0,
+        183.0,
+        640.0,
+        233.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 19,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/4_jpg.rf.a937c41e1fc4d92e9e1f8c2d9efeb87d.jpg"
+    },
+    {
+      "person_bbox": [
+        486.25,
+        47.75,
+        503.75,
+        127.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 19,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/4_jpg.rf.a937c41e1fc4d92e9e1f8c2d9efeb87d.jpg"
+    },
+    {
+      "person_bbox": [
+        481.5,
+        150.5,
+        498.5,
+        231.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 19,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/4_jpg.rf.a937c41e1fc4d92e9e1f8c2d9efeb87d.jpg"
+    },
+    {
+      "person_bbox": [
+        320.25,
+        149.0,
+        340.75,
+        228.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 19,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/4_jpg.rf.a937c41e1fc4d92e9e1f8c2d9efeb87d.jpg"
+    },
+    {
+      "person_bbox": [
+        271.0,
+        346.0,
+        463.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 20,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/518_jpg.rf.73999663994434126ac8b7ac5dbe6b52.jpg"
+    },
+    {
+      "person_bbox": [
+        210.25,
+        338.0,
+        473.75,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 21,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/644_jpg.rf.39197521b9addbcfa9d3620d85004e2d.jpg"
+    },
+    {
+      "person_bbox": [
+        195.25,
+        151.5,
+        332.75,
+        419.5
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 22,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/681_jpg.rf.7a0a7ef78f7dc01872cc3130dc3b354e.jpg"
+    },
+    {
+      "person_bbox": [
+        220.0,
+        299.0,
+        443.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 23,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/972_jpg.rf.4c6fac866e4928f3da7591fd2c26c2ac.jpg"
+    },
+    {
+      "person_bbox": [
+        10.0,
+        253.25,
+        640.0,
+        639.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 24,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/IMG_3093_mp4-22_jpg.rf.ea118a6046b21e9246efd53599dfdc41.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        241.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 25,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/IMG_3094_mp4-3_jpg.rf.65429c37fcf92b2ba8cfc9d2180051ef.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        105.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 26,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/IMG_3100_mp4-1_jpg.rf.7b4a6df995ec2702dee6e7f8c5b47e14.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        94.25,
+        640.0,
+        639.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 27,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/IMG_3100_mp4-3_jpg.rf.f05ef399880b1ac30e900df4f2fbb3c0.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        183.25,
+        640.0,
+        639.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 28,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/IMG_3103_mp4-16_jpg.rf.d31a50c14cb25c823066fe63793f7792.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        54.25,
+        640.0,
+        639.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 29,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/IMG_3103_mp4-17_jpg.rf.3223d405c1b3657aa54e170e32c8fe52.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        170.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 30,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/IMG_3103_mp4-18_jpg.rf.39e564f01ba6048fc34853e99f3de11b.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        225.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 31,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/IMG_3103_mp4-8_jpg.rf.d54ebee33e6fd97c282258aabc1e52d7.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        140.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 32,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/IMG_4921-2_mp4-122_jpg.rf.d27a983b805c273486c09e20f65a5a6b.jpg"
+    },
+    {
+      "person_bbox": [
+        0.25,
+        113.25,
+        493.75,
+        639.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 33,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/IMG_5024_mp4-8_jpg.rf.6b626854d6228eab4c341ddd5f8b5e46.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        192.25,
+        640.0,
+        639.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 34,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/IMG_9949-1-_mp4-20_jpg.rf.6ff2adfaf91058088d86084475d4d575.jpg"
+    },
+    {
+      "person_bbox": [
+        18.0,
+        224.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 36,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/Mask2_mov-11_jpg.rf.34ddcb1a619624541a2cca4400b7cd92.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        161.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 37,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/Mask2_mov-15_jpg.rf.026bd9a95154b1ead451a722a25ed130.jpg"
+    },
+    {
+      "person_bbox": [
+        11.0,
+        107.25,
+        477.0,
+        639.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 38,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/Movie-on-10-31-22-at-10_08-AM_mov-13_jpg.rf.91dc3b79da617fb2e4321f27f48f21f4.jpg"
+    },
+    {
+      "person_bbox": [
+        130.0,
+        54.0,
+        474.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 39,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/Movie-on-10-31-22-at-10_08-AM_mov-22_jpg.rf.a02b881bb190fa4a30026a648d13d278.jpg"
+    },
+    {
+      "person_bbox": [
+        140.5,
+        59.0,
+        467.5,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 40,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/Movie-on-10-31-22-at-10_08-AM_mov-6_jpg.rf.344372295a53aaf103587c9714ec98f7.jpg"
+    },
+    {
+      "person_bbox": [
+        0.25,
+        0.25,
+        537.75,
+        636.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 41,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/RPReplay_Final1667001201_MP4-454_jpg.rf.74024a799f518f9a6314ed301827eb1b.jpg"
+    },
+    {
+      "person_bbox": [
+        346.75,
+        457.75,
+        368.25,
+        558.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        349.0,
+        468.25,
+        376.0,
+        561.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        360.0,
+        468.0,
+        386.0,
+        570.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        149.5,
+        453.25,
+        165.5,
+        548.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        148.5,
+        454.0,
+        177.5,
+        557.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        41.0,
+        446.5,
+        62.0,
+        540.5
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        24.5,
+        460.75,
+        44.5,
+        550.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        16.25,
+        443.25,
+        36.75,
+        532.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        21.25,
+        456.75,
+        59.75,
+        564.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        630.25,
+        466.0,
+        639.75,
+        561.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        497.5,
+        452.0,
+        513.5,
+        554.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        483.5,
+        453.25,
+        501.5,
+        562.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 42,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/YouTube_FreeStockFootage_People-wearing-face-mask_Empty-Street_Covid19-D_DbgrvhlGs-720p_mp4-66_jpg.rf.72af13fb1f20520e0d41547037ced88b.jpg"
+    },
+    {
+      "person_bbox": [
+        366.25,
+        351.25,
+        375.75,
+        380.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 43,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/airport_inside_0090_jpg.rf.663e21100a3c4bc66a41cceba5403e51.jpg"
+    },
+    {
+      "person_bbox": [
+        333.25,
+        352.75,
+        340.75,
+        377.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 43,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/airport_inside_0090_jpg.rf.663e21100a3c4bc66a41cceba5403e51.jpg"
+    },
+    {
+      "person_bbox": [
+        268.75,
+        361.0,
+        273.25,
+        378.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 43,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/airport_inside_0090_jpg.rf.663e21100a3c4bc66a41cceba5403e51.jpg"
+    },
+    {
+      "person_bbox": [
+        222.0,
+        354.25,
+        242.0,
+        403.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 43,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/airport_inside_0090_jpg.rf.663e21100a3c4bc66a41cceba5403e51.jpg"
+    },
+    {
+      "person_bbox": [
+        392.0,
+        153.0,
+        399.0,
+        195.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 46,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/autox4_mp4-63_jpg.rf.b0fab4fd2c947536a122d6f2e7cca895.jpg"
+    },
+    {
+      "person_bbox": [
+        11.0,
+        214.0,
+        271.0,
+        475.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 49,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/class1_077_jpg.rf.84c3583c1866262daeb1618b80e18df9.jpg"
+    },
+    {
+      "person_bbox": [
+        224.25,
+        0.25,
+        386.75,
+        260.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 49,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/class1_077_jpg.rf.84c3583c1866262daeb1618b80e18df9.jpg"
+    },
+    {
+      "person_bbox": [
+        20.0,
+        158.25,
+        329.0,
+        488.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 50,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/class1_206_jpg.rf.3988ff665e55e1cd9dbcd22c87be73d9.jpg"
+    },
+    {
+      "person_bbox": [
+        291.75,
+        25.0,
+        573.25,
+        250.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 50,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/class1_206_jpg.rf.3988ff665e55e1cd9dbcd22c87be73d9.jpg"
+    },
+    {
+      "person_bbox": [
+        310.25,
+        114.25,
+        561.75,
+        290.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 51,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/class1_267_jpg.rf.ab7a08d97aba5b0748e976df6e65700a.jpg"
+    },
+    {
+      "person_bbox": [
+        163.25,
+        229.5,
+        393.75,
+        529.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 51,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/class1_267_jpg.rf.ab7a08d97aba5b0748e976df6e65700a.jpg"
+    },
+    {
+      "person_bbox": [
+        151.5,
+        404.75,
+        171.5,
+        439.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 53,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/construction-1023-_jpg.rf.7b73352606fb1d79619d34031c07a232.jpg"
+    },
+    {
+      "person_bbox": [
+        222.0,
+        143.0,
+        238.0,
+        185.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 58,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/construction-2-_mp4-149_jpg.rf.c6d3939d4743a346de668a0ae05accbc.jpg"
+    },
+    {
+      "person_bbox": [
+        311.0,
+        124.5,
+        325.0,
+        169.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 59,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/construction-2-_mp4-38_jpg.rf.0bb63aba0a9ebe5a4741a6207e2e1902.jpg"
+    },
+    {
+      "person_bbox": [
+        275.75,
+        178.0,
+        306.25,
+        247.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 62,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/construction-3-_mp4-219_jpg.rf.416dbf917b54d5895e2430fa0d6f1b66.jpg"
+    },
+    {
+      "person_bbox": [
+        248.5,
+        254.0,
+        271.5,
+        305.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 63,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/construction-3-_mp4-21_jpg.rf.4fc9ff5afc8387b5c673a424781c527c.jpg"
+    },
+    {
+      "person_bbox": [
+        354.0,
+        148.5,
+        412.0,
+        215.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 66,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/construction-823-_jpg.rf.640d8abfc7c7689d4a19e6aa00ac8984.jpg"
+    },
+    {
+      "person_bbox": [
+        260.25,
+        38.0,
+        543.75,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 69,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/img_08_jpg.rf.0f132a9c7ca6d12a8a9d1c4b3dbd54da.jpg"
+    },
+    {
+      "person_bbox": [
+        2.0,
+        70.0,
+        639.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 71,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0064_jpg.rf.f019b082d09af2750a81ef5ea3fcbc3e.jpg"
+    },
+    {
+      "person_bbox": [
+        48.5,
+        275.0,
+        134.5,
+        605.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 72,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0355_jpg.rf.508753d5b708536eca53de192b927c61.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        268.0,
+        84.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 72,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0355_jpg.rf.508753d5b708536eca53de192b927c61.jpg"
+    },
+    {
+      "person_bbox": [
+        277.5,
+        263.5,
+        342.5,
+        608.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 72,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0355_jpg.rf.508753d5b708536eca53de192b927c61.jpg"
+    },
+    {
+      "person_bbox": [
+        383.0,
+        257.0,
+        477.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 72,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0355_jpg.rf.508753d5b708536eca53de192b927c61.jpg"
+    },
+    {
+      "person_bbox": [
+        66.25,
+        252.0,
+        173.75,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 73,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0665_jpg.rf.1dad479f7f54b2a7127cf18ef74ffd85.jpg"
+    },
+    {
+      "person_bbox": [
+        149.5,
+        222.0,
+        244.5,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 73,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0665_jpg.rf.1dad479f7f54b2a7127cf18ef74ffd85.jpg"
+    },
+    {
+      "person_bbox": [
+        217.75,
+        203.0,
+        308.25,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 73,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0665_jpg.rf.1dad479f7f54b2a7127cf18ef74ffd85.jpg"
+    },
+    {
+      "person_bbox": [
+        276.75,
+        302.0,
+        371.25,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 73,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0665_jpg.rf.1dad479f7f54b2a7127cf18ef74ffd85.jpg"
+    },
+    {
+      "person_bbox": [
+        316.5,
+        183.0,
+        416.5,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 73,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0665_jpg.rf.1dad479f7f54b2a7127cf18ef74ffd85.jpg"
+    },
+    {
+      "person_bbox": [
+        430.0,
+        172.0,
+        515.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 73,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0665_jpg.rf.1dad479f7f54b2a7127cf18ef74ffd85.jpg"
+    },
+    {
+      "person_bbox": [
+        508.0,
+        186.0,
+        604.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 73,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_0665_jpg.rf.1dad479f7f54b2a7127cf18ef74ffd85.jpg"
+    },
+    {
+      "person_bbox": [
+        25.75,
+        28.0,
+        372.25,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 74,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/ppe_1228_jpg.rf.29b714c415ea74df3160f56a603463a0.jpg"
+    },
+    {
+      "person_bbox": [
+        285.25,
+        388.75,
+        393.75,
+        564.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 75,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/residential_jpg.rf.17181770c64333009b9101e1572c5112.jpg"
+    },
+    {
+      "person_bbox": [
+        317.5,
+        57.0,
+        395.5,
+        198.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 75,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/residential_jpg.rf.17181770c64333009b9101e1572c5112.jpg"
+    },
+    {
+      "person_bbox": [
+        565.0,
+        33.0,
+        640.0,
+        430.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 77,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/soooo_jpg.rf.5980d39f656b4d62672d2164173455e3.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        209.0,
+        38.0,
+        277.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 77,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/soooo_jpg.rf.5980d39f656b4d62672d2164173455e3.jpg"
+    },
+    {
+      "person_bbox": [
+        112.0,
+        122.0,
+        166.0,
+        207.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 77,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/soooo_jpg.rf.5980d39f656b4d62672d2164173455e3.jpg"
+    },
+    {
+      "person_bbox": [
+        26.0,
+        188.25,
+        292.0,
+        639.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 77,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/soooo_jpg.rf.5980d39f656b4d62672d2164173455e3.jpg"
+    },
+    {
+      "person_bbox": [
+        226.75,
+        0.0,
+        567.25,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 77,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/soooo_jpg.rf.5980d39f656b4d62672d2164173455e3.jpg"
+    },
+    {
+      "person_bbox": [
+        355.5,
+        115.75,
+        418.5,
+        241.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 77,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/soooo_jpg.rf.5980d39f656b4d62672d2164173455e3.jpg"
+    },
+    {
+      "person_bbox": [
+        4.75,
+        203.0,
+        639.25,
+        461.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 78,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/video_CDC-YOUTUBE_mp4-42_jpg.rf.bbc5cf2369c54126f61f0b1f71f77d8d.jpg"
+    },
+    {
+      "person_bbox": [
+        481.5,
+        60.5,
+        597.5,
+        548.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 79,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-118_jpg.rf.9dc8b46dfbac73d9e4f983964355d7ac.jpg"
+    },
+    {
+      "person_bbox": [
+        275.25,
+        0.0,
+        531.75,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 80,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-179_jpg.rf.bab3fbda351095d3b9aaba8007e3aa87.jpg"
+    },
+    {
+      "person_bbox": [
+        258.5,
+        228.5,
+        284.5,
+        330.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 81,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-194_jpg.rf.601da70a10e87c30c693ffbee53b17a7.jpg"
+    },
+    {
+      "person_bbox": [
+        228.0,
+        59.0,
+        615.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 82,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-200_jpg.rf.2c8aaf9fb58df4a3af442c293217d0c5.jpg"
+    },
+    {
+      "person_bbox": [
+        163.25,
+        0.0,
+        423.75,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 84,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-226_jpg.rf.e6dcacf16dc2dbcfd29f6705b7c1a224.jpg"
+    },
+    {
+      "person_bbox": [
+        281.25,
+        168.75,
+        310.75,
+        310.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 86,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-255_jpg.rf.c5a9f8ed208cb72e1a700ba52dc2fdfa.jpg"
+    },
+    {
+      "person_bbox": [
+        556.25,
+        411.0,
+        579.75,
+        493.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 89,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-277_jpg.rf.1bda1581c28b4f6cccd5eda6b23b94ee.jpg"
+    },
+    {
+      "person_bbox": [
+        247.0,
+        242.75,
+        289.0,
+        371.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 89,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-277_jpg.rf.1bda1581c28b4f6cccd5eda6b23b94ee.jpg"
+    },
+    {
+      "person_bbox": [
+        329.5,
+        234.0,
+        382.5,
+        370.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 89,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-277_jpg.rf.1bda1581c28b4f6cccd5eda6b23b94ee.jpg"
+    },
+    {
+      "person_bbox": [
+        334.75,
+        66.75,
+        401.25,
+        450.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 90,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-287_jpg.rf.c9a7d5b17f75d0c9ed62ad4127141aa2.jpg"
+    },
+    {
+      "person_bbox": [
+        190.75,
+        143.0,
+        311.25,
+        360.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 91,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-308_jpg.rf.790ae393e769f8e6280734b7506523ab.jpg"
+    },
+    {
+      "person_bbox": [
+        412.25,
+        238.75,
+        422.75,
+        287.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 92,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-342_jpg.rf.d7e55a17800f8d87313d7b6f33256ea9.jpg"
+    },
+    {
+      "person_bbox": [
+        20.25,
+        280.0,
+        41.75,
+        353.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 92,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-342_jpg.rf.d7e55a17800f8d87313d7b6f33256ea9.jpg"
+    },
+    {
+      "person_bbox": [
+        421.0,
+        385.5,
+        455.0,
+        440.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 92,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-342_jpg.rf.d7e55a17800f8d87313d7b6f33256ea9.jpg"
+    },
+    {
+      "person_bbox": [
+        346.25,
+        307.75,
+        355.75,
+        334.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 93,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-367_jpg.rf.fab8b016cb63c0928f40849db44ee98d.jpg"
+    },
+    {
+      "person_bbox": [
+        207.25,
+        69.75,
+        274.75,
+        498.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 94,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-391_jpg.rf.2744ad86e8dbd4366f1fa839accc48b3.jpg"
+    },
+    {
+      "person_bbox": [
+        208.75,
+        80.0,
+        289.25,
+        498.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 95,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-392_jpg.rf.7e49e3a8486caaa4e9d82246de93e68e.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        312.25,
+        60.0,
+        594.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 97,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-405_jpg.rf.6d1fc463659ac0d8e735bc1e731086a0.jpg"
+    },
+    {
+      "person_bbox": [
+        202.0,
+        0.25,
+        427.0,
+        548.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 98,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-416_jpg.rf.8b5d7c27337f84a1cd2b3e8b7c6435a7.jpg"
+    },
+    {
+      "person_bbox": [
+        2.0,
+        13.25,
+        216.0,
+        639.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 100,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-455_jpg.rf.35acd2e91608806a26f3ac4e784ea512.jpg"
+    },
+    {
+      "person_bbox": [
+        265.0,
+        146.0,
+        548.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 100,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-455_jpg.rf.35acd2e91608806a26f3ac4e784ea512.jpg"
+    },
+    {
+      "person_bbox": [
+        124.0,
+        0.0,
+        381.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 101,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-470_jpg.rf.6aebf4cfb6c5a7e703c6532ca5090517.jpg"
+    },
+    {
+      "person_bbox": [
+        275.25,
+        138.75,
+        366.75,
+        271.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 103,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-487_jpg.rf.5f1c67ece433c16da8ed3c9200ef4b5f.jpg"
+    },
+    {
+      "person_bbox": [
+        211.0,
+        71.0,
+        380.0,
+        550.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 104,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-504_jpg.rf.23771986686856ac7d350cea84ddf611.jpg"
+    },
+    {
+      "person_bbox": [
+        75.5,
+        146.25,
+        254.5,
+        631.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 107,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-584_jpg.rf.3136186a0786384c1ffc261f4d40ea42.jpg"
+    },
+    {
+      "person_bbox": [
+        372.25,
+        54.75,
+        449.75,
+        549.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 108,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-617_jpg.rf.309ef116f1d9074886d61bb0816b6b9e.jpg"
+    },
+    {
+      "person_bbox": [
+        247.5,
+        100.25,
+        324.5,
+        546.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 108,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-617_jpg.rf.309ef116f1d9074886d61bb0816b6b9e.jpg"
+    },
+    {
+      "person_bbox": [
+        237.0,
+        90.0,
+        315.0,
+        518.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 109,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-619_jpg.rf.93749f0e33b2f7beb302dd2e176d768a.jpg"
+    },
+    {
+      "person_bbox": [
+        353.0,
+        58.25,
+        441.0,
+        550.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 109,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-619_jpg.rf.93749f0e33b2f7beb302dd2e176d768a.jpg"
+    },
+    {
+      "person_bbox": [
+        139.75,
+        22.0,
+        242.25,
+        385.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 110,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-697_jpg.rf.950b34f23e196850ec51a4add2eeb840.jpg"
+    },
+    {
+      "person_bbox": [
+        443.0,
+        348.25,
+        451.0,
+        373.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 111,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-70_jpg.rf.2d5f69c78f062dfc572ccb6ce6bc3c9b.jpg"
+    },
+    {
+      "person_bbox": [
+        477.0,
+        333.0,
+        480.0,
+        346.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 111,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-70_jpg.rf.2d5f69c78f062dfc572ccb6ce6bc3c9b.jpg"
+    },
+    {
+      "person_bbox": [
+        41.5,
+        72.25,
+        237.5,
+        639.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 114,
+      "file_name": "datasets/raw/construction_site_safety/valid/images/youtube-836_jpg.rf.df6fc9e569e7b6b850ecb75c37781d10.jpg"
+    },
+    {
+      "person_bbox": [
+        308.75,
+        366.5,
+        395.25,
+        450.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 116,
+      "file_name": "datasets/raw/construction_site_safety/test/images/-4405-_png_jpg.rf.82b5c10b2acd1cfaa24259ada8e599fe.jpg"
+    },
+    {
+      "person_bbox": [
+        0.5,
+        138.75,
+        151.5,
+        534.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 117,
+      "file_name": "datasets/raw/construction_site_safety/test/images/000005_jpg.rf.96e9379ccae638140c4a90fc4b700a2b.jpg"
+    },
+    {
+      "person_bbox": [
+        288.0,
+        115.5,
+        640.0,
+        508.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 117,
+      "file_name": "datasets/raw/construction_site_safety/test/images/000005_jpg.rf.96e9379ccae638140c4a90fc4b700a2b.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        66.75,
+        57.0,
+        218.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 118,
+      "file_name": "datasets/raw/construction_site_safety/test/images/002551_jpg.rf.ce4b9f934161faa72c80dc6898d37b2d.jpg"
+    },
+    {
+      "person_bbox": [
+        93.0,
+        113.25,
+        134.0,
+        245.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 118,
+      "file_name": "datasets/raw/construction_site_safety/test/images/002551_jpg.rf.ce4b9f934161faa72c80dc6898d37b2d.jpg"
+    },
+    {
+      "person_bbox": [
+        181.75,
+        31.5,
+        376.25,
+        567.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 118,
+      "file_name": "datasets/raw/construction_site_safety/test/images/002551_jpg.rf.ce4b9f934161faa72c80dc6898d37b2d.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        91.0,
+        429.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 119,
+      "file_name": "datasets/raw/construction_site_safety/test/images/003357_jpg.rf.9867f91e88089bb68dc95947d5116d14.jpg"
+    },
+    {
+      "person_bbox": [
+        501.25,
+        433.25,
+        542.75,
+        600.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 120,
+      "file_name": "datasets/raw/construction_site_safety/test/images/004063_jpg.rf.1b7cdc4035bcb24ef69b8798b444053e.jpg"
+    },
+    {
+      "person_bbox": [
+        450.5,
+        399.75,
+        490.5,
+        612.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 120,
+      "file_name": "datasets/raw/construction_site_safety/test/images/004063_jpg.rf.1b7cdc4035bcb24ef69b8798b444053e.jpg"
+    },
+    {
+      "person_bbox": [
+        284.0,
+        435.0,
+        318.0,
+        599.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 120,
+      "file_name": "datasets/raw/construction_site_safety/test/images/004063_jpg.rf.1b7cdc4035bcb24ef69b8798b444053e.jpg"
+    },
+    {
+      "person_bbox": [
+        185.5,
+        277.75,
+        264.5,
+        637.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 120,
+      "file_name": "datasets/raw/construction_site_safety/test/images/004063_jpg.rf.1b7cdc4035bcb24ef69b8798b444053e.jpg"
+    },
+    {
+      "person_bbox": [
+        4.0,
+        219.0,
+        191.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 120,
+      "file_name": "datasets/raw/construction_site_safety/test/images/004063_jpg.rf.1b7cdc4035bcb24ef69b8798b444053e.jpg"
+    },
+    {
+      "person_bbox": [
+        283.25,
+        228.25,
+        300.75,
+        301.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 120,
+      "file_name": "datasets/raw/construction_site_safety/test/images/004063_jpg.rf.1b7cdc4035bcb24ef69b8798b444053e.jpg"
+    },
+    {
+      "person_bbox": [
+        319.0,
+        81.25,
+        536.0,
+        639.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 121,
+      "file_name": "datasets/raw/construction_site_safety/test/images/004763_jpg.rf.46484e6ca73caeaa9de45822cf1085a9.jpg"
+    },
+    {
+      "person_bbox": [
+        188.0,
+        130.0,
+        325.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 121,
+      "file_name": "datasets/raw/construction_site_safety/test/images/004763_jpg.rf.46484e6ca73caeaa9de45822cf1085a9.jpg"
+    },
+    {
+      "person_bbox": [
+        1.0,
+        56.0,
+        248.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 121,
+      "file_name": "datasets/raw/construction_site_safety/test/images/004763_jpg.rf.46484e6ca73caeaa9de45822cf1085a9.jpg"
+    },
+    {
+      "person_bbox": [
+        630.0,
+        339.25,
+        640.0,
+        518.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 122,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006463_jpg.rf.02f19082420ecc5537b9d59abbe6050c.jpg"
+    },
+    {
+      "person_bbox": [
+        596.0,
+        320.5,
+        635.0,
+        501.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 122,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006463_jpg.rf.02f19082420ecc5537b9d59abbe6050c.jpg"
+    },
+    {
+      "person_bbox": [
+        44.25,
+        227.25,
+        137.75,
+        639.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 122,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006463_jpg.rf.02f19082420ecc5537b9d59abbe6050c.jpg"
+    },
+    {
+      "person_bbox": [
+        121.0,
+        263.5,
+        194.0,
+        576.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 122,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006463_jpg.rf.02f19082420ecc5537b9d59abbe6050c.jpg"
+    },
+    {
+      "person_bbox": [
+        205.0,
+        236.0,
+        285.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 122,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006463_jpg.rf.02f19082420ecc5537b9d59abbe6050c.jpg"
+    },
+    {
+      "person_bbox": [
+        266.0,
+        248.75,
+        339.0,
+        627.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 122,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006463_jpg.rf.02f19082420ecc5537b9d59abbe6050c.jpg"
+    },
+    {
+      "person_bbox": [
+        355.25,
+        260.5,
+        421.75,
+        625.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 122,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006463_jpg.rf.02f19082420ecc5537b9d59abbe6050c.jpg"
+    },
+    {
+      "person_bbox": [
+        418.5,
+        273.75,
+        478.5,
+        587.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 122,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006463_jpg.rf.02f19082420ecc5537b9d59abbe6050c.jpg"
+    },
+    {
+      "person_bbox": [
+        472.0,
+        280.75,
+        529.0,
+        563.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 122,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006463_jpg.rf.02f19082420ecc5537b9d59abbe6050c.jpg"
+    },
+    {
+      "person_bbox": [
+        489.5,
+        261.25,
+        574.5,
+        638.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 122,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006463_jpg.rf.02f19082420ecc5537b9d59abbe6050c.jpg"
+    },
+    {
+      "person_bbox": [
+        297.0,
+        0.0,
+        319.0,
+        48.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 122,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006463_jpg.rf.02f19082420ecc5537b9d59abbe6050c.jpg"
+    },
+    {
+      "person_bbox": [
+        97.0,
+        367.75,
+        164.0,
+        637.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 123,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006672_jpg.rf.87d5978c486feb53177408cf00a0d87f.jpg"
+    },
+    {
+      "person_bbox": [
+        127.0,
+        407.0,
+        223.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 123,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006672_jpg.rf.87d5978c486feb53177408cf00a0d87f.jpg"
+    },
+    {
+      "person_bbox": [
+        215.5,
+        370.25,
+        276.5,
+        639.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 123,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006672_jpg.rf.87d5978c486feb53177408cf00a0d87f.jpg"
+    },
+    {
+      "person_bbox": [
+        284.75,
+        397.25,
+        339.25,
+        639.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 123,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006672_jpg.rf.87d5978c486feb53177408cf00a0d87f.jpg"
+    },
+    {
+      "person_bbox": [
+        313.0,
+        390.0,
+        399.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 123,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006672_jpg.rf.87d5978c486feb53177408cf00a0d87f.jpg"
+    },
+    {
+      "person_bbox": [
+        416.5,
+        361.5,
+        502.5,
+        637.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 123,
+      "file_name": "datasets/raw/construction_site_safety/test/images/006672_jpg.rf.87d5978c486feb53177408cf00a0d87f.jpg"
+    },
+    {
+      "person_bbox": [
+        361.75,
+        239.75,
+        384.25,
+        341.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 124,
+      "file_name": "datasets/raw/construction_site_safety/test/images/0_jpg.rf.2ff49f74309118f169e07aa12564df87.jpg"
+    },
+    {
+      "person_bbox": [
+        183.0,
+        276.0,
+        203.0,
+        390.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 124,
+      "file_name": "datasets/raw/construction_site_safety/test/images/0_jpg.rf.2ff49f74309118f169e07aa12564df87.jpg"
+    },
+    {
+      "person_bbox": [
+        120.75,
+        357.25,
+        138.25,
+        466.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 124,
+      "file_name": "datasets/raw/construction_site_safety/test/images/0_jpg.rf.2ff49f74309118f169e07aa12564df87.jpg"
+    },
+    {
+      "person_bbox": [
+        104.5,
+        395.5,
+        136.5,
+        504.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 124,
+      "file_name": "datasets/raw/construction_site_safety/test/images/0_jpg.rf.2ff49f74309118f169e07aa12564df87.jpg"
+    },
+    {
+      "person_bbox": [
+        90.5,
+        364.0,
+        113.5,
+        481.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 124,
+      "file_name": "datasets/raw/construction_site_safety/test/images/0_jpg.rf.2ff49f74309118f169e07aa12564df87.jpg"
+    },
+    {
+      "person_bbox": [
+        227.5,
+        0.0,
+        262.5,
+        55.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 125,
+      "file_name": "datasets/raw/construction_site_safety/test/images/2008_008320_jpg.rf.bd34011d46f82f9410d95f00e560b8ea.jpg"
+    },
+    {
+      "person_bbox": [
+        180.5,
+        83.0,
+        363.5,
+        539.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 125,
+      "file_name": "datasets/raw/construction_site_safety/test/images/2008_008320_jpg.rf.bd34011d46f82f9410d95f00e560b8ea.jpg"
+    },
+    {
+      "person_bbox": [
+        24.0,
+        324.75,
+        76.0,
+        548.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 126,
+      "file_name": "datasets/raw/construction_site_safety/test/images/2008_008519_jpg.rf.1798c8eed7de04399a0e7e297b4b4c9e.jpg"
+    },
+    {
+      "person_bbox": [
+        59.5,
+        301.5,
+        148.5,
+        536.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 126,
+      "file_name": "datasets/raw/construction_site_safety/test/images/2008_008519_jpg.rf.1798c8eed7de04399a0e7e297b4b4c9e.jpg"
+    },
+    {
+      "person_bbox": [
+        535.25,
+        398.25,
+        548.75,
+        417.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 126,
+      "file_name": "datasets/raw/construction_site_safety/test/images/2008_008519_jpg.rf.1798c8eed7de04399a0e7e297b4b4c9e.jpg"
+    },
+    {
+      "person_bbox": [
+        517.0,
+        403.75,
+        530.0,
+        417.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 126,
+      "file_name": "datasets/raw/construction_site_safety/test/images/2008_008519_jpg.rf.1798c8eed7de04399a0e7e297b4b4c9e.jpg"
+    },
+    {
+      "person_bbox": [
+        154.75,
+        144.0,
+        454.25,
+        578.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 127,
+      "file_name": "datasets/raw/construction_site_safety/test/images/2009_000059_jpg.rf.50e8398a37eb33f33fd9f662feeea083.jpg"
+    },
+    {
+      "person_bbox": [
+        87.0,
+        0.0,
+        228.0,
+        111.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 128,
+      "file_name": "datasets/raw/construction_site_safety/test/images/2009_000496_jpg.rf.9a2d210fe0f5ea4b572aeb07e41ecbae.jpg"
+    },
+    {
+      "person_bbox": [
+        341.0,
+        0.0,
+        640.0,
+        582.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 128,
+      "file_name": "datasets/raw/construction_site_safety/test/images/2009_000496_jpg.rf.9a2d210fe0f5ea4b572aeb07e41ecbae.jpg"
+    },
+    {
+      "person_bbox": [
+        112.25,
+        191.75,
+        152.75,
+        269.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 130,
+      "file_name": "datasets/raw/construction_site_safety/test/images/777_jpg.rf.92dc6945342410ced7ac93f3dfbff0c5.jpg"
+    },
+    {
+      "person_bbox": [
+        151.25,
+        191.25,
+        184.75,
+        254.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 130,
+      "file_name": "datasets/raw/construction_site_safety/test/images/777_jpg.rf.92dc6945342410ced7ac93f3dfbff0c5.jpg"
+    },
+    {
+      "person_bbox": [
+        16.0,
+        105.25,
+        640.0,
+        639.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 132,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_0871_MOV-12_jpg.rf.36858a9d51613f9a39b7855b54dfa098.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        124.25,
+        640.0,
+        639.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 133,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_0871_mp4-11_jpg.rf.432092b53ebeb84f4b9b27b40343c9aa.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        138.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 134,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_0871_mp4-23_jpg.rf.03f872b1ed87ad7fadc85e09475ad37a.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        111.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 135,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_3100_mp4-12_jpg.rf.58849ca6a931c2cfe1b17fb4206d9d82.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        111.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 136,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_3100_mp4-9_jpg.rf.413ccf5fe4a7ee67f71e07c2c43b6756.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        161.0,
+        640.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 137,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_3103_mp4-9_jpg.rf.b31bd2d816465a27aa1eb072f90bb5aa.jpg"
+    },
+    {
+      "person_bbox": [
+        84.75,
+        206.75,
+        131.25,
+        442.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        70.25,
+        232.0,
+        118.75,
+        484.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        117.0,
+        239.0,
+        161.0,
+        449.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        149.5,
+        208.75,
+        177.5,
+        433.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        157.25,
+        228.5,
+        204.75,
+        454.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        194.0,
+        209.75,
+        236.0,
+        432.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        215.25,
+        221.5,
+        270.75,
+        448.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        251.0,
+        213.5,
+        287.0,
+        428.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        273.5,
+        204.0,
+        295.5,
+        260.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        268.5,
+        225.75,
+        324.5,
+        456.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        306.0,
+        219.0,
+        340.0,
+        435.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        328.5,
+        199.5,
+        363.5,
+        266.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        323.75,
+        229.25,
+        375.25,
+        458.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        359.25,
+        213.25,
+        396.75,
+        440.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        382.5,
+        208.5,
+        412.5,
+        427.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        383.0,
+        227.25,
+        428.0,
+        458.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        402.5,
+        221.25,
+        441.5,
+        443.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        427.0,
+        213.0,
+        475.0,
+        463.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        460.5,
+        235.0,
+        511.5,
+        481.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        478.25,
+        199.5,
+        528.75,
+        465.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        512.25,
+        218.0,
+        567.75,
+        496.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 138,
+      "file_name": "datasets/raw/construction_site_safety/test/images/IMG_5846_jpg.rf.0b9984069116e2acd928568eb7a8e214.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        274.0,
+        40.0,
+        337.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        91.75,
+        249.25,
+        119.25,
+        291.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        32.5,
+        257.0,
+        264.5,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        1.5,
+        27.5,
+        23.5,
+        203.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        58.25,
+        0.0,
+        259.75,
+        249.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        259.75,
+        0.0,
+        388.25,
+        248.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        417.75,
+        48.5,
+        517.25,
+        181.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        411.25,
+        55.0,
+        561.75,
+        255.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        496.0,
+        0.0,
+        640.0,
+        252.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        264.25,
+        295.5,
+        280.75,
+        369.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        277.0,
+        331.0,
+        294.0,
+        365.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        266.0,
+        254.0,
+        352.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        353.25,
+        310.75,
+        388.75,
+        397.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        363.0,
+        346.5,
+        403.0,
+        435.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        296.75,
+        312.0,
+        465.25,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        448.0,
+        354.0,
+        528.0,
+        504.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        448.75,
+        356.0,
+        474.25,
+        431.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        529.25,
+        369.25,
+        587.75,
+        425.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        443.0,
+        255.5,
+        640.0,
+        638.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 139,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Image36_jpg.rf.8704f3450f736cdd01a61dcee588f2c2.jpg"
+    },
+    {
+      "person_bbox": [
+        130.0,
+        54.0,
+        474.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 141,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Movie-on-10-31-22-at-10_08-AM_mov-20_jpg.rf.aea4278b41550cdb75df5891a26052e7.jpg"
+    },
+    {
+      "person_bbox": [
+        126.5,
+        33.0,
+        465.5,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 142,
+      "file_name": "datasets/raw/construction_site_safety/test/images/Movie-on-10-31-22-at-10_08-AM_mov-24_jpg.rf.c50014f3510a484e5bd565460fd0fd5c.jpg"
+    },
+    {
+      "person_bbox": [
+        570.25,
+        125.0,
+        603.75,
+        345.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 143,
+      "file_name": "datasets/raw/construction_site_safety/test/images/NX_img_177_jpg.rf.c03709e5fadfe2109411f05a9e9bc25f.jpg"
+    },
+    {
+      "person_bbox": [
+        438.25,
+        84.25,
+        504.75,
+        491.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 143,
+      "file_name": "datasets/raw/construction_site_safety/test/images/NX_img_177_jpg.rf.c03709e5fadfe2109411f05a9e9bc25f.jpg"
+    },
+    {
+      "person_bbox": [
+        94.0,
+        0.0,
+        233.0,
+        300.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 143,
+      "file_name": "datasets/raw/construction_site_safety/test/images/NX_img_177_jpg.rf.c03709e5fadfe2109411f05a9e9bc25f.jpg"
+    },
+    {
+      "person_bbox": [
+        54.5,
+        234.0,
+        193.5,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 143,
+      "file_name": "datasets/raw/construction_site_safety/test/images/NX_img_177_jpg.rf.c03709e5fadfe2109411f05a9e9bc25f.jpg"
+    },
+    {
+      "person_bbox": [
+        596.75,
+        36.25,
+        629.25,
+        221.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 143,
+      "file_name": "datasets/raw/construction_site_safety/test/images/NX_img_177_jpg.rf.c03709e5fadfe2109411f05a9e9bc25f.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        0.0,
+        640.0,
+        634.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 144,
+      "file_name": "datasets/raw/construction_site_safety/test/images/RPReplay_Final1667001201_MP4-100_jpg.rf.9a1b50c4301c53b3ae534c6353337df9.jpg"
+    },
+    {
+      "person_bbox": [
+        317.25,
+        0.25,
+        563.75,
+        307.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 150,
+      "file_name": "datasets/raw/construction_site_safety/test/images/class1_150_jpg.rf.5995dce34d38deb9eb0b6e36cae78f17.jpg"
+    },
+    {
+      "person_bbox": [
+        145.5,
+        250.75,
+        347.5,
+        465.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 150,
+      "file_name": "datasets/raw/construction_site_safety/test/images/class1_150_jpg.rf.5995dce34d38deb9eb0b6e36cae78f17.jpg"
+    },
+    {
+      "person_bbox": [
+        183.0,
+        27.5,
+        372.0,
+        248.5
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 151,
+      "file_name": "datasets/raw/construction_site_safety/test/images/class2_131_jpg.rf.ad8314a9273471f1280ce8789ea75376.jpg"
+    },
+    {
+      "person_bbox": [
+        484.0,
+        168.0,
+        640.0,
+        396.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 152,
+      "file_name": "datasets/raw/construction_site_safety/test/images/class2_145_jpg.rf.b8ed5a5357ee41f8fb1aa9b01a400d51.jpg"
+    },
+    {
+      "person_bbox": [
+        143.5,
+        36.5,
+        433.5,
+        299.5
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 152,
+      "file_name": "datasets/raw/construction_site_safety/test/images/class2_145_jpg.rf.b8ed5a5357ee41f8fb1aa9b01a400d51.jpg"
+    },
+    {
+      "person_bbox": [
+        513.25,
+        258.25,
+        533.75,
+        310.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 154,
+      "file_name": "datasets/raw/construction_site_safety/test/images/construction-192-_jpg.rf.56dd5c4c1396c6ad01be4fbec3bca46f.jpg"
+    },
+    {
+      "person_bbox": [
+        233.0,
+        260.0,
+        265.0,
+        307.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 162,
+      "file_name": "datasets/raw/construction_site_safety/test/images/construction-675-_jpg.rf.bb4a05441be707256175e04929da3478.jpg"
+    },
+    {
+      "person_bbox": [
+        192.0,
+        65.0,
+        451.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 165,
+      "file_name": "datasets/raw/construction_site_safety/test/images/image_53_jpg.rf.3446e366b5d4d905a32e1aedc8fe87de.jpg"
+    },
+    {
+      "person_bbox": [
+        143.5,
+        82.25,
+        319.5,
+        632.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 166,
+      "file_name": "datasets/raw/construction_site_safety/test/images/image_55_jpg.rf.27ae4341a9b9647d73a8929ff7a22369.jpg"
+    },
+    {
+      "person_bbox": [
+        204.25,
+        271.5,
+        212.75,
+        294.5
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 167,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ka_01181_png_jpg.rf.154ee4ef254eabd62e316be50470c578.jpg"
+    },
+    {
+      "person_bbox": [
+        219.25,
+        265.25,
+        223.75,
+        276.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 167,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ka_01181_png_jpg.rf.154ee4ef254eabd62e316be50470c578.jpg"
+    },
+    {
+      "person_bbox": [
+        221.25,
+        272.75,
+        231.75,
+        292.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 167,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ka_01181_png_jpg.rf.154ee4ef254eabd62e316be50470c578.jpg"
+    },
+    {
+      "person_bbox": [
+        227.5,
+        274.5,
+        231.5,
+        281.5
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 167,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ka_01181_png_jpg.rf.154ee4ef254eabd62e316be50470c578.jpg"
+    },
+    {
+      "person_bbox": [
+        230.25,
+        277.25,
+        235.75,
+        287.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 167,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ka_01181_png_jpg.rf.154ee4ef254eabd62e316be50470c578.jpg"
+    },
+    {
+      "person_bbox": [
+        243.75,
+        275.75,
+        246.25,
+        289.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 167,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ka_01181_png_jpg.rf.154ee4ef254eabd62e316be50470c578.jpg"
+    },
+    {
+      "person_bbox": [
+        246.5,
+        257.75,
+        254.5,
+        297.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 167,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ka_01181_png_jpg.rf.154ee4ef254eabd62e316be50470c578.jpg"
+    },
+    {
+      "person_bbox": [
+        0.25,
+        224.0,
+        497.75,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 169,
+      "file_name": "datasets/raw/construction_site_safety/test/images/maksssksksss17_png_jpg.rf.f685b497756b1facbf3d4c2d2d22c0d2.jpg"
+    },
+    {
+      "person_bbox": [
+        132.5,
+        163.0,
+        320.5,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 170,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_0018_jpg.rf.be66fabcc8627f60d963454b5a227095.jpg"
+    },
+    {
+      "person_bbox": [
+        312.0,
+        81.0,
+        457.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 170,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_0018_jpg.rf.be66fabcc8627f60d963454b5a227095.jpg"
+    },
+    {
+      "person_bbox": [
+        421.5,
+        235.0,
+        433.5,
+        378.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 171,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_1073_jpg.rf.72ea8a293a4f3e1135219e33701b1099.jpg"
+    },
+    {
+      "person_bbox": [
+        400.75,
+        221.75,
+        429.25,
+        418.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 171,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_1073_jpg.rf.72ea8a293a4f3e1135219e33701b1099.jpg"
+    },
+    {
+      "person_bbox": [
+        429.5,
+        229.0,
+        465.5,
+        398.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 171,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_1073_jpg.rf.72ea8a293a4f3e1135219e33701b1099.jpg"
+    },
+    {
+      "person_bbox": [
+        587.0,
+        194.25,
+        640.0,
+        462.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 171,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_1073_jpg.rf.72ea8a293a4f3e1135219e33701b1099.jpg"
+    },
+    {
+      "person_bbox": [
+        318.0,
+        218.5,
+        353.0,
+        420.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 171,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_1073_jpg.rf.72ea8a293a4f3e1135219e33701b1099.jpg"
+    },
+    {
+      "person_bbox": [
+        284.5,
+        217.5,
+        333.5,
+        426.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 171,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_1073_jpg.rf.72ea8a293a4f3e1135219e33701b1099.jpg"
+    },
+    {
+      "person_bbox": [
+        229.75,
+        226.75,
+        248.25,
+        253.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 171,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_1073_jpg.rf.72ea8a293a4f3e1135219e33701b1099.jpg"
+    },
+    {
+      "person_bbox": [
+        61.75,
+        214.0,
+        106.25,
+        432.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 171,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_1073_jpg.rf.72ea8a293a4f3e1135219e33701b1099.jpg"
+    },
+    {
+      "person_bbox": [
+        93.5,
+        202.75,
+        141.5,
+        493.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 171,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_1073_jpg.rf.72ea8a293a4f3e1135219e33701b1099.jpg"
+    },
+    {
+      "person_bbox": [
+        111.25,
+        140.0,
+        231.75,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 171,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_1073_jpg.rf.72ea8a293a4f3e1135219e33701b1099.jpg"
+    },
+    {
+      "person_bbox": [
+        222.0,
+        155.0,
+        328.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 171,
+      "file_name": "datasets/raw/construction_site_safety/test/images/ppe_1073_jpg.rf.72ea8a293a4f3e1135219e33701b1099.jpg"
+    },
+    {
+      "person_bbox": [
+        371.75,
+        120.75,
+        389.25,
+        153.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 172,
+      "file_name": "datasets/raw/construction_site_safety/test/images/thumbnail-ba5c72edb320b49a69e86b05775c49b2-scaled-1_jpeg_jpg.rf.3bb460e284098219861b894fb0db13d5.jpg"
+    },
+    {
+      "person_bbox": [
+        381.25,
+        119.25,
+        415.75,
+        236.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 172,
+      "file_name": "datasets/raw/construction_site_safety/test/images/thumbnail-ba5c72edb320b49a69e86b05775c49b2-scaled-1_jpeg_jpg.rf.3bb460e284098219861b894fb0db13d5.jpg"
+    },
+    {
+      "person_bbox": [
+        406.0,
+        57.0,
+        505.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 172,
+      "file_name": "datasets/raw/construction_site_safety/test/images/thumbnail-ba5c72edb320b49a69e86b05775c49b2-scaled-1_jpeg_jpg.rf.3bb460e284098219861b894fb0db13d5.jpg"
+    },
+    {
+      "person_bbox": [
+        269.75,
+        45.75,
+        380.25,
+        625.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 172,
+      "file_name": "datasets/raw/construction_site_safety/test/images/thumbnail-ba5c72edb320b49a69e86b05775c49b2-scaled-1_jpeg_jpg.rf.3bb460e284098219861b894fb0db13d5.jpg"
+    },
+    {
+      "person_bbox": [
+        205.0,
+        40.25,
+        301.0,
+        541.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 172,
+      "file_name": "datasets/raw/construction_site_safety/test/images/thumbnail-ba5c72edb320b49a69e86b05775c49b2-scaled-1_jpeg_jpg.rf.3bb460e284098219861b894fb0db13d5.jpg"
+    },
+    {
+      "person_bbox": [
+        130.25,
+        143.25,
+        145.75,
+        204.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 172,
+      "file_name": "datasets/raw/construction_site_safety/test/images/thumbnail-ba5c72edb320b49a69e86b05775c49b2-scaled-1_jpeg_jpg.rf.3bb460e284098219861b894fb0db13d5.jpg"
+    },
+    {
+      "person_bbox": [
+        138.75,
+        96.5,
+        208.25,
+        493.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 172,
+      "file_name": "datasets/raw/construction_site_safety/test/images/thumbnail-ba5c72edb320b49a69e86b05775c49b2-scaled-1_jpeg_jpg.rf.3bb460e284098219861b894fb0db13d5.jpg"
+    },
+    {
+      "person_bbox": [
+        526.0,
+        0.0,
+        632.0,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 172,
+      "file_name": "datasets/raw/construction_site_safety/test/images/thumbnail-ba5c72edb320b49a69e86b05775c49b2-scaled-1_jpeg_jpg.rf.3bb460e284098219861b894fb0db13d5.jpg"
+    },
+    {
+      "person_bbox": [
+        0.0,
+        90.25,
+        71.0,
+        434.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 172,
+      "file_name": "datasets/raw/construction_site_safety/test/images/thumbnail-ba5c72edb320b49a69e86b05775c49b2-scaled-1_jpeg_jpg.rf.3bb460e284098219861b894fb0db13d5.jpg"
+    },
+    {
+      "person_bbox": [
+        53.5,
+        80.25,
+        135.5,
+        466.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 172,
+      "file_name": "datasets/raw/construction_site_safety/test/images/thumbnail-ba5c72edb320b49a69e86b05775c49b2-scaled-1_jpeg_jpg.rf.3bb460e284098219861b894fb0db13d5.jpg"
+    },
+    {
+      "person_bbox": [
+        380.0,
+        195.5,
+        477.0,
+        550.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 173,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-108_jpg.rf.9dc7ed5f816f07d520f3dbfaad08d40f.jpg"
+    },
+    {
+      "person_bbox": [
+        247.75,
+        123.25,
+        368.25,
+        548.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 173,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-108_jpg.rf.9dc7ed5f816f07d520f3dbfaad08d40f.jpg"
+    },
+    {
+      "person_bbox": [
+        136.75,
+        0.25,
+        377.25,
+        544.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 174,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-114_jpg.rf.5e02b6574ace1f4b3689befbc5051cd0.jpg"
+    },
+    {
+      "person_bbox": [
+        331.5,
+        191.5,
+        381.5,
+        455.5
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 175,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-126_jpg.rf.786824e90daf3276130ca73ca610a8da.jpg"
+    },
+    {
+      "person_bbox": [
+        262.5,
+        253.75,
+        342.5,
+        549.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 175,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-126_jpg.rf.786824e90daf3276130ca73ca610a8da.jpg"
+    },
+    {
+      "person_bbox": [
+        508.75,
+        228.5,
+        529.25,
+        283.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 176,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-152_jpg.rf.9147878e3ddda845e58f7d9c041f1338.jpg"
+    },
+    {
+      "person_bbox": [
+        204.0,
+        351.0,
+        214.0,
+        372.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 176,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-152_jpg.rf.9147878e3ddda845e58f7d9c041f1338.jpg"
+    },
+    {
+      "person_bbox": [
+        214.0,
+        218.0,
+        227.0,
+        249.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 176,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-152_jpg.rf.9147878e3ddda845e58f7d9c041f1338.jpg"
+    },
+    {
+      "person_bbox": [
+        30.5,
+        292.25,
+        37.5,
+        309.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 176,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-152_jpg.rf.9147878e3ddda845e58f7d9c041f1338.jpg"
+    },
+    {
+      "person_bbox": [
+        48.0,
+        200.25,
+        54.0,
+        228.75
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 176,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-152_jpg.rf.9147878e3ddda845e58f7d9c041f1338.jpg"
+    },
+    {
+      "person_bbox": [
+        506.75,
+        441.0,
+        543.25,
+        573.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 177,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-186_jpg.rf.1f1d93447d4be3233c22c4ce9f6e0601.jpg"
+    },
+    {
+      "person_bbox": [
+        336.0,
+        101.0,
+        498.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 177,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-186_jpg.rf.1f1d93447d4be3233c22c4ce9f6e0601.jpg"
+    },
+    {
+      "person_bbox": [
+        151.5,
+        66.0,
+        380.5,
+        640.0
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 178,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-192_jpg.rf.93bea040de8cd55f34ffb12f6ffe30b1.jpg"
+    },
+    {
+      "person_bbox": [
+        263.25,
+        215.5,
+        304.75,
+        369.5
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 179,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-198_jpg.rf.e89faeb9765c6bd6cece5434d140f4af.jpg"
+    },
+    {
+      "person_bbox": [
+        457.5,
+        363.25,
+        485.5,
+        450.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 181,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-237_jpg.rf.d07a927721fe259757237c3706ea22e5.jpg"
+    },
+    {
+      "person_bbox": [
+        446.75,
+        412.0,
+        483.25,
+        579.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 181,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-237_jpg.rf.d07a927721fe259757237c3706ea22e5.jpg"
+    },
+    {
+      "person_bbox": [
+        504.25,
+        345.75,
+        536.75,
+        445.25
+      ],
+      "has_helmet": false,
+      "has_vest": true,
+      "image_id": 183,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-263_jpg.rf.374e343e12ead395440dbd81417e1be9.jpg"
+    },
+    {
+      "person_bbox": [
+        180.25,
+        1.25,
+        378.75,
+        601.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 184,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-263_jpg.rf.bb17b89dd2ec9a090ce53b728f48865e.jpg"
+    },
+    {
+      "person_bbox": [
+        241.25,
+        388.25,
+        259.75,
+        429.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 185,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-34_jpg.rf.03eacc444bae3c5caa3fef5c736c3e40.jpg"
+    },
+    {
+      "person_bbox": [
+        206.5,
+        271.0,
+        215.5,
+        287.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 186,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-388_jpg.rf.18caa1da4f818a65f73e48463cb2270e.jpg"
+    },
+    {
+      "person_bbox": [
+        198.0,
+        124.25,
+        252.0,
+        512.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 187,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-462_jpg.rf.df73aa5089a04b8fbf3adf9d614a6740.jpg"
+    },
+    {
+      "person_bbox": [
+        242.0,
+        80.0,
+        368.0,
+        606.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 187,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-462_jpg.rf.df73aa5089a04b8fbf3adf9d614a6740.jpg"
+    },
+    {
+      "person_bbox": [
+        74.75,
+        0.0,
+        243.25,
+        632.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 188,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-471_jpg.rf.4296b7bd9a5a07753077beddbcd651bf.jpg"
+    },
+    {
+      "person_bbox": [
+        0.5,
+        0.0,
+        159.5,
+        570.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 189,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-472_jpg.rf.e9425ff40c0df2beeef70abbc2324956.jpg"
+    },
+    {
+      "person_bbox": [
+        197.0,
+        371.25,
+        257.0,
+        594.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 191,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-510_jpg.rf.62f82e36d134d53587edb48f291986f4.jpg"
+    },
+    {
+      "person_bbox": [
+        340.0,
+        558.0,
+        358.0,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 192,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-53_jpg.rf.e96f8f81389f4e63a79663095680a617.jpg"
+    },
+    {
+      "person_bbox": [
+        577.25,
+        549.75,
+        588.75,
+        588.25
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 192,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-53_jpg.rf.e96f8f81389f4e63a79663095680a617.jpg"
+    },
+    {
+      "person_bbox": [
+        303.5,
+        0.0,
+        639.5,
+        512.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 193,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-596_jpg.rf.11a8a4ac01d8aadb80eeb0406dfa579a.jpg"
+    },
+    {
+      "person_bbox": [
+        210.25,
+        39.25,
+        639.75,
+        545.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 194,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-631_jpg.rf.7c6ecf859c1b0a659f8ea057ad27aebd.jpg"
+    },
+    {
+      "person_bbox": [
+        152.25,
+        0.0,
+        453.75,
+        640.0
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 196,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-738_jpg.rf.6f300b76e12b325f7c373c95ef319005.jpg"
+    },
+    {
+      "person_bbox": [
+        144.5,
+        100.25,
+        371.5,
+        639.75
+      ],
+      "has_helmet": true,
+      "has_vest": true,
+      "image_id": 197,
+      "file_name": "datasets/raw/construction_site_safety/test/images/youtube-840_jpg.rf.974a83a7c5aee7c16e83435b043c6d96.jpg"
+    }
+  ]
+}

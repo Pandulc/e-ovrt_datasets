@@ -1,17 +1,18 @@
-# Guia de conversiones COCO, YOLO y ODVG
+# Guía de conversiones COCO, YOLO y ODVG
 
-Fecha de corte: 2026-06-05
+Fecha de corte: 2026-06-18
 
 ## Script principal
 
 ```bash
-datasets/scripts/convert/convert_datasets.py --datasets chv shel5k construction_ppe sh17
-```
+# Convertir los 3 datasets activos a canonical_v2
+python3 datasets/scripts/convert/convert_datasets.py \
+    --datasets construction_site_safety ppe_siabar chv \
+    --views canonical_v2
 
-Tambien se puede convertir un dataset individual:
-
-```bash
-datasets/scripts/convert/convert_datasets.py --datasets chv
+# También se puede convertir un dataset individual:
+python3 datasets/scripts/convert/convert_datasets.py \
+    --datasets chv --views canonical_v2
 ```
 
 ## Salidas generadas
@@ -19,39 +20,48 @@ datasets/scripts/convert/convert_datasets.py --datasets chv
 ```text
 datasets/processed/
   coco/
-    original/
-    canonical_cr01_cr02/
+    canonical_v2/
+      construction_site_safety/{train,val,test}.json
+      ppe_siabar/{train,val,test}.json
+      chv/{train,val,test}.json
+    bench/
+      construction_site_safety_bench.json   # val+test merged
+      person_gt.json                        # GT persona-nivel (CR-01/CR-02)
   yolo/
-    original/
-    canonical_cr01_cr02/
+    canonical_v2/
+      construction_site_safety/
+      ppe_siabar/
+      chv/
   odvg/
-    original/
-    canonical_cr01_cr02/
-  reports/
+    canonical_v2/
+      construction_site_safety/
+      ppe_siabar/
+      chv/
 ```
 
 ## Vistas
 
-### original
+### canonical_v2 (activa)
 
-Conserva las clases originales de cada dataset. Es util para inspeccion, auditoria, entrenamiento cerrado por dataset o comparaciones con papers/fuentes originales.
-
-### canonical_cr01_cr02
-
-Normaliza clases a:
+Vocabulario de detección canónico v2:
 
 ```text
 person
 helmet
 vest
-no_helmet
-no_vest
+bare_head
 ```
 
-Esta vista esta orientada a las condiciones iniciales del plan:
+`bare_head` solo se genera desde anotaciones negativas explícitas (e.g., `NO-Hardhat` en `construction_site_safety`). No se deriva por inferencia espacial (D9).
 
-- CR-01: persona sin casco
-- CR-02: persona sin chaleco reflectivo
+### original (histórica)
+
+Conserva las clases originales de cada dataset. Útil para auditoría o comparación con papers.
+
+### canonical_cr01_cr02 (DEPRECATED)
+
+Vista v1 con clases `person, helmet, vest, no_helmet, no_vest`. Reemplazada por `canonical_v2`.  
+Los scripts que la generan tienen `sys.exit()` guard — no ejecutar.
 
 ## Formato COCO
 
@@ -65,13 +75,13 @@ Convenciones:
 
 - `bbox`: `[x, y, width, height]`
 - `category_id`: entero contiguo desde 0
-- `segmentation`: lista vacia
+- `segmentation`: lista vacía
 - `iscrowd`: 0
 
 Ejemplo:
 
 ```text
-datasets/processed/coco/canonical_cr01_cr02/chv/train.json
+datasets/processed/coco/canonical_v2/construction_site_safety/train.json
 ```
 
 ## Formato YOLO
@@ -84,15 +94,15 @@ datasets/processed/yolo/{view}/{dataset_id}/
 
 Convenciones:
 
-- Labels generados en `labels/{split}/`.
-- Listas de imagenes en `image_lists/{split}.txt`.
+- Labels en `labels/{split}/`.
+- Listas de imágenes en `image_lists/{split}.txt`.
 - `data.yaml` generado por vista/dataset.
-- Las listas apuntan a las imagenes raw; no se duplican imagenes.
+- Las listas apuntan a imágenes raw; no se duplican imágenes.
 
 Ejemplo:
 
 ```text
-datasets/processed/yolo/canonical_cr01_cr02/shel5k/data.yaml
+datasets/processed/yolo/canonical_v2/chv/data.yaml
 ```
 
 ## Formato ODVG
@@ -105,67 +115,39 @@ datasets/processed/odvg/{view}/{dataset_id}/{split}.jsonl
 
 Convenciones:
 
-- Un objeto JSON por linea.
+- Un objeto JSON por línea.
 - `filename`: ruta de la imagen.
-- `height` y `width`: dimensiones de la imagen.
+- `height` y `width`: dimensiones.
 - `detection.instances`: lista de instancias.
-- Cada instancia contiene:
-  - `bbox`: `[x1, y1, x2, y2]`
-  - `label`: entero contiguo desde 0
-  - `category`: nombre textual de clase
-
-Cada directorio ODVG tambien incluye:
-
-```text
-label_map.json
-```
+- Cada instancia: `bbox` en `[x1, y1, x2, y2]`, `label` (int), `category` (str).
+- Directorio incluye `label_map.json`.
 
 Ejemplo:
 
 ```text
-datasets/processed/odvg/canonical_cr01_cr02/sh17/train.jsonl
-datasets/processed/odvg/canonical_cr01_cr02/sh17/label_map.json
+datasets/processed/odvg/canonical_v2/construction_site_safety/train.jsonl
+datasets/processed/odvg/canonical_v2/construction_site_safety/label_map.json
 ```
 
 ## Splits
 
-| Dataset | Politica |
+| Dataset | Política |
 |---|---|
-| SH17 | Split oficial train/val |
-| SHEL5K | Split custom 70/15/15 con seed 42 |
-| CHV | Split oficial train/valid/test, normalizado como train/val/test |
-| Construction-PPE | Split oficial train/val/test |
+| construction_site_safety | Split oficial Roboflow (train/val/test) |
+| chv | Split oficial (train/val/test) |
+| ppe_siabar | Split oficial Roboflow (train/val/test) |
 
-## Validacion realizada
+## Validación
 
-Se valido que:
+Se valida que:
 
 - Los JSON COCO parsean correctamente.
-- Los JSONL ODVG parsean linea por linea.
-- Las listas YOLO contienen la cantidad esperada de imagenes.
-- Los conteos de anotaciones coinciden entre COCO, YOLO y ODVG por vista/dataset.
-- `datasets/registry/datasets_metadata.yaml` parsea correctamente y marca los cuatro datasets prioritarios como `converted_coco_yolo_odvg`.
+- Los JSONL ODVG parsean línea por línea.
+- Las listas YOLO tienen la cantidad esperada de imágenes.
+- Los conteos coinciden entre COCO, YOLO y ODVG por vista/dataset.
 
-## Reportes
-
-Reportes por dataset:
+## Registros de conversión
 
 ```text
-datasets/processed/reports/chv_conversion_report.json
-datasets/processed/reports/shel5k_conversion_report.json
-datasets/processed/reports/construction_ppe_conversion_report.json
-datasets/processed/reports/sh17_conversion_report.json
+datasets/registry/conversion_report.md    # resumen legible con conteos reales
 ```
-
-Resumen agregado:
-
-```text
-datasets/processed/reports/conversion_summary.json
-```
-
-Reporte legible:
-
-```text
-datasets/registry/conversion_report.md
-```
-
