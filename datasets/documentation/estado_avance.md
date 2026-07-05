@@ -73,7 +73,7 @@ Criterio: `center_in_bbox`
 
 ## Sprint 2 — Evaluación cuantitativa BENCH v2 (2026-06-18)
 
-Completado. 5 modelos evaluados en BENCH v2 (196 imgs, zero-shot, IoU≥0.5). Resultados completos en `e-ovrt_media-plane/docs/experimentos/b2-sprint2-bench-v2.md`.
+Completado. 5 modelos evaluados en BENCH v2 (196 imgs, zero-shot, IoU≥0.5). Resultados completos en la tabla debajo (no existe un reporte separado; este es el registro completo del sprint).
 
 | Modelo | mAP@50 | AP helmet | AP vest | AP bare_head | CR-01 recall E1 | FPS | VRAM MB |
 |---|---|---|---|---|---|---|---|
