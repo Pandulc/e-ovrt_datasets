@@ -1,0 +1,12 @@
+[
+  {
+    "name": "person",
+    "type": "rectangle",
+    "attributes": [
+      {"name": "has_helmet", "mutable": true, "input_type": "radio",
+       "default_value": "unknown", "values": ["unknown", "true", "false"]},
+      {"name": "has_vest", "mutable": true, "input_type": "radio",
+       "default_value": "unknown", "values": ["unknown", "true", "false"]}
+    ]
+  }
+]

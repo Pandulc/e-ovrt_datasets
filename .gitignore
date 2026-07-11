@@ -30,6 +30,11 @@ tmp/
 
 # Raw dataset media and archives
 # Keep dataset documentation, labels, metadata, scripts and processed outputs versionable.
+# clip_bench (video-gt-lab, spec 43/video-gt-lab-design §6): los .mp4 de
+# datasets/raw/clip_bench/clips/ quedan ignorados por la regla *.mp4 de abajo
+# (van a Drive, se verifican por sha256 en manifest.yaml); TODO lo demás del
+# banco (datasets/processed/clip_bench/**: manifest.yaml, meta/, preann/,
+# annotations/, gt/) se commitea normalmente — no hay regla que lo ignore.
 datasets/raw/**/*.jpg
 datasets/raw/**/*.jpeg
 datasets/raw/**/*.png

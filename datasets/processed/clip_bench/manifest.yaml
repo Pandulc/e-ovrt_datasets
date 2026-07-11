@@ -1,0 +1,13 @@
+clips:
+- clip_id: cb_b01_p7
+  file: ../../raw/clip_bench/clips/cb_b01_p7.mp4
+  sha256: 655120724f9eaa3f88b4e874dc38d07432e7ba14456495608a40c77bfec9fd17
+  fps: 30
+  duration_ms: 24433
+  resolution: 1920x1080
+  block: B
+  scenario: P7
+  level: subject
+  state: preannotated
+  preann: preann/cb_b01_p7.xml
+  meta: meta/cb_b01_p7.clip.yaml

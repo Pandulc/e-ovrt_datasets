@@ -1,0 +1,7 @@
+# media y artefactos regenerables del laboratorio — nunca commitear
+raw/
+clips/
+preann/
+corrected/
+gt/
+*.mp4
