@@ -247,7 +247,7 @@ def assemble_clip_gt(clip_meta: dict, clip_info: dict,
 
 
 def _parse_pattern_set(text: str) -> dict:
-    """'CR-01=3000,CR-02=5000' → {'CR-01': 3000, 'CR-02': 5000}.
+    """'CR-01=4000,CR-02=7000' → {'CR-01': 4000, 'CR-02': 7000}.
 
     FIX 7 (auditoría 2026-07-11): un valor no entero (p.ej. 'CR-01=abc')
     antes reventaba con el ValueError crudo de `int()`. Acá se relanza con
@@ -262,7 +262,7 @@ def _parse_pattern_set(text: str) -> dict:
         except ValueError:
             raise ValueError(
                 f"--pattern-set: valor no entero para {key!r} ({value!r}); "
-                "formato esperado 'CR-01=3000,CR-02=5000'"
+                "formato esperado 'CR-01=4000,CR-02=7000'"
             ) from None
     return out
 
@@ -413,7 +413,7 @@ def main(argv=None) -> int:
     parser.add_argument("--clip-yaml", required=True, help="metadata del clip (spec §4.2)")
     parser.add_argument("--info", required=True, help="<clip_id>.info.json de prepare_clip.sh")
     parser.add_argument("--out", required=True, help="salida clip_gt.v2 JSON")
-    parser.add_argument("--pattern-set", default="", help="ej: CR-01=3000,CR-02=5000")
+    parser.add_argument("--pattern-set", default="", help="ej: CR-01=4000,CR-02=7000")
     parser.add_argument("--allow-empty", action="store_true",
                         help="permite GT negativo sin tracks 'person' (negativo intencional)")
     args = parser.parse_args(argv)
