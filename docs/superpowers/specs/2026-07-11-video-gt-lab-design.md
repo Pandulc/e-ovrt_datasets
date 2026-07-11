@@ -184,12 +184,16 @@ HF y el patrón `tools.*`; el repo datasets se mantiene stdlib+Pillow(+PyYAML).
      implementación tras el smoke con 41 tracks). Los `sub_threshold_events`
      también llevan `subject_label`.
   6. Intervalos con duración **≥ persistencia mínima** del pattern set (parámetro
-     CLI `--pattern-set`, default `CR-01=3000,CR-02=5000` ms — nunca hardcodeado)
+     CLI `--pattern-set`, default `CR-01=4000,CR-02=7000` ms — nunca hardcodeado)
      → `episodes[]`; menores → `sub_threshold_events[]` con `reason`.
-     **Atención:** este default (3 s / 5 s) es un piso técnico, no el operativo del
-     banco. El spec 43 §3 pide P1 = "≥ 8 s continuos" y la Tabla D.4 fija PR-01 y
-     PR-02 por severidad — al derivar los clips del banco se pasa el `--pattern-set`
-     que corresponda a la corrida, no el default.
+     **El default está alineado con el pattern set OFICIAL del motor**
+     (`cr01_cr02_v2.yaml` del control-plane, que cita la Tabla 24/D.4: CR-01 high
+     4000 ms, CR-02 medium 7000 ms). *(corregido en la auditoría E2E: el default
+     original 3000/5000 estaba desalineado — los intervalos de 3–4 s se
+     clasificaban como episodios que el motor nunca confirma → falsos `missed` y
+     recall deprimido en silencio.)* Si la corrida usa otro pattern set, se pasa
+     el mismo por `--pattern-set`: el GT lo graba en `provenance.pattern_set_ms`
+     y el evaluador lo consume de ahí.
   7. Conversión frame→ms: `round(frame * 1000 / fps)` sobre el clip CFR.
   8. **Guardas duras (agregadas en implementación)** — `derive_clip_gt.py`
      **falla** (no produce GT silencioso) si: el XML no tiene ningún track

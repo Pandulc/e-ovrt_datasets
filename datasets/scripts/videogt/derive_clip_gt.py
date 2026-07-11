@@ -32,7 +32,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from videogt.cvat_xml import attribute_states  # noqa: E402
 
 CONDITIONS = {"CR-01": "has_helmet", "CR-02": "has_vest"}
-DEFAULT_PATTERN_SET_MS = {"CR-01": 3000, "CR-02": 5000}
+# Alineado con el pattern set OFICIAL del motor (control-plane
+# configs/patterns/cr01_cr02_v2.yaml, que cita la Tabla 24/D.4 del informe:
+# CR-01 high confirm_after_ms=4000, CR-02 medium confirm_after_ms=7000).
+# Si este default y el motor divergen, los intervalos entre ambos umbrales se
+# clasifican como episodios que el motor nunca confirma -> falsos `missed` y
+# recall deprimido. Ante la duda, pasar --pattern-set explicito.
+DEFAULT_PATTERN_SET_MS = {"CR-01": 4000, "CR-02": 7000}
 START_END_TOLERANCE_MS = 500
 TOOL_NAME = "video-gt-lab/derive_clip_gt"
 SIZE_MISMATCH_TOLERANCE_FRAMES = 1

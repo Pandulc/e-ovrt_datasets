@@ -1,38 +1,35 @@
 # Metadata del clip del banco (spec video-gt-lab §4.2 / spec 43 §4).
-# Lo que NO se puede inferir del video: bloque, escenario, nivel y las
-# variables de sensibilidad de la Tabla C.2. El resto (fps, duration_ms,
-# source_file, sha256) lo completa la derivación desde el info.json.
+# GT PRELIMINAR: la correccion del XML la hizo revision VISUAL asistida
+# (crops por track, sin pasada frame a frame en CVAT). Sirve para el
+# bring-up de la plataforma y las pruebas iniciales; la reemplaza la
+# correccion humana controlada del usuario en CVAT.
 
 clip_id: cb_b01_p7
 
-# Bloque B = obra real (no guionado). Validez externa: episodios no guionados.
-# Origen: recorte-1.mp4. LICENCIA/CONSENTIMIENTO: registrar en
+# Bloque B = obra real (no guionado). LICENCIA/CONSENTIMIENTO: registrar en
 # registry/license_registry.md antes de usarlo en resultados reportables
 # (spec 43 §7) — pendiente.
 block: B
 
-# P7 = multi-persona con cruces y oclusiones (~10 operarios en plano general).
+# P7 = multi-persona (~10-12 operarios, plano general, maquinaria cruzando).
 scenario: P7
 
-# subject = un episodio por persona (G1-demo, ADR-002). Es el nivel correcto
-# para un clip multi-persona, y sirve para la comparacion cualitativa G0/G1.
-# OJO: para METRICAS contra el motor de alertas hay que derivar a nivel scene
-# (las claves de sujeto de CVAT no mapean a las del motor) — ver spec §4.3.
-level: subject
+# scene = episodios escena-condicion (G0), el nivel que matchea el motor de
+# alertas. La variante subject-level (G1-demo cualitativa) queda para la
+# pasada controlada en CVAT.
+level: scene
 
-# source_id: identidad que el evaluador del control-plane matchea contra las
-# alertas (alert.source_id == episode.source_id). Default = clip_id; se declara
-# explicito para que la corrida del bench configure su fuente con este id.
+# Identidad que el evaluador matchea contra las alertas
+# (alert.source_id == episode.source_id); la corrida del bench configura su
+# fuente con este id (ingest.config.source_id).
 source_id: cb_b01_p7
 
-# Variables de sensibilidad (Tabla C.2). Al ser Bloque B no controlamos la
-# grabacion: se declara lo que el video ES, no lo que quisieramos.
 recording:
   resolution: 1920x1080
-  distance_band_m: ">20"     # plano general elevado; mas lejos que las bandas 5-10 / 10-20
+  distance_band_m: ">20"     # plano general elevado
   lighting: natural          # exterior, dia
-  occlusion: medium          # maquinaria (rodillo, cargadora) cruza delante de los operarios
+  occlusion: medium          # rodillo y cargadora cruzan delante de los operarios
 
 annotation:
-  annotator: pendiente       # completar con el anotador real tras corregir en CVAT
+  annotator: claude-vision-preliminary   # PRELIMINAR — pendiente correccion humana en CVAT
   double_annotated: false

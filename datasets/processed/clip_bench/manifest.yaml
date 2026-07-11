@@ -7,7 +7,9 @@ clips:
   resolution: 1920x1080
   block: B
   scenario: P7
-  level: subject
-  state: preannotated
+  level: scene
+  state: gt_preliminary
   preann: preann/cb_b01_p7.xml
   meta: meta/cb_b01_p7.clip.yaml
+  annotations: annotations/cb_b01_p7.xml
+  gt: gt/cb_b01_p7.json

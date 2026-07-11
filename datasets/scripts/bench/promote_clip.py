@@ -64,6 +64,10 @@ REQUIRED_CLIP_YAML_FIELDS = ["clip_id", "block", "scenario"]
 _STATES_NEXT_STEP = {
     "preannotated": "corregir en CVAT y exportar a corrected/<clip_id>.xml",
     "corrected": "derivar el GT con derive_clip_gt.py hacia gt/<clip_id>.json",
+    # gt_preliminary: GT valido pero la correccion NO fue la pasada humana
+    # controlada en CVAT (p.ej. revision visual asistida). Sirve para bring-up
+    # y pruebas de plataforma; NO para numeros reportables de tesis.
+    "gt_preliminary": "reemplazar por la correccion humana controlada en CVAT",
     "gt_ready": "banco completo — correr validate_clip_gt.py contra el manifest",
 }
 
@@ -267,7 +271,7 @@ def main(argv=None) -> int:
                         help=f"directorio processed del banco (default: {DEFAULT_BANK_DIR})")
     parser.add_argument("--raw-bench-dir", default=DEFAULT_RAW_BENCH_DIR,
                         help=f"directorio raw del banco, git-ignored (default: {DEFAULT_RAW_BENCH_DIR})")
-    parser.add_argument("--state", choices=["preannotated", "corrected", "gt_ready"],
+    parser.add_argument("--state", choices=["preannotated", "corrected", "gt_preliminary", "gt_ready"],
                         default=None, help="override explícito del state (default: derivado)")
     args = parser.parse_args(argv)
 

@@ -60,8 +60,14 @@ opcionalmente `source_id` si la fuente del bench no coincide con el `clip_id`).
 python3 datasets/scripts/videogt/derive_clip_gt.py \
   --xml corrected/<clip_id>.xml --clip-yaml <clip_id>.clip.yaml \
   --info clips/<clip_id>.info.json --out gt/<clip_id>.json \
-  [--pattern-set "CR-01=3000,CR-02=5000"] [--allow-empty]
+  [--pattern-set "CR-01=4000,CR-02=7000"] [--allow-empty]
 ```
+
+El default del `--pattern-set` (CR-01=4000, CR-02=7000 ms) está alineado con el
+pattern set oficial del motor (`cr01_cr02_v2`, Tabla D.4). Si la corrida usa otro
+pattern set, pasá el mismo acá: productor y evaluador deben clasificar
+episodio/sub-umbral con los MISMOS umbrales (el GT graba los suyos en
+`provenance.pattern_set_ms` y el evaluador los usa).
 
 Emite `clip_gt.v2` (episodios, `sub_threshold_events`, bloque `provenance`
 con el sha256 del XML) + timeline en consola para la revisión final humana.

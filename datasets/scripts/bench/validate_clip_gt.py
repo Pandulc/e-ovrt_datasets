@@ -131,7 +131,7 @@ def validate_manifest(manifest: dict, base_dir: Path) -> list[str]:
     for row in manifest.get("clips", []):
         cid = row.get("clip_id", "?")
         state = row.get("state", "gt_ready")
-        required = ["clip_id", "file"] + (["gt"] if state == "gt_ready" else [])
+        required = ["clip_id", "file"] + (["gt"] if state in ("gt_ready", "gt_preliminary") else [])
         # FIX 7: una fila sin clip_id/gt/file explotaba con un KeyError
         # críptico en vez de listar qué falta.
         missing = [f for f in required if f not in row]
