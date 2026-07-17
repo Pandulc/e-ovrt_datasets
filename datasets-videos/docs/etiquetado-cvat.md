@@ -21,7 +21,7 @@ video fuente ─▶ [0 prepare] ─▶ clip CFR ─▶ [1 preannotate] ─▶ CV
  (raw/)         ffmpeg          .mp4        GDINO + ByteTrack     │
                 CFR+recorte                 (máquina GPU)         ▼
                                                         [2 CVAT: corrección humana]  ← ACÁ ESTAMOS
-                                                          (esta PC, protocolo §5)
+                                                          (esta PC, protocolo §7)
                                                                   │ XML corregido
                                                                   ▼
 manifest ◀─ [4 validate] ◀─ clip_gt.v2 ◀─ [3 derive] ◀─ XML + clip.yaml
@@ -39,7 +39,9 @@ manifest ◀─ [4 validate] ◀─ clip_gt.v2 ◀─ [3 derive] ◀─ XML + cl
   el XML corregido a `corrected/<clip>.xml`.
 - **Etapa 3** (`derive_clip_gt.py`): convierte el XML corregido en el GT final
   (`gt/<clip>.json`) haciendo pura aritmética.
-- **Etapa 4** (`validate_clip_gt.py`): valida el GT contra el schema.
+- **Etapa 4** (`validate_clip_gt.py`): valida el GT — no solo el schema: coherencia
+  de niveles, rangos temporales, solapes, y el cruce manifest ↔ archivos ↔ sha256
+  (detalle en §5.5).
 
 **La regla de oro:** el GT sale del video que vos mirás y corregís; el script solo
 hace las cuentas (frames → milisegundos, intervalos → episodios). Si CVAT queda mal,
@@ -68,8 +70,9 @@ ms = round(frame * 1000 / fps)     # con fps = 30
 
 Por eso importa tanto el CFR: si el fps fuera variable, `frame * 1000 / fps` daría
 un tiempo equivocado. La derivación incluso **falla a propósito** si el `<size>`
-del XML (cantidad de frames) no coincide con el `n_frames` del clip preparado —
-es la señal de que la task se creó sobre el video equivocado.
+del XML (cantidad de frames) no coincide con el `n_frames` del clip preparado
+(con una tolerancia de **1 frame**) — es la señal de que la task se creó sobre el
+video equivocado.
 
 ### 2.3 Track vs Shape (la distinción más importante)
 
@@ -245,8 +248,11 @@ No toda violación es un episodio. Cada condición tiene una **persistencia mín
 | CR-01 (casco) | **4000 ms** |
 | CR-02 (chaleco) | **7000 ms** |
 
-Estos defaults están **alineados con el pattern set oficial del motor**
-(`cr01_cr02_v2.yaml` del control-plane). Entonces:
+Estos defaults están hardcodeados en la derivación y **alineados con el pattern set
+oficial del motor** (`confirm_after_ms` de `cr01_cr02_v2.yaml` en el control-plane).
+Se pueden overridear con el flag `--pattern-set` de `derive_clip_gt.py` — si el motor
+cambia sus tiempos de confirmación, el GT se re-deriva con los nuevos valores sin
+tocar CVAT (los valores usados quedan registrados en el `provenance` del GT). Entonces:
 
 - Intervalo **≥ persistencia mínima** → **episodio** (`episodes[]`): una infracción
   de verdad que el sistema debería alertar.
@@ -260,7 +266,10 @@ positivos del motor).
 
 ### 5.3 Nivel escena (scene) vs sujeto (subject)
 
-El `clip.yaml` de cada clip declara un `level`:
+El `clip.yaml` de cada clip declara la identidad y el modo de derivación
+(`clip_id`, `block`, `scenario` obligatorios; `level` y `source_id` opcionales —
+los datos técnicos como `fps` y `n_frames` salen del `info.json` que generó la
+etapa 0, no se repiten acá). El `level` define el nivel del GT:
 
 - **`scene`** (default, lo que usa `cb_b01_p7`): el GT son episodios de
   **escena-condición**. Primero se umbrala **por track**, y los sobrevivientes se
@@ -268,7 +277,16 @@ El `clip.yaml` de cada clip declara un `level`:
   concurrentes en violación. Es el nivel que matchea el motor de alertas para las
   métricas (recall/precision).
 - **`subject`**: un episodio por track, con `subject_label` (`persona_A`,
-  `persona_B`, …). Es para comparación cualitativa; no se usa para métricas 1:1.
+  `persona_B`, …) y una `subject_key` **local al clip** — no matchea las claves
+  `{pattern}:{source}:{track}` del motor en vivo, porque los track ids de CVAT y
+  los del tracker en producción no tienen relación. Es para comparación
+  cualitativa; no se usa para métricas 1:1.
+
+Cada episodio lleva además el **`source_id`** del clip (declarado en `clip.yaml`;
+por convención `source_id = clip_id`). Es la costura con el evaluador: una alerta
+del motor solo puede matchear un episodio si `alert.source_id == episode.source_id`.
+Si la fuente del run en vivo se identifica con otro id, el evaluador no matchea nada
+— por eso el `clip.yaml` es donde se fija esa identidad, no el XML.
 
 El orden "umbralar por track ANTES de fusionar" es deliberado: fusionar primero
 crearía episodios de escena que ningún individuo sostuvo, y el motor (que es 1:1
@@ -289,6 +307,32 @@ Ejemplo de salida:
 Revisar contra el video antes de promover al banco.
 ```
 
+### 5.5 Lo que la derivación agrega y la validación controla
+
+Además de los episodios, el GT final lleva dos cosas que no dibujaste:
+
+- **`negative`**: no se declara, **se computa** — un clip es negativo si la
+  derivación no produjo ningún episodio. Los clips negativos son intencionales
+  (escenas donde todos cumplen, para verificar que el sistema **no** alerta) y por
+  diseño se limitan a los escenarios previstos para eso (P5/V3 — el validador avisa
+  si aparece un negativo fuera de ellos). Si el clip es un negativo real, la
+  derivación se corre con `--allow-empty`; sin ese flag, "cero tracks `person`" se
+  trata como error (lo más probable es un export en formato equivocado, ver §6).
+- **`provenance`**: sha256 del XML corregido, pattern set usado (ms por condición)
+  y versión de la herramienta. Hace la derivación auditable: ante un GT dudoso se
+  puede verificar de qué XML exacto y con qué umbrales salió.
+
+La **etapa 4** (`validate_clip_gt.py`) es bastante más que un chequeo de schema.
+Valida, entre otras cosas: campos requeridos y valores permitidos
+(`schema_version`, `block`, `condition_id`, `level`), la coherencia
+`negative ⇔ sin episodios`, la coherencia por nivel (`scene` exige `source_id` y
+prohíbe `subject_label`; `subject` exige `subject_label` + `subject_key`), rangos
+temporales (`0 ≤ start < end ≤ duration_ms`), no-solape de episodios de la misma
+condición, y el cruce **manifiesto ↔ archivos ↔ sha256**: que el GT exista para
+los clips en estado `gt_ready`/`gt_preliminary`, que el `clip_id` coincida y que
+la media referida sea la que dice ser. Es la última guarda antes de que el clip
+entre al banco.
+
 ---
 
 ## 6. Errores comunes (y las guardas que los atrapan)
@@ -308,7 +352,75 @@ falla: contamina el banco y arrastra el error a las métricas del sistema evalua
 
 ---
 
-## 7. El flujo completo de una sesión (resumen)
+## 7. Protocolo de decisión del anotador
+
+Reglas para las decisiones que la UI de CVAT no toma por vos. Salen de cómo el
+evaluador consume el GT (matching por ventana temporal, sin ignore-regions), así
+que no son estilo: cada una previene una distorsión concreta de las métricas.
+
+### 7.1 `unknown` solo sostenido, nunca para huecos breves
+
+`unknown` corta la corrida de violación (§4.2). Un hueco breve de `unknown` en
+medio de una violación real la **parte en dos**: puede convertir un episodio en
+dos (el motor emite una alerta → la segunda mitad cuenta `missed`) o en dos
+sub-umbrales (el episodio real **desaparece del GT**). Regla:
+
+- Oclusión o borrosidad **breve** (la persona reaparece y el estado obviamente
+  persistió): mantener el último valor cierto y marcar `occluded`. No tocar el atributo.
+- `unknown` **solo** para tramos sostenidos genuinamente inevaluables (la persona
+  queda lejos/tapada por varios segundos y no hay forma honesta de saber).
+
+### 7.2 Inicio de violación: sesgo temprano
+
+La ventana de matching del evaluador es `[start + persistencia, start + techo]` y
+el techo es holgado (10 s CR-01 / 20 s CR-02). Consecuencia asimétrica: marcar el
+inicio **tarde** puede dejar la alerta del motor fuera de la ventana (cuenta
+`missed` **y** FP a la vez); marcarlo temprano solo consume techo. Regla: la
+transición a `false` va en el **primer frame donde plausiblemente empieza** la
+violación, no cuando ya es inconfundible. El fin de la violación, en cambio,
+marcalo donde realmente ocurre (sin sesgo).
+
+### 7.3 Definiciones operativas de los atributos
+
+Para que dos anotadores decidan igual los casos borde:
+
+| Caso | `has_helmet` / `has_vest` |
+|---|---|
+| Casco puesto en la cabeza | `true` |
+| Casco en la mano, bajo el brazo, en el suelo | `false` |
+| Gorra/capucha y no se distingue si hay casco debajo | `unknown` |
+| Chaleco puesto, aunque desabrochado | `true` |
+| Chaleco colgado del hombro / en la mano | `false` |
+| Persona de espaldas | decidible igual: casco y chaleco de alta visibilidad se ven de espaldas |
+| Persona muy lejana/borrosa sostenidamente | `unknown` (ver §7.1) |
+
+### 7.4 Dónde va el esfuerzo (y dónde no)
+
+El GT derivado es **puramente temporal**: las cajas no alimentan ninguna métrica;
+solo importan como portadoras de identidad y atributos. Prioridad del tiempo de sesión:
+
+1. **Identidad de tracks** (merge/split): un track que salta de persona corrompe
+   el umbralado por track — es el error más caro.
+2. **Transiciones de atributos** contra el video, con §7.1–7.3.
+3. **Personas faltantes**: hacé al menos una pasada con las anotaciones ocultas
+   (ojo del anotador sin cajas superpuestas). La pre-anotación viene del mismo
+   modelo que después se evalúa: las personas que GDINO no vio son exactamente
+   las que el sistema va a fallar — si no las agregás, el error queda invisible
+   y correlacionado (infla las métricas).
+4. Geometría de cajas: **lo justo**. No pulir al píxel; caja floja es gratis.
+
+### 7.5 Violaciones filo de navaja
+
+Una violación de duración cercana al umbral (≈4 s CR-01, ≈7 s CR-02) flipea entre
+episodio y sub-umbral con jitter de anotación de ±200 ms. No la "estires" ni la
+"recortes" para que caiga de un lado: anotala honesta y **avisá** — es el clip el
+que se descarta o se acepta con esa fragilidad documentada, no la anotación la
+que se acomoda. Ídem si una violación empieza tan tarde que no llega a confirmar
+antes del fin del clip (necesita al menos `persistencia + margen` de clip restante).
+
+---
+
+## 8. El flujo completo de una sesión (resumen)
 
 Presupuesto esperado: **5–10 min por clip de 30 s** con 1–3 personas (vs 30–60 min
 de anotación manual densa). Obra real multi-persona (P7) lleva más, sobre todo por
@@ -333,7 +445,7 @@ Los comandos concretos de export/derive/validate están en
 
 ---
 
-## 8. Glosario rápido
+## 9. Glosario rápido
 
 - **Task / Job:** unidad de trabajo sobre un clip / espacio de anotación dentro de ella.
 - **Track:** caja que sigue a un objeto a lo largo del video (lo que usamos).
@@ -348,4 +460,6 @@ Los comandos concretos de export/derive/validate están en
 - **Sub-umbral:** violación demasiado corta; el motor **no** debe alertarla (verifica FP).
 - **CFR:** constant frame rate; garantiza que `frame → ms` sea exacto.
 - **clip_gt.v2:** el JSON de GT final que produce la derivación.
-```
+- **`source_id`:** identidad de la fuente del clip (convención: `= clip_id`); la costura que permite al evaluador matchear alertas contra episodios.
+- **Clip negativo:** clip sin episodios (todos cumplen); verifica que el sistema no alerte. `negative` se computa, no se declara.
+- **`provenance`:** sha256 del XML + pattern set usado; hace auditable de dónde salió cada GT.
