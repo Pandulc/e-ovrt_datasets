@@ -2,7 +2,7 @@
 
 Guía paso a paso para importar la pre-anotación en CVAT, corregirla y
 re-exportarla, en la PC que tenga CVAT. Es la **etapa 2** del pipeline
-(`docs/superpowers/specs/2026-07-11-video-gt-lab-design.md`); las etapas 0, 1, 3 y
+(`docs/_archive/superpowers/specs/2026-07-11-video-gt-lab-design.md`); las etapas 0, 1, 3 y
 4 corren en la máquina con GPU. El protocolo de corrección resume el §5 del spec.
 
 > **Contrato que esta etapa valida por primera vez:** el XML que genera

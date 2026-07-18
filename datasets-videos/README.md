@@ -3,7 +3,7 @@
 Flujo de adquisición de anotaciones temporales en video mediante CVAT. GT de
 salida: **`clip_gt.v2`** (episodios de violación CR-01/CR-02 en milisegundos —
 no frame-level, no COCO). Spec completo:
-`docs/superpowers/specs/2026-07-11-video-gt-lab-design.md`.
+`docs/_archive/superpowers/specs/2026-07-11-video-gt-lab-design.md`.
 
 ## Estructura
 
@@ -145,6 +145,6 @@ sin pasar por CVAT/derivación) no exige `gt`; una fila `gt_ready` sí lo exige.
 
 ## Spec completo
 
-Ver `docs/superpowers/specs/2026-07-11-video-gt-lab-design.md`: pipeline
+Ver `docs/_archive/superpowers/specs/2026-07-11-video-gt-lab-design.md`: pipeline
 (§3), formatos y contratos (§4), protocolo de corrección en CVAT (§5), layout
 y dependencias (§6).

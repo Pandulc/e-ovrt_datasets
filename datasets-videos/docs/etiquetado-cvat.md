@@ -7,7 +7,7 @@ guía operativa paso a paso (levantar el servicio, importar, exportar). Si quer�
 "qué botón toco", andá a la guía; si querés "por qué esto funciona así", quedate acá.
 
 El diseño completo vive en el spec:
-`docs/superpowers/specs/2026-07-11-video-gt-lab-design.md`.
+`docs/_archive/superpowers/specs/2026-07-11-video-gt-lab-design.md`.
 
 ---
 

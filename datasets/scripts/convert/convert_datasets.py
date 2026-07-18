@@ -738,14 +738,14 @@ def main() -> None:
     parser.add_argument(
         "--datasets",
         nargs="+",
-        default=["chv", "shel5k", "construction_ppe", "sh17"],
+        default=["construction_site_safety", "chv", "ppe_siabar"],
         choices=sorted(configs()),
     )
     parser.add_argument(
         "--views",
         nargs="+",
-        default=["original", "canonical_cr01_cr02"],
-        choices=["original", "canonical_cr01_cr02", "canonical_v2"],
+        default=["canonical_v2"],
+        choices=["original", "canonical_v2"],
     )
     args = parser.parse_args()
 

@@ -2,7 +2,7 @@
 
 Regla de oro (spec 43 §3.3): el GT sale del video corregido por el humano;
 este script solo hace la aritmética. Las reglas viven en el spec del
-laboratorio (docs/superpowers/specs/2026-07-11-video-gt-lab-design.md §3.3).
+laboratorio (docs/_archive/superpowers/specs/2026-07-11-video-gt-lab-design.md §3.3).
 
 Identidad de los episodios (contrato del evaluador, control-plane
 `evaluation/temporal.py`): TODO episodio lleva `source_id` — convención
