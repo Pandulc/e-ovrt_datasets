@@ -5,11 +5,12 @@
 
 clip_id: video16_clip10
 
-# TODO: completar (p.ej. A = guionado, B = obra real)
-block: TODO
+# PROVISIONAL (test de mecanica, 2026-07-18): valores para verificar el pipeline
+# GT->corrida->evaluacion. Corregir con los reales antes de promover al banco.
+block: B
 
-# TODO: completar codigo de escenario (ver registry/ para convencion)
-scenario: TODO
+# PROVISIONAL: corregir con el codigo de escenario real (ver registry/).
+scenario: P7
 
 # scene = episodios escena-condicion (G0, el nivel que matchea el motor de alertas).
 # subject = variante subject-level (G1), requiere subject_key por episodio.
