@@ -16,10 +16,15 @@ _BOOL = {"true": True, "false": False}
 def parse_cvat_video_xml(path: str | Path) -> dict:
     """Parsea un annotations.xml → {'tracks': [...], 'stop_frame': int | None}."""
     root = ET.parse(str(path)).getroot()
+    # Los exports a nivel task traen <meta><task><size>; los de nivel job,
+    # <meta><job><size>. Sin cubrir ambos, stop_frame queda None y el guard I2
+    # de derive_clip_gt (size XML vs n_frames del clip) se desactiva en silencio.
     stop_frame = None
-    size_el = root.find("./meta/task/size")
-    if size_el is not None and (size_el.text or "").strip().isdigit():
-        stop_frame = int(size_el.text.strip()) - 1
+    for xpath in ("./meta/task/size", "./meta/job/size"):
+        size_el = root.find(xpath)
+        if size_el is not None and (size_el.text or "").strip().isdigit():
+            stop_frame = int(size_el.text.strip()) - 1
+            break
 
     tracks = []
     for tr in root.findall("track"):

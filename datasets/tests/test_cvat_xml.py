@@ -45,6 +45,18 @@ def test_parse_tracks_y_stop_frame(tmp_path):
     assert track["boxes"][1]["occluded"] is True
 
 
+def test_parse_stop_frame_de_export_de_job(tmp_path):
+    # Los exports de CVAT a nivel job traen <meta><job><size>, no <meta><task>.
+    # Si no se lee, stop_frame queda None y el guard I2 (size XML vs n_frames
+    # del clip) se desactiva en silencio.
+    xml = CVAT_XML.replace(
+        "<meta><task><size>10</size></task></meta>",
+        "<meta><job><size>10</size><stop_frame>9</stop_frame></job></meta>",
+    )
+    doc = parse_cvat_video_xml(_write(tmp_path, xml))
+    assert doc["stop_frame"] == 9
+
+
 def test_attribute_states_escalon_y_outside(tmp_path):
     doc = parse_cvat_video_xml(_write(tmp_path, CVAT_XML))
     states = attribute_states(doc["tracks"][0], "has_helmet", end_frame=9)
