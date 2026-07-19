@@ -11,6 +11,7 @@ from videogt.derive_clip_gt import (
     assemble_clip_gt,
     classify_intervals,
     derive,
+    dimensioning_warnings,
     frame_to_ms,
     load_clip_meta,
     main,
@@ -325,6 +326,101 @@ def test_fix7_main_pattern_set_invalido_sale_limpio_no_traceback(capsys):
               "--out", "o.json", "--pattern-set", "CR-01=abc"])
     err = capsys.readouterr().err
     assert "CR-01" in err
+
+
+# A1 (doc 57 §6.5/§6.7): gate de dimensionamiento — warning en provenance, NO
+# bloquea. La duración mínima de un clip para que su episodio sea evaluable es
+# start_ms + t_alert_upper(condición) + resolve(condición) + cola(2000); y el
+# onset del primer episodio nunca en t≈0 (si no, TTFD colapsa a 0 artefactual).
+def _dim_gt(episodes, duration_ms):
+    return {"clip_id": "x", "duration_ms": duration_ms,
+            "negative": len(episodes) == 0, "episodes": episodes}
+
+
+def _dim_ep(cond, start, end, id="ep1"):
+    return {"id": id, "condition_id": cond, "start_ms": start, "end_ms": end}
+
+
+def test_dimensioning_onset_en_cero_da_warning():
+    gt = _dim_gt([_dim_ep("CR-01", 0, 8000)], duration_ms=20000)
+    assert any("onset" in w for w in dimensioning_warnings(gt))
+
+
+def test_dimensioning_onset_en_2000_no_da_warning_de_onset():
+    # 2000ms es el piso exacto (≥ 2000): no debe avisar por onset
+    gt = _dim_gt([_dim_ep("CR-01", 2000, 16000)], duration_ms=20000)
+    assert not any("onset" in w for w in dimensioning_warnings(gt))
+
+
+def test_dimensioning_clip_corto_cr02_censura_t_alert():
+    # CR-02: floor = 4000 + 20000 + 3000 + 2000 = 29000; duración 12000 < floor
+    gt = _dim_gt([_dim_ep("CR-02", 4000, 11000)], duration_ms=12000)
+    warns = dimensioning_warnings(gt)
+    assert any("ep1" in w and "29000" in w for w in warns)
+
+
+def test_dimensioning_clip_bien_dimensionado_no_da_warning():
+    # CR-01 alto: floor = 3000 + 10000 + 2000 + 2000 = 17000; duración 20000 ≥ floor
+    gt = _dim_gt([_dim_ep("CR-01", 3000, 17000)], duration_ms=20000)
+    assert dimensioning_warnings(gt) == []
+
+
+def test_dimensioning_negativo_sin_episodios_no_da_warning():
+    assert dimensioning_warnings(_dim_gt([], duration_ms=15000)) == []
+
+
+def test_dimensioning_sin_duration_no_rompe_solo_chequea_onset():
+    # duration_ms es opcional en el schema v2: sin ella no se puede computar el
+    # floor, pero el chequeo de onset (que no depende de la duración) debe seguir
+    # y la función NUNCA debe romper (es un warning, no un error).
+    gt = {"clip_id": "x", "negative": False,
+          "episodes": [_dim_ep("CR-02", 0, 5000)]}   # sin duration_ms
+    warns = dimensioning_warnings(gt)
+    assert any("onset" in w for w in warns)        # onset sí se evalúa
+    assert not any("duration_ms" in w for w in warns)  # floor se omite sin duración
+
+
+def test_dimensioning_por_episodio_cada_condicion_su_umbral():
+    # P6-like: CR-01 y CR-02 en el mismo clip; la duración alcanza para CR-01
+    # (floor 17000) pero no para CR-02 (floor 29000) → warning solo del CR-02.
+    gt = _dim_gt(
+        [_dim_ep("CR-01", 3000, 15000, id="ep1"),
+         _dim_ep("CR-02", 3000, 15000, id="ep2")],
+        duration_ms=18000,
+    )
+    warns = dimensioning_warnings(gt)
+    assert any("ep2" in w for w in warns)
+    assert not any("ep1" in w for w in warns)
+
+
+def test_a1_derive_provenance_incluye_dimensioning_warnings(tmp_path):
+    # E2E_XML_SCENE: episodio CR-01 en 2000–7000ms, clip de 10000ms. Onset en
+    # 2000 (ok), pero floor CR-01 = 2000+10000+2000+2000 = 16000 > 10000 →
+    # warning de censura en provenance (no bloquea la derivación).
+    xml = tmp_path / "a.xml"
+    xml.write_text(E2E_XML_SCENE)
+    cy = tmp_path / "clip.yaml"
+    cy.write_text(CLIP_YAML_SCENE)
+    info = tmp_path / "clip.info.json"
+    info.write_text(json.dumps({
+        "clip_id": "cb_lab_p1", "file": "clips/cb_lab_p1.mp4", "fps": 30,
+        "duration_ms": 10000, "n_frames": 300, "resolution": "1280x720",
+        "sha256": "0" * 64,
+    }))
+    gt = derive(str(xml), str(cy), str(info), {"CR-01": 3000, "CR-02": 5000})
+    warns = gt["provenance"]["dimensioning_warnings"]
+    assert any("ep1" in w for w in warns)
+
+
+def test_a1_timeline_imprime_dimensioning_warnings(capsys):
+    from videogt.derive_clip_gt import _print_timeline
+    gt = _dim_gt([_dim_ep("CR-02", 4000, 11000)], duration_ms=12000)
+    gt.update({"fps_nominal": 30, "sub_threshold_events": [],
+               "provenance": {"dimensioning_warnings": dimensioning_warnings(gt)}})
+    gt["episodes"][0].update({"subjects_in_evidence": 1, "notes": ""})
+    _print_timeline(gt)
+    out = capsys.readouterr().out
+    assert "DIMENSIONAMIENTO" in out and "ep1" in out
 
 
 # End-to-end tests

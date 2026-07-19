@@ -39,6 +39,19 @@ CONDITIONS = {"CR-01": "has_helmet", "CR-02": "has_vest"}
 # clasifican como episodios que el motor nunca confirma -> falsos `missed` y
 # recall deprimido. Ante la duda, pasar --pattern-set explicito.
 DEFAULT_PATTERN_SET_MS = {"CR-01": 4000, "CR-02": 7000}
+# A1 — gate de dimensionamiento (doc 57 §6.5/§6.7, Tabla 35/D.4). Para que un
+# episodio sea evaluable sin censura temporal el clip debe extenderse hasta el
+# borde superior de `t_alert-system` de su patrón MÁS resolve MÁS una cola. Esto
+# NO es la persistencia (confirm_after_ms del pattern set) — es el techo de la
+# métrica de latencia por severidad. Si el clip queda por debajo, t_alert-system
+# y recall de ese episodio no son concluyentes (los declara `metric_censored` el
+# evaluador). El aviso va en provenance, NO bloquea la derivación.
+DIMENSIONING_MS = {
+    "CR-01": {"t_alert_upper_ms": 10000, "resolve_ms": 2000},   # PR-01 alto
+    "CR-02": {"t_alert_upper_ms": 20000, "resolve_ms": 3000},   # PR-02 medio
+}
+MIN_ONSET_MS = 2000   # el onset del primer episodio nunca en t≈0 (pre-roll)
+DIMENSIONING_TAIL_MS = 2000   # cola para observar el cierre por resolve
 START_END_TOLERANCE_MS = 500
 TOOL_NAME = "video-gt-lab/derive_clip_gt"
 SIZE_MISMATCH_TOLERANCE_FRAMES = 1
@@ -153,6 +166,51 @@ def classify_intervals(intervals: list[dict], pattern_set_ms: dict) -> tuple[lis
                 sub_event["subject_label"] = iv["subject_label"]
             sub_events.append(sub_event)
     return episodes, sub_events
+
+
+def dimensioning_warnings(gt: dict) -> list[str]:
+    """Avisos de dimensionamiento del clip (A1, doc 57 §6.5/§6.7).
+
+    Puramente aritmético sobre los tiempos del GT — NO bloquea nada. Un clip
+    negativo (sin episodios) no tiene métrica temporal que censurar, así que no
+    genera avisos. Para cada episodio se exige que la duración del clip alcance
+    el borde superior de `t_alert-system` de su condición + resolve + cola; si
+    no, ese episodio queda censurado para t_alert-system/recall (el evaluador lo
+    marca `metric_censored`). Además, el onset del primer episodio no debe caer
+    antes de `MIN_ONSET_MS` (sin pre-roll el TTFD colapsa a 0 como artefacto de
+    recorte, como en `video16_clip10`).
+    """
+    warnings = []
+    episodes = gt.get("episodes", [])
+    if not episodes:
+        return warnings
+    # `duration_ms` es opcional en el schema v2: sin ella no se puede computar el
+    # floor de censura, pero el chequeo de onset (que no la usa) sigue. La función
+    # es un warning, nunca rompe — de ahí el `.get()` (espeja el guard de
+    # `episodes`/`condition_id`).
+    duration = gt.get("duration_ms")
+    first_start = min(ep["start_ms"] for ep in episodes)
+    if first_start < MIN_ONSET_MS:
+        warnings.append(
+            f"onset del primer episodio en {first_start} ms (< {MIN_ONSET_MS} ms): "
+            "sin pre-roll el TTFD colapsa a 0 como artefacto de recorte — "
+            "re-ventanear el corte para que el onset caiga en t≈3–4 s (doc 57 §6.5)"
+        )
+    if duration is None:
+        return warnings
+    for ep in episodes:
+        dim = DIMENSIONING_MS.get(ep["condition_id"])
+        if dim is None:
+            continue
+        floor = ep["start_ms"] + dim["t_alert_upper_ms"] + dim["resolve_ms"] + DIMENSIONING_TAIL_MS
+        if duration < floor:
+            warnings.append(
+                f"{ep['id']} ({ep['condition_id']}): duration_ms {duration} < {floor} ms "
+                f"(start {ep['start_ms']} + t_alert_upper {dim['t_alert_upper_ms']} + "
+                f"resolve {dim['resolve_ms']} + cola {DIMENSIONING_TAIL_MS}): "
+                "t_alert-system/recall de este episodio quedan censurados (doc 57 §6.7)"
+            )
+    return warnings
 
 
 def _column_label(i: int) -> str:
@@ -388,6 +446,8 @@ def derive(xml_path, clip_yaml_path, info_json_path, pattern_set_ms: dict,
         "xml_sha256": hashlib.sha256(Path(xml_path).read_bytes()).hexdigest(),
         "pattern_set_ms": pattern_set_ms,
         "tool": TOOL_NAME,
+        # A1: gate de dimensionamiento (doc 57 §6.5/§6.7). Auditoría, no bloquea.
+        "dimensioning_warnings": dimensioning_warnings(gt),
     }
     return gt
 
@@ -404,6 +464,8 @@ def _print_timeline(gt: dict) -> None:
     for ev in gt["sub_threshold_events"]:
         print(f"  sub-umbral      {ev['condition_id']}  "
               f"{_fmt_ms(ev['start_ms'])} → {_fmt_ms(ev['end_ms'])}  ({ev['reason']})")
+    for w in gt.get("provenance", {}).get("dimensioning_warnings", []):
+        print(f"  ⚠ DIMENSIONAMIENTO  {w}")
     print("Revisar contra el video antes de promover al banco.\n")
 
 
