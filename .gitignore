@@ -35,6 +35,9 @@ tmp/
 # (van a Drive, se verifican por sha256 en manifest.yaml); TODO lo demás del
 # banco (datasets/processed/clip_bench/**: manifest.yaml, meta/, preann/,
 # annotations/, gt/) se commitea normalmente — no hay regla que lo ignore.
+# ppe-dataset: candidato RECHAZADO para bench (registry/evaluation_ppe_dataset.md);
+# se ignora entero — sus labels no tienen valor versionable y el raw pesa 1,2 GB.
+datasets/raw/ppe-dataset/
 datasets/raw/**/*.jpg
 datasets/raw/**/*.jpeg
 datasets/raw/**/*.png
