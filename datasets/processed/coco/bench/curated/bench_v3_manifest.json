@@ -1,0 +1,29 @@
+{
+  "strata": [
+    "bench_obra_test",
+    "bench_obra_val",
+    "chv",
+    "shel5k"
+  ],
+  "images_by_stratum": {
+    "bench_obra_test": 62,
+    "bench_obra_val": 85,
+    "chv": 1330,
+    "shel5k": 5000
+  },
+  "total_images": 6477,
+  "total_annotations": 55165,
+  "source_paths": {
+    "bench_obra_test": "processed/coco/bench/curated/construction_site_safety_bench_obra_test.json",
+    "bench_obra_val": "processed/coco/bench/curated/construction_site_safety_bench_obra_val.json",
+    "chv": "processed/coco/bench/curated/bench_stratum_chv.json",
+    "shel5k": "processed/coco/bench/curated/bench_stratum_shel5k.json"
+  },
+  "source_sha256": {
+    "bench_obra_test": "e82eed03469665a335dd655a89d5412ae1e33274e9d73f9075f69df1c8eaf61a",
+    "bench_obra_val": "b2326724b71e7776fb53440d98d1d00be4f2c2b6b4484a049ceb7045ad74c58c",
+    "chv": "6d15ff9b464075111e327b18ee46b1d1248abe4822b26647af90aff7404939a7",
+    "shel5k": "bf35f63bcf726c1c57d8768838f8c4a5ff48ca4a0ebf452edef32ab5e6ad1e0f"
+  },
+  "bench_v3_sha256": "4557024ecc4ee497ab1fad01d6819206395c10fd794010ed8c1d9198b19a4462"
+}
