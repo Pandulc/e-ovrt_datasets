@@ -1,344 +1,153 @@
 {
-  "construction_site_safety": {
-    "dataset_id": "construction_site_safety",
-    "source_format": "yolo",
-    "raw_image_count": 2799,
+  "shel5k": {
+    "dataset_id": "shel5k",
+    "source_format": "voc",
+    "raw_image_count": 5000,
     "splits": {
-      "train": 2603,
-      "val": 114,
-      "test": 82
+      "train": 3500,
+      "val": 750,
+      "test": 750
     },
     "views": {
       "canonical_v2": {
         "coco": {
           "train": {
-            "file": "datasets/processed/coco/canonical_v2/construction_site_safety/train.json",
-            "images": 2603,
-            "annotations": 18527,
+            "file": "datasets/processed/coco/canonical_v2/shel5k/train.json",
+            "images": 3500,
+            "annotations": 31997,
             "class_counts": {
-              "helmet": 3362,
-              "person": 9691,
-              "vest": 3156,
-              "bare_head": 2318
+              "helmet": 13602,
+              "bare_head": 4299,
+              "person": 14096
             },
             "dropped_source_classes": {
-              "NO-Mask": 3209,
-              "machinery": 5238,
-              "NO-Safety Vest": 3957,
-              "Mask": 1743,
-              "vehicle": 1534,
-              "Safety Cone": 3170
+              "head_with_helmet": 11278,
+              "face": 9928
             }
           },
           "val": {
-            "file": "datasets/processed/coco/canonical_v2/construction_site_safety/val.json",
-            "images": 114,
-            "annotations": 355,
+            "file": "datasets/processed/coco/canonical_v2/shel5k/val.json",
+            "images": 750,
+            "annotations": 6578,
             "class_counts": {
-              "helmet": 79,
-              "person": 166,
-              "vest": 41,
-              "bare_head": 69
+              "helmet": 2780,
+              "person": 2904,
+              "bare_head": 894
             },
             "dropped_source_classes": {
-              "NO-Safety Vest": 106,
-              "NO-Mask": 74,
-              "Mask": 21,
-              "Safety Cone": 44,
-              "machinery": 55,
-              "vehicle": 42
+              "head_with_helmet": 2360,
+              "face": 2130
             }
           },
           "test": {
-            "file": "datasets/processed/coco/canonical_v2/construction_site_safety/test.json",
-            "images": 82,
-            "annotations": 386,
+            "file": "datasets/processed/coco/canonical_v2/shel5k/test.json",
+            "images": 750,
+            "annotations": 6820,
             "class_counts": {
-              "helmet": 110,
-              "person": 174,
-              "bare_head": 41,
-              "vest": 61
+              "helmet": 2870,
+              "person": 3023,
+              "bare_head": 927
             },
             "dropped_source_classes": {
-              "NO-Mask": 79,
-              "NO-Safety Vest": 90,
-              "Safety Cone": 92,
-              "vehicle": 41,
-              "machinery": 44,
-              "Mask": 28
+              "head_with_helmet": 2410,
+              "face": 2077
             }
           }
         },
         "yolo": {
           "train": {
-            "labels_dir": "datasets/processed/yolo/canonical_v2/construction_site_safety/labels/train",
-            "image_list": "datasets/processed/yolo/canonical_v2/construction_site_safety/image_lists/train.txt",
-            "data_yaml": "datasets/processed/yolo/canonical_v2/construction_site_safety/data.yaml",
-            "images": 2603,
-            "annotations": 18527,
+            "labels_dir": "datasets/processed/yolo/canonical_v2/shel5k/labels/train",
+            "image_list": "datasets/processed/yolo/canonical_v2/shel5k/image_lists/train.txt",
+            "data_yaml": "datasets/processed/yolo/canonical_v2/shel5k/data.yaml",
+            "images": 3500,
+            "annotations": 31997,
             "class_counts": {
-              "helmet": 3362,
-              "person": 9691,
-              "vest": 3156,
-              "bare_head": 2318
+              "helmet": 13602,
+              "bare_head": 4299,
+              "person": 14096
             },
             "dropped_source_classes": {
-              "NO-Mask": 3209,
-              "machinery": 5238,
-              "NO-Safety Vest": 3957,
-              "Mask": 1743,
-              "vehicle": 1534,
-              "Safety Cone": 3170
+              "head_with_helmet": 11278,
+              "face": 9928
             }
           },
           "val": {
-            "labels_dir": "datasets/processed/yolo/canonical_v2/construction_site_safety/labels/val",
-            "image_list": "datasets/processed/yolo/canonical_v2/construction_site_safety/image_lists/val.txt",
-            "data_yaml": "datasets/processed/yolo/canonical_v2/construction_site_safety/data.yaml",
-            "images": 114,
-            "annotations": 355,
+            "labels_dir": "datasets/processed/yolo/canonical_v2/shel5k/labels/val",
+            "image_list": "datasets/processed/yolo/canonical_v2/shel5k/image_lists/val.txt",
+            "data_yaml": "datasets/processed/yolo/canonical_v2/shel5k/data.yaml",
+            "images": 750,
+            "annotations": 6578,
             "class_counts": {
-              "helmet": 79,
-              "person": 166,
-              "vest": 41,
-              "bare_head": 69
+              "helmet": 2780,
+              "person": 2904,
+              "bare_head": 894
             },
             "dropped_source_classes": {
-              "NO-Safety Vest": 106,
-              "NO-Mask": 74,
-              "Mask": 21,
-              "Safety Cone": 44,
-              "machinery": 55,
-              "vehicle": 42
+              "head_with_helmet": 2360,
+              "face": 2130
             }
           },
           "test": {
-            "labels_dir": "datasets/processed/yolo/canonical_v2/construction_site_safety/labels/test",
-            "image_list": "datasets/processed/yolo/canonical_v2/construction_site_safety/image_lists/test.txt",
-            "data_yaml": "datasets/processed/yolo/canonical_v2/construction_site_safety/data.yaml",
-            "images": 82,
-            "annotations": 386,
+            "labels_dir": "datasets/processed/yolo/canonical_v2/shel5k/labels/test",
+            "image_list": "datasets/processed/yolo/canonical_v2/shel5k/image_lists/test.txt",
+            "data_yaml": "datasets/processed/yolo/canonical_v2/shel5k/data.yaml",
+            "images": 750,
+            "annotations": 6820,
             "class_counts": {
-              "helmet": 110,
-              "person": 174,
-              "bare_head": 41,
-              "vest": 61
+              "helmet": 2870,
+              "person": 3023,
+              "bare_head": 927
             },
             "dropped_source_classes": {
-              "NO-Mask": 79,
-              "NO-Safety Vest": 90,
-              "Safety Cone": 92,
-              "vehicle": 41,
-              "machinery": 44,
-              "Mask": 28
+              "head_with_helmet": 2410,
+              "face": 2077
             }
           }
         },
         "odvg": {
           "train": {
-            "file": "datasets/processed/odvg/canonical_v2/construction_site_safety/train.jsonl",
-            "label_map": "datasets/processed/odvg/canonical_v2/construction_site_safety/label_map.json",
-            "images": 2603,
-            "annotations": 18527,
+            "file": "datasets/processed/odvg/canonical_v2/shel5k/train.jsonl",
+            "label_map": "datasets/processed/odvg/canonical_v2/shel5k/label_map.json",
+            "images": 3500,
+            "annotations": 31997,
             "class_counts": {
-              "helmet": 3362,
-              "person": 9691,
-              "vest": 3156,
-              "bare_head": 2318
+              "helmet": 13602,
+              "bare_head": 4299,
+              "person": 14096
             },
             "dropped_source_classes": {
-              "NO-Mask": 3209,
-              "machinery": 5238,
-              "NO-Safety Vest": 3957,
-              "Mask": 1743,
-              "vehicle": 1534,
-              "Safety Cone": 3170
+              "head_with_helmet": 11278,
+              "face": 9928
             }
           },
           "val": {
-            "file": "datasets/processed/odvg/canonical_v2/construction_site_safety/val.jsonl",
-            "label_map": "datasets/processed/odvg/canonical_v2/construction_site_safety/label_map.json",
-            "images": 114,
-            "annotations": 355,
+            "file": "datasets/processed/odvg/canonical_v2/shel5k/val.jsonl",
+            "label_map": "datasets/processed/odvg/canonical_v2/shel5k/label_map.json",
+            "images": 750,
+            "annotations": 6578,
             "class_counts": {
-              "helmet": 79,
-              "person": 166,
-              "vest": 41,
-              "bare_head": 69
+              "helmet": 2780,
+              "person": 2904,
+              "bare_head": 894
             },
             "dropped_source_classes": {
-              "NO-Safety Vest": 106,
-              "NO-Mask": 74,
-              "Mask": 21,
-              "Safety Cone": 44,
-              "machinery": 55,
-              "vehicle": 42
+              "head_with_helmet": 2360,
+              "face": 2130
             }
           },
           "test": {
-            "file": "datasets/processed/odvg/canonical_v2/construction_site_safety/test.jsonl",
-            "label_map": "datasets/processed/odvg/canonical_v2/construction_site_safety/label_map.json",
-            "images": 82,
-            "annotations": 386,
+            "file": "datasets/processed/odvg/canonical_v2/shel5k/test.jsonl",
+            "label_map": "datasets/processed/odvg/canonical_v2/shel5k/label_map.json",
+            "images": 750,
+            "annotations": 6820,
             "class_counts": {
-              "helmet": 110,
-              "person": 174,
-              "bare_head": 41,
-              "vest": 61
+              "helmet": 2870,
+              "person": 3023,
+              "bare_head": 927
             },
             "dropped_source_classes": {
-              "NO-Mask": 79,
-              "NO-Safety Vest": 90,
-              "Safety Cone": 92,
-              "vehicle": 41,
-              "machinery": 44,
-              "Mask": 28
-            }
-          }
-        }
-      }
-    }
-  },
-  "ppe_siabar": {
-    "dataset_id": "ppe_siabar",
-    "source_format": "yolo",
-    "raw_image_count": 1607,
-    "splits": {
-      "train": 1120,
-      "val": 326,
-      "test": 161
-    },
-    "views": {
-      "canonical_v2": {
-        "coco": {
-          "train": {
-            "file": "datasets/processed/coco/canonical_v2/ppe_siabar/train.json",
-            "images": 1120,
-            "annotations": 3326,
-            "class_counts": {
-              "vest": 1355,
-              "helmet": 969,
-              "person": 1002
-            },
-            "dropped_source_classes": {
-              "Boots": 1655
-            }
-          },
-          "val": {
-            "file": "datasets/processed/coco/canonical_v2/ppe_siabar/val.json",
-            "images": 326,
-            "annotations": 973,
-            "class_counts": {
-              "helmet": 273,
-              "vest": 398,
-              "person": 302
-            },
-            "dropped_source_classes": {
-              "Boots": 541
-            }
-          },
-          "test": {
-            "file": "datasets/processed/coco/canonical_v2/ppe_siabar/test.json",
-            "images": 161,
-            "annotations": 473,
-            "class_counts": {
-              "vest": 191,
-              "helmet": 144,
-              "person": 138
-            },
-            "dropped_source_classes": {
-              "Boots": 243
-            }
-          }
-        },
-        "yolo": {
-          "train": {
-            "labels_dir": "datasets/processed/yolo/canonical_v2/ppe_siabar/labels/train",
-            "image_list": "datasets/processed/yolo/canonical_v2/ppe_siabar/image_lists/train.txt",
-            "data_yaml": "datasets/processed/yolo/canonical_v2/ppe_siabar/data.yaml",
-            "images": 1120,
-            "annotations": 3326,
-            "class_counts": {
-              "vest": 1355,
-              "helmet": 969,
-              "person": 1002
-            },
-            "dropped_source_classes": {
-              "Boots": 1655
-            }
-          },
-          "val": {
-            "labels_dir": "datasets/processed/yolo/canonical_v2/ppe_siabar/labels/val",
-            "image_list": "datasets/processed/yolo/canonical_v2/ppe_siabar/image_lists/val.txt",
-            "data_yaml": "datasets/processed/yolo/canonical_v2/ppe_siabar/data.yaml",
-            "images": 326,
-            "annotations": 973,
-            "class_counts": {
-              "helmet": 273,
-              "vest": 398,
-              "person": 302
-            },
-            "dropped_source_classes": {
-              "Boots": 541
-            }
-          },
-          "test": {
-            "labels_dir": "datasets/processed/yolo/canonical_v2/ppe_siabar/labels/test",
-            "image_list": "datasets/processed/yolo/canonical_v2/ppe_siabar/image_lists/test.txt",
-            "data_yaml": "datasets/processed/yolo/canonical_v2/ppe_siabar/data.yaml",
-            "images": 161,
-            "annotations": 473,
-            "class_counts": {
-              "vest": 191,
-              "helmet": 144,
-              "person": 138
-            },
-            "dropped_source_classes": {
-              "Boots": 243
-            }
-          }
-        },
-        "odvg": {
-          "train": {
-            "file": "datasets/processed/odvg/canonical_v2/ppe_siabar/train.jsonl",
-            "label_map": "datasets/processed/odvg/canonical_v2/ppe_siabar/label_map.json",
-            "images": 1120,
-            "annotations": 3326,
-            "class_counts": {
-              "vest": 1355,
-              "helmet": 969,
-              "person": 1002
-            },
-            "dropped_source_classes": {
-              "Boots": 1655
-            }
-          },
-          "val": {
-            "file": "datasets/processed/odvg/canonical_v2/ppe_siabar/val.jsonl",
-            "label_map": "datasets/processed/odvg/canonical_v2/ppe_siabar/label_map.json",
-            "images": 326,
-            "annotations": 973,
-            "class_counts": {
-              "helmet": 273,
-              "vest": 398,
-              "person": 302
-            },
-            "dropped_source_classes": {
-              "Boots": 541
-            }
-          },
-          "test": {
-            "file": "datasets/processed/odvg/canonical_v2/ppe_siabar/test.jsonl",
-            "label_map": "datasets/processed/odvg/canonical_v2/ppe_siabar/label_map.json",
-            "images": 161,
-            "annotations": 473,
-            "class_counts": {
-              "vest": 191,
-              "helmet": 144,
-              "person": 138
-            },
-            "dropped_source_classes": {
-              "Boots": 243
+              "head_with_helmet": 2410,
+              "face": 2077
             }
           }
         }

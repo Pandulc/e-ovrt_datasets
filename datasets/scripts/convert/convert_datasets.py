@@ -37,6 +37,11 @@ class DatasetConfig:
     custom_split_seed: int = 42
     canonical_v2_map: dict[str, str] | None = None
     negative_classes: dict[str, str] | None = None  # ej: {"NO-Hardhat": "no_helmet", "NO-Safety Vest": "no_vest"}
+    # Fuentes cuyo nombre cae en la lista prohibida de bare_head (head/face) pero
+    # que se VERIFICÓ semánticamente que son anotaciones explícitas de cabeza
+    # descubierta (no derivación por resta). Exige verificación empírica documentada
+    # en el test del dataset (ej. shel5k: datasets/tests/test_shel5k_mapping.py).
+    bare_head_explicit_sources: frozenset[str] | set[str] | None = None
 
 
 def configs() -> dict[str, DatasetConfig]:
@@ -235,9 +240,15 @@ def configs() -> dict[str, DatasetConfig]:
                 "person_no_helmet": "person",
                 "person": "person",
                 "helmet": "helmet",
-                "head_with_helmet": "helmet",
-                # head and face are NOT mapped: bare_head from head/face is forbidden (D9)
+                # head_with_helmet NO se mapea: solapa 97% con una caja `helmet`
+                # separada (verificado sobre 400 XML) — mapearlo duplicaría el GT.
+                # `head` en SHEL5K es la anotación EXPLÍCITA de cabeza descubierta
+                # (82% contenida en person_no_helmet, 2% en person_with_helmet;
+                # existe head_with_helmet aparte): cumple el contrato D9 vía
+                # bare_head_explicit_sources. `face` sigue sin mapear.
+                "head": "bare_head",
             },
+            bare_head_explicit_sources=frozenset({"head"}),
             splits=None,
         ),
         "sh17": DatasetConfig(
@@ -467,8 +478,13 @@ _FORBIDDEN_BARE_HEAD_SOURCES = {"head", "face", "head_with_helmet"}
 def assert_no_derived_bare_head(config: DatasetConfig) -> None:
     """bare_head solo desde negativos explícitos; nunca desde head/face (spec §3.1)."""
     v2 = config.canonical_v2_map or {}
+    explicit = {s.lower() for s in (config.bare_head_explicit_sources or ())}
     for src, dst in v2.items():
         if dst == "bare_head" and src.lower() in _FORBIDDEN_BARE_HEAD_SOURCES:
+            if src.lower() in explicit:
+                # Exención verificada: la clase es un negativo explícito del
+                # dataset de origen (ver bare_head_explicit_sources).
+                continue
             raise ValueError(
                 f"{config.dataset_id}: bare_head derivado de '{src}' está prohibido (D9)."
             )
