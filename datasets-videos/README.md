@@ -12,6 +12,65 @@ no frame-level, no COCO). Spec completo:
 - `preann/` — pre-anotaciones de media-plane (GDINO-base) + preview MP4, descartables
 - `corrected/` — anotaciones CVAT corregidas (CVAT XML 1.1, staging)
 - `gt/` — `clip_gt.v2` derivado (episodios en ms)
+- `<clip_id>.clip.yaml` — **la ficha de cada clip, en la raíz de este directorio**
+
+### Los `.clip.yaml` viven en la raíz, y no es negociable
+
+Están sueltos acá y no en un subdirectorio porque **dos consumidores los buscan
+exactamente en esta ruta**:
+
+| Consumidor | Cómo los busca |
+|---|---|
+| `datasets/scripts/bench/promote_clip.py` | `<lab>/<clip_id>.clip.yaml`, y está en su lista de archivos **obligatorios** |
+| Consola web (`webconsole/backend/.../clips/`) | `videos_dir.glob("*.clip.yaml")`, **no recursivo**; y escribe los nuevos en esta misma raíz |
+
+Moverlos a una carpeta rompe la promoción al banco y la vista de Clips de la
+consola. Si alguna vez hay que reorganizarlos, hay que tocar los dos repos y sus
+tests a la vez.
+
+### Qué contiene la ficha y para qué sirve cada campo
+
+```yaml
+clip_id: v01_c01      # identidad del clip
+block: B              # A = rodaje propio guionado | B = obra real
+scenario: P5          # caso del shot-list (doc 59)
+source_id: v01_c01    # CLAVE DE MATCHEO — ver abajo
+level: scene          # scene | subject: cómo se agrupan los episodios
+master: raw/1.1.mp4   # de qué video salió (clave extra, la usa la consola)
+```
+
+`derive_clip_gt.py` **exige solo `clip_id`, `block` y `scenario`**; el resto tiene
+default y las claves extra (`master`, `episode_draft`) se toleran y no se filtran
+al GT. Sin esta ficha el script no corre, por más que la anotación de CVAT esté
+perfecta.
+
+**El campo que carga el peso es `source_id`.** Es la clave con la que el evaluador
+cruza las alertas contra el GT: hace `alert.source_id == episode.source_id`. Si no
+coincide, ninguna alerta matchea con ningún episodio — todas cuentan como falsos
+positivos y todos los episodios como perdidos. Los resultados salen catastróficos y
+la causa es un string. La corrida del bench configura su fuente con este valor
+(`ingest.config.source_id`).
+
+Los demás campos son para poder **leer** los resultados después: `block` separa
+material real de guionado, `scenario` deja decir "los P2 fallan" en vez de mirar un
+promedio ciego, y `level` define si los episodios se agrupan por escena o por
+persona. Todo eso se copia dentro del `clip_gt.v2`, así que un archivo de GT se
+explica solo meses después.
+
+### Lote de internet: el clip ES el master, sin recortar
+
+Los 14 clips `v01_c01`…`v10_c01` vienen del lote de internet (doc 58 §B.2.1) y
+**no se recortan** (doc 59 §6): se usan enteros como material soak para medir FAR.
+Recortarlos solo tiraría tiempo negativo, que es justo lo que hay que acumular.
+Por eso sus fichas dicen `NO regenerar desde la consola`: la herramienta de recorte
+es para el material del rodaje propio, donde se filman 33 s a propósito para
+extraer los 20 buenos.
+
+Trece son de cumplimiento (`scenario: P5`) y el GT los marcará `negative: true` solo
+con que la corrección en CVAT no deje ningún episodio. El único con una infracción
+real es **`v04_c01`** (`scenario: P8`): CR-01 espontáneo nocturno, con el evento a
+t≈6 s — ya por encima de los 3,5 s de pre-roll que exige medir el TTFD, así que
+tampoco necesita re-ventaneo.
 
 ## Pipeline
 

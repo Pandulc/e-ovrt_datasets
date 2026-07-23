@@ -1,0 +1,11 @@
+# Lote de internet (doc 58 §B.2.1): obra real en cumplimiento, mini-soak sin
+# cortes de escena verificados.
+# El clip ES el master SIN RECORTAR (doc 59 §6): se usa entero como material
+# soak para medir FAR. NO regenerar desde la consola.
+# El GT lo marcara negative: true si CVAT no deja ningun episodio de infraccion.
+clip_id: v10_c01
+block: B          # obra real, no guionado
+scenario: P5      # cumplimiento total
+source_id: v10_c01
+level: scene
+master: raw/10.1.mp4

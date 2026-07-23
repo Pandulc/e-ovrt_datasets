@@ -1,0 +1,17 @@
+# UNICO POSITIVO REAL DEL LOTE DE INTERNET (doc 58 §B.2.1). CR-01 espontaneo,
+# nocturno: el evento arranca a t~6 s, la infraccion dura ~11 s y sale a t~17 s
+# de un clip de 19,1 s.
+#
+# El clip ES el master SIN RECORTAR: el onset a los ~6 s ya supera los 3,5 s de
+# pre-roll que exige la medicion de TTFD, asi que no hace falta re-ventanear.
+# NO regenerar desde la consola.
+#
+# Es el primer TTFD real del banco, pero es un caso DURO (de noche el modelo
+# tiene recall alto y precision baja), no un showcase. Los positivos limpios
+# salen del rodaje propio.
+clip_id: v04_c01
+block: B          # obra real, no guionado
+scenario: P8      # la infraccion entra y sale del plano
+source_id: v04_c01
+level: scene
+master: raw/4.1.mp4

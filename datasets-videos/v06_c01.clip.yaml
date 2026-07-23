@@ -1,0 +1,14 @@
+# SOAK PRINCIPAL DEL BANCO (doc 58 §B.2.1): toma CONTINUA de 6:10, con 0 cortes
+# de escena verificados. Es el clip que mas peso aporta al denominador de FAR
+# (~6 de los ~16 min de cumplimiento agregado del lote).
+#
+# El clip ES el master SIN RECORTAR (doc 59 §6). Recortarlo destruiria
+# justamente lo que lo hace valioso: la ventana continua de tiempo negativo.
+# NO regenerar desde la consola.
+# El GT lo marcara negative: true si CVAT no deja ningun episodio de infraccion.
+clip_id: v06_c01
+block: B          # obra real, no guionado
+scenario: P5      # cumplimiento total
+source_id: v06_c01
+level: scene
+master: raw/6.1.mp4
