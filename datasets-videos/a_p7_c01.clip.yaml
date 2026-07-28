@@ -1,0 +1,11 @@
+clip_id: a_p7_c01
+block: A
+scenario: P7
+source_id: a_p7_c01
+level: scene
+master: raw/P7-a-take1.mp4
+episode_draft:
+- onset_ms: 3500
+  end_ms: 33178
+  condition: CR-01
+warnings: []

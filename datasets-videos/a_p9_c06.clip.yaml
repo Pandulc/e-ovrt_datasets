@@ -1,0 +1,12 @@
+clip_id: a_p9_c06
+block: A
+scenario: P9
+source_id: a_p9_c06
+level: scene
+master: raw/P9-b-take1.mp4
+episode_draft:
+- onset_ms: 3500
+  end_ms: 22674
+  condition: CR-01
+warnings:
+- solo 1.9 s de cola, se necesitan 3

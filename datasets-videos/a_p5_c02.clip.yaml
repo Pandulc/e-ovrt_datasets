@@ -1,0 +1,12 @@
+clip_id: a_p5_c02
+block: A
+scenario: P5
+source_id: a_p5_c02
+level: scene
+master: raw/P5-a-take2.mp4
+episode_draft:
+- onset_ms: 3500
+  end_ms: 49847
+  condition: null
+warnings:
+- solo 2.9 s de cola, se necesitan 3

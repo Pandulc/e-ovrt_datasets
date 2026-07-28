@@ -1,0 +1,11 @@
+clip_id: a_p1_c12
+block: A
+scenario: P1
+source_id: a_p1_c12
+level: scene
+master: raw/P1-c-take6.mp4
+episode_draft:
+- onset_ms: 3500
+  end_ms: 22074
+  condition: CR-01
+warnings: []

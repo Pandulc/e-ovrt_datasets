@@ -1,0 +1,14 @@
+clip_id: a_p8_c01
+block: A
+scenario: P8
+source_id: a_p8_c01
+level: scene
+master: raw/P8-a-take1.mp4
+episode_draft:
+- onset_ms: 3500
+  end_ms: 17619
+  condition: CR-01
+- onset_ms: 31398
+  end_ms: 44179
+  condition: CR-01
+warnings: []

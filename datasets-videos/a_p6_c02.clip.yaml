@@ -1,0 +1,14 @@
+clip_id: a_p6_c02
+block: A
+scenario: P6
+source_id: a_p6_c02
+level: scene
+master: raw/P6-a-take2.mp4
+episode_draft:
+- onset_ms: 3500
+  end_ms: 53501
+  condition: CR-01
+- onset_ms: 8806
+  end_ms: 43739
+  condition: CR-02
+warnings: []

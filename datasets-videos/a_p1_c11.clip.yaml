@@ -1,0 +1,11 @@
+clip_id: a_p1_c11
+block: A
+scenario: P1
+source_id: a_p1_c11
+level: scene
+master: raw/P1-c-take5.mp4
+episode_draft:
+- onset_ms: 3500
+  end_ms: 22918
+  condition: CR-01
+warnings: []
