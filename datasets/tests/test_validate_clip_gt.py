@@ -226,6 +226,17 @@ def test_fix7_fila_manifest_sin_campo_clip_id_da_error_claro(tmp_path):
     assert any("clip_id" in e for e in errors)
 
 
+def test_fix7_gt_con_json_corrupto_da_error_claro(tmp_path):
+    # Un gt/<id>.json con JSON roto propagaba json.JSONDecodeError crudo;
+    # debe reportarse como error de validación indicando el archivo.
+    gt_dir = tmp_path / "gt"; gt_dir.mkdir()
+    (gt_dir / "c1.json").write_text("{esto no es json")
+    manifest = {"clips": [{"clip_id": "c1", "file": "clips/c1.mp4",
+                           "sha256": "0" * 64, "gt": "gt/c1.json"}]}
+    errors = validate_manifest(manifest, tmp_path)  # sin JSONDecodeError
+    assert any("c1" in e and "gt/c1.json" in e and "JSON" in e for e in errors)
+
+
 # FIX 8 (promote_clip.py, gap de auditoría 2026-07-11): una fila recién
 # promovida sin GT todavía (state preannotated/corrected) no debe fallar por
 # no traer `gt` — es el caso normal de un clip que no pasó por CVAT aún.

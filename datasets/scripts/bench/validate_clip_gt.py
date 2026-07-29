@@ -145,7 +145,14 @@ def validate_manifest(manifest: dict, base_dir: Path) -> list[str]:
             if not gt_path.exists():
                 errors.append(f"{cid}: falta el GT {row['gt']}")
                 continue
-            gt = json.loads(gt_path.read_text())
+            try:
+                gt = json.loads(gt_path.read_text())
+            except json.JSONDecodeError as e:
+                # Mismo espíritu que FIX 7: error claro por fila en vez de
+                # propagar json.JSONDecodeError crudo sin decir qué archivo.
+                errors.append(f"{cid}: GT no parseable ({row['gt']}) — "
+                              f"JSON corrupto: {e}")
+                continue
             gt_errors = validate_gt(gt)
             errors.extend(gt_errors)
             if gt.get("clip_id") != cid:

@@ -1,12 +1,21 @@
 """
-Evaluación del BENCH v2 contra detections.jsonl del media-plane.
+Evaluación del BENCH contra detections.jsonl del media-plane.
 
-Uso:
+Uso (par CURADO — el único válido para evaluación):
     python3 datasets/scripts/bench/evaluate_bench.py \
         --detections runs/run_xxx/detections.jsonl runs/run_yyy/detections.jsonl \
-        --bench-coco datasets/processed/coco/bench/construction_site_safety_bench.json \
-        --person-gt datasets/processed/coco/bench/person_gt.json \
+        --bench-coco datasets/processed/coco/bench/curated/construction_site_safety_bench_obra_val.json \
+        --person-gt datasets/processed/coco/bench/curated/person_gt_bench_obra.json \
         --iou-threshold 0.5
+
+Los COCO curados viven en `datasets/processed/coco/bench/curated/` (val y test
+del núcleo bench_obra; el split test se evalúa igual con
+`construction_site_safety_bench_obra_test.json`) y se emparejan SIEMPRE con
+`person_gt_bench_obra.json`.
+
+ADVERTENCIA: el par histórico `construction_site_safety_bench.json` +
+`person_gt.json` (196 imgs, 111 violadoras) está PROHIBIDO para evaluación —
+bench contaminado de dominio (ver `datasets/registry/bench_v3.md`).
 
 Produce un resumen de métricas: per-class AP@IoU=0.5, recall CR-01, y conteos.
 """
@@ -203,14 +212,37 @@ def evaluate_cr01(
     Recall CR-01: fracción de personas con has_helmet=False que tienen una detección
     de bare_head (o ausencia de helmet) dentro de su head_region.
 
-    Estrategia E1: detectar bare_head; match si IoU(det, person_bbox) ≥ threshold
-    o si el centro del det cae dentro del head_region (top 1/3 del person_bbox).
+    Estrategia E1: detectar bare_head; match si el centro del det cae dentro
+    del head_region (tercio superior del person_bbox) o si
+    IoU(det, head_region) ≥ threshold — el IoU se computa contra el
+    head_region, NO contra el person_bbox completo.
+
+    Nota: las detecciones no se "consumen" al matchear — una misma detección
+    de bare_head puede validar a varios violadores con head_regions solapados
+    (comportamiento preexistente, documentado a propósito).
+
+    Denominador (fix doc 75 §2.5 — bug del denominador gemelo): solo violadores
+    EVALUABLES — en imágenes del bench COCO evaluado (images_by_filename) Y
+    cubiertas por el run (con clave en detections_by_filename; load_detections crea
+    la clave aunque el evento traiga 0 detecciones). Mismo criterio que
+    restrict_gt_to_detections del CLI del media-plane: un violador en una imagen
+    que el run no procesó no puede detectarse y deflacionaría el recall; uno fuera
+    del bench evaluado está fuera del universo de la evaluación.
     """
-    # Agrupar GT por basename (file_name en person_gt puede ser path completo)
-    cr01_violators = [r for r in person_gt_records if not r.get("has_helmet", True)]
+    # file_name en person_gt puede ser path completo; alinear por basename
+    bench_basenames = {Path(k).name for k in images_by_filename}
+    covered_basenames = {Path(k).name for k in detections_by_filename}
+    gt_violators_total = sum(1 for r in person_gt_records if not r.get("has_helmet", True))
+    cr01_violators = [
+        r for r in person_gt_records
+        if not r.get("has_helmet", True)
+        and Path(r["file_name"]).name in bench_basenames
+        and Path(r["file_name"]).name in covered_basenames
+    ]
     n_violators = len(cr01_violators)
     if n_violators == 0:
-        return {"cr01_recall": None, "n_violators": 0, "n_detected": 0}
+        return {"cr01_recall": None, "n_violators": 0, "n_detected": 0,
+                "n_violators_gt_total": gt_violators_total}
 
     detected = 0
     for rec in cr01_violators:
@@ -235,6 +267,7 @@ def evaluate_cr01(
         "cr01_recall": round(detected / n_violators, 4),
         "n_violators": n_violators,
         "n_detected": detected,
+        "n_violators_gt_total": gt_violators_total,
     }
 
 
@@ -247,9 +280,16 @@ def main() -> None:
     parser.add_argument("--detections", nargs="+", required=True, type=Path,
                         help="Uno o más archivos detections.jsonl")
     parser.add_argument("--bench-coco", required=True, type=Path,
-                        help="COCO JSON del BENCH (construction_site_safety_bench.json)")
+                        help="COCO JSON del BENCH curado "
+                             "(datasets/processed/coco/bench/curated/*.json). "
+                             "El histórico construction_site_safety_bench.json "
+                             "está PROHIBIDO para evaluación — ver "
+                             "registry/bench_v3.md")
     parser.add_argument("--person-gt", required=True, type=Path,
-                        help="GT persona-nivel (person_gt.json)")
+                        help="GT persona-nivel curado "
+                             "(curated/person_gt_bench_obra.json). El histórico "
+                             "person_gt.json está PROHIBIDO para evaluación — "
+                             "ver registry/bench_v3.md")
     parser.add_argument("--iou-threshold", type=float, default=0.5)
     args = parser.parse_args()
 
@@ -293,10 +333,13 @@ def main() -> None:
     print()
     print("=== CR-01 recall (E1: bare_head → head_region) ===")
     cr01 = evaluate_cr01(person_gt_records, detections_by_img, images_by_filename, args.iou_threshold)
+    excluidas = cr01["n_violators_gt_total"] - cr01["n_violators"]
+    if excluidas:
+        print(f"  Violadoras del GT excluidas del denominador (fuera del bench o no cubiertas por el run): {excluidas}")
     if cr01["cr01_recall"] is not None:
         print(f"  Recall CR-01: {cr01['cr01_recall']:.4f}  ({cr01['n_detected']}/{cr01['n_violators']} violadoras detectadas)")
     else:
-        print("  No hay violadoras CR-01 en el GT (cr01_recall no definido).")
+        print("  No hay violadoras CR-01 evaluables (cr01_recall no definido).")
 
 
 if __name__ == "__main__":

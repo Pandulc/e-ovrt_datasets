@@ -26,7 +26,7 @@ datasets/processed/
       chv/{train,val,test}.json
     bench/
       construction_site_safety_bench.json   # val+test merged
-      person_gt.json                        # GT persona-nivel (CR-01/CR-02)
+      person_gt.json                        # GT persona-nivel (CR-01/CR-02) (HISTÓRICO — prohibido para evaluación, ver registry/bench_v3.md; vigente: curated/person_gt_bench_obra.json)
   yolo/
     canonical_v2/
       construction_site_safety/

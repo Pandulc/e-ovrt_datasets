@@ -27,6 +27,16 @@ def manifest_sha256(text: str) -> str:
     return hashlib.sha256(text.encode()).hexdigest()
 
 
+def freeze_payload(merged: dict) -> str:
+    """La ÚNICA serialización congelable de bench_v3: se hashea y se escribe tal cual.
+
+    sort_keys=True para que los bytes en disco sean deterministas y
+    `sha256sum bench_v3.json` verifique directo contra el manifest (doc 75 §2.4:
+    hashear una re-serialización distinta de la escrita rompe la verificación).
+    """
+    return json.dumps(merged, sort_keys=True)
+
+
 def assemble_bench_v3(strata: dict[str, dict]) -> tuple[dict, dict]:
     """Fusiona COCOs por estrato en un bench_v3 con ids globales únicos.
 
@@ -77,12 +87,13 @@ def main() -> None:
         strata[name] = json.loads(text)
 
     merged, manifest = assemble_bench_v3(strata)
+    payload = freeze_payload(merged)
     manifest["source_paths"] = {k: str(v.relative_to(ROOT)) for k, v in STRATUM_SOURCES.items()}
     manifest["source_sha256"] = source_sha256
-    manifest["bench_v3_sha256"] = manifest_sha256(json.dumps(merged, sort_keys=True))
+    manifest["bench_v3_sha256"] = manifest_sha256(payload)
 
     out_dir = CURATED
-    (out_dir / "bench_v3.json").write_text(json.dumps(merged))
+    (out_dir / "bench_v3.json").write_text(payload)
     (out_dir / "bench_v3_manifest.json").write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False)
     )

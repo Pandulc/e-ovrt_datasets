@@ -85,3 +85,7 @@ datasets/processed/coco/finetuning_cr01_cr02/
 datasets/processed/coco/original/
 datasets/processed/yolo/
 datasets/processed/odvg/
+
+# Kit de auditoría Task 4.3 (PNGs derivados de imágenes raw; regenerable con
+# datasets/scripts/bench/build_audit_kit.py — seed fija, salida determinista)
+datasets/processed/audit_task43/

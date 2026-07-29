@@ -116,8 +116,9 @@ datasets/processed/
 │   │       ├── val.json
 │   │       └── test.json
 │   └── bench/                                   # BENCH GT — versionado en git
-│       ├── construction_site_safety_bench.json  # COCO unificado val+test (196 imgs)
-│       └── person_gt.json                       # GT persona-nivel (340 personas)
+│       ├── construction_site_safety_bench.json  # COCO unificado val+test (196 imgs) (HISTÓRICO — prohibido para evaluación, ver registry/bench_v3.md)
+│       ├── person_gt.json                       # GT persona-nivel (340 personas) (HISTÓRICO — prohibido para evaluación, ver registry/bench_v3.md; vigente: curated/person_gt_bench_obra.json)
+│       └── curated/                             # bench curado VIGENTE: bench_obra val/test, person_gt_bench_obra.json, bench_v3.json
 │
 ├── yolo/
 │   └── canonical_v2/                            # Mismo layout por dataset/split
@@ -180,16 +181,22 @@ python3 datasets/scripts/convert/convert_datasets.py \
 | Script | Función |
 |---|---|
 | `geometry.py` | Helpers de geometría: IoU, head_region, center_in_bbox para asignación de annotations. |
-| `build_person_gt.py` | Construye `person_gt.json` con atributos `has_helmet`/`has_vest` por persona en el BENCH. |
+| `build_person_gt.py` | Construye `person_gt.json` (HISTÓRICO — prohibido para evaluación, ver registry/bench_v3.md; vigente: curated/person_gt_bench_obra.json) con atributos `has_helmet`/`has_vest` por persona en el BENCH. |
 | `evaluate_bench.py` | Evalúa un `detections.jsonl` de e-ovrt_media-plane contra el GT del BENCH: AP@50 por clase y recall CR-01. |
 
 ```bash
-# Evaluar una corrida del media-plane
+# Evaluar una corrida del media-plane (par CURADO — el único válido)
 python3 datasets/scripts/bench/evaluate_bench.py \
     --detections ../e-ovrt_media-plane/runs/<run_id>/detections.jsonl \
-    --bench-coco datasets/processed/coco/bench/construction_site_safety_bench.json \
-    --person-gt datasets/processed/coco/bench/person_gt.json
+    --bench-coco datasets/processed/coco/bench/curated/construction_site_safety_bench_obra_val.json \
+    --person-gt datasets/processed/coco/bench/curated/person_gt_bench_obra.json
+# (el split test se evalúa igual con construction_site_safety_bench_obra_test.json)
 ```
+
+> **Nota:** el par histórico `construction_site_safety_bench.json` + `person_gt.json`
+> está **prohibido para evaluación** (bench contaminado de dominio, 196 imgs /
+> 111 violadoras — ver `registry/bench_v3.md`); evaluar siempre con los COCO
+> curados de `curated/` + `person_gt_bench_obra.json`.
 
 ---
 
@@ -247,7 +254,7 @@ datasets/splits/v2/{train,bench,demo}.txt + manifest.json        # versionado
     ├──▶ e-ovrt_media-plane/configs/datasets/*.yaml               # TRAIN / DEMO
     │
     ▼  scripts/bench/build_person_gt.py
-datasets/processed/coco/bench/person_gt.json                     # versionado
+datasets/processed/coco/bench/person_gt.json                     # versionado (HISTÓRICO — prohibido para evaluación, ver registry/bench_v3.md; vigente: curated/person_gt_bench_obra.json)
     │
     ▼  e-ovrt_media-plane (corrida experimental)
 runs/<run_id>/detections.jsonl

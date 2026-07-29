@@ -84,7 +84,7 @@ datasets/raw/construction_site_safety/
 ### Particularidades
 
 - **Augmentación**: el split `train` está augmentado por Roboflow (recortes, flips, cambios de color). Las imágenes de val y test son sin augmentar → BENCH sin sesgo por augmentación.
-- **CR-02 limitado**: `NO-Safety Vest` existe en el raw pero **no** se incluyó en canonical_v2. El GT de persona-nivel (person_gt.json) tiene `has_vest=False` para 0 personas → CR-02 no evaluable con este dataset.
+- **CR-02 limitado**: `NO-Safety Vest` existe en el raw pero **no** se incluyó en canonical_v2. El GT de persona-nivel (person_gt.json — HISTÓRICO, prohibido para evaluación, ver registry/bench_v3.md; vigente: curated/person_gt_bench_obra.json) tiene `has_vest=False` para 0 personas → CR-02 no evaluable con este dataset.
 - **bare_head anotado**: única fuente del corpus con anotaciones directas de cabeza descubierta (NO-Hardhat), lo que hace viable la estrategia E1 de detección directa.
 
 ---

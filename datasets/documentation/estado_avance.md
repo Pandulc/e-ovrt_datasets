@@ -50,7 +50,7 @@ Datasets seleccionados: `construction_site_safety`, `chv`, `ppe_siabar` (3 activ
 
 ## GT persona-nivel del BENCH
 
-Archivo: `datasets/processed/coco/bench/person_gt.json`  
+Archivo: `datasets/processed/coco/bench/person_gt.json` (HISTÓRICO — prohibido para evaluación, ver registry/bench_v3.md; vigente: curated/person_gt_bench_obra.json)  
 Criterio: `center_in_bbox`
 
 | Métrica | Valor |

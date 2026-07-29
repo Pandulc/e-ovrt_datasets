@@ -90,20 +90,12 @@ def _xywh_to_xyxy(bbox: list[float]) -> list[float]:
     return [x, y, x + w, y + h]
 
 
-def main() -> None:
-    """Construye GT persona-nivel desde canonical_v2 COCO del BENCH.
+def person_gt_records_from_coco(coco: dict) -> list[dict]:
+    """Records persona-nivel para un COCO canonical_v2.
 
-    En canonical_v2, bare_head proviene SOLO de negativos explícitos (D9), por lo que
-    cada bare_head annotation es ya un proxy confiable de no_helmet.
-    CR-02 (has_vest) queda True si no hay anotaciones NO-Safety Vest disponibles en esta vista.
+    En canonical_v2, bare_head proviene SOLO de negativos explícitos (D9), por lo
+    que cada bare_head annotation es ya un proxy confiable de no_helmet.
     """
-    p = argparse.ArgumentParser(description="Construye GT persona-nivel del BENCH.")
-    p.add_argument("--coco", required=True, type=Path,
-                   help="COCO canonical_v2 del BENCH (merged val+test de construction_site_safety)")
-    p.add_argument("--out", required=True, type=Path)
-    args = p.parse_args()
-
-    coco = json.loads(args.coco.read_text())
     cat_map = {c["id"]: c["name"] for c in coco["categories"]}
 
     # Group annotations by image; convert COCO xywh bbox to xyxy
@@ -127,21 +119,51 @@ def main() -> None:
             rec["image_id"] = img["id"]
             rec["file_name"] = img["file_name"]
         all_person_gt.extend(person_gt)
+    return all_person_gt
 
-    violators_cr01 = sum(1 for r in all_person_gt if not r["has_helmet"])
-    violators_cr02 = sum(1 for r in all_person_gt if not r["has_vest"])
-    print(f"Personas: {len(all_person_gt)} | CR-01 violadoras: {violators_cr01} | CR-02 violadoras: {violators_cr02}")
 
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(json.dumps({
+def build_person_gt_payload(cocos: list[dict]) -> dict:
+    """Payload person_gt (mismo contrato que el histórico) desde uno o más COCOs.
+
+    Acepta múltiples COCOs porque el núcleo curado de bench_obra vive en dos
+    archivos (val + test curados); los records se concatenan y los conteos se
+    calculan sobre el total. Los image_id se conservan tal cual vienen de cada
+    fuente (la evaluación matchea por basename de file_name, no por id).
+    """
+    records: list[dict] = []
+    for coco in cocos:
+        records.extend(person_gt_records_from_coco(coco))
+
+    violators_cr01 = sum(1 for r in records if not r["has_helmet"])
+    violators_cr02 = sum(1 for r in records if not r["has_vest"])
+    return {
         "matching": "center_in_bbox",
         "source_view": "canonical_v2",
         "note_cr02": "has_vest=True para todos (NO-Safety Vest no es clase canonical_v2; ver raw annotations)",
-        "total_persons": len(all_person_gt),
+        "total_persons": len(records),
         "violators_cr01": violators_cr01,
         "violators_cr02": violators_cr02,
-        "records": all_person_gt,
-    }, indent=2))
+        "records": records,
+    }
+
+
+def main() -> None:
+    """Construye GT persona-nivel desde canonical_v2 COCO(s) del BENCH.
+
+    CR-02 (has_vest) queda True si no hay anotaciones NO-Safety Vest disponibles en esta vista.
+    """
+    p = argparse.ArgumentParser(description="Construye GT persona-nivel del BENCH.")
+    p.add_argument("--coco", required=True, type=Path, nargs="+",
+                   help="Uno o más COCOs canonical_v2 del BENCH (ej: val + test curados de bench_obra)")
+    p.add_argument("--out", required=True, type=Path)
+    args = p.parse_args()
+
+    payload = build_person_gt_payload([json.loads(path.read_text()) for path in args.coco])
+    print(f"Personas: {payload['total_persons']} | CR-01 violadoras: {payload['violators_cr01']} "
+          f"| CR-02 violadoras: {payload['violators_cr02']}")
+
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    args.out.write_text(json.dumps(payload, indent=2))
     print(f"GT escrito en {args.out}")
 
 

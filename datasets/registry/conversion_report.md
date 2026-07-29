@@ -37,7 +37,7 @@ vest y bare_head en BENCH por debajo de 150 (102 y 110 resp.) — limitación es
 
 ## GT persona-nivel del BENCH
 
-Archivo: `datasets/processed/coco/bench/person_gt.json`  
+Archivo: `datasets/processed/coco/bench/person_gt.json` (HISTÓRICO — prohibido para evaluación, ver registry/bench_v3.md; vigente: curated/person_gt_bench_obra.json)  
 Criterio de asignación: center_in_bbox (centro del bbox violation dentro de la región de referencia)
 
 | Métrica | Valor |
