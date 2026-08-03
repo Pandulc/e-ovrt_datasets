@@ -1,0 +1,39 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "a_p2_c01",
+  "source_file": "clips/a_p2_c01.mp4",
+  "block": "A",
+  "scenario": "P2",
+  "fps_nominal": 30,
+  "duration_ms": 36433,
+  "recording": {},
+  "negative": false,
+  "episodes": [
+    {
+      "id": "ep1",
+      "condition_id": "CR-02",
+      "level": "scene",
+      "source_id": "a_p2_c01",
+      "start_ms": 4433,
+      "end_ms": 29400,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    }
+  ],
+  "sub_threshold_events": [],
+  "annotation": {
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "2fe1225baac8cf866f4ef0f8eb491c2ae2a75aeab226317eb4fa95040e27190b",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

@@ -1,0 +1,1648 @@
+<?xml version="1.0" ?>
+<annotations>
+  <version>1.1</version>
+  <meta>
+    <task>
+      <name>a_p6_c02</name>
+      <size>1695</size>
+      <original_size>
+        <width>1920</width>
+        <height>1080</height>
+      </original_size>
+    </task>
+  </meta>
+  <track id="1" label="person" source="semi-auto">
+    <box frame="0" keyframe="1" outside="0" occluded="0" xtl="642.43" ytl="119.02" xbr="1068.90" ybr="1078.09">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="3" keyframe="1" outside="0" occluded="0" xtl="684.40" ytl="110.74" xbr="1103.23" ybr="1078.70">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="6" keyframe="1" outside="0" occluded="0" xtl="720.67" ytl="110.45" xbr="1132.03" ybr="1078.62">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="9" keyframe="1" outside="0" occluded="0" xtl="748.40" ytl="112.12" xbr="1162.20" ybr="1078.10">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="12" keyframe="1" outside="0" occluded="0" xtl="781.41" ytl="116.18" xbr="1184.43" ybr="1077.61">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="15" keyframe="1" outside="0" occluded="0" xtl="817.00" ytl="121.88" xbr="1236.77" ybr="1078.04">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="18" keyframe="1" outside="0" occluded="0" xtl="857.41" ytl="133.04" xbr="1274.82" ybr="1079.26">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="21" keyframe="1" outside="0" occluded="0" xtl="902.98" ytl="129.86" xbr="1332.72" ybr="1076.72">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="24" keyframe="1" outside="0" occluded="0" xtl="914.93" ytl="127.06" xbr="1375.15" ybr="1078.74">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="27" keyframe="1" outside="0" occluded="0" xtl="937.35" ytl="125.26" xbr="1421.27" ybr="1079.72">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="30" keyframe="1" outside="0" occluded="0" xtl="962.91" ytl="123.85" xbr="1447.63" ybr="1078.31">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="33" keyframe="1" outside="0" occluded="0" xtl="994.36" ytl="120.41" xbr="1451.18" ybr="1075.33">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="36" keyframe="1" outside="0" occluded="0" xtl="1006.54" ytl="118.20" xbr="1441.88" ybr="1073.64">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="39" keyframe="1" outside="0" occluded="0" xtl="1010.27" ytl="117.35" xbr="1419.46" ybr="1069.90">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="42" keyframe="1" outside="0" occluded="0" xtl="997.74" ytl="120.48" xbr="1400.53" ybr="1076.39">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="45" keyframe="1" outside="0" occluded="0" xtl="1006.91" ytl="108.78" xbr="1373.92" ybr="1071.94">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="48" keyframe="1" outside="0" occluded="0" xtl="1000.48" ytl="105.55" xbr="1356.56" ybr="1072.87">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="51" keyframe="1" outside="0" occluded="0" xtl="1001.85" ytl="109.30" xbr="1341.37" ybr="1047.41">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="54" keyframe="1" outside="0" occluded="0" xtl="995.26" ytl="104.09" xbr="1335.71" ybr="1025.34">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="69" keyframe="1" outside="0" occluded="0" xtl="1005.00" ytl="105.52" xbr="1338.13" ybr="1010.01">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="72" keyframe="1" outside="0" occluded="0" xtl="1004.27" ytl="108.92" xbr="1339.93" ybr="983.87">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="75" keyframe="1" outside="0" occluded="0" xtl="985.73" ytl="109.23" xbr="1338.54" ybr="982.27">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="78" keyframe="1" outside="0" occluded="0" xtl="966.52" ytl="111.07" xbr="1331.99" ybr="984.91">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="84" keyframe="1" outside="0" occluded="0" xtl="969.47" ytl="104.16" xbr="1318.52" ybr="984.43">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="87" keyframe="1" outside="0" occluded="0" xtl="968.53" ytl="93.10" xbr="1310.08" ybr="985.70">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="90" keyframe="1" outside="0" occluded="0" xtl="965.45" ytl="130.58" xbr="1299.09" ybr="989.28">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="93" keyframe="1" outside="0" occluded="0" xtl="963.94" ytl="160.86" xbr="1292.62" ybr="987.01">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="96" keyframe="1" outside="0" occluded="0" xtl="947.73" ytl="157.77" xbr="1285.66" ybr="988.75">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="99" keyframe="1" outside="0" occluded="0" xtl="931.04" ytl="153.85" xbr="1278.06" ybr="988.86">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="102" keyframe="1" outside="0" occluded="0" xtl="918.10" ytl="150.49" xbr="1274.85" ybr="989.27">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="111" keyframe="1" outside="0" occluded="0" xtl="906.58" ytl="153.85" xbr="1269.81" ybr="987.60">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="126" keyframe="1" outside="0" occluded="0" xtl="917.90" ytl="154.49" xbr="1269.00" ybr="986.55">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="129" keyframe="1" outside="0" occluded="0" xtl="935.95" ytl="149.32" xbr="1264.65" ybr="988.92">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="132" keyframe="1" outside="0" occluded="0" xtl="952.19" ytl="147.46" xbr="1273.12" ybr="1000.69">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="135" keyframe="1" outside="0" occluded="0" xtl="964.64" ytl="147.05" xbr="1288.31" ybr="1011.87">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="138" keyframe="1" outside="0" occluded="0" xtl="969.27" ytl="144.83" xbr="1300.90" ybr="1023.31">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="141" keyframe="1" outside="0" occluded="0" xtl="972.34" ytl="144.30" xbr="1314.16" ybr="1033.01">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="144" keyframe="1" outside="0" occluded="0" xtl="973.32" ytl="143.02" xbr="1338.17" ybr="1031.60">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="147" keyframe="1" outside="0" occluded="0" xtl="975.75" ytl="144.06" xbr="1361.18" ybr="1028.62">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="150" keyframe="1" outside="0" occluded="0" xtl="977.83" ytl="145.49" xbr="1383.89" ybr="1028.57">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="153" keyframe="1" outside="0" occluded="0" xtl="1017.47" ytl="151.68" xbr="1405.66" ybr="1029.31">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="156" keyframe="1" outside="0" occluded="0" xtl="1065.33" ytl="153.32" xbr="1418.32" ybr="1032.59">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="159" keyframe="1" outside="0" occluded="0" xtl="1106.05" ytl="159.38" xbr="1425.91" ybr="1032.88">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="162" keyframe="1" outside="0" occluded="0" xtl="1099.90" ytl="163.07" xbr="1445.17" ybr="1032.99">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="165" keyframe="1" outside="0" occluded="0" xtl="1115.01" ytl="166.02" xbr="1469.17" ybr="1034.10">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="168" keyframe="1" outside="0" occluded="0" xtl="1119.54" ytl="164.43" xbr="1487.55" ybr="1033.05">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="171" keyframe="1" outside="0" occluded="0" xtl="1120.58" ytl="163.38" xbr="1502.89" ybr="1024.99">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="174" keyframe="1" outside="0" occluded="0" xtl="1134.18" ytl="166.00" xbr="1516.54" ybr="1031.03">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="177" keyframe="1" outside="0" occluded="0" xtl="1152.38" ytl="170.28" xbr="1521.16" ybr="1049.67">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="180" keyframe="1" outside="0" occluded="0" xtl="1163.45" ytl="165.98" xbr="1553.31" ybr="1078.41">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="183" keyframe="1" outside="0" occluded="0" xtl="1150.78" ytl="165.99" xbr="1589.15" ybr="1080.31">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="186" keyframe="1" outside="0" occluded="0" xtl="1141.60" ytl="167.75" xbr="1566.45" ybr="1079.74">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="189" keyframe="1" outside="0" occluded="0" xtl="1135.45" ytl="175.23" xbr="1526.12" ybr="1079.53">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="192" keyframe="1" outside="0" occluded="0" xtl="1135.73" ytl="179.89" xbr="1481.58" ybr="1076.14">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="195" keyframe="1" outside="0" occluded="0" xtl="1121.18" ytl="189.30" xbr="1458.16" ybr="1076.18">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="204" keyframe="1" outside="0" occluded="0" xtl="1129.62" ytl="198.02" xbr="1475.96" ybr="1074.70">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="210" keyframe="1" outside="0" occluded="0" xtl="1133.64" ytl="203.49" xbr="1505.97" ybr="1075.51">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="213" keyframe="1" outside="0" occluded="0" xtl="1140.92" ytl="199.86" xbr="1547.65" ybr="1079.19">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="216" keyframe="1" outside="0" occluded="0" xtl="1150.74" ytl="203.67" xbr="1587.46" ybr="1079.70">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="219" keyframe="1" outside="0" occluded="0" xtl="1154.25" ytl="207.47" xbr="1608.73" ybr="1079.78">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="222" keyframe="1" outside="0" occluded="0" xtl="1180.38" ytl="203.72" xbr="1613.05" ybr="1078.78">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="231" keyframe="1" outside="0" occluded="0" xtl="1191.94" ytl="203.08" xbr="1615.08" ybr="1077.46">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="237" keyframe="1" outside="0" occluded="0" xtl="1174.09" ytl="202.59" xbr="1607.98" ybr="1076.84">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="240" keyframe="1" outside="0" occluded="0" xtl="1147.66" ytl="202.65" xbr="1602.46" ybr="1077.98">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="249" keyframe="1" outside="0" occluded="0" xtl="1121.67" ytl="212.54" xbr="1597.45" ybr="1077.78">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="252" keyframe="1" outside="0" occluded="0" xtl="1054.68" ytl="215.90" xbr="1605.33" ybr="1077.78">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="255" keyframe="1" outside="0" occluded="0" xtl="1004.97" ytl="223.34" xbr="1612.16" ybr="1077.43">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="258" keyframe="1" outside="0" occluded="0" xtl="950.41" ytl="226.56" xbr="1626.40" ybr="1077.34">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="261" keyframe="1" outside="0" occluded="0" xtl="937.64" ytl="232.39" xbr="1646.91" ybr="1077.64">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="264" keyframe="1" outside="0" occluded="0" xtl="980.32" ytl="244.62" xbr="1668.81" ybr="1078.29">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="267" keyframe="1" outside="0" occluded="0" xtl="1074.41" ytl="256.25" xbr="1691.92" ybr="1079.48">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="270" keyframe="1" outside="0" occluded="0" xtl="1147.53" ytl="272.60" xbr="1698.04" ybr="1079.69">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="273" keyframe="1" outside="0" occluded="0" xtl="1160.28" ytl="280.71" xbr="1713.50" ybr="1079.17">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="276" keyframe="1" outside="0" occluded="0" xtl="1163.03" ytl="285.38" xbr="1726.98" ybr="1078.96">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="282" keyframe="1" outside="0" occluded="0" xtl="1168.33" ytl="289.29" xbr="1739.04" ybr="1078.71">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="285" keyframe="1" outside="0" occluded="0" xtl="1185.85" ytl="291.43" xbr="1738.97" ybr="1078.87">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="288" keyframe="1" outside="0" occluded="0" xtl="1201.71" ytl="299.53" xbr="1737.17" ybr="1076.14">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="291" keyframe="1" outside="0" occluded="0" xtl="1250.19" ytl="300.90" xbr="1739.26" ybr="1075.64">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="294" keyframe="1" outside="0" occluded="0" xtl="1268.19" ytl="300.11" xbr="1737.68" ybr="1076.01">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="300" keyframe="1" outside="0" occluded="0" xtl="1270.08" ytl="277.29" xbr="1720.42" ybr="1075.81">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="303" keyframe="1" outside="0" occluded="0" xtl="1268.58" ytl="261.92" xbr="1702.40" ybr="1074.91">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="306" keyframe="1" outside="0" occluded="0" xtl="1270.61" ytl="247.06" xbr="1725.65" ybr="1073.45">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="309" keyframe="1" outside="0" occluded="0" xtl="1276.06" ytl="241.14" xbr="1755.94" ybr="1074.81">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="312" keyframe="1" outside="0" occluded="0" xtl="1284.87" ytl="229.96" xbr="1762.52" ybr="1079.82">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="315" keyframe="1" outside="0" occluded="0" xtl="1284.88" ytl="225.39" xbr="1782.57" ybr="1079.88">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="318" keyframe="1" outside="0" occluded="0" xtl="1286.14" ytl="221.63" xbr="1799.98" ybr="1079.62">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="321" keyframe="1" outside="0" occluded="0" xtl="1288.82" ytl="221.53" xbr="1810.14" ybr="1079.07">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="327" keyframe="1" outside="0" occluded="0" xtl="1296.60" ytl="219.38" xbr="1797.72" ybr="1080.10">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="330" keyframe="1" outside="0" occluded="0" xtl="1298.33" ytl="221.59" xbr="1770.31" ybr="1075.62">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="336" keyframe="1" outside="0" occluded="0" xtl="1300.99" ytl="224.09" xbr="1808.61" ybr="1077.88">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="339" keyframe="1" outside="0" occluded="0" xtl="1294.21" ytl="229.73" xbr="1849.99" ybr="1077.27">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="342" keyframe="1" outside="0" occluded="0" xtl="1287.24" ytl="231.63" xbr="1905.61" ybr="1078.39">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="345" keyframe="1" outside="0" occluded="0" xtl="1286.70" ytl="244.98" xbr="1907.88" ybr="1078.28">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="348" keyframe="1" outside="0" occluded="0" xtl="1285.59" ytl="260.49" xbr="1907.90" ybr="1078.97">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="351" keyframe="1" outside="0" occluded="0" xtl="1282.65" ytl="283.03" xbr="1911.20" ybr="1077.05">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="354" keyframe="1" outside="0" occluded="0" xtl="1286.81" ytl="296.14" xbr="1915.09" ybr="1076.06">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="360" keyframe="1" outside="0" occluded="0" xtl="1304.72" ytl="303.31" xbr="1915.05" ybr="1077.33">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="363" keyframe="1" outside="0" occluded="0" xtl="1321.14" ytl="299.24" xbr="1914.99" ybr="1077.44">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="366" keyframe="1" outside="0" occluded="0" xtl="1332.97" ytl="289.50" xbr="1914.39" ybr="1077.00">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="369" keyframe="1" outside="0" occluded="0" xtl="1336.24" ytl="278.03" xbr="1916.40" ybr="1078.74">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="372" keyframe="1" outside="0" occluded="0" xtl="1330.95" ytl="264.69" xbr="1916.26" ybr="1079.48">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="375" keyframe="1" outside="0" occluded="0" xtl="1313.62" ytl="244.93" xbr="1889.05" ybr="1080.91">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="378" keyframe="1" outside="0" occluded="0" xtl="1283.47" ytl="238.23" xbr="1833.99" ybr="1077.49">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="381" keyframe="1" outside="0" occluded="0" xtl="1262.61" ytl="230.35" xbr="1777.05" ybr="1079.75">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="384" keyframe="1" outside="0" occluded="0" xtl="1245.95" ytl="221.28" xbr="1748.81" ybr="1073.54">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="387" keyframe="1" outside="0" occluded="0" xtl="1241.01" ytl="210.15" xbr="1705.56" ybr="1073.24">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="390" keyframe="1" outside="0" occluded="0" xtl="1238.13" ytl="205.01" xbr="1647.47" ybr="1074.22">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="393" keyframe="1" outside="0" occluded="0" xtl="1236.25" ytl="197.88" xbr="1616.34" ybr="1074.34">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="396" keyframe="1" outside="0" occluded="0" xtl="1236.45" ytl="189.35" xbr="1600.16" ybr="1074.96">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="408" keyframe="1" outside="0" occluded="0" xtl="1234.93" ytl="174.92" xbr="1618.96" ybr="1077.02">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="411" keyframe="1" outside="0" occluded="0" xtl="1234.51" ytl="164.89" xbr="1616.33" ybr="1075.37">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="414" keyframe="1" outside="0" occluded="0" xtl="1214.18" ytl="160.98" xbr="1603.02" ybr="1074.71">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="417" keyframe="1" outside="0" occluded="0" xtl="1199.05" ytl="158.38" xbr="1568.87" ybr="1037.95">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="420" keyframe="1" outside="0" occluded="0" xtl="1144.60" ytl="156.18" xbr="1548.17" ybr="1032.60">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="423" keyframe="1" outside="0" occluded="0" xtl="1096.64" ytl="154.40" xbr="1525.86" ybr="1033.86">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="426" keyframe="1" outside="0" occluded="0" xtl="1083.94" ytl="157.80" xbr="1499.68" ybr="1033.30">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="429" keyframe="1" outside="0" occluded="0" xtl="1080.56" ytl="155.45" xbr="1469.17" ybr="1029.72">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="432" keyframe="1" outside="0" occluded="0" xtl="1077.28" ytl="149.07" xbr="1436.57" ybr="1013.33">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="435" keyframe="1" outside="0" occluded="0" xtl="1074.88" ytl="145.12" xbr="1402.73" ybr="977.11">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="438" keyframe="1" outside="0" occluded="0" xtl="1074.91" ytl="141.31" xbr="1382.70" ybr="950.69">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="441" keyframe="1" outside="0" occluded="0" xtl="1075.66" ytl="137.75" xbr="1371.02" ybr="946.55">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="450" keyframe="1" outside="0" occluded="0" xtl="1077.05" ytl="131.28" xbr="1360.55" ybr="946.03">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="471" keyframe="1" outside="0" occluded="0" xtl="1060.25" ytl="127.74" xbr="1365.47" ybr="946.42">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="483" keyframe="1" outside="0" occluded="0" xtl="1075.67" ytl="131.36" xbr="1390.33" ybr="952.43">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="486" keyframe="1" outside="0" occluded="0" xtl="1076.86" ytl="130.75" xbr="1418.42" ybr="957.47">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="489" keyframe="1" outside="0" occluded="0" xtl="1076.64" ytl="132.16" xbr="1454.18" ybr="959.62">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="492" keyframe="1" outside="0" occluded="0" xtl="1081.10" ytl="135.48" xbr="1482.58" ybr="961.01">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="495" keyframe="1" outside="0" occluded="0" xtl="1089.29" ytl="138.70" xbr="1509.66" ybr="961.87">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="498" keyframe="1" outside="0" occluded="0" xtl="1121.54" ytl="139.23" xbr="1523.48" ybr="962.81">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="501" keyframe="1" outside="0" occluded="0" xtl="1157.78" ytl="141.21" xbr="1533.02" ybr="961.76">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="504" keyframe="1" outside="0" occluded="0" xtl="1191.07" ytl="143.61" xbr="1530.92" ybr="960.32">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="507" keyframe="1" outside="0" occluded="0" xtl="1201.35" ytl="146.14" xbr="1527.48" ybr="958.15">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="513" keyframe="1" outside="0" occluded="0" xtl="1213.55" ytl="139.86" xbr="1516.20" ybr="938.37">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="516" keyframe="1" outside="0" occluded="0" xtl="1222.85" ytl="138.81" xbr="1514.05" ybr="879.13">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="519" keyframe="1" outside="0" occluded="0" xtl="1231.50" ytl="137.48" xbr="1511.05" ybr="863.23">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="522" keyframe="1" outside="0" occluded="0" xtl="1236.52" ytl="136.76" xbr="1507.88" ybr="845.77">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="528" keyframe="1" outside="0" occluded="0" xtl="1240.70" ytl="148.62" xbr="1503.20" ybr="845.73">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="531" keyframe="1" outside="0" occluded="0" xtl="1237.56" ytl="159.34" xbr="1498.06" ybr="841.61">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="534" keyframe="1" outside="0" occluded="0" xtl="1222.48" ytl="169.08" xbr="1493.91" ybr="835.24">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="537" keyframe="1" outside="0" occluded="0" xtl="1205.61" ytl="173.81" xbr="1494.49" ybr="830.19">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="543" keyframe="1" outside="0" occluded="0" xtl="1192.13" ytl="174.57" xbr="1495.77" ybr="824.20">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="552" keyframe="1" outside="0" occluded="0" xtl="1191.42" ytl="172.03" xbr="1500.45" ybr="812.92">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="564" keyframe="1" outside="0" occluded="0" xtl="1189.61" ytl="162.60" xbr="1478.83" ybr="811.40">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="567" keyframe="1" outside="0" occluded="0" xtl="1190.29" ytl="159.70" xbr="1466.00" ybr="809.35">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="570" keyframe="1" outside="0" occluded="0" xtl="1190.37" ytl="154.28" xbr="1450.73" ybr="805.89">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="573" keyframe="1" outside="0" occluded="0" xtl="1190.62" ytl="148.95" xbr="1437.45" ybr="801.13">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="579" keyframe="1" outside="0" occluded="0" xtl="1189.68" ytl="136.14" xbr="1418.99" ybr="792.60">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="582" keyframe="1" outside="0" occluded="0" xtl="1191.27" ytl="130.69" xbr="1405.83" ybr="789.32">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="585" keyframe="1" outside="0" occluded="0" xtl="1190.15" ytl="124.95" xbr="1394.39" ybr="792.86">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="591" keyframe="1" outside="0" occluded="0" xtl="1187.51" ytl="118.32" xbr="1389.64" ybr="809.64">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="597" keyframe="1" outside="0" occluded="0" xtl="1181.77" ytl="113.77" xbr="1390.83" ybr="823.64">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="615" keyframe="1" outside="0" occluded="0" xtl="1182.49" ytl="115.60" xbr="1412.74" ybr="831.57">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="621" keyframe="1" outside="0" occluded="0" xtl="1183.21" ytl="116.35" xbr="1424.06" ybr="833.01">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="627" keyframe="1" outside="0" occluded="0" xtl="1183.40" ytl="120.60" xbr="1439.53" ybr="833.57">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="630" keyframe="1" outside="0" occluded="0" xtl="1182.54" ytl="123.68" xbr="1450.03" ybr="833.93">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="633" keyframe="1" outside="0" occluded="0" xtl="1183.20" ytl="125.76" xbr="1468.96" ybr="834.67">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="636" keyframe="1" outside="0" occluded="0" xtl="1177.75" ytl="130.62" xbr="1485.76" ybr="836.10">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="639" keyframe="1" outside="0" occluded="0" xtl="1179.71" ytl="130.63" xbr="1499.64" ybr="833.86">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="645" keyframe="1" outside="0" occluded="0" xtl="1182.06" ytl="136.13" xbr="1510.03" ybr="868.52">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="648" keyframe="1" outside="0" occluded="0" xtl="1182.32" ytl="139.07" xbr="1510.45" ybr="887.02">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="657" keyframe="1" outside="0" occluded="0" xtl="1218.65" ytl="146.45" xbr="1532.25" ybr="890.34">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="660" keyframe="1" outside="0" occluded="0" xtl="1245.94" ytl="147.06" xbr="1545.29" ybr="889.16">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="663" keyframe="1" outside="0" occluded="0" xtl="1245.48" ytl="146.15" xbr="1560.07" ybr="896.27">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="666" keyframe="1" outside="0" occluded="0" xtl="1217.02" ytl="147.27" xbr="1570.93" ybr="918.79">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="669" keyframe="1" outside="0" occluded="0" xtl="1197.20" ytl="148.09" xbr="1569.16" ybr="930.08">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="672" keyframe="1" outside="0" occluded="0" xtl="1190.97" ytl="149.06" xbr="1557.34" ybr="945.29">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="675" keyframe="1" outside="0" occluded="0" xtl="1191.70" ytl="145.31" xbr="1539.70" ybr="946.89">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="678" keyframe="1" outside="0" occluded="0" xtl="1192.99" ytl="144.39" xbr="1523.57" ybr="947.44">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="681" keyframe="1" outside="0" occluded="0" xtl="1190.57" ytl="145.05" xbr="1510.49" ybr="947.38">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="684" keyframe="1" outside="0" occluded="0" xtl="1181.09" ytl="143.29" xbr="1497.01" ybr="945.74">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="687" keyframe="1" outside="0" occluded="0" xtl="1169.84" ytl="141.10" xbr="1491.49" ybr="952.76">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="690" keyframe="1" outside="0" occluded="0" xtl="1161.72" ytl="142.52" xbr="1491.73" ybr="990.35">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="693" keyframe="1" outside="0" occluded="0" xtl="1152.40" ytl="144.26" xbr="1492.91" ybr="1015.29">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="696" keyframe="1" outside="0" occluded="0" xtl="1147.78" ytl="144.48" xbr="1491.67" ybr="1030.73">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="702" keyframe="1" outside="0" occluded="0" xtl="1133.27" ytl="148.23" xbr="1488.01" ybr="1052.04">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="705" keyframe="1" outside="0" occluded="0" xtl="1127.89" ytl="150.08" xbr="1488.76" ybr="1062.52">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="714" keyframe="1" outside="0" occluded="0" xtl="1115.61" ytl="158.11" xbr="1498.43" ybr="1063.72">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="720" keyframe="1" outside="0" occluded="0" xtl="1095.29" ytl="158.48" xbr="1501.38" ybr="1066.09">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="723" keyframe="1" outside="0" occluded="0" xtl="1033.60" ytl="160.80" xbr="1498.45" ybr="1068.06">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="726" keyframe="1" outside="0" occluded="0" xtl="978.06" ytl="160.70" xbr="1489.52" ybr="1069.73">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="729" keyframe="1" outside="0" occluded="0" xtl="950.01" ytl="163.80" xbr="1477.95" ybr="1069.08">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="732" keyframe="1" outside="0" occluded="0" xtl="957.59" ytl="163.55" xbr="1461.41" ybr="1068.85">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="735" keyframe="1" outside="0" occluded="0" xtl="946.89" ytl="160.10" xbr="1436.48" ybr="1070.68">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="738" keyframe="1" outside="0" occluded="0" xtl="948.78" ytl="155.33" xbr="1413.91" ybr="1070.31">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="741" keyframe="1" outside="0" occluded="0" xtl="954.85" ytl="154.08" xbr="1391.10" ybr="1071.34">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="744" keyframe="1" outside="0" occluded="0" xtl="953.45" ytl="150.36" xbr="1366.80" ybr="1072.44">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="747" keyframe="1" outside="0" occluded="0" xtl="944.27" ytl="149.93" xbr="1342.54" ybr="1071.21">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="750" keyframe="1" outside="0" occluded="0" xtl="935.62" ytl="149.73" xbr="1323.87" ybr="1071.60">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="756" keyframe="1" outside="0" occluded="0" xtl="919.62" ytl="146.17" xbr="1308.30" ybr="1077.42">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="768" keyframe="1" outside="0" occluded="0" xtl="922.23" ytl="148.85" xbr="1323.74" ybr="1076.72">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="774" keyframe="1" outside="0" occluded="0" xtl="933.50" ytl="156.50" xbr="1338.07" ybr="1074.72">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="780" keyframe="1" outside="0" occluded="0" xtl="941.61" ytl="163.39" xbr="1356.00" ybr="1073.52">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="786" keyframe="1" outside="0" occluded="0" xtl="950.16" ytl="167.93" xbr="1370.76" ybr="1074.79">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="789" keyframe="1" outside="0" occluded="0" xtl="952.89" ytl="171.04" xbr="1380.80" ybr="1074.10">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="795" keyframe="1" outside="0" occluded="0" xtl="951.44" ytl="176.00" xbr="1398.47" ybr="1073.14">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="801" keyframe="1" outside="0" occluded="0" xtl="950.79" ytl="180.40" xbr="1420.55" ybr="1076.12">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="807" keyframe="1" outside="0" occluded="0" xtl="949.97" ytl="190.87" xbr="1434.25" ybr="1074.62">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="825" keyframe="1" outside="0" occluded="0" xtl="941.48" ytl="175.57" xbr="1413.64" ybr="1073.40">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="828" keyframe="1" outside="0" occluded="0" xtl="934.13" ytl="167.24" xbr="1401.65" ybr="1074.58">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="831" keyframe="1" outside="0" occluded="0" xtl="929.85" ytl="163.40" xbr="1383.03" ybr="1074.48">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="834" keyframe="1" outside="0" occluded="0" xtl="928.43" ytl="158.53" xbr="1361.49" ybr="1073.44">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="837" keyframe="1" outside="0" occluded="0" xtl="935.20" ytl="156.21" xbr="1348.30" ybr="1073.89">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="840" keyframe="1" outside="0" occluded="0" xtl="944.04" ytl="155.11" xbr="1330.53" ybr="1074.10">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="843" keyframe="1" outside="0" occluded="0" xtl="949.68" ytl="154.69" xbr="1315.08" ybr="1076.74">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="846" keyframe="1" outside="0" occluded="0" xtl="962.91" ytl="153.09" xbr="1304.69" ybr="1075.73">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="849" keyframe="1" outside="0" occluded="0" xtl="973.33" ytl="153.75" xbr="1303.29" ybr="1076.12">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="852" keyframe="1" outside="0" occluded="0" xtl="954.93" ytl="153.94" xbr="1303.30" ybr="1076.53">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="855" keyframe="1" outside="0" occluded="0" xtl="944.69" ytl="152.07" xbr="1301.75" ybr="1075.47">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="861" keyframe="1" outside="0" occluded="0" xtl="945.78" ytl="149.58" xbr="1288.40" ybr="1075.52">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="867" keyframe="1" outside="0" occluded="0" xtl="945.70" ytl="149.62" xbr="1275.45" ybr="1075.77">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="873" keyframe="1" outside="0" occluded="0" xtl="947.25" ytl="154.13" xbr="1296.65" ybr="1074.21">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="876" keyframe="1" outside="0" occluded="0" xtl="944.81" ytl="153.30" xbr="1313.85" ybr="1074.47">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="879" keyframe="1" outside="0" occluded="0" xtl="942.54" ytl="153.82" xbr="1332.44" ybr="1074.19">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="882" keyframe="1" outside="0" occluded="0" xtl="942.33" ytl="155.64" xbr="1350.26" ybr="1074.58">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="885" keyframe="1" outside="0" occluded="0" xtl="945.46" ytl="159.37" xbr="1373.60" ybr="1073.19">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="888" keyframe="1" outside="0" occluded="0" xtl="947.53" ytl="161.85" xbr="1395.59" ybr="1062.68">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="891" keyframe="1" outside="0" occluded="0" xtl="973.34" ytl="159.95" xbr="1404.01" ybr="1052.19">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="894" keyframe="1" outside="0" occluded="0" xtl="1003.73" ytl="157.69" xbr="1416.73" ybr="1051.88">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="897" keyframe="1" outside="0" occluded="0" xtl="1040.70" ytl="157.48" xbr="1421.36" ybr="1050.21">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="900" keyframe="1" outside="0" occluded="0" xtl="1083.19" ytl="154.28" xbr="1426.13" ybr="1050.74">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="909" keyframe="1" outside="0" occluded="0" xtl="1086.78" ytl="146.14" xbr="1417.58" ybr="1036.62">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="912" keyframe="1" outside="0" occluded="0" xtl="1085.32" ytl="139.22" xbr="1411.52" ybr="1013.58">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="915" keyframe="1" outside="0" occluded="0" xtl="1082.03" ytl="138.90" xbr="1410.43" ybr="989.39">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="918" keyframe="1" outside="0" occluded="0" xtl="1079.06" ytl="137.42" xbr="1409.88" ybr="959.04">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="921" keyframe="1" outside="0" occluded="0" xtl="1082.93" ytl="133.92" xbr="1408.18" ybr="932.03">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="924" keyframe="1" outside="0" occluded="0" xtl="1096.77" ytl="131.36" xbr="1410.61" ybr="923.15">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="927" keyframe="1" outside="0" occluded="0" xtl="1108.06" ytl="132.31" xbr="1416.72" ybr="923.15">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="933" keyframe="1" outside="0" occluded="0" xtl="1114.20" ytl="132.82" xbr="1434.90" ybr="918.00">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="936" keyframe="1" outside="0" occluded="0" xtl="1114.40" ytl="131.93" xbr="1444.28" ybr="905.12">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="939" keyframe="1" outside="0" occluded="0" xtl="1115.18" ytl="131.82" xbr="1451.77" ybr="884.16">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="942" keyframe="1" outside="0" occluded="0" xtl="1122.01" ytl="134.52" xbr="1457.26" ybr="866.59">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="945" keyframe="1" outside="0" occluded="0" xtl="1133.34" ytl="133.95" xbr="1460.67" ybr="859.86">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="948" keyframe="1" outside="0" occluded="0" xtl="1150.74" ytl="132.06" xbr="1467.04" ybr="860.48">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="951" keyframe="1" outside="0" occluded="0" xtl="1176.22" ytl="131.87" xbr="1471.51" ybr="860.48">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="954" keyframe="1" outside="0" occluded="0" xtl="1190.22" ytl="132.17" xbr="1470.09" ybr="858.53">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="960" keyframe="1" outside="0" occluded="0" xtl="1197.50" ytl="129.78" xbr="1459.57" ybr="855.92">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="969" keyframe="1" outside="0" occluded="0" xtl="1198.78" ytl="135.57" xbr="1440.83" ybr="849.97">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="972" keyframe="1" outside="0" occluded="0" xtl="1199.18" ytl="144.58" xbr="1430.47" ybr="842.23">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="978" keyframe="1" outside="0" occluded="0" xtl="1201.76" ytl="157.69" xbr="1417.85" ybr="837.59">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1002" keyframe="1" outside="0" occluded="0" xtl="1201.00" ytl="147.17" xbr="1418.73" ybr="837.52">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1032" keyframe="1" outside="0" occluded="0" xtl="1198.85" ytl="140.25" xbr="1440.76" ybr="836.26">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1035" keyframe="1" outside="0" occluded="0" xtl="1201.52" ytl="136.87" xbr="1415.45" ybr="836.25">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1038" keyframe="1" outside="0" occluded="0" xtl="1189.77" ytl="129.69" xbr="1429.61" ybr="839.93">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1041" keyframe="1" outside="0" occluded="0" xtl="1178.63" ytl="123.99" xbr="1459.31" ybr="843.86">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1044" keyframe="1" outside="0" occluded="0" xtl="1176.54" ytl="120.31" xbr="1475.26" ybr="847.62">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1047" keyframe="1" outside="0" occluded="0" xtl="1177.53" ytl="116.70" xbr="1462.89" ybr="850.50">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1050" keyframe="1" outside="0" occluded="0" xtl="1177.29" ytl="114.35" xbr="1449.07" ybr="850.48">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1068" keyframe="1" outside="0" occluded="0" xtl="1184.61" ytl="122.08" xbr="1426.25" ybr="849.78">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1074" keyframe="1" outside="0" occluded="0" xtl="1182.69" ytl="127.07" xbr="1446.23" ybr="850.85">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1077" keyframe="1" outside="0" occluded="0" xtl="1181.36" ytl="131.14" xbr="1467.59" ybr="859.66">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1080" keyframe="1" outside="0" occluded="0" xtl="1181.03" ytl="135.90" xbr="1468.48" ybr="900.45">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1083" keyframe="1" outside="0" occluded="0" xtl="1181.23" ytl="138.77" xbr="1479.39" ybr="926.12">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1086" keyframe="1" outside="0" occluded="0" xtl="1190.74" ytl="143.13" xbr="1491.64" ybr="945.00">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1089" keyframe="1" outside="0" occluded="0" xtl="1199.62" ytl="143.56" xbr="1514.93" ybr="948.61">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1092" keyframe="1" outside="0" occluded="0" xtl="1211.20" ytl="146.05" xbr="1537.59" ybr="949.96">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1095" keyframe="1" outside="0" occluded="0" xtl="1203.37" ytl="145.32" xbr="1554.56" ybr="952.36">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1098" keyframe="1" outside="0" occluded="0" xtl="1181.60" ytl="145.18" xbr="1562.41" ybr="953.50">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1101" keyframe="1" outside="0" occluded="0" xtl="1170.54" ytl="145.92" xbr="1559.42" ybr="992.86">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1104" keyframe="1" outside="0" occluded="0" xtl="1175.83" ytl="150.49" xbr="1548.09" ybr="1014.99">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1107" keyframe="1" outside="0" occluded="0" xtl="1176.42" ytl="152.66" xbr="1530.81" ybr="1030.89">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1110" keyframe="1" outside="0" occluded="0" xtl="1178.24" ytl="146.89" xbr="1514.76" ybr="1032.88">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1113" keyframe="1" outside="0" occluded="0" xtl="1172.55" ytl="144.44" xbr="1500.32" ybr="1035.92">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1116" keyframe="1" outside="0" occluded="0" xtl="1132.38" ytl="152.20" xbr="1494.46" ybr="1036.38">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1119" keyframe="1" outside="0" occluded="0" xtl="1132.02" ytl="157.20" xbr="1490.79" ybr="1058.15">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1122" keyframe="1" outside="0" occluded="0" xtl="1082.89" ytl="167.34" xbr="1497.84" ybr="1074.48">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1125" keyframe="1" outside="0" occluded="0" xtl="1132.92" ytl="180.85" xbr="1514.07" ybr="1076.21">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1128" keyframe="1" outside="0" occluded="0" xtl="1173.55" ytl="197.78" xbr="1547.61" ybr="1074.78">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1131" keyframe="1" outside="0" occluded="0" xtl="1177.55" ytl="206.24" xbr="1601.72" ybr="1074.44">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1134" keyframe="1" outside="0" occluded="0" xtl="1176.60" ytl="214.38" xbr="1654.07" ybr="1075.88">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1137" keyframe="1" outside="0" occluded="0" xtl="1191.66" ytl="221.92" xbr="1702.19" ybr="1079.99">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1140" keyframe="1" outside="0" occluded="0" xtl="1228.13" ytl="226.88" xbr="1734.29" ybr="1079.43">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1143" keyframe="1" outside="0" occluded="0" xtl="1320.90" ytl="233.89" xbr="1758.69" ybr="1075.75">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1146" keyframe="1" outside="0" occluded="0" xtl="1338.15" ytl="247.80" xbr="1795.72" ybr="1074.37">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1149" keyframe="1" outside="0" occluded="0" xtl="1339.99" ytl="271.68" xbr="1835.36" ybr="1075.66">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1152" keyframe="1" outside="0" occluded="0" xtl="1346.65" ytl="292.23" xbr="1887.43" ybr="1077.55">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1155" keyframe="1" outside="0" occluded="0" xtl="1356.01" ytl="317.27" xbr="1913.00" ybr="1078.52">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1158" keyframe="1" outside="0" occluded="0" xtl="1356.16" ytl="338.57" xbr="1913.40" ybr="1078.45">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1161" keyframe="1" outside="0" occluded="0" xtl="1341.90" ytl="351.53" xbr="1914.07" ybr="1077.95">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1176" keyframe="1" outside="0" occluded="0" xtl="1351.83" ytl="335.09" xbr="1914.15" ybr="1078.87">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1179" keyframe="1" outside="0" occluded="0" xtl="1362.87" ytl="320.85" xbr="1913.81" ybr="1079.29">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1182" keyframe="1" outside="0" occluded="0" xtl="1372.59" ytl="308.21" xbr="1913.85" ybr="1078.49">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1185" keyframe="1" outside="0" occluded="0" xtl="1381.49" ytl="297.92" xbr="1913.59" ybr="1077.35">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1191" keyframe="1" outside="0" occluded="0" xtl="1385.69" ytl="284.28" xbr="1914.19" ybr="1077.95">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1203" keyframe="1" outside="0" occluded="0" xtl="1373.79" ytl="277.25" xbr="1915.65" ybr="1079.73">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1215" keyframe="1" outside="0" occluded="0" xtl="1349.52" ytl="263.78" xbr="1909.99" ybr="1079.23">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1221" keyframe="1" outside="0" occluded="0" xtl="1321.77" ytl="252.16" xbr="1909.40" ybr="1078.80">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1224" keyframe="1" outside="0" occluded="0" xtl="1345.54" ytl="247.89" xbr="1902.33" ybr="1078.71">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1227" keyframe="1" outside="0" occluded="0" xtl="1356.64" ytl="243.69" xbr="1897.90" ybr="1078.64">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1230" keyframe="1" outside="0" occluded="0" xtl="1345.14" ytl="233.25" xbr="1891.58" ybr="1080.32">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1233" keyframe="1" outside="0" occluded="0" xtl="1327.45" ytl="233.68" xbr="1745.63" ybr="1077.04">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1239" keyframe="1" outside="0" occluded="0" xtl="1306.07" ytl="231.43" xbr="1737.56" ybr="1074.45">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1242" keyframe="1" outside="0" occluded="0" xtl="1290.31" ytl="231.29" xbr="1754.90" ybr="1074.04">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1245" keyframe="1" outside="0" occluded="0" xtl="1280.99" ytl="228.42" xbr="1796.89" ybr="1078.41">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1248" keyframe="1" outside="0" occluded="0" xtl="1253.84" ytl="220.21" xbr="1707.07" ybr="1074.40">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1254" keyframe="1" outside="0" occluded="0" xtl="1258.28" ytl="203.04" xbr="1700.92" ybr="1067.83">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1257" keyframe="1" outside="0" occluded="0" xtl="1206.17" ytl="198.69" xbr="1671.81" ybr="1071.19">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1260" keyframe="1" outside="0" occluded="0" xtl="1178.67" ytl="189.45" xbr="1651.10" ybr="1076.88">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1263" keyframe="1" outside="0" occluded="0" xtl="1167.85" ytl="185.37" xbr="1661.68" ybr="1075.51">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1266" keyframe="1" outside="0" occluded="0" xtl="1168.97" ytl="181.04" xbr="1642.85" ybr="1076.65">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1269" keyframe="1" outside="0" occluded="0" xtl="1158.97" ytl="135.96" xbr="1583.66" ybr="1077.52">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1272" keyframe="1" outside="0" occluded="0" xtl="1155.30" ytl="35.28" xbr="1555.91" ybr="1076.74">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1275" keyframe="1" outside="0" occluded="0" xtl="1117.04" ytl="52.67" xbr="1524.76" ybr="1072.25">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1278" keyframe="1" outside="0" occluded="0" xtl="1052.49" ytl="126.98" xbr="1485.94" ybr="1058.21">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1281" keyframe="1" outside="0" occluded="0" xtl="1014.13" ytl="154.21" xbr="1421.71" ybr="1052.48">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1284" keyframe="1" outside="0" occluded="0" xtl="1007.82" ytl="151.19" xbr="1387.85" ybr="1055.80">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1287" keyframe="1" outside="0" occluded="0" xtl="1002.12" ytl="148.61" xbr="1374.09" ybr="1050.33">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1290" keyframe="1" outside="0" occluded="0" xtl="1001.02" ytl="149.53" xbr="1361.39" ybr="1050.15">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1293" keyframe="1" outside="0" occluded="0" xtl="954.80" ytl="143.97" xbr="1343.46" ybr="1045.18">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1296" keyframe="1" outside="0" occluded="0" xtl="992.08" ytl="137.37" xbr="1337.65" ybr="1038.97">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1299" keyframe="1" outside="0" occluded="0" xtl="965.78" ytl="129.25" xbr="1335.15" ybr="1040.49">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1302" keyframe="1" outside="0" occluded="0" xtl="955.28" ytl="132.20" xbr="1302.29" ybr="1039.48">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1305" keyframe="1" outside="0" occluded="0" xtl="940.41" ytl="130.10" xbr="1274.36" ybr="1036.42">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1311" keyframe="1" outside="0" occluded="0" xtl="934.49" ytl="128.37" xbr="1263.44" ybr="1023.30">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1320" keyframe="1" outside="0" occluded="0" xtl="915.75" ytl="127.09" xbr="1252.06" ybr="1016.39">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1323" keyframe="1" outside="0" occluded="0" xtl="878.16" ytl="127.17" xbr="1240.52" ybr="1017.73">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1326" keyframe="1" outside="0" occluded="0" xtl="926.39" ytl="127.18" xbr="1242.55" ybr="1019.00">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1329" keyframe="1" outside="0" occluded="0" xtl="942.41" ytl="129.33" xbr="1245.25" ybr="1016.40">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1335" keyframe="1" outside="0" occluded="0" xtl="949.19" ytl="127.05" xbr="1259.97" ybr="1023.18">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1341" keyframe="1" outside="0" occluded="0" xtl="972.46" ytl="128.17" xbr="1281.05" ybr="1025.08">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1344" keyframe="1" outside="0" occluded="0" xtl="978.96" ytl="130.80" xbr="1292.00" ybr="1022.27">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1347" keyframe="1" outside="0" occluded="0" xtl="980.54" ytl="128.43" xbr="1303.45" ybr="1022.33">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1353" keyframe="1" outside="0" occluded="0" xtl="986.37" ytl="121.50" xbr="1332.23" ybr="1022.86">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1356" keyframe="1" outside="0" occluded="0" xtl="991.06" ytl="123.23" xbr="1357.61" ybr="1018.15">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1359" keyframe="1" outside="0" occluded="0" xtl="993.83" ytl="127.88" xbr="1386.32" ybr="1014.35">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1362" keyframe="1" outside="0" occluded="0" xtl="992.83" ytl="130.47" xbr="1397.62" ybr="1011.73">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1365" keyframe="1" outside="0" occluded="0" xtl="991.55" ytl="131.60" xbr="1418.99" ybr="1005.85">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1371" keyframe="1" outside="0" occluded="0" xtl="994.07" ytl="131.14" xbr="1433.58" ybr="1000.94">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1377" keyframe="1" outside="0" occluded="0" xtl="991.09" ytl="133.92" xbr="1449.16" ybr="995.93">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1389" keyframe="1" outside="0" occluded="0" xtl="993.36" ytl="142.32" xbr="1414.40" ybr="998.28">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1392" keyframe="1" outside="0" occluded="0" xtl="993.01" ytl="148.28" xbr="1371.55" ybr="999.11">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1398" keyframe="1" outside="0" occluded="0" xtl="994.77" ytl="151.81" xbr="1357.95" ybr="1004.11">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1407" keyframe="1" outside="0" occluded="0" xtl="994.80" ytl="149.17" xbr="1375.06" ybr="1005.61">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1410" keyframe="1" outside="0" occluded="0" xtl="995.45" ytl="149.72" xbr="1395.48" ybr="1005.72">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1419" keyframe="1" outside="0" occluded="0" xtl="996.14" ytl="155.96" xbr="1382.68" ybr="1007.99">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1428" keyframe="1" outside="0" occluded="0" xtl="996.66" ytl="152.01" xbr="1364.57" ybr="1011.99">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1431" keyframe="1" outside="0" occluded="0" xtl="995.87" ytl="154.83" xbr="1377.89" ybr="1012.23">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1437" keyframe="1" outside="0" occluded="0" xtl="994.46" ytl="160.60" xbr="1390.16" ybr="1007.21">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1455" keyframe="1" outside="0" occluded="0" xtl="995.46" ytl="162.75" xbr="1375.46" ybr="1004.78">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1458" keyframe="1" outside="0" occluded="0" xtl="995.16" ytl="162.30" xbr="1365.23" ybr="1003.58">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1464" keyframe="1" outside="0" occluded="0" xtl="995.75" ytl="157.83" xbr="1375.50" ybr="1000.21">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1473" keyframe="1" outside="0" occluded="0" xtl="994.22" ytl="154.77" xbr="1394.72" ybr="996.82">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1485" keyframe="1" outside="0" occluded="0" xtl="994.73" ytl="155.41" xbr="1378.94" ybr="999.07">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1494" keyframe="1" outside="0" occluded="0" xtl="994.00" ytl="154.03" xbr="1389.68" ybr="999.55">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1515" keyframe="1" outside="0" occluded="0" xtl="994.70" ytl="156.77" xbr="1401.97" ybr="1001.36">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1524" keyframe="1" outside="0" occluded="0" xtl="993.62" ytl="153.01" xbr="1383.42" ybr="992.04">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1527" keyframe="1" outside="0" occluded="0" xtl="993.23" ytl="148.55" xbr="1367.46" ybr="990.86">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1530" keyframe="1" outside="0" occluded="0" xtl="995.37" ytl="143.89" xbr="1352.06" ybr="991.87">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1533" keyframe="1" outside="0" occluded="0" xtl="987.30" ytl="139.86" xbr="1337.46" ybr="1000.23">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1536" keyframe="1" outside="0" occluded="0" xtl="949.67" ytl="136.08" xbr="1319.73" ybr="1014.27">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1539" keyframe="1" outside="0" occluded="0" xtl="930.93" ytl="137.10" xbr="1304.41" ybr="1025.67">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1542" keyframe="1" outside="0" occluded="0" xtl="926.88" ytl="135.63" xbr="1275.78" ybr="1029.25">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1545" keyframe="1" outside="0" occluded="0" xtl="924.94" ytl="136.57" xbr="1257.07" ybr="1027.95">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1548" keyframe="1" outside="0" occluded="0" xtl="917.62" ytl="140.28" xbr="1241.57" ybr="1026.53">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1551" keyframe="1" outside="0" occluded="0" xtl="905.92" ytl="144.17" xbr="1234.99" ybr="1029.67">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1554" keyframe="1" outside="0" occluded="0" xtl="891.36" ytl="149.16" xbr="1223.70" ybr="1031.47">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1560" keyframe="1" outside="0" occluded="0" xtl="865.06" ytl="156.01" xbr="1212.53" ybr="1026.60">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1566" keyframe="1" outside="0" occluded="0" xtl="856.36" ytl="144.62" xbr="1204.65" ybr="1039.70">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1569" keyframe="1" outside="0" occluded="0" xtl="868.01" ytl="139.57" xbr="1204.64" ybr="1057.77">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1572" keyframe="1" outside="0" occluded="0" xtl="887.65" ytl="136.95" xbr="1206.19" ybr="1071.06">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1575" keyframe="1" outside="0" occluded="0" xtl="903.49" ytl="119.84" xbr="1213.05" ybr="1072.44">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1578" keyframe="1" outside="0" occluded="0" xtl="914.03" ytl="127.00" xbr="1226.78" ybr="1068.54">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1581" keyframe="1" outside="0" occluded="0" xtl="920.87" ytl="113.38" xbr="1262.68" ybr="1069.89">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1584" keyframe="1" outside="0" occluded="0" xtl="922.08" ytl="59.47" xbr="1316.57" ybr="1073.34">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1587" keyframe="1" outside="0" occluded="0" xtl="923.20" ytl="84.82" xbr="1352.51" ybr="1072.30">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1590" keyframe="1" outside="0" occluded="0" xtl="935.92" ytl="83.16" xbr="1383.65" ybr="1074.18">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1593" keyframe="1" outside="0" occluded="0" xtl="949.74" ytl="87.16" xbr="1407.64" ybr="1073.78">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1596" keyframe="1" outside="0" occluded="0" xtl="954.71" ytl="89.28" xbr="1428.99" ybr="1074.36">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1608" keyframe="1" outside="0" occluded="0" xtl="947.35" ytl="91.08" xbr="1403.87" ybr="1072.32">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1611" keyframe="1" outside="0" occluded="0" xtl="940.08" ytl="85.95" xbr="1375.97" ybr="1070.35">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1617" keyframe="1" outside="0" occluded="0" xtl="937.27" ytl="89.95" xbr="1351.44" ybr="1073.29">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1620" keyframe="1" outside="0" occluded="0" xtl="934.13" ytl="93.79" xbr="1266.93" ybr="1071.74">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1623" keyframe="1" outside="0" occluded="0" xtl="939.20" ytl="96.27" xbr="1255.56" ybr="1075.22">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1626" keyframe="1" outside="0" occluded="0" xtl="877.33" ytl="92.44" xbr="1244.50" ybr="1075.77">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1629" keyframe="1" outside="0" occluded="0" xtl="841.66" ytl="90.56" xbr="1246.24" ybr="1076.14">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1638" keyframe="1" outside="0" occluded="0" xtl="825.81" ytl="95.22" xbr="1236.81" ybr="1077.12">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1641" keyframe="1" outside="0" occluded="0" xtl="804.78" ytl="94.91" xbr="1206.34" ybr="1078.27">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1644" keyframe="1" outside="0" occluded="0" xtl="791.36" ytl="98.48" xbr="1193.48" ybr="1074.62">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1650" keyframe="1" outside="0" occluded="0" xtl="777.37" ytl="107.33" xbr="1193.47" ybr="1075.33">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1653" keyframe="1" outside="0" occluded="0" xtl="789.33" ytl="113.70" xbr="1194.32" ybr="1077.21">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1659" keyframe="1" outside="0" occluded="0" xtl="805.80" ytl="126.29" xbr="1227.43" ybr="1077.91">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1662" keyframe="1" outside="0" occluded="0" xtl="824.42" ytl="132.86" xbr="1259.36" ybr="1078.97">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1665" keyframe="1" outside="0" occluded="0" xtl="846.16" ytl="136.78" xbr="1294.10" ybr="1079.22">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1668" keyframe="1" outside="0" occluded="0" xtl="863.29" ytl="146.32" xbr="1331.07" ybr="1080.26">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1671" keyframe="1" outside="0" occluded="0" xtl="891.09" ytl="148.93" xbr="1363.29" ybr="1078.53">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1674" keyframe="1" outside="0" occluded="0" xtl="908.53" ytl="149.79" xbr="1383.77" ybr="1078.45">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1677" keyframe="1" outside="0" occluded="0" xtl="923.24" ytl="154.47" xbr="1403.32" ybr="1078.62">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1680" keyframe="1" outside="0" occluded="0" xtl="926.39" ytl="168.34" xbr="1421.52" ybr="1078.56">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1683" keyframe="1" outside="0" occluded="0" xtl="922.29" ytl="172.47" xbr="1448.27" ybr="1078.21">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1686" keyframe="1" outside="0" occluded="0" xtl="924.61" ytl="175.32" xbr="1486.04" ybr="1076.86">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1689" keyframe="1" outside="0" occluded="0" xtl="957.72" ytl="186.51" xbr="1506.85" ybr="1076.25">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1692" keyframe="1" outside="0" occluded="0" xtl="1005.82" ytl="191.87" xbr="1596.16" ybr="1077.89">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+    <box frame="1693" keyframe="1" outside="1" occluded="0" xtl="1005.82" ytl="191.87" xbr="1596.16" ybr="1077.89">
+      <attribute name="has_helmet">true</attribute>
+      <attribute name="has_vest">true</attribute>
+    </box>
+  </track>
+  <track id="2" label="person" source="semi-auto">
+    <box frame="0" keyframe="1" outside="0" occluded="0" xtl="1152.14" ytl="203.69" xbr="1426.16" ybr="403.64">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="15" keyframe="1" outside="0" occluded="0" xtl="1152.40" ytl="206.85" xbr="1425.37" ybr="401.23">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="16" keyframe="1" outside="1" occluded="0" xtl="1152.40" ytl="206.85" xbr="1425.37" ybr="401.23">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+  </track>
+  <track id="3" label="person" source="semi-auto">
+    <box frame="0" keyframe="1" outside="0" occluded="0" xtl="1230.98" ytl="214.43" xbr="1259.44" ybr="286.47">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1" keyframe="1" outside="1" occluded="0" xtl="1230.98" ytl="214.43" xbr="1259.44" ybr="286.47">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+  </track>
+  <track id="4" label="person" source="semi-auto">
+    <box frame="0" keyframe="1" outside="0" occluded="0" xtl="1388.77" ytl="250.90" xbr="1417.08" ybr="327.57">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1" keyframe="1" outside="1" occluded="0" xtl="1388.77" ytl="250.90" xbr="1417.08" ybr="327.57">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+  </track>
+  <track id="5" label="person" source="semi-auto">
+    <box frame="0" keyframe="1" outside="0" occluded="0" xtl="1210.34" ytl="214.71" xbr="1234.75" ybr="273.59">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1" keyframe="1" outside="1" occluded="0" xtl="1210.34" ytl="214.71" xbr="1234.75" ybr="273.59">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+  </track>
+  <track id="6" label="person" source="semi-auto">
+    <box frame="0" keyframe="1" outside="0" occluded="0" xtl="1317.36" ytl="240.78" xbr="1348.77" ybr="308.16">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1" keyframe="1" outside="1" occluded="0" xtl="1317.36" ytl="240.78" xbr="1348.77" ybr="308.16">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+  </track>
+  <track id="7" label="person" source="semi-auto">
+    <box frame="0" keyframe="1" outside="0" occluded="0" xtl="1343.87" ytl="243.99" xbr="1368.16" ybr="312.02">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+    <box frame="1" keyframe="1" outside="1" occluded="0" xtl="1343.87" ytl="243.99" xbr="1368.16" ybr="312.02">
+      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_vest">false</attribute>
+    </box>
+  </track>
+</annotations>

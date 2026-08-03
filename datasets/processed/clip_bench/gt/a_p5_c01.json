@@ -1,0 +1,64 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "a_p5_c01",
+  "source_file": "clips/a_p5_c01.mp4",
+  "block": "A",
+  "scenario": "P5",
+  "fps_nominal": 30,
+  "duration_ms": 39167,
+  "recording": {},
+  "negative": true,
+  "episodes": [],
+  "sub_threshold_events": [
+    {
+      "condition_id": "CR-01",
+      "start_ms": 36500,
+      "end_ms": 37533,
+      "reason": "transitorio < persistencia mínima (1033 ms < 4000 ms) — NO debe alertar",
+      "track_id": 586
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 28500,
+      "end_ms": 28733,
+      "reason": "transitorio < persistencia mínima (233 ms < 4000 ms) — NO debe alertar",
+      "track_id": 587
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 28500,
+      "end_ms": 28733,
+      "reason": "transitorio < persistencia mínima (233 ms < 7000 ms) — NO debe alertar",
+      "track_id": 587
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 37900,
+      "end_ms": 37933,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 588
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 37900,
+      "end_ms": 37933,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 588
+    }
+  ],
+  "annotation": {
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "a0aa01b9a8c1c337edc31ba65c035f0768fe318823bbfbd802b624290ba4afba",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

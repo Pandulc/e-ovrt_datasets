@@ -4,4 +4,7 @@ clips/
 preann/
 corrected/
 gt/
+# material de revisión visual (F-GT1): frames de personas reales del rodaje —
+# NUNCA commitear, se regenera con scripts/videogt (ver review/fgt1/LEEME.md)
+review/
 *.mp4

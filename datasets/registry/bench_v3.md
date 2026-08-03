@@ -41,7 +41,7 @@ contenido del bench no cambió al alinearlo (mismos conteos, mismo `bench_v3_sha
 | Estrato | Origen | Imágenes | Aporta |
 |---|---|---|---|
 | `bench_obra_test` + `bench_obra_val` | `construction_site_safety` curado (doc 63) | 147 | núcleo con pasada visual muestral, todas las clases con negativos explícitos |
-| `chv` | CHV (académico, GitHub ZijianWang) | 1.330 | 2ª fuente person/helmet/vest; **mejor AP de vest medido en el proyecto** (0.55–0.58) |
+| `chv` | CHV (académico, GitHub ZijianWang; grant "open for free use" de los autores, SIN licencia formal — cita obligatoria `wang2021ppe`, imágenes no redistribuibles; verificado 2026-07-29, ver `license_registry.md`) | 1.330 | 2ª fuente person/helmet/vest; **mejor AP de vest medido en el proyecto** (0.55–0.58) |
 | `shel5k` | SHEL5K (Mendeley 9rcv8mm682 v4, CC BY 4.0) | 5.000 | 3ª fuente; **bare_head nativo** (6.120 instancias vs 61 del núcleo) + `person_gt_shel5k.json` (5.248 violadores CR-01) |
 | **Total** | | **6.477** | |
 

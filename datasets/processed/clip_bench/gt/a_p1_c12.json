@@ -1,0 +1,50 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "a_p1_c12",
+  "source_file": "clips/a_p1_c12.mp4",
+  "block": "A",
+  "scenario": "P1",
+  "fps_nominal": 30,
+  "duration_ms": 25067,
+  "recording": {},
+  "negative": false,
+  "episodes": [
+    {
+      "id": "ep1",
+      "condition_id": "CR-01",
+      "level": "scene",
+      "source_id": "a_p1_c12",
+      "start_ms": 3000,
+      "end_ms": 21400,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    }
+  ],
+  "sub_threshold_events": [],
+  "annotation": {
+    "unknown_adjudications": [
+      {
+        "attr": "has_helmet",
+        "from_frame": 303,
+        "to_frame": 472,
+        "value": "false",
+        "decided_by": "simonll4",
+        "decided_at": "2026-08-03",
+        "rationale": "cabeza ocluida por la caja; por la imagen sola no se determina, pero el estado real es sin casco — continuidad temporal (sin casco antes y despues, sin oportunidad de ponerselo) y rodaje dirigido (ficha 25/07, violacion continua 3,5-22,1 s)"
+      }
+    ],
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "1bab117a09038021bfc412866336661e1f8d421023882ab9e04eceb6e5b0cbc0",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

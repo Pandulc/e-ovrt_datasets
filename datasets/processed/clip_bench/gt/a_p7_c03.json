@@ -1,0 +1,78 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "a_p7_c03",
+  "source_file": "clips/a_p7_c03.mp4",
+  "block": "A",
+  "scenario": "P7",
+  "fps_nominal": 30,
+  "duration_ms": 32533,
+  "recording": {},
+  "negative": false,
+  "episodes": [
+    {
+      "id": "ep1",
+      "condition_id": "CR-01",
+      "level": "scene",
+      "source_id": "a_p7_c03",
+      "start_ms": 3000,
+      "end_ms": 8067,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    },
+    {
+      "id": "ep2",
+      "condition_id": "CR-01",
+      "level": "scene",
+      "source_id": "a_p7_c03",
+      "start_ms": 11600,
+      "end_ms": 32533,
+      "subjects_in_evidence": 4,
+      "notes": "la condición sigue activa al final del clip"
+    }
+  ],
+  "sub_threshold_events": [
+    {
+      "condition_id": "CR-01",
+      "start_ms": 10300,
+      "end_ms": 10633,
+      "reason": "transitorio < persistencia mínima (333 ms < 4000 ms) — NO debe alertar",
+      "track_id": 608
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 10933,
+      "end_ms": 10967,
+      "reason": "transitorio < persistencia mínima (34 ms < 4000 ms) — NO debe alertar",
+      "track_id": 609
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 11100,
+      "end_ms": 11200,
+      "reason": "transitorio < persistencia mínima (100 ms < 4000 ms) — NO debe alertar",
+      "track_id": 609
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 18100,
+      "end_ms": 18133,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 611
+    }
+  ],
+  "annotation": {
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "5719872b2e0edd4e99093502a6e6adf23b464078b3cb88d0a442451b3c94d615",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

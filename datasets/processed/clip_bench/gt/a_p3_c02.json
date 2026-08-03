@@ -1,0 +1,36 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "a_p3_c02",
+  "source_file": "clips/a_p3_c02.mp4",
+  "block": "A",
+  "scenario": "P3",
+  "fps_nominal": 30,
+  "duration_ms": 18500,
+  "recording": {},
+  "negative": true,
+  "episodes": [],
+  "sub_threshold_events": [
+    {
+      "condition_id": "CR-01",
+      "start_ms": 3267,
+      "end_ms": 6000,
+      "reason": "transitorio < persistencia mínima (2733 ms < 4000 ms) — NO debe alertar",
+      "track_id": 580
+    }
+  ],
+  "annotation": {
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "2282d4be75a71911cf45221fc4fc097a959717ee2f79cf3e8266c0f1e3263b34",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

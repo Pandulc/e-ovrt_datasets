@@ -1,0 +1,117 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "a_p7_c02",
+  "source_file": "clips/a_p7_c02.mp4",
+  "block": "A",
+  "scenario": "P7",
+  "fps_nominal": 30,
+  "duration_ms": 33767,
+  "recording": {},
+  "negative": false,
+  "episodes": [
+    {
+      "id": "ep1",
+      "condition_id": "CR-01",
+      "level": "scene",
+      "source_id": "a_p7_c02",
+      "start_ms": 13200,
+      "end_ms": 26933,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    }
+  ],
+  "sub_threshold_events": [
+    {
+      "condition_id": "CR-01",
+      "start_ms": 8200,
+      "end_ms": 8233,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 597
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 8200,
+      "end_ms": 8233,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 597
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 8900,
+      "end_ms": 9600,
+      "reason": "transitorio < persistencia mínima (700 ms < 4000 ms) — NO debe alertar",
+      "track_id": 598
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 8900,
+      "end_ms": 8933,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 598
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 9600,
+      "end_ms": 9867,
+      "reason": "transitorio < persistencia mínima (267 ms < 4000 ms) — NO debe alertar",
+      "track_id": 599
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 11600,
+      "end_ms": 11900,
+      "reason": "transitorio < persistencia mínima (300 ms < 4000 ms) — NO debe alertar",
+      "track_id": 601
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 11900,
+      "end_ms": 12133,
+      "reason": "transitorio < persistencia mínima (233 ms < 4000 ms) — NO debe alertar",
+      "track_id": 602
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 27000,
+      "end_ms": 29900,
+      "reason": "transitorio < persistencia mínima (2900 ms < 4000 ms) — NO debe alertar",
+      "track_id": 604
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 10400,
+      "end_ms": 10500,
+      "reason": "transitorio < persistencia mínima (100 ms < 4000 ms) — NO debe alertar",
+      "track_id": 606
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 3033,
+      "end_ms": 6533,
+      "reason": "transitorio < persistencia mínima (3500 ms < 4000 ms) — NO debe alertar",
+      "track_id": 607
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 6400,
+      "end_ms": 6433,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 607
+    }
+  ],
+  "annotation": {
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "88d768c741c42c48727dbec687f63a249095cc70b7336a3d7cafb6ac04e93377",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

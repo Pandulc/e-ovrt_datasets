@@ -1,0 +1,78 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "a_p8_c01",
+  "source_file": "clips/a_p8_c01.mp4",
+  "block": "A",
+  "scenario": "P8",
+  "fps_nominal": 30,
+  "duration_ms": 47167,
+  "recording": {},
+  "negative": false,
+  "episodes": [
+    {
+      "id": "ep1",
+      "condition_id": "CR-01",
+      "level": "scene",
+      "source_id": "a_p8_c01",
+      "start_ms": 3067,
+      "end_ms": 16033,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    },
+    {
+      "id": "ep2",
+      "condition_id": "CR-01",
+      "level": "scene",
+      "source_id": "a_p8_c01",
+      "start_ms": 31100,
+      "end_ms": 43300,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    }
+  ],
+  "sub_threshold_events": [
+    {
+      "condition_id": "CR-01",
+      "start_ms": 29600,
+      "end_ms": 29633,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 614
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 30600,
+      "end_ms": 30633,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 614
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 30900,
+      "end_ms": 31000,
+      "reason": "transitorio < persistencia mínima (100 ms < 4000 ms) — NO debe alertar",
+      "track_id": 615
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 16400,
+      "end_ms": 16433,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 616
+    }
+  ],
+  "annotation": {
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "630c6de34346bf06a627f1298e64db1cb1439c2b0d0646fbea7be93a0ad155c5",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

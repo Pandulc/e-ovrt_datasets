@@ -1,0 +1,11 @@
+clip_id: a_p4_c01
+block: A
+scenario: P4
+source_id: a_p4_c01
+level: scene
+master: raw/P4-a-take1.mp4
+episode_draft:
+- onset_ms: 3500
+  end_ms: 19728
+  condition: CR-01
+warnings: []

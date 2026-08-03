@@ -1,0 +1,12 @@
+clip_id: a_p9_c02
+block: A
+scenario: P9
+source_id: a_p9_c02
+level: scene
+master: raw/P9-a-take2.mp4
+episode_draft:
+- onset_ms: 3500
+  end_ms: 25479
+  condition: CR-01
+warnings:
+- solo 0.2 s de cola, se necesitan 3

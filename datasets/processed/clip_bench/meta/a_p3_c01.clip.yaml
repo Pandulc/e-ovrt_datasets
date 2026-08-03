@@ -1,0 +1,11 @@
+clip_id: a_p3_c01
+block: A
+scenario: P3
+source_id: a_p3_c01
+level: scene
+master: raw/P3-a-take1.mp4
+episode_draft:
+- onset_ms: 3500
+  end_ms: 15394
+  condition: null
+warnings: []

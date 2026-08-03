@@ -1,0 +1,50 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "a_p2_c04",
+  "source_file": "clips/a_p2_c04.mp4",
+  "block": "A",
+  "scenario": "P2",
+  "fps_nominal": 30,
+  "duration_ms": 42333,
+  "recording": {},
+  "negative": false,
+  "episodes": [
+    {
+      "id": "ep1",
+      "condition_id": "CR-02",
+      "level": "scene",
+      "source_id": "a_p2_c04",
+      "start_ms": 3033,
+      "end_ms": 36633,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    }
+  ],
+  "sub_threshold_events": [],
+  "annotation": {
+    "unknown_adjudications": [
+      {
+        "attr": "has_vest",
+        "from_frame": 368,
+        "to_frame": 510,
+        "value": "false",
+        "decided_by": "simonll4",
+        "decided_at": "2026-08-03",
+        "rationale": "torso ocluido por la caja que carga; por la imagen sola no se determina, pero el estado real es sin chaleco — continuidad temporal (sin chaleco antes y despues, sin oportunidad de ponerselo) y rodaje dirigido (ficha 25/07, violacion continua 3,5-37,3 s)"
+      }
+    ],
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "eb5ae8cebea850447c8644d832a93f46d20f0b748b294c80f0cd763cd7d87243",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

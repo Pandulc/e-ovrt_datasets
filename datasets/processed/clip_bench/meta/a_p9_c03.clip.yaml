@@ -1,0 +1,13 @@
+clip_id: a_p9_c03
+block: A
+scenario: P9
+source_id: a_p9_c03
+level: scene
+master: raw/P9-a-take3.mp4
+episode_draft:
+- onset_ms: 2832
+  end_ms: 22585
+  condition: CR-01
+warnings:
+- solo 2.8 s de pre-roll, se necesitan 3.5 — el TTFD va a salir degradado
+- solo 1.0 s de cola, se necesitan 3

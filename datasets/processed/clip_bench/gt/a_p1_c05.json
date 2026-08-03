@@ -1,0 +1,51 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "a_p1_c05",
+  "source_file": "clips/a_p1_c05.mp4",
+  "block": "A",
+  "scenario": "P1",
+  "fps_nominal": 30,
+  "duration_ms": 21667,
+  "recording": {},
+  "negative": false,
+  "episodes": [
+    {
+      "id": "ep1",
+      "condition_id": "CR-01",
+      "level": "scene",
+      "source_id": "a_p1_c05",
+      "start_ms": 3900,
+      "end_ms": 12700,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    },
+    {
+      "id": "ep2",
+      "condition_id": "CR-01",
+      "level": "scene",
+      "source_id": "a_p1_c05",
+      "start_ms": 13300,
+      "end_ms": 18400,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    }
+  ],
+  "sub_threshold_events": [],
+  "annotation": {
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "2a22e5d4676d3df7faeb56e502fc74363aa6b5fb6d22a886c0d02b8152854bc5",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": [
+      "ep2 (CR-01): duration_ms 21667 < 27300 ms (start 13300 + t_alert_upper 10000 + resolve 2000 + cola 2000): t_alert-system/recall de este episodio quedan censurados (doc 57 §6.7)"
+    ]
+  }
+}

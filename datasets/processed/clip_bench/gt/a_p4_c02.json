@@ -1,0 +1,54 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "a_p4_c02",
+  "source_file": "clips/a_p4_c02.mp4",
+  "block": "A",
+  "scenario": "P4",
+  "fps_nominal": 30,
+  "duration_ms": 31667,
+  "recording": {},
+  "negative": false,
+  "episodes": [
+    {
+      "id": "ep1",
+      "condition_id": "CR-01",
+      "level": "scene",
+      "source_id": "a_p4_c02",
+      "start_ms": 3933,
+      "end_ms": 21167,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    }
+  ],
+  "sub_threshold_events": [
+    {
+      "condition_id": "CR-01",
+      "start_ms": 100,
+      "end_ms": 133,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 583
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 100,
+      "end_ms": 133,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 583
+    }
+  ],
+  "annotation": {
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "d0937c94d89d70cd1edb33854c35e1ecc86cc09a71bcd915dcafb57e1fd1a775",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}
