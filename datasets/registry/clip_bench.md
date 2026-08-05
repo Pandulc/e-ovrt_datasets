@@ -48,13 +48,38 @@ precision/recall de episodios, `t_alert-system`, TTFD y SDR.
 
 Se declaran acá **antes** de reportar resultados, no se descubren después.
 
-### L1 — Sin clips soak: FAR/hora no computable
+### L1 — FAR/hora no es una métrica reportable de este trabajo (determinación 2026-08-04)
 
 El denominador de FAR/hora exige negativos de ≥5 min (doc 57 §3.2, gate G1). El
 banco no tiene ninguno: los 4 negativos suman 0,0358 h y **no entran al
 denominador** (el manifest lo declara explícito en `far_denominator_basis`).
-**Consecuencia:** no se reporta FAR/hora sobre este banco. El material de soak
-llegará con el lote de clips de internet (en anotación CVAT al 2026-08-03).
+
+**Determinación (doc 90 D-90.1 del repo `docs`):** no se trata de un pendiente sino de
+un límite del material. Con 0 FP y la regla de 3 hacen falta **3,0 h** de video en
+cumplimiento anotado para poder afirmar "FAR ≤ 1 FA/hora" (umbral **ilustrativo**: el
+proyecto no pre-registró un objetivo de FAR — el punto es que ninguna cota alcanzable
+sostiene una afirmación); el banco alcanza **0,10 h** con el clip soak previsto
+(6,2 min del lote de internet) y como mucho **0,26 h** si se agregaran todos los
+negativos cortos (tiempos efectivos, descontando 7 s de warm-up por clip: nadie puede
+alertar antes de la persistencia). Una cota de 11–30 falsas alarmas por hora no
+sostiene ninguna afirmación operativa, así que **reportar FAR/hora como métrica de
+rendimiento sería reportar ruido**. La mecánica pre-registrada no cambia: el agregador
+ya emite `far_per_hour: null` sin soak, con la base declarada.
+
+**Qué se reporta en su lugar:** el **control de negativos** por campaña. Es evidencia
+**comparativa pareada** — las mismas escenas, el mismo GT, condiciones idénticas para
+todas las combinaciones — y en ese rol discrimina: T1, T2, G1 y B1-eind dan **0 FP de
+4 clips**; D1, H1 y B1-`bare_head` dan 2–3. Lo que NO es: una tasa absoluta de falsas
+alarmas (2,1 min no cuantifican una tasa — esa pregunta queda declarada acá, como L1).
+El clip soak, cuando esté, se reporta como el único con denominador temporal y **como
+contexto de la incertidumbre**, nunca como rendimiento.
+
+**Corrección al doc 57:** ese doc estima el material soak en *"≈0 anotación"*. Es falso
+en la práctica: un soak de obra en cumplimiento tiene gente en cuadro y certificar que
+nadie viola durante minutos exige trackear a todos frame a frame (el `--allow-empty` de
+`derive_clip_gt` cubre el caso contrario: clips **sin personas**). Medido: el clip de
+6 min lleva más de una jornada. Un modo "negativo atestiguado" (revisión humana con
+protocolo, sin cajas) lo abarataría — queda como trabajo futuro.
 
 ### L2 — Sin doble anotación: no hay kappa (DECISIÓN, no pendiente)
 
