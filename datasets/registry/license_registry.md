@@ -15,7 +15,8 @@ Registro operativo de licencias, permisos de uso y restricciones de redistribuci
 | SHWD | https://github.com/njvisionpower/Safety-Helmet-Wearing-Dataset | Verificar | Pendiente | Confirmar licencia y permisos de redistribucion. |
 | SODA | https://linjiarui.net/en/portfolio/2022-02-22-SODA-site-object-detection-dataset-for-deep-learning-in-construction | Verificar | Pendiente | Mantener como extension contextual. |
 | Pictor-PPE | https://github.com/ciber-lab/pictor-ppe | Verificar | Bloqueado | No usar antes de confirmar licencia efectiva y version. |
-| MOCS | https://www.anlab340.com/Archives/IndexArctype/index/t_id/17.html | Verificar | Bloqueado | Puede requerir solicitud o validacion manual de acceso. |
+| MOCS (copia Roboflow `mocs-bowib`) | https://universe.roboflow.com/mocs/mocs-bowib | CC BY 4.0 **declarada por el uploader de la copia** (original anlab340: sin verificar) | Aprobado (uso evaluativo, SIN redistribución) | ✎ 2026-08-05: lo que está en disco es la copia Roboflow (1.471 imgs, solo `Worker`), usada en el piloto A1 (doc 94, evidencia cualitativa + ancla person↔Worker). El original de anlab340 nunca se descargó. Para el informe: citar el paper original de MOCS + declarar la procedencia de la copia; imágenes no se redistribuyen (raw gitignorado). |
+| ppe-dataset (rbyz "PPE 6 classes" v6) | https://universe.roboflow.com/rbyz/ppe-6-classes-ntld9 | MIT | Rechazado (S0) | Candidato a BENCH rechazado 2026-07-23 por calidad/dominio/integridad — 4 descalificadores, ver `evaluation_ppe_dataset.md`. La licencia no fue el problema. Raw (1,2 GB) borrable y re-descargable. |
 
 ## Criterio de uso
 

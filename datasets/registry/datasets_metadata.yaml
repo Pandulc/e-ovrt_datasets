@@ -271,11 +271,13 @@
   - CR-02
   split_policy: official
   split_seed: 42
-  status: downloaded_basic_validated
-  notes: Kaggle download completed with configured ~/.kaggle/kaggle.json. Dataset
-    contains images, YOLO labels, Pascal VOC labels, metadata JSON and official train/val
-    split. Use YOLO labels as primary source unless conversion requires clipping the
-    two VOC boxes listed in validation.
+  status: raw_absent_views_stale
+  notes: >-
+    (✎ 2026-08-05) El raw NO está en disco y las vistas processed/original apuntan a
+    rutas de otra máquina (/home/pandulc/...): están muertas. Nunca entró al pipeline
+    v2 (sin vista canonical_v2, sin rol) ni a ningún resultado reportable. Licencia
+    CC BY-NC-SA (share-alike). Histórico: descarga Kaggle validada 2026-06; para
+    reutilizarlo habría que re-descargar y re-convertir.
   conversion_status: converted_coco_yolo_odvg
   conversion_views:
   - original
@@ -288,6 +290,8 @@
 - id: shel5k
   name: SHEL5K
   priority: alta
+  role_v2:
+  - BENCH
   source_url: https://data.mendeley.com/datasets/9rcv8mm682/4
   download_url: https://data.mendeley.com/datasets/9rcv8mm682/4
   local_raw_dir: datasets/raw/shel5k
@@ -350,25 +354,32 @@
   - CR-01
   split_policy: custom_seeded
   split_seed: 42
-  status: downloaded_basic_validated
-  notes: Manual Mendeley download completed. Dataset contains 5000 PNG images and
-    5000 Pascal VOC XML annotations. No official split files found; generate reproducible
-    custom split before training/evaluation.
+  status: bench_v3_stratum
+  notes: >-
+    Estrato `shel5k` de bench_v3 (5.000 imgs, doc 66 B4/B5): 3ª fuente independiente,
+    única con `bare_head` nativo (6.120 instancias vs 61 del núcleo) +
+    `person_gt_shel5k.json` (5.248 violadores CR-01 — el n grande que separó al
+    especialista gdino-base-560, doc 64 §B5). Mitades A/B para calibrar/reportar en
+    Nivel A (doc 83). Congelado con sha256 en bench_v3_manifest.json.
   conversion_status: converted_coco_yolo_odvg
   conversion_views:
   - original
-  - canonical_cr01_cr02
+  - canonical_v2
   conversion_report: datasets/registry/conversion_report.md
   processed_outputs:
     coco: datasets/processed/coco/{view}/shel5k
     yolo: datasets/processed/yolo/{view}/shel5k
     odvg: datasets/processed/odvg/{view}/shel5k
+  bench_artifacts:
+    stratum_json: datasets/processed/coco/bench/curated/bench_stratum_shel5k.json
+    person_gt: datasets/processed/coco/bench/curated (person_gt_shel5k, ver bench_v3.md)
 - id: chv
   name: CHV - Color Helmet and Vest
   priority: alta
   role_v2:
   - TRAIN
   - DEMO
+  - BENCH
   source_url: https://github.com/ZijianWang-ZW/PPE_detection
   download_url: https://drive.google.com/file/d/1fdGn67W0B7ShpBDbbQpUF0ScPQa4DR0a/view?usp=sharing
   local_raw_dir: datasets/raw/chv
@@ -490,10 +501,11 @@
   - CR-02
   split_policy: official
   split_seed: 42
-  status: downloaded_basic_validated
-  notes: Validacion basica y conversion completadas. Incluye clases explicitas de
-    EPP faltante. Licencia AGPL-3.0 presente en LICENSE descargado; documentar
-    implicancias antes de redistribucion.
+  status: raw_absent_views_stale
+  notes: >-
+    (✎ 2026-08-05) El raw NO está en disco; las vistas processed/original quedaron
+    huérfanas. Nunca entró al pipeline v2 ni a ningún resultado reportable. Licencia
+    AGPL-3.0 (viral). Histórico: validación básica y conversión completadas 2026-06.
   conversion_status: converted_coco_yolo_odvg
   conversion_views:
   - original
@@ -606,27 +618,54 @@
   status: pending_license_review
   notes: Condicionado por licencia, permisos y formato real de anotaciones.
 - id: mocs
-  name: MOCS - Moving Objects in Construction Sites
-  priority: condicionada
-  source_url: https://www.anlab340.com/Archives/IndexArctype/index/t_id/17.html
-  download_url: https://www.anlab340.com/Archives/IndexArctype/index/t_id/17.html
-  local_raw_dir: datasets/raw/mocs
-  downloaded_at: null
-  original_format: verificar
-  target_formats:
-  - coco
-  - yolo
-  license: verificar antes de usar
-  classes_original: []
-  classes_mapped:
-    person: []
-    helmet: []
-    vest: []
-    no_helmet: []
-    no_vest: []
-  covered_conditions:
-  - CR-05
-  split_policy: blocked_until_access_verified
-  split_seed: 42
-  status: pending_access_review
-  notes: Extension condicionada para maquinaria, vehiculos y trabajadores.
+  name: MOCS (copia Roboflow "mocs-bowib", NO el original de anlab340)
+  priority: cerrada
+  role_v2:
+  - PILOTO_A1
+  source_url: https://universe.roboflow.com/mocs/mocs-bowib
+  original_source_url: https://www.anlab340.com/Archives/IndexArctype/index/t_id/17.html
+  download_url: https://universe.roboflow.com/mocs/mocs-bowib
+  local_raw_dir: datasets/raw/MOCS
+  downloaded_at: '2025-05-22'
+  original_format: coco (roboflow export, v1 2024-01-11)
+  license: CC BY 4.0 declarada por el uploader de Roboflow (ver caveat en notes)
+  image_count: 1471
+  classes_original:
+  - Worker
+  split_policy: official (roboflow train/valid/test)
+  status: used_pilot_a1
+  notes: >-
+    (✎ 2026-08-05, corrige la entrada anterior) Lo que hay en disco es la COPIA
+    Roboflow (mocs-bowib, 1.471 imgs, solo anota `Worker`), no el MOCS original de
+    anlab340 que esta entrada describía como "bloqueado". Dos usos, ambos cerrados:
+    (1) candidato BENCH en el scoring del doc 66 — DESCARTADO (solo Worker, sin EPP);
+    (2) material del mini-piloto de clase nueva A1 (doc 94, 2026-08-05): evidencia
+    cualitativa de amplitud de vocabulario (excavator/tower_crane/dump_truck sobre 151
+    imgs) + ancla cross-dataset person↔Worker (AP 0,610, n=507). El número duro del
+    piloto (machinery AP 0,662) NO sale de acá: sale del GT de construction_site_safety.
+    CAVEAT de licencia para el informe: la CC BY 4.0 la declara el uploader de la
+    copia; los términos del original (anlab340) no se verificaron. Uso evaluativo, sin
+    redistribución de imágenes, citando el paper original de MOCS además de la copia.
+
+- id: ppe_dataset_rbyz
+  name: PPE 6 classes (rbyz/ppe-6-classes-ntld9 v6) — candidato RECHAZADO
+  priority: cerrada
+  source_url: https://universe.roboflow.com/rbyz/ppe-6-classes-ntld9
+  local_raw_dir: datasets/raw/ppe-dataset
+  downloaded_at: '2025-07-09'
+  original_format: yolov8 (roboflow export)
+  license: MIT
+  image_count: 5381
+  status: rejected_s0
+  evaluation: datasets/registry/evaluation_ppe_dataset.md
+  notes: >-
+    (✎ 2026-08-05: se registra acá lo que hasta ahora solo vivía en el doc de
+    evaluación) Candidato a BENCH aportado por el usuario, evaluado con el protocolo
+    S0 y RECHAZADO 2026-07-23 con 4 descalificadores, cada uno suficiente: sin GT de
+    `person` (la clase ancla), dominio equivocado (mayoría e-commerce/estudio con
+    augmentations horneadas), anotación pobre (bboxes corridas, fuera de rango, GT
+    vacío), e integridad rota (5.381 de 17.264 imgs declaradas; 86% de train sin
+    label). Agravante: ~10% de solapamiento con ppe_siabar (material de TRAIN).
+    El raw (1,2 GB) es BORRABLE: re-descargable de Roboflow si hiciera falta y no
+    alimenta ningún artefacto. Valor para el informe: ejemplo del protocolo de
+    selección funcionando (rechazo con causa documentada).
