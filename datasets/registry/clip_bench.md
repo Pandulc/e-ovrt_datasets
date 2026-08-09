@@ -8,13 +8,17 @@ precision/recall de episodios, `t_alert-system`, TTFD y SDR.
   internet quedó CERRADO: 13 de 14 con GT; `v08_c01` excluido con causa (§1.1).
 - **Manifest:** `datasets/processed/clip_bench/clip_bench_manifest.json`
   (`schema_version: clip_bench_manifest.v1`)
-- **`manifest.yaml` sha256:** `299ccc19593361db…` — **freezes anteriores, todos
-  verificables en git**: 34 clips del rodaje `cef5082e…` (commit `f7a27fe6`, el que
-  citan T1/T2/D1/H1/G1/B1/R1–R6), 37 con estrato B `6b75ac6e…`, 38 con `v04_c02`
-  `4437eb6d…`. El manifest solo crece; las filas del rodaje nunca cambiaron.
-  Las campañas del rodaje (T1…R6) se congelaron contra el freeze de 34 y **no
-  incluyen** el estrato B, por diseño. Las del estrato B (i1/i2, na1) corrieron su
-  **gen. 3 el 2026-08-09 con los 13 clips** — el lote completo (doc 111).
+- **`manifest.yaml` sha256:** `3f14f50a53c0…` (✎ 2026-08-09, tras la **revisión ciega
+  del GT**, doc 113 §B: `v04_c02` y `v01_c01` pasaron a negativos por corrección
+  firmada) — **freezes anteriores, todos verificables en git**: 34 clips del rodaje
+  `cef5082e…` (commit `f7a27fe6`, el que citan T1/T2/D1/H1/G1/B1/R1–R6), 37 con
+  estrato B `6b75ac6e…`, 38 con `v04_c02` `4437eb6d…`, 47 pre-revisión `299ccc19…`
+  (commit `907d50fa`). Las filas del RODAJE nunca cambiaron — la revisión tocó solo
+  2 filas del estrato B. Las campañas del rodaje (T1…R6) se congelaron contra el
+  freeze de 34 y **no incluyen** el estrato B, por diseño. Las del estrato B (i1/i2,
+  na1) corrieron su **gen. 3 el 2026-08-09 con los 13 clips** y fueron
+  **re-evaluadas el mismo día contra el GT post-revisión** (mismas detecciones;
+  determinismo 11/11; cifras vigentes en `results/`).
 - **Checksums:** `clip_bench.sha256` — verificar con
   `cd datasets/processed/clip_bench && sha256sum -c clip_bench.sha256`
 
@@ -24,12 +28,21 @@ precision/recall de episodios, `t_alert-system`, TTFD y SDR.
 |---|---|---|
 | Clips | **47**, todos con GT, todos `gt_ready` | 34 |
 | Bloque | A (rodaje guionado 2026-07-25) 34 · **B (lote de internet) 13 de 14** | A 34 |
-| Escenarios | P1:14 P2:5 P3:2 P4:2 P5:11 P6:3 P7:4 P8:1 P9:5 — **P1–P9 sin huecos** | P1:11 P2:5 P3:2 P4:2 P5:2 P6:2 P7:4 P8:1 P9:5 |
-| Positivos / negativos / **soak** | 34 / **13** / **1** | 30 / 4 / 0 |
-| Episodios | **40** — CR-01: 32, CR-02: 8 | 35 — CR-01 28, CR-02 7 |
+| Escenarios | P1:13 P2:5 P3:2 P4:2 P5:13 P6:2 P7:4 P8:1 P9:5 — **P1–P9 sin huecos** | P1:11 P2:5 P3:2 P4:2 P5:2 P6:2 P7:4 P8:1 P9:5 |
+| Positivos / negativos / **soak** | 32 / **15** / **1** | 30 / 4 / 0 |
+| Episodios | **37** — CR-01: 30, CR-02: 7 | 35 — CR-01 28, CR-02 7 |
 | Duración total | 1.976.837 ms (**32 min 57 s**) | 1.072.736 ms (17 min 53 s) |
-| Duración negativa | 915.901 ms (0,2544 h) | 128.834 ms (0,0358 h) |
+| Duración negativa | 981.101 ms (**0,2725 h**) | 128.834 ms (0,0358 h) |
 | **Denominador FAR/hora** | **0,1027 h** (el soak `v06_c01`) | 0,0 h |
+
+> **✎ 2026-08-09, revisión ciega del GT (doc 113 §B) — la fila de arriba es la
+> VIGENTE.** Los 5 episodios del estrato B se re-revisaron a ciegas: 3 cayeron por
+> corrección firmada (`v04_c02` CR-01+CR-02: sujeto en cabina de máquina, estado no
+> observable; `v01_c01` CR-01: contraluz). `v04_c02` y `v01_c01` son **negativos**
+> (P5). La composición pasó de 34/13/40-episodios a **32/15/37**. Cuenta de calidad
+> del GT del lote: **5 de 7 declaraciones de episodio eran errores**, todas
+> sobre-declarando donde el estado no era observable — la evidencia más directa de la
+> frontera de juzgabilidad, ahora medida también en el anotador.
 
 > **✎ 2026-08-09 — EL LOTE DE INTERNET QUEDÓ CERRADO: 13 de 14 con GT.** Entraron 8
 > clips en dos tandas (7 el 08-09 + `v02_c01`): **2 positivos** (`v01_c02` evaluable;
@@ -68,13 +81,13 @@ El lote está **CERRADO**: el 14º (`v08_c01`) queda excluido con causa (abajo).
 
 | clip | duración | escenario | GT | luz |
 |---|---|---|---|---|
-| `v01_c01` | 37.200 ms | P1 | 1 ep CR-01 `31.567 → 37.200 ms` — **CENSURADO** (A1) | diurna |
+| `v01_c01` | 37.200 ms | P5 | negativo — **tras corrección firmada 08-09** (casco a contraluz no observable; el ep censurado que tenía era error) | diurna |
 | `v01_c02` | 32.767 ms | P1 | 1 ep CR-01 `0 → 15.633 ms` — evaluable, **sin pre-roll** | diurna |
 | `v02_c01` | 48.900 ms | P5 | negativo — sin un solo atributo en `false` en los 7 tracks | diurna |
 | `v03_c01` | 22.000 ms | P5 | negativo | diurna |
 | `v03_c02` | 104.900 ms | P5 | negativo — tras corrección firmada | diurna |
 | `v04_c01` | 19.067 ms | P1 | 1 ep CR-01 `3.967 → 17.967 ms` | **nocturna** |
-| `v04_c02` | 28.000 ms | P6 | 2 ep (CR-01+CR-02) `0 → 23.833 ms`, mismo sujeto | **nocturna** |
+| `v04_c02` | 28.000 ms | P5 | negativo — **tras corrección firmada 08-09** (sujeto en cabina, estado no observable; sus 2 ep eran error) | **nocturna** |
 | `v04_c03` | 32.133 ms | P5 | negativo — **el único negativo nocturno del banco** | **nocturna** |
 | `v05_c01` | 78.500 ms | P5 | negativo — el negativo más largo después del soak, 17 tracks | diurna |
 | `v06_c01` | 369.567 ms | P5 | negativo — **el clip SOAK** — tras corrección firmada | diurna |
@@ -82,15 +95,19 @@ El lote está **CERRADO**: el 14º (`v08_c01`) queda excluido con causa (abajo).
 | `v09_c01` | 45.167 ms | P5 | negativo | diurna |
 | `v10_c01` | 59.033 ms | P5 | negativo — fachada en altura (arnés, no chalecos) | diurna |
 
-**5 episodios**, de los cuales **4 evaluables** (el de `v01_c01` está censurado: arranca
-a 31,6 s en un clip de 37,2 s y CR-01 exige llegar a 45,6 s). Dos llevan aviso de
-**pre-roll** (`v01_c02` y `v04_c02`, onset en t=0): su TTFD es artefacto del recorte.
+**2 episodios, ambos evaluables** (✎ 08-09: eran "5, 4 evaluables" antes de la revisión
+ciega — cayeron los 2 de `v04_c02` y el censurado de `v01_c01`). Uno lleva aviso de
+**pre-roll** (`v01_c02`, onset en t=0): su TTFD es artefacto del recorte.
 
-**La curación de escenarios acertó 7 de 13.** Se fijaron antes de anotar y el GT los
-desmintió en la mitad: `v04_c01` P8→**P1**, `v04_c02` P5→**P6**, `v01_c01` y `v01_c02`
-P5→**P1**, y `v06_c01`/`v03_c02` recorrieron P5→positivo→**P5** (vuelven a la etiqueta
-curada, pero sólo después de una corrección firmada). Los 6 que acertaron de entrada son
-negativos. D-90.1 ya advertía que `scenario` en este lote era expectativa, no hecho.
+**La curación de escenarios acertó 9 de 13** (✎ 08-09; el texto anterior decía "7 de
+13" con el GT pre-revisión). Se fijaron antes de anotar; el GT de primera pasada los
+desmintió en varios casos, pero la revisión ciega devolvió DOS a su etiqueta curada:
+`v04_c01` P8→**P1** y `v01_c02` P5→**P1** son las dos correcciones reales de curación;
+`v06_c01`, `v03_c02`, `v04_c02` y `v01_c01` recorrieron P5→positivo→**P5** (la
+expectativa original era la correcta; lo que estaba mal era la anotación, corregida con
+firma). Los 6 que acertaron de entrada son negativos. D-90.1 ya advertía que `scenario`
+en este lote era expectativa, no hecho — y el saldo final le da la razón a la curación
+más que al GT de primera pasada.
 
 **El 14º clip, `v08_c01`, NO se anota — exclusión declarada (usuario, 2026-08-09).**
 50,2 s diurnos, expectativa de curación `P5`. Causa: el lote ya cumplió su función
@@ -236,6 +253,20 @@ El denominador de FAR/hora exige negativos de ≥5 min (doc 57 §3.2, gate G1).
 > declarado y su intervalo enorme, y se dice que **refuta** la operabilidad en vez de
 > quedar en silencio. Todo lo que sigue en esta sección describe el estado anterior y
 > se conserva por trazabilidad.
+
+> **⚠️ TRAMPA AL AUDITAR LA GEN. 2 PRESERVADA (anotada 2026-08-09, doc `operacion/113`
+> §D3).** Los `metrics.gen2.json` de I1 e I2 conservan los valores **incorrectos**
+> (48,705647 y 2.045,637192) acompañados de `far_basis: "solo clips soak (negativos >= 5
+> min, doc 57 §3.2 G1)"`. **Ese string describe la fórmula CORREGIDA, no la que produjo
+> el número que tiene al lado:** esos valores se computaron con el numerador de *todos*
+> los negativos sobre el denominador de *solo* los soak. Quien audite la gen. 2 sin leer
+> el doc 111 §6.3 leerá una base falsa. **Los archivos NO se editan** —son el registro de
+> lo que la gen. 2 produjo—, por eso la advertencia vive acá y en el `provenance` de cada
+> `campaign.yaml`.
+>
+> **Regla de cita para el informe:** el FAR declarado del estrato B es **3 FP (escena) y
+> 190 (sujeto) en 6:09,6 del único clip soak**; la tasa horaria (29,2 / 1.850,8) es una
+> **derivada** de esos conteos sobre 0,1027 h — no una medición de una hora de operación.
 
 **Estado anterior (hasta 2026-08-06):** el banco no tenía ningún negativo de ≥5 min;
 los 4 negativos sumaban 0,0358 h y **no entraban al denominador** (el manifest lo

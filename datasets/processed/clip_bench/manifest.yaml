@@ -482,7 +482,7 @@ clips:
   duration_ms: 37200
   resolution: 1920x1080
   block: B
-  scenario: P1
+  scenario: P5
   level: scene
   state: gt_ready
   preann: preann/v01_c01.xml
@@ -566,7 +566,7 @@ clips:
   duration_ms: 28000
   resolution: 1920x1080
   block: B
-  scenario: P6
+  scenario: P5
   level: scene
   state: gt_ready
   preann: preann/v04_c02.xml
@@ -657,17 +657,3 @@ clips:
   meta: meta/v10_c01.clip.yaml
   annotations: annotations/v10_c01.xml
   gt: gt/v10_c01.json
-# OJO: promote_clip.py hace round-trip del YAML y BORRA los comentarios de este
-# archivo. Si volvés a promover un clip, revisá que este bloque siga acá.
-#
-# cb_b01_p7 RETIRADO del banco el 2026-08-03 → _retired/cb_b01_p7/
-# (licencia/consentimiento sin registrar + GT por IA; ver _retired/cb_b01_p7/MOTIVO.md)
-#
-# piloto 2026-07-18 (video02_clip07, video15_clip01, video16_clip10, video16_clip14):
-# anotados a mano y EJECUTABLES desde el 2026-08-06 (los .mp4 se recuperaron de CVAT),
-# pero fuera del banco: sus episodios están censurados por el gate A1 (clips de 12 s).
-# GT derivado en _retired/piloto_2026-07-18/; se miden a Nivel A (docs 102 y 105).
-#
-# v08_c01 EXCLUIDO del dataset anotado/curado (decisión del usuario, 2026-08-09):
-# el lote de internet cierra en 13/14 con GT. No es un pendiente — es cobertura no
-# ejecutada con causa (doc 57 §7.6). Ver datasets-videos/v08_c01.clip.yaml y registry §1.1.

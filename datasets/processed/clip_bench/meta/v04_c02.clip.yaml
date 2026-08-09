@@ -2,12 +2,21 @@
 # que v04_c01, video 4 del pool).
 # El clip ES el master SIN RECORTAR (doc 59 §6). NO regenerar desde la consola.
 #
-# GT HUMANO 2026-08-06 (doc 108) — LA EXPECTATIVA NO SE CUMPLIO: el clip NO es
-# negativo. Un mismo sujeto (track 6) viola LAS DOS condiciones en simultaneo:
-#   ep1 CR-01  0 -> 23.833 ms   (23,8 s, 1 sujeto)
-#   ep2 CR-02  0 -> 23.833 ms   (23,8 s, 1 sujeto)
-# Los DOS episodios son EVALUABLES SIN CENSURA (CR-01 exige 14 s desde el onset,
-# CR-02 exige 25 s; el clip dura 28 s).
+# GT HUMANO, EN DOS PASADAS:
+#   1a pasada (2026-08-06, doc 108) -> LA EXPECTATIVA NO SE CUMPLIO: el clip NO es
+#   negativo. Un mismo sujeto (track 6) viola LAS DOS condiciones en simultaneo:
+#     ep1 CR-01  0 -> 23.833 ms   (23,8 s, 1 sujeto)
+#     ep2 CR-02  0 -> 23.833 ms   (23,8 s, 1 sujeto)
+#   2a pasada (revision visual del track 110... digo track 6, ver annotation,
+#   2026-08-09) -> ERROR DE ANOTACION EN LOS DOS ATRIBUTOS: el sujeto esta en la
+#   cabina de una maquina durante TODO el clip y el estado (casco y chaleco) NO es
+#   observable en ningun frame. Los dos 'false' originales se corrigen a 'unknown'
+#   con firma (ver attribute_corrections). Misma familia que v06_c01/v03_c02:
+#   violacion sobre-declarada donde el estado no era observable.
+# RESULTADO VIGENTE: sin episodios evaluables sobre este track — el clip pierde
+# los DOS episodios (CR-01 y CR-02 dependian del mismo sujeto). Consecuencia
+# asumida: si no hay otro sujeto que sostenga una violacion, el clip pasa a
+# NEGATIVO — a re-derivar.
 #
 # ⚠ AVISO DE DIMENSIONAMIENTO (A1): el onset esta en t=0 ⇒ SIN PRE-ROLL. El TTFD
 # de este clip colapsa a 0 como artefacto del recorte, NO por merito del sistema
@@ -16,10 +25,12 @@
 # (F-102.1) y por la misma causa: el master arranca con la infraccion ya en curso.
 clip_id: v04_c02
 block: B          # obra real, no guionado
-# ESCENARIO CORREGIDO CONTRA EL GT HUMANO (era P5 por expectativa de curacion,
-# antes de anotar; el comentario original de este archivo lo daba por negativo).
-# Un unico sujeto sostiene CR-01 y CR-02 a la vez ⇒ P6 (doc 72 §4.6), no P5.
-scenario: P6      # las dos condiciones a la vez, mismo sujeto
+# HISTORIA DEL ESCENARIO (trazabilidad completa): era P5 por expectativa de
+# curacion (el comentario original daba el clip por negativo) -> el GT de la 1a
+# pasada lo "corrigio" a P6 (un sujeto con las dos condiciones) -> la revision
+# ciega del 2026-08-09 lo devolvio a P5: la expectativa original era la correcta,
+# el sujeto esta en cabina y su estado no es observable.
+scenario: P5      # cumplimiento total (negativo) — tras la correccion firmada
 source_id: v04_c02
 level: scene
 master: raw/4.2.mp4
@@ -46,3 +57,40 @@ annotation:
   double_annotated: false
   second_annotator: null
   kappa: null
+
+  # REVISION VISUAL DEL TRACK 6, 2026-08-09 (revision ciega del doc 113 Bloque B).
+  # El sujeto que sostiene ambos episodios esta arriba/dentro de la cabina de una
+  # maquina desde el frame 0 hasta que desaparece (f715, coincide con el cierre de
+  # ambos episodios). En ningun frame de todo el tramo se distingue con confianza
+  # si lleva casco o chaleco: la anotacion original marcaba 'false' los 716 frames
+  # sin ningun tramo 'unknown', lo cual no es plausible dada la oclusion declarada.
+  attribute_corrections:
+  - track_id: 6             # obligatorio: la correccion es de UNA persona
+    attr: has_helmet
+    from_frame: 0
+    to_frame: 715
+    previous_value: 'false'
+    value: 'unknown'
+    decided_by: simonll4
+    decided_at: '2026-08-09'
+    rationale: >-
+      Revision visual en CVAT del track 6 en todo su rango (f0-f715): esta dentro
+      de la cabina de la maquina durante el clip entero y el area de la cabeza no
+      es observable en ningun frame. El 'false' original era sobre-declaracion,
+      no un hecho verificado — misma familia que el error de v06_c01 y v03_c02
+      (doc 112 §7.2). CONSECUENCIA ASUMIDA: el episodio CR-01 de este clip deja de
+      ser derivable sobre este sujeto; a re-derivar el GT.
+  - track_id: 6
+    attr: has_vest
+    from_frame: 0
+    to_frame: 715
+    previous_value: 'false'
+    value: 'unknown'
+    decided_by: simonll4
+    decided_at: '2026-08-09'
+    rationale: >-
+      Misma revision y misma causa que el has_helmet de arriba (cabina de maquina,
+      oclusion total, los 716 frames): el 'false' de has_vest tampoco es plausible.
+      CONSECUENCIA ASUMIDA: el episodio CR-02 de este clip deja de ser derivable
+      sobre este sujeto; a re-derivar el GT. Si ningun otro sujeto sostiene una
+      violacion en este clip, pasa a NEGATIVO.

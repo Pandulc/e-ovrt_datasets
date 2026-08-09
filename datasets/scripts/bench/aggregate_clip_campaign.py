@@ -48,6 +48,18 @@ def _mean(xs):
     return round(mean(xs), 6) if xs else None
 
 
+def _n(xs):
+    """Cuantas unidades entraron efectivamente a `_mean` (las que no eran None).
+
+    Toda media que descarta Nones promedia sobre un SUBCONJUNTO, y un promedio sin
+    su `n` no se puede comparar entre campanas: `t_alert` sale solo de los clips que
+    alertaron, asi que el peor detector parece tener latencia comparable porque
+    promedia unicamente sus casos faciles (trampa de supervivencia, F-96). Publicar
+    el `n` al lado de la media es lo que la vuelve interpretable.
+    """
+    return sum(1 for x in xs if x is not None)
+
+
 def _load(evals_dir: Path, gt_dir: Path) -> list[dict]:
     rows = []
     for p in sorted(Path(evals_dir).glob("eval_*.json")):
@@ -85,6 +97,11 @@ def aggregate_campaign(evals_dir, gt_dir, campaign: dict | None = None) -> dict:
     fp = tot(pos, "unexpected_alerts_count")
     evaluable = ep - cen
 
+    recalls_por_clip = [_clip_recall(r["eval"]) for r in pos]
+    t_alerts = [r["eval"].get("avg_latency_ms_from_episode_start") for r in pos]
+    ttfds = [r["eval"].get("avg_ttfd_ms") for r in pos]
+    sdrs = [r["eval"].get("avg_sdr") for r in pos]
+
     positives = {
         "clips": len(pos),
         "episodes_total": ep,
@@ -97,15 +114,31 @@ def aggregate_campaign(evals_dir, gt_dir, campaign: dict | None = None) -> dict:
         "sub_threshold": tot(pos, "sub_threshold_count"),
         "recall_micro": _safe(mat, evaluable),
         "precision_micro": _safe(mat, mat + fp),
-        "recall_macro": _mean([_clip_recall(r["eval"]) for r in pos]),
-        "t_alert_system_ms": _mean([r["eval"].get("avg_latency_ms_from_episode_start") for r in pos]),
-        "ttfd_ms": _mean([r["eval"].get("avg_ttfd_ms") for r in pos]),
-        "sdr": _mean([r["eval"].get("avg_sdr") for r in pos]),
+        "recall_macro": _mean(recalls_por_clip),
+        # cada media publica sobre cuantos clips se calculo (ver `_n`)
+        "recall_macro_n": _n(recalls_por_clip),
+        "t_alert_system_ms": _mean(t_alerts),
+        "t_alert_system_ms_n": _n(t_alerts),
+        "ttfd_ms": _mean(ttfds),
+        "ttfd_ms_n": _n(ttfds),
+        "sdr": _mean(sdrs),
+        "sdr_n": _n(sdrs),
     }
     rm, pm = positives["recall_micro"], positives["precision_micro"]
-    positives["f1_micro"] = (
-        round(2 * rm * pm / (rm + pm), 6) if rm and pm and (rm + pm) else None
-    )
+    # F1 con la MISMA convencion que `score_person_state.prf1` (el scorer de Nivel A),
+    # salvo la guarda de la primera rama. Corregido 2026-08-09: antes `rm and pm and
+    # (rm + pm)` devolvia None cuando recall o precision valian 0.0 — es decir,
+    # marcaba como "no evaluable" a la campana que se evaluo entera y fallo entera.
+    # El 0.0 medido y el None no medible son cosas distintas y las dos tienen que
+    # poder salir. La guarda `rm is None` es propia del agregador: sin episodios
+    # evaluables (todos censurados, caso del piloto doc 102) el recall NO se midio,
+    # y ahi un 0.0 seria un fracaso fabricado sobre material que nunca fue juzgable.
+    if rm is None:
+        positives["f1_micro"] = None
+    elif not rm or not pm:
+        positives["f1_micro"] = 0.0
+    else:
+        positives["f1_micro"] = round(2 * rm * pm / (rm + pm), 6)
 
     # FAR/hora: numerador y denominador tienen que salir del MISMO conjunto de clips.
     # Bug corregido 2026-08-09 (doc 111 §6): antes el numerador eran los FP de TODOS
@@ -145,9 +178,17 @@ def aggregate_campaign(evals_dir, gt_dir, campaign: dict | None = None) -> dict:
     for cond, c in by_condition.items():
         clips = [r for r in pos if r["clip_id"] in c["clips"]]
         c["clips"] = len(c["clips"])
-        c["sdr"] = _mean([r["eval"].get("avg_sdr") for r in clips])
-        c["t_alert_system_ms"] = _mean(
-            [r["eval"].get("avg_latency_ms_from_episode_start") for r in clips])
+        c_sdr = [r["eval"].get("avg_sdr") for r in clips]
+        c_lat = [r["eval"].get("avg_latency_ms_from_episode_start") for r in clips]
+        c["sdr"] = _mean(c_sdr)
+        c["sdr_n"] = _n(c_sdr)
+        c["t_alert_system_ms"] = _mean(c_lat)
+        c["t_alert_system_ms_n"] = _n(c_lat)
+        # OJO: atribucion por CLIP, no por episodio. Un clip con episodios CR-01 y
+        # CR-02 aporta sus FP (y su SDR y su t_alert) a las DOS condiciones, porque
+        # el eval los da por clip y no hay forma de repartirlos. Por eso esta columna
+        # NO suma al total de FP: sumarla lo sobreestima (medido: campana d1, 35 FP
+        # reales contra 41 sumando por condicion). Declarado en `notes`.
         c["false_positives"] = sum(r["eval"]["unexpected_alerts_count"] for r in clips)
 
     by_scenario: dict[str, dict] = {}
@@ -166,7 +207,9 @@ def aggregate_campaign(evals_dir, gt_dir, campaign: dict | None = None) -> dict:
             s["_sdr"].append(e.get("avg_sdr"))
     for s in by_scenario.values():
         s["recall"] = _safe(s["matched"], s["episodes_evaluable"])
-        s["sdr"] = _mean(s.pop("_sdr"))
+        sdrs_esc = s.pop("_sdr")
+        s["sdr"] = _mean(sdrs_esc)
+        s["sdr_n"] = _n(sdrs_esc)
 
     by_clip = [{
         "clip_id": r["clip_id"],
@@ -200,6 +243,15 @@ def aggregate_campaign(evals_dir, gt_dir, campaign: dict | None = None) -> dict:
             "Las re_alerts no cuentan como FP (ADR-011).",
             "Reportar SIEMPRE by_scenario junto al agregado (L5, registry/clip_bench.md).",
             "recall_micro = por episodio; recall_macro = media por clip. Declarar cual se usa.",
+            "Toda media publica su n (*_n): sale solo de los clips que tienen ese valor. "
+            "t_alert/ttfd/sdr promedian SOLO los clips que alertaron — comparar dos "
+            "campanas con tasas de deteccion distintas sin mirar el n es la trampa de "
+            "supervivencia (F-96).",
+            "by_condition NO es una particion y su columna de FP no se suma: un clip "
+            "con dos condiciones aporta sus FP a las dos (el eval los da por clip). "
+            "El total de FP es el de positives/negatives.",
+            "far_per_hour y far_per_hour_all_negatives usan bases distintas y CADA una "
+            "toma numerador y denominador del mismo subconjunto de clips.",
         ],
     }
     if campaign:
@@ -221,12 +273,15 @@ def print_summary(m: dict) -> None:
                 print(f"  {k:12} = {c[k]}")
     print(f"\nPOSITIVOS: {p['clips']} clips, {p['episodes_total']} episodios "
           f"({p['episodes_censored']} censurados → {p['episodes_evaluable']} evaluables)")
-    print(f"  recall  micro={_fmt(p['recall_micro'])}   macro={_fmt(p['recall_macro'])}")
+    print(f"  recall  micro={_fmt(p['recall_micro'])}   "
+          f"macro={_fmt(p['recall_macro'])} (n={p['recall_macro_n']}/{p['clips']})")
     print(f"  precision micro={_fmt(p['precision_micro'])}   F1={_fmt(p['f1_micro'])}")
     print(f"  matched={p['matched']} missed={p['missed']} FP={p['false_positives']} "
           f"re_alerts={p['re_alerts']}")
-    print(f"  t_alert={_fmt(p['t_alert_system_ms'],9,1)} ms   "
-          f"TTFD={_fmt(p['ttfd_ms'],7,1)} ms   SDR={_fmt(p['sdr'])}")
+    # el n va pegado a la media: sin el, t_alert de dos campanas no es comparable
+    print(f"  t_alert={_fmt(p['t_alert_system_ms'],9,1)} ms (n={p['t_alert_system_ms_n']}/{p['clips']})"
+          f"   TTFD={_fmt(p['ttfd_ms'],7,1)} ms (n={p['ttfd_ms_n']})"
+          f"   SDR={_fmt(p['sdr'])} (n={p['sdr_n']})")
     print(f"\nNEGATIVOS (control de FP): {n['clips']} clips, {n['false_positives']} FP, "
           f"{n['observed_ms']/60000:.1f} min")
     print(f"  FAR/hora = {n['far_per_hour'] if n['far_per_hour'] is not None else 'NO REPORTABLE'}"

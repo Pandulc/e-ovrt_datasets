@@ -3,36 +3,15 @@
   "clip_id": "v04_c02",
   "source_file": "clips/v04_c02.mp4",
   "block": "B",
-  "scenario": "P6",
+  "scenario": "P5",
   "fps_nominal": 30,
   "duration_ms": 28000,
   "recording": {
     "resolution": "1920x1080",
     "lighting": "nocturna"
   },
-  "negative": false,
-  "episodes": [
-    {
-      "id": "ep1",
-      "condition_id": "CR-01",
-      "level": "scene",
-      "source_id": "v04_c02",
-      "start_ms": 0,
-      "end_ms": 23833,
-      "subjects_in_evidence": 1,
-      "notes": ""
-    },
-    {
-      "id": "ep2",
-      "condition_id": "CR-02",
-      "level": "scene",
-      "source_id": "v04_c02",
-      "start_ms": 0,
-      "end_ms": 23833,
-      "subjects_in_evidence": 1,
-      "notes": ""
-    }
-  ],
+  "negative": true,
+  "episodes": [],
   "sub_threshold_events": [
     {
       "condition_id": "CR-01",
@@ -89,17 +68,39 @@
     "double_annotated": false,
     "second_annotator": null,
     "kappa": null,
+    "attribute_corrections": [
+      {
+        "track_id": 6,
+        "attr": "has_helmet",
+        "from_frame": 0,
+        "to_frame": 715,
+        "previous_value": "false",
+        "value": "unknown",
+        "decided_by": "simonll4",
+        "decided_at": "2026-08-09",
+        "rationale": "Revision visual en CVAT del track 6 en todo su rango (f0-f715): esta dentro de la cabina de la maquina durante el clip entero y el area de la cabeza no es observable en ningun frame. El 'false' original era sobre-declaracion, no un hecho verificado — misma familia que el error de v06_c01 y v03_c02 (doc 112 §7.2). CONSECUENCIA ASUMIDA: el episodio CR-01 de este clip deja de ser derivable sobre este sujeto; a re-derivar el GT."
+      },
+      {
+        "track_id": 6,
+        "attr": "has_vest",
+        "from_frame": 0,
+        "to_frame": 715,
+        "previous_value": "false",
+        "value": "unknown",
+        "decided_by": "simonll4",
+        "decided_at": "2026-08-09",
+        "rationale": "Misma revision y misma causa que el has_helmet de arriba (cabina de maquina, oclusion total, los 716 frames): el 'false' de has_vest tampoco es plausible. CONSECUENCIA ASUMIDA: el episodio CR-02 de este clip deja de ser derivable sobre este sujeto; a re-derivar el GT. Si ningun otro sujeto sostiene una violacion en este clip, pasa a NEGATIVO."
+      }
+    ],
     "start_end_tolerance_ms": 500
   },
   "provenance": {
-    "xml_sha256": "b413abf8d54559f60e34aece48640f69f02ad671ce4286cabeee18b94d23f026",
+    "xml_sha256": "98946a7d1eb1cc99a0f261a6d3afd7b940172fdb632b43252d68ba258bcc6b1c",
     "pattern_set_ms": {
       "CR-01": 4000,
       "CR-02": 7000
     },
     "tool": "video-gt-lab/derive_clip_gt",
-    "dimensioning_warnings": [
-      "onset del primer episodio en 0 ms (< 2000 ms): sin pre-roll el TTFD colapsa a 0 como artefacto de recorte — re-ventanear el corte para que el onset caiga en t≈3–4 s (doc 57 §6.5)"
-    ]
+    "dimensioning_warnings": []
   }
 }

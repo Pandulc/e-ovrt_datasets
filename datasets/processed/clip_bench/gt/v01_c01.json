@@ -3,26 +3,15 @@
   "clip_id": "v01_c01",
   "source_file": "clips/v01_c01.mp4",
   "block": "B",
-  "scenario": "P1",
+  "scenario": "P5",
   "fps_nominal": 30,
   "duration_ms": 37200,
   "recording": {
     "resolution": "1920x1080",
     "lighting": "diurna"
   },
-  "negative": false,
-  "episodes": [
-    {
-      "id": "ep1",
-      "condition_id": "CR-01",
-      "level": "scene",
-      "source_id": "v01_c01",
-      "start_ms": 31567,
-      "end_ms": 37200,
-      "subjects_in_evidence": 1,
-      "notes": "la condición sigue activa al final del clip"
-    }
-  ],
+  "negative": true,
+  "episodes": [],
   "sub_threshold_events": [
     {
       "condition_id": "CR-01",
@@ -58,17 +47,28 @@
     "double_annotated": false,
     "second_annotator": null,
     "kappa": null,
+    "attribute_corrections": [
+      {
+        "track_id": 9,
+        "attr": "has_helmet",
+        "from_frame": 947,
+        "to_frame": 1115,
+        "previous_value": "false",
+        "value": "unknown",
+        "decided_by": "simonll4",
+        "decided_at": "2026-08-09",
+        "rationale": "Revision visual del track 9 en su unico tramo 'false' (f947-f1115, el que sostenia el episodio CR-01): el sujeto esta dentro del edificio, detras del hueco de fachada y a contraluz; el chaleco se distingue con claridad pero la zona de la cabeza queda en sombra y el estado del casco NO es determinable en ningun frame del tramo. Criterio del usuario en la revision ciega: \"si no se alcanza a ver o distinguir, es unknown\". El 'false' original era sobre-declaracion, no un hecho verificado — quinta declaracion de episodio del lote que cae por la misma causa (v06_c01, v03_c02, v04_c02 x2). CONSECUENCIA ASUMIDA: el episodio (ya censurado por A1, sin recall citable) deja de existir y el clip pasa a NEGATIVO (37,2 s de tiempo informativo)."
+      }
+    ],
     "start_end_tolerance_ms": 500
   },
   "provenance": {
-    "xml_sha256": "cb5fcc48ff2b224099a6543d1e1e40aee3f612ee5f4e4a16185f527b0a06f116",
+    "xml_sha256": "0967888d0782331214c0870dddd92760be60b9082fe072d3d891d9aedd5d3565",
     "pattern_set_ms": {
       "CR-01": 4000,
       "CR-02": 7000
     },
     "tool": "video-gt-lab/derive_clip_gt",
-    "dimensioning_warnings": [
-      "ep1 (CR-01): duration_ms 37200 < 45567 ms (start 31567 + t_alert_upper 10000 + resolve 2000 + cola 2000): t_alert-system/recall de este episodio quedan censurados (doc 57 §6.7)"
-    ]
+    "dimensioning_warnings": []
   }
 }

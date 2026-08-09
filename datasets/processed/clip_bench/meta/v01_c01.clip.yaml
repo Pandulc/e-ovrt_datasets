@@ -1,21 +1,29 @@
 # Lote de internet (doc 58 §B.2.1): obra real no guionada, diurno.
 # El clip ES el master SIN RECORTAR (doc 59 §6). NO regenerar desde la consola.
 #
-# GT HUMANO 2026-08-09 (doc 111): 1 episodio CR-01 (31.567 -> 37.200 ms, track 9),
-# pero **CENSURADO por el gate A1**: el episodio arranca a 31,6 s y el clip dura
-# 37,2 s, cuando CR-01 exige llegar a onset + 10.000 + 2.000 + 2.000 = 45,6 s.
-# ⇒ NO aporta recall citable; su valor es control de FP y tiempo observado.
-#
-# ⚠️ REVISIÓN VISUAL PENDIENTE (misma familia que v06_c01 y v03_c02): el sujeto del
-# episodio (track 9, 127 px de alto) está DENTRO del edificio, detrás del hueco de
-# fachada y a contraluz; la zona de la cabeza no es claramente observable en el frame
-# auditado (f1000). El chaleco SÍ se ve. Si la revisión concluye que el casco no es
-# determinable, corresponde `has_helmet -> unknown` (como en v03_c02), no `false`.
-# El GT vigente respeta lo que marcó el anotador: `false`.
+# GT HUMANO, EN DOS PASADAS:
+#   1a pasada (2026-08-09, doc 111): 1 episodio CR-01 (31.567 -> 37.200 ms, track 9),
+#   CENSURADO por el gate A1 (arranca a 31,6 s de un clip de 37,2 s; CR-01 exige
+#   llegar a 45,6 s) => no aportaba recall, solo control de FP.
+#   2a pasada (revision ciega del doc 113 Bloque B, 2026-08-09): la marca de
+#   REVISION VISUAL PENDIENTE que vivia aca se RESOLVIO — verificacion visual con
+#   la caja del track 9 dibujada sobre el frame 1000: el chaleco se ve claramente
+#   (has_vest=true, correcto), pero la zona de la cabeza esta en sombra, dentro
+#   del edificio y a contraluz: el estado del casco NO es determinable. Por el
+#   criterio fijado por el usuario ("si no se alcanza a ver o distinguir, es
+#   unknown"), el 'false' era sobre-declaracion => has_helmet -> unknown en el
+#   unico tramo 'false' del track (f947-f1115), con firma (ver
+#   annotation.attribute_corrections).
+# RESULTADO VIGENTE: **NEGATIVO** — 0 episodios. Misma familia que v06_c01,
+# v03_c02 y v04_c02: violacion sobre-declarada donde el estado no era observable.
+# NO ES SOAK: dura 37,2 s (< 5 min); aporta 0,0103 h de tiempo negativo
+# INFORMATIVO y control de FP sobre obra real.
 clip_id: v01_c01
 block: B          # obra real, no guionado
-# ESCENARIO CORREGIDO CONTRA EL GT (era P5 por expectativa de curación).
-scenario: P1      # sin casco (CR-01), un episodio — censurado por duración
+# HISTORIA DEL ESCENARIO (ironia completa, para trazabilidad): era P5 por
+# expectativa de curacion -> el GT de la 1a pasada lo "corrigio" a P1 -> la
+# revision ciega lo devolvio a P5: la expectativa original era la correcta.
+scenario: P5      # cumplimiento total (negativo) — tras la correccion firmada
 source_id: v01_c01
 level: scene
 master: raw/1.1.mp4
@@ -35,3 +43,29 @@ annotation:
   double_annotated: false
   second_annotator: null
   kappa: null
+
+  # REVISION VISUAL DEL TRACK 9, 2026-08-09 (revision ciega del doc 113 Bloque B).
+  # Metodo: frame 1000 extraido del mp4 con la caja del track 9 del XML dibujada
+  # encima (la identificacion por "person N" de la UI de CVAT NO es confiable: los
+  # numeros de la UI no coinciden con los track_id del export — fenomeno ya
+  # documentado en v03_c02, donde "person 3" de la UI era el track 0).
+  attribute_corrections:
+  - track_id: 9             # obligatorio: la correccion es de UNA persona
+    attr: has_helmet
+    from_frame: 947
+    to_frame: 1115
+    previous_value: 'false'
+    value: 'unknown'
+    decided_by: simonll4
+    decided_at: '2026-08-09'
+    rationale: >-
+      Revision visual del track 9 en su unico tramo 'false' (f947-f1115, el que
+      sostenia el episodio CR-01): el sujeto esta dentro del edificio, detras del
+      hueco de fachada y a contraluz; el chaleco se distingue con claridad pero la
+      zona de la cabeza queda en sombra y el estado del casco NO es determinable
+      en ningun frame del tramo. Criterio del usuario en la revision ciega: "si no
+      se alcanza a ver o distinguir, es unknown". El 'false' original era
+      sobre-declaracion, no un hecho verificado — quinta declaracion de episodio
+      del lote que cae por la misma causa (v06_c01, v03_c02, v04_c02 x2).
+      CONSECUENCIA ASUMIDA: el episodio (ya censurado por A1, sin recall citable)
+      deja de existir y el clip pasa a NEGATIVO (37,2 s de tiempo informativo).
