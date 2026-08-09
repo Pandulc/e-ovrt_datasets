@@ -1,0 +1,32 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "v09_c01",
+  "source_file": "clips/v09_c01.mp4",
+  "block": "B",
+  "scenario": "P5",
+  "fps_nominal": 30,
+  "duration_ms": 45167,
+  "recording": {
+    "resolution": "1920x1080",
+    "lighting": "diurna"
+  },
+  "negative": true,
+  "episodes": [],
+  "sub_threshold_events": [],
+  "annotation": {
+    "annotator": "simon",
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "79adeba4bc78bc8c4707ea1583e6d57bd27fe3f4f11cc4d7a33194afa723e2e1",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

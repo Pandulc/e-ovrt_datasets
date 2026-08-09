@@ -1,0 +1,11 @@
+{
+  "clip_id": "video02_clip07",
+  "file": "PERDIDO — era datasets-videos/clips/video02_clip07.mp4",
+  "fps": 30,
+  "duration_ms": 12000,
+  "n_frames": 360,
+  "resolution": "1920x1080",
+  "sha256": null,
+  "reconstructed": true,
+  "reconstruction_note": "info.json RECONSTRUIDO el 2026-08-06 (doc 102). El .mp4 se perdio en el renombre a vXX_cXX (commit 9fdc9f9f). n_frames y resolution salen de meta/task del XML de CVAT; fps=30 por los masters del lote (1920x1080@30) y por la aritmetica de doc 57 (358 frames -> 11.933 ms). sha256 no verificable: no hay archivo. NO promovible al banco."
+}

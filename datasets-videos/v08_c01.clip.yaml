@@ -1,11 +1,48 @@
-# Lote de internet (doc 58 §B.2.1): obra real en cumplimiento.
-# El clip ES el master SIN RECORTAR (doc 59 §6): se usa entero como material
-# soak para medir FAR. Recortarlo solo tiraria tiempo negativo, que es justo
-# lo que hay que acumular. NO regenerar desde la consola.
-# El GT lo marcara negative: true si CVAT no deja ningun episodio de infraccion.
+# ╔══════════════════════════════════════════════════════════════════════════════╗
+# ║  EXCLUIDO DEL DATASET ANOTADO/CURADO — decision del usuario, 2026-08-09       ║
+# ╚══════════════════════════════════════════════════════════════════════════════╝
+#
+# **Este clip NO se anota y NO entra al banco.** Es el unico de los 14 del lote de
+# internet que queda fuera; los otros 13 tienen GT humano y estan promovidos.
+#
+# CAUSA: decision de alcance del usuario (2026-08-09). El lote ya cumplio su funcion
+# —levantar L4 con material de obra real no guionada— con 13 clips, y anotar el 14o
+# no cambia ninguna conclusion: es un clip diurno de 50,2 s cuya expectativa de
+# curacion era P5 (cumplimiento), o sea que aportaria mas tiempo negativo corto a un
+# denominador que ya no depende de el (el unico soak del banco es v06_c01, y el gate
+# de soak exige >=5 min que este clip no tiene ni de cerca).
+#
+# ESTO NO ES UN PENDIENTE. Se declara como cobertura no ejecutada con causa, que es
+# la regla del proyecto (doc 57 §7.6: "el nucleo validable se cierra con las metricas
+# que el material efectivamente cubra; lo no cubierto se declara con causa, nunca se
+# fabrica ni bloquea"). Registrado tambien en registry/clip_bench.md §1.1.
+#
+# QUE HAY EN DISCO IGUAL: el clip normalizado (clips/v08_c01.mp4 + .info.json) y su
+# pre-anotacion automatica (preann/v08_c01.xml). Se conservan por si alguna vez se
+# decide anotarlo, pero **sin GT humano no es promovible** y ninguna campania lo toca.
+#
+# SI ALGUNA VEZ SE ANOTA: borrar este bloque, completar `scenario` contra el GT (no
+# contra la expectativa: la curacion acerto 7 de 13 en este lote) y seguir la cadena
+# estandar (derive -> validate -> promote -> build_clip_bench).
+#
+excluded: true
+excluded_reason: "decision de alcance del usuario 2026-08-09: el lote cierra en 13/14; anotar este no cambia conclusiones"
+excluded_by: simonll4
+excluded_at: '2026-08-09'
+
 clip_id: v08_c01
 block: B          # obra real, no guionado
-scenario: P5      # cumplimiento total
+scenario: P5      # EXPECTATIVA de curacion, NUNCA verificada contra GT (no se anoto)
 source_id: v08_c01
 level: scene
 master: raw/8.1.mp4
+
+license:
+  source: "YouTube @HospitalConstruction"
+  channel_url: "https://www.youtube.com/@HospitalConstruction"
+  terms: "Standard YouTube License — uso academico/evaluativo con cita, sin redistribucion"
+  video_url: TODO
+
+recording:
+  resolution: 1920x1080
+  lighting: diurna

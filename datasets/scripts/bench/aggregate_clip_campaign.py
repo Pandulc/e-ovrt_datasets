@@ -107,17 +107,32 @@ def aggregate_campaign(evals_dir, gt_dir, campaign: dict | None = None) -> dict:
         round(2 * rm * pm / (rm + pm), 6) if rm and pm and (rm + pm) else None
     )
 
+    # FAR/hora: numerador y denominador tienen que salir del MISMO conjunto de clips.
+    # Bug corregido 2026-08-09 (doc 111 §6): antes el numerador eran los FP de TODOS
+    # los negativos y el denominador solo las horas de los soak. Con 1 soak y 1 negativo
+    # corto la distorsión era chica (1,2x) y pasó desapercibida; con 9 negativos y 1
+    # soak infla 7x (escena: 204,6 vs 29,2 FA/h reales). Ahora se computan las dos
+    # bases, cada una consistente consigo misma, y `far_per_hour` es la declarada
+    # (solo soak, doc 57 §3.2 G1).
+    soak = [r for r in neg if (r["gt"].get("duration_ms") or 0) >= SOAK_MIN_MS]
     neg_ms = sum(r["gt"].get("duration_ms") or 0 for r in neg)
-    soak_ms = sum(d for r in neg if (d := r["gt"].get("duration_ms") or 0) >= SOAK_MIN_MS)
+    soak_ms = sum(r["gt"].get("duration_ms") or 0 for r in soak)
     neg_fp = tot(neg, "unexpected_alerts_count")
+    soak_fp = tot(soak, "unexpected_alerts_count")
     negatives = {
         "clips": len(neg),
         "false_positives": neg_fp,
         "observed_ms": neg_ms,
-        "soak_clips": sum(1 for r in neg if (r["gt"].get("duration_ms") or 0) >= SOAK_MIN_MS),
+        "soak_clips": len(soak),
         "soak_ms": soak_ms,
-        "far_per_hour": _safe(neg_fp, soak_ms / 3_600_000.0) if soak_ms else None,
+        "soak_false_positives": soak_fp,
+        # la métrica declarada: FP de los clips soak sobre las horas de los clips soak
+        "far_per_hour": _safe(soak_fp, soak_ms / 3_600_000.0) if soak_ms else None,
         "far_basis": FAR_BASIS,
+        # base alternativa, informativa: TODO el tiempo negativo observado. Más `n`,
+        # pero mezcla ventanas cortas donde una tasa por hora extrapola de más.
+        "far_per_hour_all_negatives": _safe(neg_fp, neg_ms / 3_600_000.0) if neg_ms else None,
+        "far_all_negatives_basis": "todos los negativos (informativo; ventanas cortas extrapolan)",
     }
 
     by_condition: dict[str, dict] = {}
@@ -215,7 +230,10 @@ def print_summary(m: dict) -> None:
     print(f"\nNEGATIVOS (control de FP): {n['clips']} clips, {n['false_positives']} FP, "
           f"{n['observed_ms']/60000:.1f} min")
     print(f"  FAR/hora = {n['far_per_hour'] if n['far_per_hour'] is not None else 'NO REPORTABLE'}"
-          f"  ({n['far_basis']}; soak={n['soak_clips']} clips)")
+          f"  ({n['far_basis']}; soak={n['soak_clips']} clips, {n['soak_false_positives']} FP)")
+    if n.get("far_per_hour_all_negatives") is not None:
+        print(f"    (informativo, todos los negativos: {n['far_per_hour_all_negatives']:.1f} "
+              f"FA/h — {n['false_positives']} FP en {n['observed_ms']/3_600_000:.4f} h)")
     print(f"\n{'esc':>4} {'clips':>5} {'eps':>4} {'recall':>7} {'FP':>3} {'SDR':>7}")
     for esc, s in m["by_scenario"].items():
         print(f"{esc:>4} {s['clips']:>5} {s['episodes_evaluable']:>4} "

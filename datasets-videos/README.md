@@ -72,6 +72,27 @@ real es **`v04_c01`** (`scenario: P8`): CR-01 espontáneo nocturno, con el event
 t≈6 s — ya por encima de los 3,5 s de pre-roll que exige medir el TTFD, así que
 tampoco necesita re-ventaneo.
 
+> ✎ **2026-08-06 — el GT humano desmintió parte del párrafo anterior (doc 102).**
+> De los 3 anotados: `v04_c01` es **P1, no P8** (un episodio, onset real 3,97 s —
+> igual sobre el pre-roll), y `v06_c01` **NO salió negativo** (P5→**P2**: 1 episodio
+> CR-02 de 13,1 s en 342,4 s) ⇒ no es soak y el banco sigue con 0 clips soak.
+> `v10_c01` sí confirmó P5. La clasificación de los 11 sin anotar sigue siendo
+> expectativa, no un hecho.
+>
+> ✎ **2026-08-07 — anotados 5 de 14, y la cuenta de aciertos de la curación cerró en
+> 1 de 5** (docs 108 y 110). Se sumaron `v04_c02` (P5→**P6**: un sujeto sostiene CR-01 y
+> CR-02 a la vez, nocturno) y `v03_c02` (**negativo**, diurno, 104,9 s). Además
+> `v06_c01` volvió a **P5 negativo** —su episodio CR-02 era error de anotación, corregido
+> con firma— y con eso **sí es el clip soak del banco**, el único (habilita FAR/hora).
+>
+> ✎ **2026-08-09 — EL LOTE QUEDÓ CERRADO: 13 de 14 con GT** (doc 111). Entraron los 8
+> restantes: 2 positivos CR-01 (`v01_c02` evaluable; `v01_c01` censurado por A1) y 6
+> negativos (`v04_c03` = el único negativo nocturno del banco). **`v08_c01` NO se anota
+> — exclusión declarada con causa** (bloque `excluded:` en su ficha; doc 57 §7.6).
+> Curación acumulada: **7 de 13**. Las anotaciones versionadas del banco son la fuente
+> de verdad (registry §2.2); los exports de CVAT de clips corregidos vienen sin las
+> correcciones y se verifica con `apply_attribute_corrections.py --check`.
+
 ## Pipeline
 
 ### Etapa 0 — Normalización (`prepare_clip.sh`)

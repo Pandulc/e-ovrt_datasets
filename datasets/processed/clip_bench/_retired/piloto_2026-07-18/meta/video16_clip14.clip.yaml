@@ -1,0 +1,29 @@
+# PILOTO 2026-07-18 — NO es parte del banco de medicion (ver MOTIVO.md).
+# El .mp4 se perdio en el renombre a vXX_cXX (commit 9fdc9f9f): este clip NO es
+# ejecutable, no admite corrida ni evaluacion. Su GT existe para el analisis de
+# duracion de clips (doc 57 §6.5/§6.7), no para reportar rendimiento.
+clip_id: video16_clip14
+block: B          # obra real, no guionado (lote de internet, pool de 16 videos)
+# Escenario asignado CONTRA EL GT humano (el stub original decia TODO): un unico
+# episodio CR-02 de un sujeto, 2.467 -> 12.000 ms => P2. Es el UNICO de los cuatro
+# pilotos con pre-roll suficiente (onset 2,47 s > MIN_ONSET_MS 2 s): no dispara el
+# aviso de onset, pero SI el de censura por duracion.
+scenario: P2
+source_id: video16_clip14
+level: scene
+master: PERDIDO   # era video16_clip14.mp4, recorte de 12 s del video 16 del pool
+
+license:
+  source: "YouTube @HospitalConstruction"
+  channel_url: "https://www.youtube.com/@HospitalConstruction"
+  terms: "Standard YouTube License — uso academico/evaluativo con cita, sin redistribucion"
+  video_url: TODO   # mapeo recorte -> video fuente no registrado
+
+recording:
+  resolution: 1920x1080
+
+annotation:
+  annotator: pandulc        # correccion humana en CVAT (task 3), 2026-07-18
+  double_annotated: false
+  second_annotator: null
+  kappa: null

@@ -1,0 +1,291 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "v06_c01",
+  "source_file": "clips/v06_c01.mp4",
+  "block": "B",
+  "scenario": "P5",
+  "fps_nominal": 30,
+  "duration_ms": 369567,
+  "recording": {
+    "resolution": "1920x1080",
+    "lighting": "diurna"
+  },
+  "negative": true,
+  "episodes": [],
+  "sub_threshold_events": [
+    {
+      "condition_id": "CR-01",
+      "start_ms": 38400,
+      "end_ms": 38433,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 4
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 38400,
+      "end_ms": 38433,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 4
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 48400,
+      "end_ms": 48633,
+      "reason": "transitorio < persistencia mínima (233 ms < 7000 ms) — NO debe alertar",
+      "track_id": 5
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 120600,
+      "end_ms": 121233,
+      "reason": "transitorio < persistencia mínima (633 ms < 4000 ms) — NO debe alertar",
+      "track_id": 11
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 120600,
+      "end_ms": 121233,
+      "reason": "transitorio < persistencia mínima (633 ms < 7000 ms) — NO debe alertar",
+      "track_id": 11
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 138200,
+      "end_ms": 138433,
+      "reason": "transitorio < persistencia mínima (233 ms < 7000 ms) — NO debe alertar",
+      "track_id": 12
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 200000,
+      "end_ms": 200033,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 14
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 200000,
+      "end_ms": 200033,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 14
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 218800,
+      "end_ms": 218833,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 15
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 218800,
+      "end_ms": 218833,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 15
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 256200,
+      "end_ms": 256433,
+      "reason": "transitorio < persistencia mínima (233 ms < 4000 ms) — NO debe alertar",
+      "track_id": 16
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 257400,
+      "end_ms": 257433,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 16
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 256200,
+      "end_ms": 256433,
+      "reason": "transitorio < persistencia mínima (233 ms < 7000 ms) — NO debe alertar",
+      "track_id": 16
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 257400,
+      "end_ms": 257433,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 16
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 50733,
+      "end_ms": 51767,
+      "reason": "transitorio < persistencia mínima (1034 ms < 4000 ms) — NO debe alertar",
+      "track_id": 33
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 74200,
+      "end_ms": 74400,
+      "reason": "transitorio < persistencia mínima (200 ms < 4000 ms) — NO debe alertar",
+      "track_id": 39
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 52400,
+      "end_ms": 52600,
+      "reason": "transitorio < persistencia mínima (200 ms < 7000 ms) — NO debe alertar",
+      "track_id": 39
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 117967,
+      "end_ms": 118433,
+      "reason": "transitorio < persistencia mínima (466 ms < 4000 ms) — NO debe alertar",
+      "track_id": 47
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 160000,
+      "end_ms": 160200,
+      "reason": "transitorio < persistencia mínima (200 ms < 4000 ms) — NO debe alertar",
+      "track_id": 52
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 72800,
+      "end_ms": 73000,
+      "reason": "transitorio < persistencia mínima (200 ms < 7000 ms) — NO debe alertar",
+      "track_id": 53
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 153600,
+      "end_ms": 154800,
+      "reason": "transitorio < persistencia mínima (1200 ms < 7000 ms) — NO debe alertar",
+      "track_id": 58
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 197000,
+      "end_ms": 197133,
+      "reason": "transitorio < persistencia mínima (133 ms < 7000 ms) — NO debe alertar",
+      "track_id": 76
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 209800,
+      "end_ms": 209833,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 79
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 209800,
+      "end_ms": 209833,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 79
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 200000,
+      "end_ms": 200133,
+      "reason": "transitorio < persistencia mínima (133 ms < 7000 ms) — NO debe alertar",
+      "track_id": 85
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 271800,
+      "end_ms": 272000,
+      "reason": "transitorio < persistencia mínima (200 ms < 7000 ms) — NO debe alertar",
+      "track_id": 93
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 271800,
+      "end_ms": 272100,
+      "reason": "transitorio < persistencia mínima (300 ms < 4000 ms) — NO debe alertar",
+      "track_id": 94
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 330600,
+      "end_ms": 330633,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 108
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 331000,
+      "end_ms": 331167,
+      "reason": "transitorio < persistencia mínima (167 ms < 4000 ms) — NO debe alertar",
+      "track_id": 110
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 340200,
+      "end_ms": 340233,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 110
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 331000,
+      "end_ms": 331167,
+      "reason": "transitorio < persistencia mínima (167 ms < 7000 ms) — NO debe alertar",
+      "track_id": 110
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 340200,
+      "end_ms": 340233,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 110
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 20400,
+      "end_ms": 20600,
+      "reason": "transitorio < persistencia mínima (200 ms < 7000 ms) — NO debe alertar",
+      "track_id": 118
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 33800,
+      "end_ms": 34067,
+      "reason": "transitorio < persistencia mínima (267 ms < 4000 ms) — NO debe alertar",
+      "track_id": 120
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 33800,
+      "end_ms": 34000,
+      "reason": "transitorio < persistencia mínima (200 ms < 7000 ms) — NO debe alertar",
+      "track_id": 120
+    }
+  ],
+  "annotation": {
+    "annotator": "simon",
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "attribute_corrections": [
+      {
+        "track_id": 110,
+        "attr": "has_vest",
+        "from_frame": 10272,
+        "to_frame": 10665,
+        "previous_value": "false",
+        "value": "true",
+        "decided_by": "simonll4",
+        "decided_at": "2026-08-06",
+        "rationale": "Revision visual en CVAT del track 110 en su tramo plenamente visible (cruza todo el plano, caja de ~215 px de alto): la persona SI lleva chaleco. El 'false' original fue error de anotacion, no incertidumbre — por eso se corrige con attribute_corrections (que pisa un valor explicito, con previous_value verificado) y NO con unknown_adjudications, que por diseno se niega a pisar valores del anotador. CONSECUENCIA ASUMIDA CON PLENO CONOCIMIENTO: el clip pierde su unico episodio CR-02 y pasa a NEGATIVO, con lo que se vuelve el PRIMER clip soak del banco (6:09,6 continuos = 0,1027 h) y habilita por primera vez un FAR/hora medido sobre obra real. FUENTE DE VERDAD (decision del usuario, 2026-08-09): **la anotacion versionada en este repo**, NO el estado de CVAT. Un re-export de CVAT que no traiga esta correccion la revertiria en silencio; para eso existe el guard `apply_attribute_corrections.py --check` (ver registry §2.2)."
+      }
+    ],
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "79cfbb5e883802830ac804c452716130282093594137ab57d24d7ff81a157c4b",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

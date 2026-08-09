@@ -1,0 +1,105 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "v04_c02",
+  "source_file": "clips/v04_c02.mp4",
+  "block": "B",
+  "scenario": "P6",
+  "fps_nominal": 30,
+  "duration_ms": 28000,
+  "recording": {
+    "resolution": "1920x1080",
+    "lighting": "nocturna"
+  },
+  "negative": false,
+  "episodes": [
+    {
+      "id": "ep1",
+      "condition_id": "CR-01",
+      "level": "scene",
+      "source_id": "v04_c02",
+      "start_ms": 0,
+      "end_ms": 23833,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    },
+    {
+      "id": "ep2",
+      "condition_id": "CR-02",
+      "level": "scene",
+      "source_id": "v04_c02",
+      "start_ms": 0,
+      "end_ms": 23833,
+      "subjects_in_evidence": 1,
+      "notes": ""
+    }
+  ],
+  "sub_threshold_events": [
+    {
+      "condition_id": "CR-01",
+      "start_ms": 8300,
+      "end_ms": 9033,
+      "reason": "transitorio < persistencia mínima (733 ms < 4000 ms) — NO debe alertar",
+      "track_id": 1
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 8300,
+      "end_ms": 9033,
+      "reason": "transitorio < persistencia mínima (733 ms < 7000 ms) — NO debe alertar",
+      "track_id": 1
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 13500,
+      "end_ms": 13633,
+      "reason": "transitorio < persistencia mínima (133 ms < 4000 ms) — NO debe alertar",
+      "track_id": 2
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 13500,
+      "end_ms": 13633,
+      "reason": "transitorio < persistencia mínima (133 ms < 7000 ms) — NO debe alertar",
+      "track_id": 2
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 16700,
+      "end_ms": 16733,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 3
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 4100,
+      "end_ms": 4433,
+      "reason": "transitorio < persistencia mínima (333 ms < 4000 ms) — NO debe alertar",
+      "track_id": 9
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 4100,
+      "end_ms": 4433,
+      "reason": "transitorio < persistencia mínima (333 ms < 7000 ms) — NO debe alertar",
+      "track_id": 9
+    }
+  ],
+  "annotation": {
+    "annotator": "simon",
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "b413abf8d54559f60e34aece48640f69f02ad671ce4286cabeee18b94d23f026",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": [
+      "onset del primer episodio en 0 ms (< 2000 ms): sin pre-roll el TTFD colapsa a 0 como artefacto de recorte — re-ventanear el corte para que el onset caiga en t≈3–4 s (doc 57 §6.5)"
+    ]
+  }
+}

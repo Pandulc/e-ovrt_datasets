@@ -1,0 +1,100 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "v03_c02",
+  "source_file": "clips/v03_c02.mp4",
+  "block": "B",
+  "scenario": "P5",
+  "fps_nominal": 30,
+  "duration_ms": 104900,
+  "recording": {
+    "resolution": "1920x1080",
+    "lighting": "diurna"
+  },
+  "negative": true,
+  "episodes": [],
+  "sub_threshold_events": [
+    {
+      "condition_id": "CR-02",
+      "start_ms": 21500,
+      "end_ms": 22300,
+      "reason": "transitorio < persistencia mínima (800 ms < 7000 ms) — NO debe alertar",
+      "track_id": 1
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 0,
+      "end_ms": 33,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 2
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 0,
+      "end_ms": 33,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 2
+    }
+  ],
+  "annotation": {
+    "annotator": "simon",
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "attribute_corrections": [
+      {
+        "track_id": 0,
+        "attr": "has_vest",
+        "from_frame": 492,
+        "to_frame": 706,
+        "previous_value": "false",
+        "value": "true",
+        "decided_by": "simonll4",
+        "decided_at": "2026-08-07",
+        "rationale": "Operador en la cabina de la excavadora: chaleco naranja de alta visibilidad claramente visible a traves del vidrio (frames 492 y 618 revisados en el video). El 'false' del export fue error de anotacion. Se extiende a todo el track por continuidad de identidad del sujeto (mismo asiento, misma maquina, track unico con un hueco de outside de 13 frames)."
+      },
+      {
+        "track_id": 0,
+        "attr": "has_helmet",
+        "from_frame": 492,
+        "to_frame": 611,
+        "previous_value": "false",
+        "value": "unknown",
+        "decided_by": "simonll4",
+        "decided_at": "2026-08-07",
+        "rationale": "Casco NO determinable: el marco de la cabina y el reflejo del vidrio tapan la cabeza del operador. El 'false' era conjetura y era ademas el unico sosten del episodio CR-01 de 4.000 ms. 'unknown' es el estado correcto para lo que no se puede juzgar."
+      },
+      {
+        "track_id": 0,
+        "attr": "has_helmet",
+        "from_frame": 612,
+        "to_frame": 623,
+        "previous_value": "true",
+        "value": "unknown",
+        "decided_by": "simonll4",
+        "decided_at": "2026-08-07",
+        "rationale": "Mismo motivo que el tramo anterior, con el signo opuesto: estos 12 frames (400 ms) venian marcados 'true'. La cabeza tampoco se ve aca, asi que el 'true' era la conjetura simetrica del 'false'. Se unifica en 'unknown' para que el track entero diga lo mismo: no evaluable."
+      },
+      {
+        "track_id": 0,
+        "attr": "has_helmet",
+        "from_frame": 624,
+        "to_frame": 706,
+        "previous_value": "false",
+        "value": "unknown",
+        "decided_by": "simonll4",
+        "decided_at": "2026-08-07",
+        "rationale": "Tramo final del track (incluye el hueco de outside 659-671, sin cajas). Misma causa que los dos tramos anteriores: cabeza tapada por la cabina, estado no determinable."
+      }
+    ],
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "06bfe6a49e665de31ab776ff20ff4cd991b3c7050087f4555ae1741adf231d75",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

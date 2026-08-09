@@ -1,0 +1,53 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "video15_clip01",
+  "source_file": "PERDIDO — era datasets-videos/clips/video15_clip01.mp4",
+  "block": "B",
+  "scenario": "P2",
+  "fps_nominal": 30,
+  "duration_ms": 12000,
+  "recording": {
+    "resolution": "1920x1080"
+  },
+  "negative": false,
+  "episodes": [
+    {
+      "id": "ep1",
+      "condition_id": "CR-02",
+      "level": "scene",
+      "source_id": "video15_clip01",
+      "start_ms": 0,
+      "end_ms": 12000,
+      "subjects_in_evidence": 2,
+      "notes": "la condición sigue activa al final del clip"
+    }
+  ],
+  "sub_threshold_events": [
+    {
+      "condition_id": "CR-02",
+      "start_ms": 0,
+      "end_ms": 33,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 0
+    }
+  ],
+  "annotation": {
+    "annotator": "pandulc",
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "2f484cbe4ed797c24c21d28a68cdce85613781ab24d2bc5944d7c8380b478e43",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": [
+      "onset del primer episodio en 0 ms (< 2000 ms): sin pre-roll el TTFD colapsa a 0 como artefacto de recorte — re-ventanear el corte para que el onset caiga en t≈3–4 s (doc 57 §6.5)",
+      "ep1 (CR-02): duration_ms 12000 < 25000 ms (start 0 + t_alert_upper 20000 + resolve 3000 + cola 2000): t_alert-system/recall de este episodio quedan censurados (doc 57 §6.7)"
+    ]
+  }
+}

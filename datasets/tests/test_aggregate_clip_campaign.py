@@ -157,3 +157,34 @@ def test_rechaza_un_eval_sin_su_GT(tmp_path):
     gts = {}
     with pytest.raises(ValueError, match="sin GT"):
         aggregate_campaign(*_write(tmp_path, evals, gts))
+
+
+def test_far_por_hora_usa_la_misma_base_en_numerador_y_denominador(tmp_path):
+    """Bug del 2026-08-09 (doc 111 §6): el numerador tomaba los FP de TODOS los
+    negativos y el denominador solo las horas de los SOAK. Con 1 soak + varios
+    negativos cortos, infla la tasa varias veces."""
+    import json
+    from bench.aggregate_clip_campaign import aggregate_campaign
+
+    evals, gts = tmp_path / "evals", tmp_path / "gt"
+    evals.mkdir(); gts.mkdir()
+    # soak: 6 min, 3 FP  |  corto: 1 min, 17 FP
+    for cid, dur, fp in (("soak", 360_000, 3), ("corto", 60_000, 17)):
+        (gts / f"{cid}.json").write_text(json.dumps({
+            "schema_version": "clip_gt.v2", "clip_id": cid, "source_file": f"{cid}.mp4",
+            "block": "B", "scenario": "P5", "fps_nominal": 30, "duration_ms": dur,
+            "recording": {}, "negative": True, "episodes": [],
+            "sub_threshold_events": [], "annotation": {}}))
+        (evals / f"eval_{cid}.json").write_text(json.dumps({
+            "scenario_id": cid, "applicability_state": "not_applicable",
+            "matched_alerts_count": 0, "missed_alerts_count": 0,
+            "unexpected_alerts_count": fp, "re_alerts_count": 0,
+            "expected_alerts_count": 0, "duplicate_alerts_count": 0,
+            "censored_episodes": [], "unexpected_alerts": []}))
+
+    n = aggregate_campaign(str(evals), str(gts), None)["negatives"]
+    assert n["soak_clips"] == 1 and n["soak_false_positives"] == 3
+    # declarada: SOLO soak — 3 FP en 0,1 h = 30,0 FA/h (y NO 20 FP / 0,1 h = 200)
+    assert n["far_per_hour"] == pytest.approx(30.0, abs=0.1)
+    # informativa: todos los negativos — 20 FP en 7 min
+    assert n["far_per_hour_all_negatives"] == pytest.approx(20 / (420_000 / 3_600_000), abs=0.1)

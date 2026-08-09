@@ -1,0 +1,31 @@
+# PILOTO 2026-07-18 — clip de 12 s. NO entra al banco de medicion de Nivel B:
+# su episodio esta CENSURADO por el gate A1 (12 s no cubren onset+t_alert_upper).
+# ✎ 2026-08-06: el .mp4 se RECUPERO desde CVAT (se habia perdido en 9fdc9f9f) y
+# el video verifica exacto contra el GT: 1920x1080, 30 fps, 360 frames, 12,000 s.
+# Ahora SI es ejecutable, y su valor es NIVEL A (estado por persona), que no
+# depende de la duracion del clip. Ver doc 105.
+clip_id: video16_clip14
+block: B          # obra real, no guionado (lote de internet, pool de 16 videos)
+# Escenario asignado CONTRA EL GT humano (el stub original decia TODO): un unico
+# episodio CR-02 de un sujeto, 2.467 -> 12.000 ms => P2. Es el UNICO de los cuatro
+# pilotos con pre-roll suficiente (onset 2,47 s > MIN_ONSET_MS 2 s): no dispara el
+# aviso de onset, pero SI el de censura por duracion.
+scenario: P2
+source_id: video16_clip14
+level: scene
+master: raw/recuperados-cvat/video16_clip14.mp4   # era video16_clip14.mp4, recorte de 12 s del video 16 del pool
+
+license:
+  source: "YouTube @HospitalConstruction"
+  channel_url: "https://www.youtube.com/@HospitalConstruction"
+  terms: "Standard YouTube License — uso academico/evaluativo con cita, sin redistribucion"
+  video_url: TODO   # mapeo recorte -> video fuente no registrado
+
+recording:
+  resolution: 1920x1080
+
+annotation:
+  annotator: pandulc        # correccion humana en CVAT (task 3), 2026-07-18
+  double_annotated: false
+  second_annotator: null
+  kappa: null

@@ -1,0 +1,32 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "v04_c03",
+  "source_file": "clips/v04_c03.mp4",
+  "block": "B",
+  "scenario": "P5",
+  "fps_nominal": 30,
+  "duration_ms": 32133,
+  "recording": {
+    "resolution": "1920x1080",
+    "lighting": "nocturna"
+  },
+  "negative": true,
+  "episodes": [],
+  "sub_threshold_events": [],
+  "annotation": {
+    "annotator": "simon",
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "0b8f212fb2caf07f33e2dd2e40346d1788eec4a6757e002dbcba6e29af1f55df",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}

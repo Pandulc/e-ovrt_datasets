@@ -1,0 +1,82 @@
+{
+  "schema_version": "clip_gt.v2",
+  "clip_id": "v03_c01",
+  "source_file": "clips/v03_c01.mp4",
+  "block": "B",
+  "scenario": "P5",
+  "fps_nominal": 30,
+  "duration_ms": 22000,
+  "recording": {
+    "resolution": "1920x1080",
+    "lighting": "diurna"
+  },
+  "negative": true,
+  "episodes": [],
+  "sub_threshold_events": [
+    {
+      "condition_id": "CR-01",
+      "start_ms": 15000,
+      "end_ms": 15300,
+      "reason": "transitorio < persistencia mínima (300 ms < 4000 ms) — NO debe alertar",
+      "track_id": 1
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 15000,
+      "end_ms": 15300,
+      "reason": "transitorio < persistencia mínima (300 ms < 7000 ms) — NO debe alertar",
+      "track_id": 1
+    },
+    {
+      "condition_id": "CR-01",
+      "start_ms": 18000,
+      "end_ms": 18033,
+      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
+      "track_id": 2
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 18000,
+      "end_ms": 18033,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 2
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 10800,
+      "end_ms": 10833,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 4
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 12000,
+      "end_ms": 12100,
+      "reason": "transitorio < persistencia mínima (100 ms < 7000 ms) — NO debe alertar",
+      "track_id": 4
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 12200,
+      "end_ms": 12233,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 4
+    }
+  ],
+  "annotation": {
+    "annotator": "simon",
+    "double_annotated": false,
+    "second_annotator": null,
+    "kappa": null,
+    "start_end_tolerance_ms": 500
+  },
+  "provenance": {
+    "xml_sha256": "94ca75fb4a8469f25bc4ccc6fa83181995a5a73a591498731097bfa83bf7e9a7",
+    "pattern_set_ms": {
+      "CR-01": 4000,
+      "CR-02": 7000
+    },
+    "tool": "video-gt-lab/derive_clip_gt",
+    "dimensioning_warnings": []
+  }
+}
