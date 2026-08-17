@@ -271,8 +271,17 @@
   - CR-02
   split_policy: official
   split_seed: 42
-  status: raw_absent_views_stale
+  status: legacy_archived
   notes: >-
+    (✎ 2026-08-15) ARCHIVADO. Al relevar el estado se verificó que las vistas
+    processed/original que la nota de abajo daba por "muertas" ya NO EXISTEN en disco:
+    el único artefacto que quedaba era `sh17_conversion_report.json`, movido a
+    `legacy/processed_reports/`. El status anterior era `raw_absent_views_stale`, que
+    describía artefactos inexistentes. Nunca entró al pipeline v2 ni a ningún resultado
+    reportable; su licencia CC BY-NC-SA (NC + share-alike) lo hacía además inelegible
+    para los roles publicables por la rúbrica del reinicio v2 (§7: CC BY 4.0 o más
+    permisiva para BENCH/DEMO). Reactivarlo exigiría re-descargar y re-convertir.
+    Histórico previo -
     (✎ 2026-08-05) El raw NO está en disco y las vistas processed/original apuntan a
     rutas de otra máquina (/home/pandulc/...): están muertas. Nunca entró al pipeline
     v2 (sin vista canonical_v2, sin rol) ni a ningún resultado reportable. Licencia
@@ -501,8 +510,15 @@
   - CR-02
   split_policy: official
   split_seed: 42
-  status: raw_absent_views_stale
+  status: legacy_archived
   notes: >-
+    (✎ 2026-08-15) ARCHIVADO. Igual que sh17: las vistas processed/original que la nota
+    de abajo daba por huérfanas ya NO EXISTEN en disco; el único artefacto remanente era
+    `construction_ppe_conversion_report.json`, movido a `legacy/processed_reports/`. El
+    status anterior (`raw_absent_views_stale`) describía artefactos inexistentes. Nunca
+    entró al pipeline v2 ni a ningún resultado reportable; su licencia AGPL-3.0 (viral
+    sobre datos) lo hacía inelegible por la rúbrica del reinicio v2 (§7: evitar
+    AGPL-en-datos para los roles publicables). Histórico previo -
     (✎ 2026-08-05) El raw NO está en disco; las vistas processed/original quedaron
     huérfanas. Nunca entró al pipeline v2 ni a ningún resultado reportable. Licencia
     AGPL-3.0 (viral). Histórico: validación básica y conversión completadas 2026-06.
@@ -539,7 +555,22 @@
   split_policy: official / custom_seeded
   split_seed: 42
   status: pending_download
-  notes: Refuerzo para casco/color/ausencia.
+  notes: >-
+    Refuerzo para casco/color/ausencia.
+    (✎ 2026-08-15 — POR QUÉ NUNCA SE DESCARGÓ, determinado al relevar el estado) No es
+    un pendiente: es un candidato de REFUERZO para una condición (CR-01) que el corpus
+    activo ya cubre, y no supera los criterios OBLIGATORIOS de la rúbrica del reinicio
+    v2 (§7). (1) LICENCIA NO VERIFICABLE: la ficha dice literalmente "verificar contra
+    fuente descargada" y se distribuye por Google Drive, sin metadatos de licencia en
+    la fuente; la rúbrica exige licencia permisiva declarada y descarta explícitamente
+    "sin-SPDX" para los roles publicables. (2) La regla de proceso del reinicio v2 es
+    "no procesar nada antes de seleccionar": descargarlo para recién ahí poder
+    verificar la licencia invierte ese orden. (3) CR-01 ya está cubierta por
+    construction_site_safety, el único candidato con negativos explícitos
+    (NO-Hardhat/NO-Safety Vest), que es el requisito más exigente de la rúbrica.
+    (4) Desde ADR-015/016 el alcance está cerrado: no se agrega material nuevo.
+    Se conserva en el catálogo como INVENTARIO de candidatos evaluados y no
+    seleccionados, no como trabajo pendiente.
 - id: shwd
   name: SHWD - Safety Helmet Wearing Dataset
   priority: media-alta
@@ -564,7 +595,13 @@
   split_policy: official / custom_seeded
   split_seed: 42
   status: pending_download
-  notes: Apoyo para casco vs cabeza/persona sin casco.
+  notes: >-
+    Apoyo para casco vs cabeza/persona sin casco.
+    (✎ 2026-08-15 — POR QUÉ NUNCA SE DESCARGÓ) Mismo caso que gdut_hwd, y por las mismas
+    cuatro razones: candidato de APOYO sobre CR-01 (ya cubierta), licencia "verificar
+    contra fuente descargada" distribuida por Google Drive sin SPDX (criterio
+    obligatorio de la rúbrica §7), la regla "no procesar nada antes de seleccionar", y
+    el cierre de alcance de ADR-015/016. Inventario, no pendiente.
 - id: soda
   name: SODA - Site Object Detection dAtaset
   priority: media
@@ -590,7 +627,16 @@
   split_policy: separar_de_corpus_cr01_cr02
   split_seed: 42
   status: pending_download
-  notes: Contextual; no mezclar con corpus obligatorio CR-01/CR-02.
+  notes: >-
+    Contextual; no mezclar con corpus obligatorio CR-01/CR-02.
+    (✎ 2026-08-15 — POR QUÉ NUNCA SE DESCARGÓ: la razón acá es DISTINTA y es
+    definitiva) Este candidato cubre CR-05 y CR-06, que están EXCLUIDAS del alcance por
+    la exclusión registrada E-02 del doc `nucleo/10` (Nivel 3, relacional/zonas:
+    requieren MOT + razonamiento contextual y cámara fija con polígono parametrizado).
+    O sea que no quedó fuera por calidad, licencia ni prioridad: quedó fuera PORQUE LAS
+    CONDICIONES QUE APORTA NO SE MIDEN EN ESTA TESIS. Descargarlo no habría producido
+    ningún dato reportable. Su propia nota ya advertía no mezclarlo con el corpus
+    obligatorio.
 - id: pictor_ppe
   name: Pictor-PPE / Pictor-v3
   priority: condicionada
@@ -616,7 +662,14 @@
   split_policy: blocked_until_license_verified
   split_seed: 42
   status: pending_license_review
-  notes: Condicionado por licencia, permisos y formato real de anotaciones.
+  notes: >-
+    Condicionado por licencia, permisos y formato real de anotaciones.
+    (✎ 2026-08-15 — POR QUÉ NUNCA SE DESCARGÓ) Su status es `pending_license_review`,
+    NO `pending_download`: nunca estuvo habilitado para bajarse. La prioridad
+    "condicionada" y la licencia "verificar antes de usar" lo dejan bloqueado en el
+    criterio obligatorio de licencia de la rúbrica §7, antes de cualquier consideración
+    de calidad o volumen. Con el alcance cerrado (ADR-015/016) la revisión de licencia
+    no se abre. Inventario, no pendiente.
 - id: mocs
   name: MOCS (copia Roboflow "mocs-bowib", NO el original de anlab340)
   priority: cerrada

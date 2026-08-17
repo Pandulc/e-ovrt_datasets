@@ -89,6 +89,109 @@ estrato**, porque afectan como se lee su resultado:
 master `raw/N.M.mp4`. Hoy esta registrado el canal y la referencia de un video
 (subido 2015-04-05, grabado 2015-03-28).
 
+## PESOS DE MODELO (agregado 2026-08-10)
+
+Hasta hoy este registro cubria datasets e imagenes/video, pero no los **pesos de los
+modelos** que producen todas las detecciones del trabajo. El informe cita tres familias;
+esta seccion las deja con licencia, fuente y evidencia de verificacion.
+
+**Correccion de un hallazgo previo.** `informe/99` §6 y `operacion/113` registraban que
+*"los catalogos de modelos no registran licencia"*. **Eso es falso al 2026-08-10**: los
+**11 catalogos** de `e-ovrt_media-plane/configs/models/**/*.yaml` (todos menos `mock`,
+que no tiene pesos) declaran `license:` **y** `source:`. Lo que faltaba de verdad era
+esta tabla y la declaracion de implicancias de AGPL, no el campo.
+
+| Familia | Variantes catalogadas | Licencia | Fuente declarada | Evidencia de verificacion (2026-08-10) |
+|---|---|---|---|---|
+| **Grounding DINO** | `gdino-tiny`, `gdino-tiny-560`, `gdino-base`, `gdino-base-560` (2 checkpoints; `-560` es la misma red a otra resolucion) | **Apache-2.0** | `huggingface.co/IDEA-Research/grounding-dino-{tiny,base}` | Frontmatter `license: apache-2.0` del model card descargado en `models/grounding-dino/original/*/README.md` |
+| **MM-Grounding-DINO** | `mm-gdino-tiny`, `mm-gdino-base`, `mm-gdino-large` | **Apache-2.0** | `huggingface.co/openmmlab-community/mm_grounding_dino_*` | Idem, `models/mm-grounding-dino/original/*/README.md` |
+| **YOLOE** | `yoloe-26s`, `yoloe-26m`, `yoloe-26l`, `yoloe-26x` | **AGPL-3.0** ⚠️ | `github.com/ultralytics/assets/releases/.../yoloe-26*-seg.pt` | Cadena embebida **en el propio checkpoint**: `AGPL-3.0 License (https://ultralytics.com/license)`. Ademas el paquete `ultralytics` 8.4.86 declara `License: AGPL-3.0` (clasificador OSI AGPLv3+) |
+
+Las tres licencias declaradas en los catalogos **coinciden** con la evidencia
+recolectada de forma independiente (model cards y binario), no son copiadas del catalogo.
+
+### La implicancia AGPL de YOLOE — declarada, no minimizada
+
+`yoloe-*` y la libreria `ultralytics` que los carga son **AGPL-3.0**, a diferencia del
+resto de la cadena (`transformers` 5.12.1 es Apache 2.0). Que significa para este
+trabajo, con los hechos a la vista:
+
+- **Uso efectivo: medicion y contraste, no produccion.** YOLOE se corrio en el bench de
+  imagenes y en el plano realtime, y **quedo descartado con causa medida** para CR-01 y
+  CR-02 (AP `bare_head` 0,000 en las 4 tallas; F-RT2). Ningún resultado del núcleo
+  **ZERO-SHOT vigente** depende de sus pesos; si la jornada E-04 produce un GO de T1,
+  esta frase se revisa (el checkpoint T1 sería un resultado que sí depende de ellos).
+- **No se redistribuyen pesos.** `models/**` esta gitignorado; se re-descargan con
+  `make download-models`. Vale para las tres familias.
+- **El alcance AGPL es el adaptador, no el proyecto entero** (verificado 2026-08-10):
+  el unico modulo que importa `ultralytics` es
+  `src/eovrt_media/models/yoloe_adapter.py` — el despacho en `models/__init__.py` solo
+  compara el nombre del adaptador, con import diferido. Ademas `ultralytics` **no es
+  dependencia del core**: vive en el extra opcional `gpu` de `pyproject.toml`, asi que
+  una instalacion sin ese extra no lo trae. La obligacion de AGPL se activa al
+  **distribuir** o al **ofrecer el servicio por red a terceros**; el uso de esta tesis es
+  local y academico.
+- **DECISION PENDIENTE DEL USUARIO:** los repos **no tienen archivo `LICENSE`**
+  (verificado en `e-ovrt_media-plane`). Antes de publicar cualquiera de los repos hay que
+  elegir licencia propia y resolver la convivencia con el adaptador AGPL — por ejemplo
+  aislarlo como componente opcional. **No es un bloqueo para defender**, si para publicar.
+
+**Al citar en el informe:** nombrar las tres familias con su licencia; para YOLOE decir
+explicitamente AGPL-3.0 y que se uso como contraste medido. La comparacion es legitima:
+todo lo reportado es evaluacion, no redistribucion.
+
+### Checkpoint derivado T1 (si la jornada lo produce) — POSICIÓN FIRMADA 2026-08-15
+
+El peso base (`yoloe-26s-seg.pt`) y el trainer (`ultralytics` 8.4.86) son
+AGPL-3.0. En lectura conservadora, el checkpoint fine-tuneado hereda esa obligación.
+**Posición aprobada por el usuario el 2026-08-15** (*decía: "posición propuesta,
+pendiente de firma del usuario"*): uso local y académico; el
+checkpoint no se redistribuye, no se commitea y no se publica con la tesis. Si la
+defensa exigiera publicarlo, se publicaría bajo AGPL-3.0.
+
+### `mobileclip2_b.ts` — licencia del asset
+
+- **Asset usado:** release `v8.4.0` de `ultralytics/assets`:
+  https://github.com/ultralytics/assets/releases/tag/v8.4.0
+  — SHA-256 **calculado y registrado localmente por este proyecto** (el proveedor no
+  publica el hash en la página del release; ✎ 2026-08-14: decía "SHA-256 publicado",
+  atribución no sostenida):
+  `35d7f213e4d75f38514e4656ad3cb91158bd33e3805d8ac349f23b186f66982f`.
+  Vive en los manifiestos locales del bundle T1:
+  `e-ovrt_experimental-setup/finetuning/cache/t1_bundle_smoke_20260813_r*/manifests/t1_base_weights.json`
+  y `.../bundle.sha256` (entrada `weights/base/mobileclip2_b.ts`).
+- **Upstream identificado:** Apple `ml-mobileclip`, que publica MobileCLIP2 y separa
+  `LICENSE_MODELS`: https://github.com/apple/ml-mobileclip/blob/main/LICENSE_MODELS
+- **Estado:** `NOASSERTION` para el binario redistribuido por Ultralytics — **ratificado
+  por el usuario el 2026-08-15**. El release
+  prueba origen y hash, pero no adjunta una licencia específica al asset que permita
+  afirmar que conserva byte a byte el estatuto del checkpoint upstream. La licencia
+  oficial de modelos de Apple es sólo para investigación y condiciona derivados y
+  redistribución. **Se decidió no asignar licencia**: afirmar que el asset conserva el
+  estatuto upstream sería una atribución que el release no sostiene, y este registro ya
+  fue corregido una vez (2026-08-14) por sobre-atribución del SHA-256.
+
+Riesgo declarado: el asset (253 MB) viajó a Mendieta dentro del bundle r20 el
+2026-08-13 como dependencia técnica del text-encoder de YOLOE, para uso privado de
+investigación y sin redistribución. La política “al clúster sólo sube material CC BY
+4.0” del doc 100 §6.3 se enunció para datos; esta fila extiende el registro a assets
+de modelo. ~~Decisión final del usuario pendiente.~~
+
+✎ **2026-08-15 — EXCEPCIÓN RATIFICADA POR EL USUARIO.** La subida de
+`mobileclip2_b.ts` a Mendieta queda registrada como **excepción explícita y acotada** a
+la política del doc 100 §6.3, con estos límites:
+
+1. **Alcance:** sólo este asset, sólo como dependencia técnica del text-encoder de YOLOE,
+   sólo para uso privado de investigación dentro del bundle T1.
+2. **Sin redistribución:** el asset no se republica, no se commitea y no se entrega con la
+   tesis; el checkpoint derivado hereda la restricción de la sección anterior.
+3. **La política sigue vigente para datos.** Esta ratificación **no** relaja el criterio
+   CC BY 4.0 del doc 100 §6.3 para material de entrenamiento: el payload T1 sigue siendo
+   `construction_site_safety` + `ppe_siabar`, ambos CC BY 4.0.
+4. **Es retroactiva y así se declara.** El asset viajó el 2026-08-13, dos días antes de la
+   firma. El informe debe decirlo en esos términos —excepción ratificada después del
+   hecho— y no presentar la subida como si hubiera estado autorizada de antemano.
+
 ## Criterio de uso
 
 - `Pendiente`: se puede preparar estructura, pero no entrenar/evaluar hasta completar verificacion.

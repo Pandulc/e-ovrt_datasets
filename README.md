@@ -39,8 +39,9 @@ python3 datasets/scripts/convert/convert_datasets.py \
     --datasets construction_site_safety chv ppe_siabar \
     --views canonical_v2
 
-# Generar manifests de rol TRAIN/BENCH/DEMO
-python3 datasets/scripts/curate/build_role_views.py
+# (ARCHIVADO 2026-08-15) Los manifests de rol TRAIN/BENCH/DEMO y su generador
+# se movieron a legacy/ — estaban huérfanos y cada rol fue superado.
+# Ver datasets/splits/DEPRECATED.md
 
 # Construir GT persona-nivel del BENCH
 python3 datasets/scripts/bench/build_person_gt.py
@@ -64,11 +65,10 @@ datasets/
     download/        # Scripts de descarga v2
     validate/        # Validación básica de datasets raw
     convert/         # convert_datasets.py → canonical_v2
-    curate/          # build_role_views.py, leakage_check.py
+    curate/          # build_bench_v3.py, build_bench_obra.py, leakage_check.py
     selection/       # quality_sample.py
     bench/           # geometry.py, build_person_gt.py, evaluate_bench.py
-  splits/
-    v2/              # Manifests activos: train.txt, bench.txt, demo.txt, manifest.json
+  splits/          # DEPRECADO ENTERO (ver DEPRECATED.md); v2/ archivado en legacy/
   tests/             # pytest — sin dependencias de datos raw
 
 legacy/              # Artefactos v1 pre-2026-06-17 (ver legacy/README.md)

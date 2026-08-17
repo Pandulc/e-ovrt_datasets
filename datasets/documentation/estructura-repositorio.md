@@ -24,7 +24,7 @@ e-ovrt_datasets/
     ├── raw/                           # Imágenes y archivos descargados (gitignored)
     ├── processed/                     # Outputs del conversor (parcialmente gitignored)
     ├── scripts/                       # Pipeline de scripts por etapa
-    ├── splits/v2/                     # Manifests de rol activos (TRAIN/BENCH/DEMO)
+    ├── splits/                        # DEPRECADO ENTERO (v2/ archivado en legacy/ el 2026-08-15)
     └── tests/                         # Suite pytest (sin dependencias de datos raw)
 ```
 
@@ -167,7 +167,7 @@ python3 datasets/scripts/convert/convert_datasets.py \
 
 | Script | Función |
 |---|---|
-| `build_role_views.py` | Genera `datasets/splits/v2/{train,bench,demo}.txt` y `manifest.json` con el balance de clases por rol. |
+| ~~`build_role_views.py`~~ | **ARCHIVADO 2026-08-15** en `legacy/scripts/curate/`. Generaba `splits/v2/{train,bench,demo}.txt`: los tres roles estaban huérfanos y cada uno fue superado (BENCH→`bench_v3`, TRAIN→`finetuning_v1`, DEMO→catálogo del media-plane, que apunta al raw). Ver `datasets/splits/DEPRECATED.md`. |
 | `leakage_check.py` | Verifica que no haya imágenes del BENCH en el TRAIN (chequeo de fuga). |
 
 ### `scripts/selection/` — Herramienta de muestreo de calidad
@@ -200,7 +200,11 @@ python3 datasets/scripts/bench/evaluate_bench.py \
 
 ---
 
-## `datasets/splits/v2/` — Manifests de rol activos
+## ~~`datasets/splits/v2/`~~ — ARCHIVADO 2026-08-15 en `legacy/splits/v2/`
+
+> Los tamaños de abajo se conservan **como referencia histórica**. **Nunca citar "el BENCH
+> de 196 imágenes" como benchmark de un resultado** — todo resultado reportable usa
+> `bench_v3` (6.477 imgs). Constancia y tabla de supersesión: `datasets/splits/DEPRECATED.md`.
 
 | Archivo | Contenido |
 |---|---|
@@ -248,8 +252,8 @@ datasets/raw/<dataset_id>/         # imágenes + anotaciones raw (gitignored)
     ▼  scripts/convert/convert_datasets.py --views canonical_v2
 datasets/processed/{coco,yolo,odvg}/canonical_v2/<dataset_id>/   # gitignored
     │
-    ▼  scripts/curate/build_role_views.py
-datasets/splits/v2/{train,bench,demo}.txt + manifest.json        # versionado
+    ▼  [ARCHIVADO 2026-08-15 -> legacy/] scripts/curate/build_role_views.py
+datasets/splits/v2/{train,bench,demo}.txt + manifest.json        # -> legacy/splits/v2/
     │
     ├──▶ e-ovrt_media-plane/configs/datasets/*.yaml               # TRAIN / DEMO
     │
