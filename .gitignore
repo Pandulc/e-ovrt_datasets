@@ -41,6 +41,13 @@ datasets/raw/ppe-dataset/
 # shel5k: el zip original (1,3 GB) es redundante con lo ya extraído (Images/ cae
 # en la regla *.png de abajo; Annotations/*.xml se commitea como el resto de labels raw).
 datasets/raw/shel5k/*.zip
+# coco_val2017: descargado el 2026-08-17 para el arnés de retención de vocabulario
+# abierto de la rama de fine-tuning T2 (5.000 imágenes, 807 MB). Es material RAW de
+# terceros, reproducible desde su fuente oficial: se ignora entero por la política de
+# versionado del repo ("no se commitea media cruda"). Lo versionable de ese arnés son
+# el script generador, el prompt set y los manifiestos, que viven en
+# `e-ovrt_experimental-setup/finetuning/`.
+datasets/raw/coco_val2017/
 datasets/raw/**/*.jpg
 datasets/raw/**/*.jpeg
 datasets/raw/**/*.png
