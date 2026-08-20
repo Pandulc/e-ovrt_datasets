@@ -56,9 +56,14 @@ Archivos de provenance, licencias y reportes que documentan el estado del corpus
 | `annotation_contract_v2.yaml` | Contrato formal de anotación v2: qué se anota, criterios por clase, casos límite. |
 | `class_mapping.yaml` | Mapeo detallado clases originales → canonical_v2 por dataset. Fuente de verdad del conversor. |
 | `conversion_report.md` | Reporte de conversión: conteos por dataset/split/clase tras ejecutar `convert_datasets.py`. |
-| `bench_gt_audit.md` | Auditoría del GT persona-nivel del BENCH (Task 4.3, pendiente de inspección manual). |
+| `bench_gt_audit.md` | Auditoría del GT persona-nivel del BENCH (Task 4.3 ya ejecutada — kit en `datasets/processed/audit_task43/`). |
+| `bench_v3.md` | **Benchmark de imágenes vigente**: bench_v3 (6.477 imgs, 3 estratos) — provenance, salvedades y freeze sha256. |
+| `clip_bench.md` | Banco de clips de video: composición, GT temporal, manifest. |
+| `curation_bench_obra.md` | Curado del núcleo `bench_obra` (147 imgs). |
+| `evaluation_ppe_dataset.md` | Evaluación del candidato `ppe-dataset` (rbyz) — rechazado S0. |
+| `plantilla-consentimiento-audiovisual.md` | Plantilla de consentimiento para el material de rodaje propio. |
 | `download_log.md` | Log de descargas: fechas, fuentes, checksums, observaciones. |
-| `license_registry.md` | Licencias por dataset y restricciones de uso. |
+| `license_registry.md` | Licencias por dataset, material de video y pesos de modelo. |
 | `selection_scoring.csv` | Scoring multicriteria de candidatos v2 para justificar la selección. |
 
 ---
@@ -90,8 +95,20 @@ datasets/raw/
 │   ├── valid/images/ + labels/                  # 326 imgs
 │   └── test/images/ + labels/                   # 161 imgs
 │
-└── construction_safety_hardhat/                  # vacío — dataset no disponible (URL inválida)
+├── shel5k/
+│   └── 9rcv8mm682-4/Safety Helmet Wearing Dataset/
+│       ├── Images/                               # 5 000 imgs (PNG)
+│       └── Annotations/                          # 5 000 XML (Pascal VOC) — versionados
+│
+├── MOCS/                                         # copia Roboflow (1 471 imgs, solo Worker) — piloto A1; gitignored entero
+│
+├── clip_bench/                                   # videos fuente del banco de clips (rodaje + lote de internet) — gitignored
+│
+└── coco_val2017/                                 # 5 000 imgs COCO val2017 (arnés de retención OV del tier T2) — gitignored entero
 ```
+
+> Nota: `construction_safety_hardhat/` ya no existe en disco (dataset descartado
+> 2026-06-17 por URL inválida; nunca se descargó).
 
 ---
 
@@ -111,7 +128,11 @@ datasets/processed/
 │   │   │   ├── train.json
 │   │   │   ├── val.json
 │   │   │   └── test.json
-│   │   └── ppe_siabar/
+│   │   ├── ppe_siabar/
+│   │   │   ├── train.json
+│   │   │   ├── val.json
+│   │   │   └── test.json
+│   │   └── shel5k/
 │   │       ├── train.json
 │   │       ├── val.json
 │   │       └── test.json
@@ -142,8 +163,10 @@ Cada subdirectorio agrupa los scripts de una etapa del pipeline. Los scripts res
 | `download_construction_site_safety.sh` | Construction Site Safety v27 (Roboflow, requiere `ROBOFLOW_API_KEY`) |
 | `download_ppe_siabar.sh` | PPE-SIABAR v1 (Roboflow, requiere `ROBOFLOW_API_KEY`) |
 | `download_chv.sh` | CHV (Google Drive, sin API key) |
-| `download_construction_safety_hardhat.py` | Construction Safety Hardhat (Kaggle, requiere `~/.kaggle/kaggle.json`) |
+| `download_shel5k.sh` | SHEL5K (Mendeley Data, sin API key) — volvió de `legacy/` el 2026-08-19: SHEL5K es fuente canonical_v2 y estrato de bench_v3 |
 | `README.md` | Instrucciones y requisitos por script |
+
+(`download_construction_safety_hardhat.py` está en `legacy/scripts/download/` — dataset descartado 2026-06-17, URL de Kaggle inválida.)
 
 ### `scripts/validate/` — Validación básica
 
@@ -159,16 +182,19 @@ Cada subdirectorio agrupa los scripts de una etapa del pipeline. Los scripts res
 
 ```bash
 python3 datasets/scripts/convert/convert_datasets.py \
-    --datasets construction_site_safety chv ppe_siabar \
+    --datasets construction_site_safety chv ppe_siabar shel5k \
     --views canonical_v2
 ```
 
-### `scripts/curate/` — Curado y manifests de rol
+### `scripts/curate/` — Curado del benchmark
 
 | Script | Función |
 |---|---|
-| ~~`build_role_views.py`~~ | **ARCHIVADO 2026-08-15** en `legacy/scripts/curate/`. Generaba `splits/v2/{train,bench,demo}.txt`: los tres roles estaban huérfanos y cada uno fue superado (BENCH→`bench_v3`, TRAIN→`finetuning_v1`, DEMO→catálogo del media-plane, que apunta al raw). Ver `datasets/splits/DEPRECATED.md`. |
+| `build_bench_v3.py` | Construye `bench_v3.json` (benchmark vigente: 6.477 imgs, 3 estratos) desde las 4 fuentes curadas. Idempotente; TDD (`tests/test_bench_v3*.py`). |
+| `build_bench_obra.py` | Construye el núcleo curado `bench_obra` (147 imgs) desde el BENCH histórico auditado. |
+| `bench_v3_report.py` | Reporte de métricas sobre bench_v3, por estrato y agregado. |
 | `leakage_check.py` | Verifica que no haya imágenes del BENCH en el TRAIN (chequeo de fuga). |
+| ~~`build_role_views.py`~~ | **ARCHIVADO 2026-08-15** en `legacy/scripts/curate/`. Generaba `splits/v2/{train,bench,demo}.txt`: los tres roles estaban huérfanos y cada uno fue superado (BENCH→`bench_v3`, TRAIN→`finetuning_v1`, DEMO→catálogo del media-plane, que apunta al raw). Ver `datasets/splits/DEPRECATED.md`. |
 
 ### `scripts/selection/` — Herramienta de muestreo de calidad
 
@@ -197,6 +223,21 @@ python3 datasets/scripts/bench/evaluate_bench.py \
 > está **prohibido para evaluación** (bench contaminado de dominio, 196 imgs /
 > 111 violadoras — ver `registry/bench_v3.md`); evaluar siempre con los COCO
 > curados de `curated/` + `person_gt_bench_obra.json`.
+
+### `scripts/videogt/` — GT de video (video-gt-lab, spec 43)
+
+| Script | Función |
+|---|---|
+| `prepare_clip.sh` | Etapa 0: normaliza un video fuente a CFR sin audio (ffmpeg) y emite `<clip_id>.info.json`; todo lo que entra a CVAT pasa por acá. |
+| `split_cvat_project.py` | Divide un export CVAT a nivel PROYECTO en un XML por task (etapa 2b; sin él, el GT sale negativo en silencio). |
+| `cvat_xml.py` | Parser del formato "CVAT for video 1.1": tracks con visibilidad y atributos mutables por frame. |
+| `cvat_labels.json` | Definición de labels para los proyectos CVAT del banco. |
+| `derive_clip_gt.py` | Derivación determinística de `clip_gt.v2` (episodios CR-01/CR-02) desde el XML de CVAT corregido. |
+| `apply_adjudications.py` | Aplica adjudicaciones humanas de huecos `unknown` sobre el XML corregido (F-GT1). |
+| `apply_attribute_corrections.py` | Aplica correcciones de atributos explícitos declaradas en `clip.yaml`. |
+| `compare_annotations.py` | Compara dos `clip_gt.v2` del mismo clip (doble anotación): kappa de Cohen por ventana + deltas de episodios. |
+
+(`gen_ficha.py` fue archivado en `legacy/scripts/videogt/` el 2026-08-19 — sin referencias en ningún pipeline ni doc.)
 
 ---
 

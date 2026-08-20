@@ -1,0 +1,10 @@
+# Dependencias Python de los scripts standalone del repo (no hay paquete instalable:
+# se corren directo con python3). Instalar con: pip install -r requirements.txt
+#
+# Requisitos de sistema (fuera de pip):
+#   - ffmpeg: requerido por datasets/scripts/videogt/prepare_clip.sh
+#   - unzip y curl: requeridos por los scripts de datasets/scripts/download/
+#   - ROBOFLOW_API_KEY (variable de entorno): requerida por los download de Roboflow
+#     (download_construction_site_safety.sh, download_ppe_siabar.sh)
+Pillow
+PyYAML

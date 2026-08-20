@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# DEPRECATED (2026-06-17): SHEL5K not selected for v2. Use v2 download scripts instead.
+# NOTA (2026-08-19): script archivado en la era v1 pero SHEL5K volvió al pipeline como
+# estrato de bench_v3 (5.000 imgs, doc 66); este sigue siendo su downloader reproducible.
+# Ver datasets/registry/bench_v3.md.
 # Download SHEL5K from Mendeley Data (public-api zip endpoint) into datasets/raw/shel5k/.
 set -euo pipefail
 

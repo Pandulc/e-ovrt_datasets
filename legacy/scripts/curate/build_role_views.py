@@ -1,3 +1,7 @@
+# ARCHIVADO (2026-08-15): los roles TRAIN/BENCH/DEMO quedaron huérfanos y fueron
+# superados (BENCH por bench_v3, TRAIN por finetuning_v1, DEMO por el catálogo del
+# media-plane). Ver datasets/splits/DEPRECATED.md.
+# OJO: datasets/tests/test_balance.py carga este archivo por path — NO borrar.
 """Arma las vistas por rol desde canonical_v2, respetando contrato, fuga y balance.
 
 Uso:

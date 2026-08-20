@@ -20,9 +20,6 @@ RAW = ROOT / "datasets" / "raw"
 PROCESSED = ROOT / "datasets" / "processed"
 
 
-CANONICAL_CLASSES = ["person", "helmet", "vest", "no_helmet", "no_vest"]
-
-
 @dataclass(frozen=True)
 class DatasetConfig:
     dataset_id: str
@@ -141,6 +138,9 @@ def configs() -> dict[str, DatasetConfig]:
                 "test": ["test"],
             },
         ),
+        # Dataset DESCARTADO (2026-06-17: URL de Kaggle inválida, nunca descargado).
+        # La config se conserva como registro histórico del mapeo y porque los tests
+        # la referencian.
         "construction_safety_hardhat": DatasetConfig(
             dataset_id="construction_safety_hardhat",
             raw_dir=RAW / "construction_safety_hardhat",
@@ -166,6 +166,8 @@ def configs() -> dict[str, DatasetConfig]:
             },
             splits=None,
         ),
+        # Dataset LEGACY (v1, no seleccionado en v2). La config se conserva como
+        # registro histórico del mapeo y porque los tests la referencian.
         "construction_ppe": DatasetConfig(
             dataset_id="construction_ppe",
             raw_dir=RAW / "construction_ppe",
@@ -251,6 +253,9 @@ def configs() -> dict[str, DatasetConfig]:
             bare_head_explicit_sources=frozenset({"head"}),
             splits=None,
         ),
+        # Dataset LEGACY (v1, no seleccionado en v2). La config se conserva como
+        # registro histórico del mapeo (incl. la prohibición D9 head/face→bare_head)
+        # y porque los tests la referencian.
         "sh17": DatasetConfig(
             dataset_id="sh17",
             raw_dir=RAW / "sh17" / "kaggle",
@@ -491,10 +496,10 @@ def assert_no_derived_bare_head(config: DatasetConfig) -> None:
 
 
 def category_maps(config: DatasetConfig, view: str) -> tuple[list[str], dict[str, int]]:
+    # La vista `canonical_cr01_cr02` (vocabulario v1: person/helmet/vest/no_helmet/no_vest)
+    # fue retirada el 2026-06-17; sus generadores viven en legacy/ con guardas sys.exit.
     if view == "original":
         names = config.classes
-    elif view == "canonical_cr01_cr02":
-        names = CANONICAL_CLASSES
     elif view == "canonical_v2":
         names = ["person", "helmet", "vest", "bare_head"]
         return names, {n: i for i, n in enumerate(names)}
@@ -510,8 +515,9 @@ def transform_category(config: DatasetConfig, category: str, view: str) -> str |
         return category if category in config.classes else None
     if view == "canonical_v2":
         return (config.canonical_v2_map or {}).get(category)
-    mapped = config.canonical_map.get(category)
-    return mapped
+    # La rama basada en `config.canonical_map` (vista canonical_cr01_cr02, v1) fue
+    # retirada el 2026-06-17; el campo se conserva como registro histórico del mapeo.
+    raise ValueError(f"Unknown view: {view}")
 
 
 def parse_objects(config: DatasetConfig, image_path: Path) -> list[dict]:

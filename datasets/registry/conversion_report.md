@@ -12,16 +12,21 @@ Fecha: 2026-06-18
 | construction_site_safety | train=2603 / val=114 / test=82 | bare_head=2428, helmet=3551, person=10031, vest=3258 | convertido ✓ |
 | ppe_siabar | train=1120 / val=326 / test=161 | helmet=1386, person=1442, vest=1944 | convertido ✓ |
 | chv | train=1064 / val=133 / test=133 | helmet=3538, person=3887, vest=1784 | convertido ✓ |
+| shel5k | train=3500 / val=750 / test=750 | bare_head=6120, helmet=19252, person=20023 | convertido ✓ (reingresó 2026-07; GT nativo de bare_head vía `head`, D9 OK) |
 | construction_safety_hardhat | — | — | no disponible (URL inválida) |
 
 Comando:
 ```bash
 python3 datasets/scripts/convert/convert_datasets.py \
-    --datasets construction_site_safety ppe_siabar chv \
+    --datasets construction_site_safety ppe_siabar chv shel5k \
     --views canonical_v2
 ```
 
-## Manifests de rol (datasets/splits/v2/)
+## Manifests de rol (ARCHIVADO 2026-08-15 → legacy/splits/v2/)
+
+> ✎ 2026-08-15: los roles TRAIN/BENCH/DEMO quedaron huérfanos y fueron superados
+> (BENCH por bench_v3, TRAIN por finetuning_v1, DEMO por el catálogo del media-plane).
+> Ver `datasets/splits/DEPRECATED.md`. La tabla se conserva como historia.
 
 | Rol | Imágenes | bare_head | helmet | vest | person |
 |---|---:|---:|---:|---:|---:|

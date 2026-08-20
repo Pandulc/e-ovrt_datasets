@@ -81,14 +81,13 @@ datasets/raw/chv/CHV_dataset/annotations/
 datasets/raw/MOCS/
 datasets/raw/archived/
 
-# Generated video-stock PoC artifacts
-datasets/interim/video_stock_poc*/
-
 # Processed outputs regenerables
 # EXCEPCIÓN: datasets/processed/coco/bench/ se versiona (BENCH GT = artefacto de reproducibilidad)
+# 2026-08-19: se destrackearon (~6.352 archivos, `git rm --cached`) las vistas `original`
+# que venían commiteadas pese a estas reglas — la realidad del índice quedó alineada
+# con la política declarada. Los archivos siguen en disco (regenerables con
+# convert_datasets.py).
 datasets/processed/coco/canonical_v2/
-datasets/processed/coco/canonical_cr01_cr02/
-datasets/processed/coco/finetuning_cr01_cr02/
 datasets/processed/coco/original/
 datasets/processed/yolo/
 datasets/processed/odvg/

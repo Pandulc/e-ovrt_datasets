@@ -5,6 +5,31 @@ Plan doc 66 §B5 del repo docs. Cada estrato conserva su identidad de fuente
 manifest declara conteos y sha256 de cada COCO fuente, para congelar el bench
 antes de re-evaluar campeones (evita "re-armar en silencio" entre corridas).
 
+Este script es el ÚLTIMO eslabón de la cadena; los 4 COCOs que fusiona tienen
+cada uno su generador commiteado (✎ 2026-08-19: los estratos chv/shel5k no lo
+tenían y se agregó `build_bench_strata.py`, que los reproduce byte a byte):
+
+    datasets/raw/construction_site_safety/...
+      └─ convert_datasets.py                     (vista `bench` del dataset Roboflow)
+           └─ processed/coco/bench/construction_site_safety_bench.json
+                └─ build_bench_obra.py           (curación doc 63: quita fuera-de-dominio)
+                     └─ curated/construction_site_safety_bench_obra_{test,val}.json  (147)
+
+    datasets/raw/{chv,shel5k}/...
+      └─ convert_datasets.py --views canonical_v2
+           └─ processed/coco/canonical_v2/{chv,shel5k}/{train,val,test}.json
+                └─ build_bench_strata.py         (fusiona train+val+test, ids 1..N)
+                     └─ curated/bench_stratum_{chv,shel5k}.json                (1.330 + 5.000)
+
+    los 4 anteriores
+      └─ build_bench_v3.py                       (ESTE script)
+           └─ curated/bench_v3.json (6.477 imgs, 55.165 anns) + bench_v3_manifest.json
+
+Trampa de serialización: los estratos se escriben con `json.dumps` pelado y
+bench_v3 con `sort_keys=True`. No es un descuido — el `source_sha256` del
+manifest hashea los BYTES de cada estrato tal como están en disco, así que
+"prolijar" la serialización de un estrato invalidaría el freeze de bench_v3.
+
 Uso:
     python3 datasets/scripts/curate/build_bench_v3.py
 """

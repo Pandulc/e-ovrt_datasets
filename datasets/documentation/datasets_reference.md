@@ -5,7 +5,9 @@ Versión del vocabulario: **canonical_v2** (`person`, `helmet`, `vest`, `bare_he
 
 Documentación técnica de los cuatro datasets seleccionados para E-OVRT-VDP v2. Para el proceso de selección ver [`2026-06-18-metodologia-seleccion.md`](2026-06-18-metodologia-seleccion.md) y `datasets/registry/selection_scoring.csv`.
 
-> Los datasets v1 (SH17, SHEL5K, Construction-PPE, vocabulario `no_helmet`/`no_vest`) están en `legacy/documentation/`. No usar para el pipeline activo.
+> Los datasets v1 (SH17, Construction-PPE, vocabulario `no_helmet`/`no_vest`) están en `legacy/documentation/`. No usar para el pipeline activo. **SHEL5K es la excepción: ES activo** — reingresó en 2026-07 como estrato de bench_v3 (5.000 imgs) y fuente canonical_v2 (la nota vieja de "no usar" era de la era v1). Ver `datasets/registry/bench_v3.md`.
+>
+> ✎ 2026-08-19: las asignaciones de ROL (TRAIN/BENCH/DEMO) que aparecen por dataset en este documento son **históricas** — los roles fueron archivados el 2026-08-15 (ver `datasets/splits/DEPRECATED.md`). El benchmark vigente es `bench_v3` (sección al final).
 
 ---
 
@@ -55,14 +57,14 @@ Documentación técnica de los cuatro datasets seleccionados para E-OVRT-VDP v2.
 | `vest` | 3 258 |
 | `bare_head` | 2 428 |
 
-### Rol en el pipeline
+### Rol en el pipeline (histórico — roles archivados 2026-08-15)
 
 | Rol | Splits usados |
 |---|---|
 | **TRAIN** | train |
 | **BENCH** | val + test (196 imgs en total) |
 
-El dataset es la única fuente del BENCH. Las imágenes de val y test se usan juntas como conjunto de evaluación primario (196 imágenes, 340 personas, 111 violadoras CR-01).
+El dataset fue la única fuente del BENCH histórico de 196 imgs (340 personas, 111 violadoras CR-01) — **superado por bench_v3**; su derivado curado (`bench_obra`) es hoy uno de los 3 estratos.
 
 ### Estructura raw
 
@@ -149,7 +151,7 @@ Los cuatro colores de casco se fusionan en una única clase `helmet`.
 | `vest` | 1 784 |
 | `bare_head` | 0 |
 
-### Rol en el pipeline
+### Rol en el pipeline (histórico — roles archivados 2026-08-15)
 
 | Rol | Splits usados |
 |---|---|
@@ -223,13 +225,13 @@ No tiene clases de negación. `Boots` se descarta en canonical_v2.
 | `vest` | 1 944 |
 | `bare_head` | 0 |
 
-### Rol en el pipeline
+### Rol en el pipeline (histórico — roles archivados 2026-08-15)
 
 | Rol | Splits usados |
 |---|---|
 | **TRAIN** | train + val + test (todos) |
 
-Todo el dataset aporta a TRAIN. No forma parte de BENCH ni DEMO.
+Todo el dataset aportaba a TRAIN. No formó parte de BENCH ni DEMO.
 
 ### Estructura raw
 
@@ -279,21 +281,44 @@ El dataset aparecía como candidato prioritario por tener `no-helmet` explícito
 
 - **TRAIN** corre con los tres datasets restantes (5 540 imágenes total).
 - La ausencia de este dataset no compromete la evaluación BENCH (que ya tiene bare_head desde construction_site_safety).
-- Si el dataset vuelve a estar disponible, el script `datasets/scripts/download/download_construction_safety_hardhat.py` ya existe y está listo para usarlo.
+- Si el dataset vuelve a estar disponible, el script `legacy/scripts/download/download_construction_safety_hardhat.py` ya existe (archivado) y está listo para usarlo.
 
 ---
 
 ## Resumen del corpus v2
 
-| Dataset | Imágenes | Rol(es) | bare_head | Licencia |
+> ✎ Las columnas/tablas de rol de abajo son HISTÓRICAS (roles archivados 2026-08-15) y
+> "BENCH = 196" está SUPERADO por bench_v3 — nunca citarlo como benchmark vigente.
+
+| Dataset | Imágenes | Rol(es) (histórico) | bare_head | Licencia |
 |---|---:|---|:---:|---|
 | construction_site_safety v27 | 2 799 | TRAIN + BENCH | ✓ | CC BY 4.0 |
 | chv | 1 330 | TRAIN + DEMO | ✗ | Open (ver repo) |
 | ppe_siabar v1 | 1 607 | TRAIN | ✗ | CC BY 4.0 |
+| shel5k | 5 000 | — (posterior a los roles; estrato de bench_v3) | ✓ (GT nativo vía `head`) | CC BY 4.0 |
 | construction_safety_hardhat | — | — (descartado) | ✓ | CC0 |
 
-| Rol | Imágenes | Fuente |
+| Rol (histórico) | Imágenes | Fuente |
 |---|---:|---|
 | **TRAIN** | 5 540 | css-train + chv-val/test + ppe_siabar-all |
 | **BENCH** | 196 | css-val + css-test |
 | **DEMO** | 1 064 | chv-train |
+
+---
+
+## Benchmark vigente: `bench_v3` (2026-07-23)
+
+Benchmark de imágenes oficial: **6.477 imágenes estratificadas en 3 fuentes
+independientes**, cada imagen etiquetada con su `stratum`:
+
+| Estrato | Imágenes | Nota |
+|---|---:|---|
+| `bench_obra` | 147 (62 test + 85 val) | núcleo curado del BENCH histórico, verificado visualmente |
+| `chv` | 1 330 | mejor AP de `vest` medido |
+| `shel5k` | 5 000 | Mendeley CC BY 4.0; GT nativo de `bare_head` (clase `head`) + `person_gt_shel5k.json` para atributos CR-01 |
+
+- Archivo congelado: `datasets/processed/coco/bench/curated/bench_v3.json`; el manifest
+  (`bench_v3_manifest.json`) lleva sha256 por fuente para verificación del freeze.
+- Se construye con `datasets/scripts/curate/build_bench_v3.py` (idempotente, TDD).
+- Provenance y salvedades por estrato: `datasets/registry/bench_v3.md`.
+- **Reportar métricas por estrato Y agregadas — nunca solo el agregado.**

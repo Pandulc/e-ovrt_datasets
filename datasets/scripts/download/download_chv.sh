@@ -21,5 +21,10 @@ if [[ ! -f "${ZIP_PATH}" ]]; then
 fi
 
 sha256sum "${ZIP_PATH}"
-unzip -q -n "${ZIP_PATH}" -d "${RAW_DIR}"
-echo "Extracted into: ${RAW_DIR}"
+
+if command -v unzip >/dev/null 2>&1; then
+  unzip -q -n "${ZIP_PATH}" -d "${RAW_DIR}"
+  echo "Extracted into: ${RAW_DIR}"
+else
+  echo "unzip not available; archive at ${ZIP_PATH}"
+fi

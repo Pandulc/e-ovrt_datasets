@@ -1,6 +1,6 @@
 # Class Mapping — E-OVRT-VDP Vocabulary v2
 #
-# Canonical detection classes (TRAIN, BENCH, DEMO):
+# Canonical detection classes:
 # - person: full body of person/worker
 # - helmet: safety helmet (the equipment), tight bbox around helmet
 # - vest: reflective/safety vest (the equipment), tight bbox around torso
@@ -48,29 +48,44 @@ bench_attributes:
       Required for CR-02 (no vest) risk evaluation.
 
 dataset_mappings:
-  # 4 datasets selected for v2 (rol: TRAIN or TRAIN+BENCH)
   # Source class → canonical detection class mapping
   # See datasets/registry/selection_scoring.csv for decision rationale.
+  # NOTA: las anotaciones "rol: ..." son HISTÓRICAS — los roles TRAIN/BENCH/DEMO
+  # fueron archivados el 2026-08-15 (ver datasets/splits/DEPRECATED.md).
+  # Fuente de verdad del mapeo: configs() en datasets/scripts/convert/convert_datasets.py.
 
-  construction_site_safety:  # rol: TRAIN + BENCH
+  construction_site_safety:  # rol: TRAIN + BENCH (histórico)
     person: ["Person"]
     helmet: ["Hardhat"]
     vest: ["Safety Vest"]
     bare_head: ["NO-Hardhat"]
 
-  chv:  # rol: TRAIN
+  chv:  # rol: TRAIN (histórico)
     person: ["person"]
     helmet: ["blue helmet", "red helmet", "white helmet", "yellow helmet"]
     vest: ["vest"]
     bare_head: []  # ausente per contract
 
-  ppe_siabar:  # rol: TRAIN
+  ppe_siabar:  # rol: TRAIN (histórico)
     person: ["Person"]
     helmet: ["Helmet"]
     vest: ["Vest"]
     bare_head: []  # ausente per contract
 
-  construction_safety_hardhat:  # rol: TRAIN
+  shel5k:  # fuente canonical_v2 + estrato de bench_v3 (reingresó 2026-07-23, doc 66)
+    # Copiado fielmente de configs() en convert_datasets.py (canonical_v2_map);
+    # pinneado por datasets/tests/test_shel5k_mapping.py.
+    person: ["person", "person_with_helmet", "person_no_helmet"]
+    helmet: ["helmet"]
+    vest: []  # SHEL5K no anota chaleco
+    # `head` es la anotación EXPLÍCITA de cabeza descubierta del paper (82% contenida
+    # en person_no_helmet, 2% en person_with_helmet; existe head_with_helmet aparte):
+    # cumple el contrato D9 vía bare_head_explicit_sources — verificado sobre 400 XML.
+    bare_head: ["head"]
+    # NO mapeadas: head_with_helmet (solapa 97% con una caja `helmet` separada —
+    # mapearla duplicaría el GT) y face.
+
+  construction_safety_hardhat:  # DESCARTADO (2026-06-17: URL de Kaggle inválida, nunca descargado)
     person: ["person"]
     helmet: ["helmet"]
     vest: ["vest"]  # parcial per contract
@@ -91,6 +106,9 @@ dataset_mappings:
 
 split_policy:
   seed: 42
+  # HISTÓRICO: el esquema by_role (TRAIN/BENCH/DEMO) fue retirado — los manifiestos
+  # de rol se archivaron el 2026-08-15 en legacy/splits/v2/ (superados por bench_v3 /
+  # finetuning_v1 / catálogo del media-plane; ver datasets/splits/DEPRECATED.md).
   by_role:
     train:
       proportion: 0.70

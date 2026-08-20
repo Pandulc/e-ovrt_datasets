@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """DEPRECATED (as of 2026-06-17) — replaced by canonical_v2 role splits.
 
-Do NOT run. The v2 workflow uses build_role_views.py; fine-tuning subsets are
-superseded by the TRAIN/BENCH/DEMO role manifests in datasets/splits/v2/.
+Do NOT run. El flujo de reemplazo (build_role_views.py + manifiestos TRAIN/BENCH/DEMO)
+fue a su vez archivado el 2026-08-15: hoy vive en legacy/scripts/curate/build_role_views.py
+y legacy/splits/v2/ — superado por bench_v3 (ver datasets/splits/DEPRECATED.md).
 """
 import sys
 sys.exit("ERROR: generate_finetuning_cr01_cr02.py is DEPRECATED. Use build_role_views.py instead.")

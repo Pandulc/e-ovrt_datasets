@@ -1,11 +1,16 @@
 # Estado de avance
 
+> ✎ **2026-08-19: corte histórico 2026-06-18**; ver `registry/bench_v3.md` y
+> `datasets/splits/DEPRECATED.md` para el estado vigente (benchmark oficial =
+> `bench_v3`, 6.477 imgs / 3 estratos; vistas por rol TRAIN/BENCH/DEMO archivadas
+> el 2026-08-15).
+
 Fecha de corte: 2026-06-18
 
 ## Resumen v2 (activo)
 
 Pipeline reiniciado el 2026-06-17. Vocabulario canónico v2: `person`, `helmet`, `vest`, `bare_head`.  
-Datasets seleccionados: `construction_site_safety`, `chv`, `ppe_siabar` (3 activos; `construction_safety_hardhat` descartado por URL inválida).
+Datasets seleccionados: `construction_site_safety`, `chv`, `ppe_siabar`, `shel5k` (4 activos — shel5k reingresó en 2026-07 como fuente canonical_v2 y estrato de bench_v3; `construction_safety_hardhat` descartado por URL inválida).
 
 ## Avance por fase del plan v2
 
@@ -22,11 +27,12 @@ Datasets seleccionados: `construction_site_safety`, `chv`, `ppe_siabar` (3 activ
 
 ## Avance por dataset v2
 
-| Dataset | Descarga | Conversión canonical_v2 | Rol |
+| Dataset | Descarga | Conversión canonical_v2 | Rol (histórico — roles archivados 2026-08-15) |
 |---|---|---|---|
 | construction_site_safety v27 | Completa (2026-06-18) | Completa | TRAIN + BENCH |
 | chv | Completa (2026-06-05) | Completa | TRAIN + DEMO |
 | ppe_siabar v1 | Completa (2026-06-18) | Completa | TRAIN |
+| shel5k | Completa (2026-06-05) | Completa (reingresó 2026-07) | — (posterior a los roles; estrato de bench_v3) |
 | construction_safety_hardhat | No disponible (URL inválida) | — | Descartado |
 
 ## Conteos convertidos canonical_v2
@@ -36,8 +42,13 @@ Datasets seleccionados: `construction_site_safety`, `chv`, `ppe_siabar` (3 activ
 | construction_site_safety | train=2603 / val=114 / test=82 | 2428 | 3551 | 3258 | 10031 |
 | chv | train=1064 / val=133 / test=133 | 0 | 3538 | 1784 | 3887 |
 | ppe_siabar | train=1120 / val=326 / test=161 | 0 | 1386 | 1944 | 1442 |
+| shel5k | train=3500 / val=750 / test=750 | 6120 | 19252 | 0 | 20023 |
 
-## Manifests de rol (datasets/splits/v2/)
+## Manifests de rol (ARCHIVADO 2026-08-15 → legacy/splits/v2/)
+
+> ✎ Los tres roles quedaron huérfanos y fueron superados (BENCH por bench_v3, TRAIN
+> por finetuning_v1, DEMO por el catálogo del media-plane). Ver
+> `datasets/splits/DEPRECATED.md`. La tabla se conserva como historia.
 
 | Rol | Imágenes | bare_head | helmet | vest | person |
 |---:|---:|---:|---:|---:|---:|
@@ -73,6 +84,11 @@ Criterio: `center_in_bbox`
 
 ## Sprint 2 — Evaluación cuantitativa BENCH v2 (2026-06-18)
 
+> ✎ **SUPERADO por bench_v3 (2026-07-23, 6.477 imgs / 3 estratos — ver
+> `registry/bench_v3.md`).** El BENCH v2 de 196 imgs resultó ~20-25% fuera de dominio
+> (auditado en docs/operacion/63) y NO debe citarse como benchmark vigente. La tabla
+> se conserva como registro histórico del sprint.
+
 Completado. 5 modelos evaluados en BENCH v2 (196 imgs, zero-shot, IoU≥0.5). Resultados completos en la tabla debajo (no existe un reporte separado; este es el registro completo del sprint).
 
 | Modelo | mAP@50 | AP helmet | AP vest | AP bare_head | CR-01 recall E1 | FPS | VRAM MB |
@@ -91,7 +107,7 @@ Completado. 5 modelos evaluados en BENCH v2 (196 imgs, zero-shot, IoU≥0.5). Re
 
 ## Próximo hito
 
-- **Task 4.3 (pendiente):** Auditoría manual del GT — inspección visual de ≥ 20 imágenes del BENCH para verificar precisión ≥ 95 % del `has_helmet` asignado por `center_in_bbox`.
+- **Task 4.3 (✎ ya ejecutada):** Auditoría manual del GT — inspección visual de ≥ 20 imágenes del BENCH para verificar precisión ≥ 95 % del `has_helmet` asignado por `center_in_bbox`. El kit de auditoría existe en `datasets/processed/audit_task43/` (regenerable con `datasets/scripts/bench/build_audit_kit.py`).
 - **Sprint 3:** Implementar estrategia E2 para CR-01 (inferir ausencia de casco desde matching persona/helmet) con GDINO-tiny y GDINO-base como candidatos principales.
 
 ## Vistas deprecadas (v1 — no usar)
@@ -99,4 +115,4 @@ Completado. 5 modelos evaluados en BENCH v2 (196 imgs, zero-shot, IoU≥0.5). Re
 - `canonical_cr01_cr02`: reemplazada por `canonical_v2`.
 - `finetuning_cr01_cr02`: reemplazada por splits v2.
 
-Los scripts que las generan (`generate_cr01_cr02_views.py`, `generate_finetuning_cr01_cr02.py`) tienen `sys.exit()` guard y están marcados DEPRECATED.
+Los scripts que las generan (`legacy/scripts/split/generate_cr01_cr02_views.py`, `legacy/scripts/curate/generate_finetuning_cr01_cr02.py`) tienen `sys.exit()` guard y están marcados DEPRECATED.

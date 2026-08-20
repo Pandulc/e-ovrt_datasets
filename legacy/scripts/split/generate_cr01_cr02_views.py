@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """DEPRECATED (as of 2026-06-17) — replaced by canonical_v2 + build_role_views.py.
 
-Do NOT run. See datasets/scripts/curate/build_role_views.py for the v2 workflow.
+Do NOT run. build_role_views.py fue a su vez archivado el 2026-08-15 y hoy vive en
+legacy/scripts/curate/build_role_views.py — superado por bench_v3
+(ver datasets/splits/DEPRECATED.md y datasets/registry/bench_v3.md).
 """
 import sys
 sys.exit("ERROR: generate_cr01_cr02_views.py is DEPRECATED. Use build_role_views.py instead.")

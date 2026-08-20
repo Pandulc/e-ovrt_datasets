@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# DEPRECATED (2026-06-17): construction_safety_hardhat discarded — invalid Kaggle URL, never downloaded.
 """Downloads construction-safety-image-classification-system from Kaggle (CC0).
 
 Supports both Kaggle auth formats:
