@@ -108,6 +108,7 @@ Completado. 5 modelos evaluados en BENCH v2 (196 imgs, zero-shot, IoU≥0.5). Re
 ## Próximo hito
 
 - **Task 4.3 (✎ ya ejecutada):** Auditoría manual del GT — inspección visual de ≥ 20 imágenes del BENCH para verificar precisión ≥ 95 % del `has_helmet` asignado por `center_in_bbox`. El kit de auditoría existe en `datasets/processed/audit_task43/` (regenerable con `datasets/scripts/bench/build_audit_kit.py`).
+  ✎ **2026-08-28 — corrección: la auditoría NO se ejecutó.** Lo que se ejecutó fue el **kit** (`build_audit_kit.py`, 24 PNG); el checklist de `registry/bench_gt_audit.md` §4 y sus §5–§6 (resultados/veredicto) siguen **vacíos** ("Completar tras la revisión manual"), coherente con la fila de la tabla de fases ("4.3 auditoría manual pendiente") y con docs `operacion/75` §6 y `78` A2. Estado real: **kit generado; revisión humana pendiente**. El informe no puede declarar "precisión del GT ≥ 95 %" ni auditoría humana del GT de imágenes (`docs/operacion/130`, R-14).
 - **Sprint 3:** Implementar estrategia E2 para CR-01 (inferir ausencia de casco desde matching persona/helmet) con GDINO-tiny y GDINO-base como candidatos principales.
 
 ## Vistas deprecadas (v1 — no usar)

@@ -37,7 +37,7 @@ Fecha de corte: 2026-06-18
 | [`registry/annotation_contract_v2.yaml`](../registry/annotation_contract_v2.yaml) | Contrato formal de anotación v2 (qué anotar, qué no, criterios por clase). |
 | [`registry/class_mapping.yaml`](../registry/class_mapping.yaml) | Mapeo detallado de clases originales → canonical_v2 por dataset. |
 | [`registry/conversion_report.md`](../registry/conversion_report.md) | Reporte de conversión: conteos por dataset/split/clase en canonical_v2. |
-| [`registry/bench_gt_audit.md`](../registry/bench_gt_audit.md) | Auditoría del GT persona-nivel del BENCH (Task 4.3 ya ejecutada — kit en `datasets/processed/audit_task43/`). |
+| [`registry/bench_gt_audit.md`](../registry/bench_gt_audit.md) | Auditoría del GT persona-nivel del BENCH (Task 4.3 ya ejecutada — kit en `datasets/processed/audit_task43/`). ✎ 2026-08-28: **corrección — sólo se generó el kit** (`build_audit_kit.py`, 24 PNG); la revisión humana **no se ejecutó**: §4–§6 del documento siguen vacíos. Estado: kit generado, checklist pendiente (`docs/operacion/130`, R-14). |
 | [`registry/bench_v3.md`](../registry/bench_v3.md) | **Benchmark de imágenes vigente**: bench_v3 (6.477 imgs, 3 estratos) — provenance, salvedades por estrato, freeze sha256. |
 | [`registry/clip_bench.md`](../registry/clip_bench.md) | Banco de clips de video (clip bench): composición, GT temporal, manifest. |
 | [`registry/curation_bench_obra.md`](../registry/curation_bench_obra.md) | Curado del núcleo `bench_obra` (147 imgs): criterios y decisiones. |
