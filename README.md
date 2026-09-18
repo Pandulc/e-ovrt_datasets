@@ -102,8 +102,19 @@ Los tests no dependen de datos raw; usan fixtures sintéticos.
 
 No versionar imágenes, videos ni archives. Versionar: scripts, documentación, registry, anotaciones procesadas necesarias para reproducibilidad (BENCH COCO, person_gt.json).
 
+## Licencia
+
+El código, la documentación y los metadatos de este repositorio se distribuyen bajo licencia
+MIT (ver [`LICENSE`](LICENSE)).
+
+**La licencia MIT no alcanza a los conjuntos de datos de terceros.** Cada fuente conserva la
+suya, y las imágenes crudas no se versionan acá: se descargan de su origen con los scripts de
+`datasets/scripts/download/`. La procedencia, la licencia y las condiciones de uso de cada
+fuente están en [`datasets/registry/license_registry.md`](datasets/registry/license_registry.md).
+Antes de redistribuir cualquier derivado, verificar los términos de la fuente que lo originó.
+
 ## Remoto
 
 ```text
-https://github.com/Pandulc/E-OVRT-VDP.git
+git@github.com:Pandulc/e-ovrt_datasets.git
 ```
