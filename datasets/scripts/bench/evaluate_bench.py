@@ -209,8 +209,18 @@ def evaluate_cr01(
     iou_threshold: float,
 ) -> dict:
     """
-    Recall CR-01: fracción de personas con has_helmet=False que tienen una detección
-    de bare_head (o ausencia de helmet) dentro de su head_region.
+    Recall CR-01 POR EVIDENCIA DIRECTA: fracción de personas con has_helmet=False que
+    tienen una detección de `bare_head` dentro de su head_region.
+
+    ⚠ **Mide la formulación DIRECTA, no la del núcleo.** Cuenta únicamente detecciones
+    de `bare_head`, es decir la evidencia positiva de la infracción. El núcleo validable
+    opera con la formulación INDIRECTA, que deriva la ausencia desde `person` y `helmet`
+    y nunca necesita `bare_head`. Un 0,000 acá significa que el modelo no ve la clase de
+    la vía directa, y NO que sea incapaz de sostener la condición: eso se mide con el
+    estado por persona (Nivel A), donde E-IND y E-DIR se comparan sobre el mismo material.
+    (✎ 2026-09-07: el docstring anterior decía «(o ausencia de helmet)», que el código no
+    hace ni hizo nunca; la aclaración se agregó al detectar que el informe leía esta
+    columna como capacidad del núcleo.)
 
     Estrategia E1: detectar bare_head; match si el centro del det cae dentro
     del head_region (tercio superior del person_bbox) o si
