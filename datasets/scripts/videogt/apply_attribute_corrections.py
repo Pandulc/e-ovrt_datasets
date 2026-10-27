@@ -39,8 +39,9 @@ corrección firmada para un sujeto pisaría a los demás. (Pasó en la primera
 redacción de la corrección de `v06_c01`: 7 tracks tenían cajas en el rango; el
 guard de `previous_value` lo atajó, y de ahí salió este campo.)
 
-Flujo:  (split_cvat_project) → apply_adjudications → apply_attribute_corrections
-        → derive_clip_gt
+Flujo:  (split_cvat_project) → apply_adjudications → apply_identity_corrections
+        → apply_attribute_corrections → derive_clip_gt
+        (los `track_id` de las correcciones son los que quedan DESPUÉS de las de identidad)
 
 Uso:
     python3 datasets/scripts/videogt/apply_attribute_corrections.py \\

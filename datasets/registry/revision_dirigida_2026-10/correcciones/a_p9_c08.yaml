@@ -1,0 +1,15 @@
+# Revisión dirigida 2026-10 — caso c6 (a_p9_c08). Generado por convertir.py.
+# Agregar estas listas bajo `annotation:` en el clip.yaml (sin pisar lo que ya haya).
+attribute_corrections:
+- track_id: 624
+  attr: has_helmet
+  from_frame: 69
+  to_frame: 75
+  previous_value: 'false'
+  value: unknown
+  decided_by: simon
+  decided_at: '2026-10-26'
+  rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+    registro en datasets/registry/revision_dirigida_2026-10/), caso c6 (a_p9_c08), R5: q1 «¿Se le ve la cabeza?
+    ¿Lleva casco?»: 36 muestras de 1,00 s a 4,50 s; en 2,30 s–2,50 s la respuesta fue «Está, pero no se le ve la
+    cabeza» → has_helmet = unknown'

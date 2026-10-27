@@ -1,0 +1,67 @@
+{
+ "revision": "revision-dirigida-2026-10",
+ "revisor": "simon",
+ "terminado": false,
+ "respuestas": {
+  "c1.q1": {
+   "596": "no_se_sabe",
+   "597": "P",
+   "598": "P",
+   "599": "P",
+   "601": "P",
+   "602": "P",
+   "603": "P"
+  },
+  "c1.q6": {
+   "855": "no_puesto",
+   "858": "no_puesto",
+   "861": "no_puesto",
+   "864": "no_puesto",
+   "867": "no_puesto",
+   "870": "no_puesto",
+   "873": "no_puesto",
+   "876": "no_puesto",
+   "879": "no_puesto",
+   "882": "no_puesto",
+   "885": "no_puesto",
+   "888": "no_puesto",
+   "891": "no_puesto",
+   "894": "puesto",
+   "897": "puesto",
+   "900": "puesto",
+   "903": "puesto",
+   "906": "puesto",
+   "909": "puesto",
+   "912": "puesto",
+   "915": "puesto",
+   "918": "puesto",
+   "921": "puesto",
+   "924": "puesto",
+   "927": "puesto",
+   "930": "puesto"
+  },
+  "c1.q5": {
+   "738": "no_se_sabe",
+   "753": "Q",
+   "768": "Q",
+   "783": "Q",
+   "798": "no_se_sabe",
+   "813": "no_se_sabe",
+   "828": "P",
+   "843": "P",
+   "858": "P",
+   "873": "P",
+   "903": "P",
+   "918": "P",
+   "933": "P",
+   "948": "P",
+   "963": "P",
+   "978": "no_se_sabe"
+  },
+  "c1.q4": {
+   "valor": "puesto"
+  }
+ },
+ "notas": {},
+ "guardado": "2026-10-26T00:00:50+00:00"
+}

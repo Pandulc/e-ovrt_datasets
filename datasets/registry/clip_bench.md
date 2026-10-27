@@ -296,29 +296,35 @@ nadie viola durante minutos exige trackear a todos frame a frame (el `--allow-em
 6 min lleva más de una jornada. Un modo "negativo atestiguado" (revisión humana con
 protocolo, sin cajas) lo abarataría — queda como trabajo futuro.
 
-### L2 — Sin doble anotación: no hay kappa (DECISIÓN, no pendiente)
+### L2 — Sin doble anotación al azar: revisión dirigida en su lugar (sin kappa)
 
 `double_annotation_ratio: 0.0` frente al objetivo ≥0,2 del doc 58 §B.3
 (≈7 clips re-anotados por una segunda persona).
 
-**Decisión del equipo, 2026-08-03: no se ejecuta.** Motivo: el proyecto lo lleva
-un equipo de 3 personas y el presupuesto de tiempo hasta la defensa (~fines de
-septiembre 2026) no lo admite. No es un ítem pendiente que se vaya a cerrar: es
-una limitación asumida.
+**Decisión del equipo: no se re-anota una muestra al azar.** Cada clip lo anotó una
+sola persona; la anotación se repartió entre los integrantes. Una doble anotación
+del 20 % daría una estimación del acuerdo sobre unos siete episodios, demasiado
+imprecisa para cambiar ninguna conclusión. En su lugar (octubre de 2026):
 
-**Consecuencia metodológica, que hay que escribir en el informe:** no existe
-medida de acuerdo inter-anotador (kappa) para este GT, así que **la
-confiabilidad de la anotación no está cuantificada**. Los números de
-precision/recall del banco se leen como "contra el criterio de un anotador",
-no "contra un GT de confiabilidad medida". Mitigaciones parciales que sí
-existen y conviene citar:
+- **revisión dirigida** de los 8 clips del rodaje donde dos registros humanos
+  discrepan o la anotación tiene una señal estructural de error, elegidos con
+  criterios que no miran al modelo; revisión **asistida por IA** (Claude propuso las
+  respuestas leyendo los cuadros, el revisor las validó; acuerdo 314/318) y sin
+  mostrar alertas ni métricas. Corrigió trayectorias partidas en los cruces de P7,
+  bordes de chaleco y un episodio marcado antes de que la cabeza fuera visible.
+  Constancia completa: [`revision_dirigida_2026-10/`](revision_dirigida_2026-10/README.md);
+- **análisis de sensibilidad a los bordes** (GT-02): cuánto cambia cada conclusión
+  si la referencia tuviera los bordes corridos (`docs` del proyecto, piloto 134).
+
+**Lo que sigue sin existir:** un coeficiente de acuerdo entre anotadores. Mitigaciones
+que sí existen y conviene citar:
 
 - el GT no es de anotación libre: sale de una **pre-anotación automática
   corregida**, lo que acota la deriva subjetiva del trazado de cajas;
-- las **fichas del rodaje** (`ficha-eventos-rodaje.md`, registradas el 25/07,
-  independientes de la anotación) concuerdan con los episodios derivados dentro
-  de ~1 s en la gran mayoría de los clips — es una verificación cruzada, no un
-  kappa;
+- las **marcas del operador** al recortar cada toma (`ficha-eventos-rodaje.md`,
+  anteriores a la anotación; no son una medición independiente del video)
+  concuerdan con los inicios del GT corregido: 32 de 33 dentro de 0,5 s y 33 de 33
+  dentro de 1 s;
 - el rodaje es **guionado**: qué condición ocurre en cada toma estaba decidido
   antes de filmar, así que la identidad de los episodios no depende del criterio
   del anotador, solo sus bordes.

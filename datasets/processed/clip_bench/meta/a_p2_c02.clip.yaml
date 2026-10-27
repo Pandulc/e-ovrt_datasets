@@ -9,3 +9,18 @@ episode_draft:
   end_ms: 33162
   condition: CR-02
 warnings: []
+annotation:
+  # Revisión dirigida 2026-10 (asistida por IA, validada por el revisor): ver
+  # datasets/registry/revision_dirigida_2026-10/. Correcciones de identidad y de atributos firmadas.
+  attribute_corrections:
+  - track_id: 575
+    attr: has_vest
+    from_frame: 109
+    to_frame: 152
+    previous_value: 'true'
+    value: 'false'
+    decided_by: simon
+    decided_at: '2026-10-26'
+    rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+      registro en datasets/registry/revision_dirigida_2026-10/), caso c5 (a_p2_c02), R5: q1 «¿Lleva el chaleco puesto?»:
+      36 muestras de 3,00 s a 6,50 s; en 3,63 s–5,07 s la respuesta fue «No lo lleva» → has_vest = false'

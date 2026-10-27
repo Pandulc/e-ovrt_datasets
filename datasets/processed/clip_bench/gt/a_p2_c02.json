@@ -14,7 +14,7 @@
       "condition_id": "CR-02",
       "level": "scene",
       "source_id": "a_p2_c02",
-      "start_ms": 5100,
+      "start_ms": 3633,
       "end_ms": 32500,
       "subjects_in_evidence": 1,
       "notes": ""
@@ -22,13 +22,26 @@
   ],
   "sub_threshold_events": [],
   "annotation": {
+    "attribute_corrections": [
+      {
+        "track_id": 575,
+        "attr": "has_vest",
+        "from_frame": 109,
+        "to_frame": 152,
+        "previous_value": "true",
+        "value": "false",
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c5 (a_p2_c02), R5: q1 «¿Lleva el chaleco puesto?»: 36 muestras de 3,00 s a 6,50 s; en 3,63 s–5,07 s la respuesta fue «No lo lleva» → has_vest = false"
+      }
+    ],
     "double_annotated": false,
     "second_annotator": null,
     "kappa": null,
     "start_end_tolerance_ms": 500
   },
   "provenance": {
-    "xml_sha256": "8f413d31a739cd6f3751cc863aca418be58bede690ef48bdd9476524079a47f0",
+    "xml_sha256": "c052b9a36574900d73d42f037cb5bf30fa6211753a10badeaf88a525fd59a9e6",
     "pattern_set_ms": {
       "CR-01": 4000,
       "CR-02": 7000

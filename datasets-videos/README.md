@@ -172,7 +172,11 @@ python3 datasets/scripts/videogt/compare_annotations.py \
 episodios dentro de `duration_ms`, sin solape de la misma condición,
 `negative` ⇔ sin episodios, y (con `--manifest`) manifest ↔ archivos ↔
 sha256. `compare_annotations.py` compara dos derivaciones independientes
-(doble anotación) y computa kappa de Cohen + |Δstart|/|Δend| medianos.
+(doble anotación) y computa kappa de Cohen + |Δstart|/|Δend| medianos. **No se
+ejecutó sobre el banco**: en su lugar hubo una revisión dirigida (ver
+`datasets/registry/clip_bench.md` §L2), cuyas correcciones de identidad se aplican
+con `datasets/scripts/videogt/apply_identity_corrections.py` entre
+`apply_adjudications.py` y `apply_attribute_corrections.py`.
 
 ### Etapa 5 — Promoción al banco
 

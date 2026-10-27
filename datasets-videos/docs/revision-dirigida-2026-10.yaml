@@ -1,0 +1,347 @@
+# Revisión dirigida del GT del rodaje (2026-10) — especificación de los casos
+#
+# Qué es: los casos del banco temporal donde dos registros humanos no coinciden o la
+# anotación tiene una señal estructural de error. Se seleccionaron con criterios que NO
+# miran la salida del modelo (ni alertas ni métricas):
+#   (1) inicio del episodio en el GT a más de 0,5 s de la marca del operador en la ficha
+#       del rodaje (4 clips: a_p2_c01, a_p2_c02, a_p7_c02, a_p9_c08);
+#   (2) cantidad de episodios distinta entre la ficha y el GT (a_p1_c05, a_p7_c03);
+#   (3) cambio de atributo de menos de 1,5 s dentro de una infracción (a_p1_c05, a_p2_c05,
+#       a_p7_c03, a_p8_c01);
+#   (4) trayectoria que termina y otra que empieza a menos de 3 s y cerca, alrededor de
+#       una infracción, o caja suelta sin cerrar (a_p7_c02, a_p7_c03, a_p8_c01).
+# Escaneados también, sin efecto sobre ningún episodio (no se preguntan): a_p4_c02,
+# a_p5_c01 y a_p9_c06 (cajas de un cuadro al entrar o salir de cuadro).
+#
+# La vista NO muestra el valor anotado hoy, las alertas, las métricas ni la ficha.
+# Herramientas: datasets/scripts/videogt/revision/{preparar.py,servidor.py,pagina.html}.
+# Las respuestas se convierten en correcciones firmadas en cada <clip>.clip.yaml
+# (attribute_corrections / identity_corrections) y se re-deriva el GT.
+
+revision: revision-dirigida-2026-10
+fps: 30
+
+opciones:
+  casco:
+    - {k: puesto, t: "Lo lleva puesto"}
+    - {k: no_puesto, t: "No lo lleva"}
+    - {k: tapado, t: "Tapado un momento (sigue igual)"}
+    - {k: no_se_sabe, t: "No se puede saber"}
+  chaleco:
+    - {k: puesto, t: "Lo lleva puesto"}
+    - {k: no_puesto, t: "No lo lleva"}
+    - {k: tapado, t: "Tapado un momento (sigue igual)"}
+    - {k: no_se_sabe, t: "No se puede saber"}
+  entrada:
+    - {k: fuera, t: "No está en cuadro"}
+    - {k: sin_cabeza, t: "Está, pero no se le ve la cabeza"}
+    - {k: no_puesto, t: "Se le ve la cabeza: sin casco"}
+    - {k: puesto, t: "Se le ve la cabeza: con casco"}
+    - {k: no_se_sabe, t: "No se puede saber"}
+  quien:
+    - {k: P, t: "P"}
+    - {k: Q, t: "Q"}
+    - {k: otra, t: "Otra persona"}
+    - {k: no_se_sabe, t: "No se distingue"}
+  identidad:
+    - {k: P, t: "P"}
+    - {k: Q, t: "Q"}
+    - {k: otra, t: "Otra persona"}
+    - {k: no_persona, t: "No es una persona"}
+    - {k: cambia, t: "Cambia de persona dentro de la caja"}
+    - {k: no_se_sabe, t: "No se distingue"}
+
+casos:
+  - id: c1
+    clip: a_p7_c02
+    persona_p: 607        # para el conversor: trayectoria principal de P y de Q
+    persona_q: 606
+    titulo: "Cruce entre personas (casco)"
+    contexto: >-
+      Tres personas en una oficina. Al principio, la persona P se saca el casco. Las cajas
+      con letras son las que dibujó la anotación; una misma persona puede tener más de una
+      letra a lo largo del clip. Mirá los videos y respondé solo por lo que ves.
+    referencias:
+      - {titulo: "Persona P", track: 607, frames: [45, 150]}
+      - {titulo: "Persona Q", track: 606, frames: [300]}
+    videos:
+      - {titulo: "6 a 14 s", desde_ms: 2500, hasta_ms: 14000}
+      - {titulo: "24 a 31 s", desde_ms: 24500, hasta_ms: 31500}
+    preguntas:
+      - id: q1
+        tipo: identidad
+        enunciado: "¿Quién es la persona de cada caja?"
+        tracks: [596, 597, 598, 599, 601, 602, 603]
+      - id: q2
+        rol: tramo_tapado
+        tramo_ms: [6500, 13200]
+        tipo: opcion
+        enunciado: >-
+          Entre 6,5 s y 13,2 s, P no tiene una caja propia durante buena parte del tramo.
+          En ese tramo, P…
+        opciones:
+          - {k: tapado, t: "Sigue en cuadro, tapado por otra persona o por un objeto"}
+          - {k: fuera, t: "Sale de cuadro"}
+          - {k: mixto, t: "Una parte del tiempo tapado y otra fuera de cuadro"}
+          - {k: no_se_sabe, t: "No se puede saber"}
+        nota: "Si elegiste la tercera, indicá los tramos (en segundos)."
+      - id: q3
+        rol: valor_tapado
+        attr: has_helmet
+        tipo: opcion
+        enunciado: "Mientras P no se ve en ese tramo, ¿se puede saber si lleva el casco puesto?"
+        opciones:
+          - {k: no_puesto, t: "Sí: no lo lleva"}
+          - {k: puesto, t: "Sí: lo lleva"}
+          - {k: no_se_sabe, t: "No se puede saber"}
+        nota: "¿Cómo lo sabés?"
+      - id: q4
+        rol: valor_tapado
+        attr: has_vest
+        tipo: opcion
+        enunciado: "Y el chaleco, ¿se puede saber si lo lleva puesto en ese tramo?"
+        opciones:
+          - {k: no_puesto, t: "Sí: no lo lleva"}
+          - {k: puesto, t: "Sí: lo lleva"}
+          - {k: no_se_sabe, t: "No se puede saber"}
+        nota: "¿Cómo lo sabés?"
+      - id: q5
+        rol: quien_por_cuadro
+        tipo: cuadros
+        enunciado: "¿Quién es la persona de la caja con borde grueso, en cada cuadro?"
+        opciones: quien
+        track: 604
+        desde_ms: 24600
+        hasta_ms: 32600
+        paso: 15
+        recorte: persona
+      - id: q6
+        rol: atributo
+        attr: has_helmet
+        tipo: cuadros
+        enunciado: "La persona de la caja con borde grueso: ¿lleva el casco puesto?"
+        opciones: casco
+        track: 604
+        desde_ms: 28500
+        hasta_ms: 31000
+        paso: 3
+        recorte: cabeza
+
+  - id: c2
+    clip: a_p7_c03
+    persona_p: 610
+    persona_q: 611
+    titulo: "Cruce entre personas (casco), otra toma"
+    contexto: >-
+      La misma escena, en otra toma. Al principio, la persona P se saca el casco. Las cajas
+      con letras son las que dibujó la anotación; una misma persona puede tener más de una
+      letra. Mirá los videos y respondé solo por lo que ves.
+    referencias:
+      - {titulo: "Persona P", track: 610, frames: [45, 150]}
+      - {titulo: "Persona Q", track: 611, frames: [300]}
+    videos:
+      - {titulo: "2 a 13 s", desde_ms: 2000, hasta_ms: 13000}
+      - {titulo: "14,5 a 17 s", desde_ms: 14500, hasta_ms: 17000}
+      - {titulo: "27,5 a 30,5 s", desde_ms: 27500, hasta_ms: 30500}
+    preguntas:
+      - id: q1
+        tipo: identidad
+        enunciado: "¿Quién es la persona de cada caja?"
+        tracks: [608, 609, 628, 629, 630]
+      - id: q2
+        rol: tramo_tapado
+        tramo_ms: [8100, 10900]
+        tipo: opcion
+        enunciado: >-
+          Entre 8,1 s y 10,9 s, P no tiene una caja propia durante buena parte del tramo.
+          En ese tramo, P…
+        opciones:
+          - {k: tapado, t: "Sigue en cuadro, tapado por otra persona o por un objeto"}
+          - {k: fuera, t: "Sale de cuadro"}
+          - {k: mixto, t: "Una parte del tiempo tapado y otra fuera de cuadro"}
+          - {k: no_se_sabe, t: "No se puede saber"}
+        nota: "Si elegiste la tercera, indicá los tramos (en segundos)."
+      - id: q3
+        rol: valor_tapado
+        attr: has_helmet
+        tipo: opcion
+        enunciado: "Mientras P no se ve en ese tramo, ¿se puede saber si lleva el casco puesto?"
+        opciones:
+          - {k: no_puesto, t: "Sí: no lo lleva"}
+          - {k: puesto, t: "Sí: lo lleva"}
+          - {k: no_se_sabe, t: "No se puede saber"}
+        nota: "¿Cómo lo sabés?"
+      - id: q4
+        rol: valor_tapado
+        attr: has_vest
+        tipo: opcion
+        enunciado: "Y el chaleco, ¿se puede saber si lo lleva puesto en ese tramo?"
+        opciones:
+          - {k: no_puesto, t: "Sí: no lo lleva"}
+          - {k: puesto, t: "Sí: lo lleva"}
+          - {k: no_se_sabe, t: "No se puede saber"}
+        nota: "¿Cómo lo sabés?"
+      - id: q5
+        rol: atributo
+        attr: has_helmet
+        tipo: cuadros
+        enunciado: "La persona de la caja con borde grueso: ¿lleva el casco puesto?"
+        opciones: casco
+        track: 609
+        desde_ms: 10900
+        hasta_ms: 11700
+        paso: 2
+        recorte: cabeza
+      - id: q6
+        rol: atributo
+        attr: has_helmet
+        tipo: cuadros
+        enunciado: "La persona de la caja con borde grueso: ¿lleva el casco puesto?"
+        opciones: casco
+        track: 609
+        desde_ms: 28000
+        hasta_ms: 29500
+        paso: 3
+        recorte: cabeza
+
+  - id: c3
+    clip: a_p1_c05
+    titulo: "Casco, una persona"
+    contexto: "Una persona sola. Mirá la cabeza en cada cuadro."
+    videos:
+      - {titulo: "11 a 15 s", desde_ms: 11000, hasta_ms: 15000}
+    preguntas:
+      - id: q1
+        rol: atributo
+        attr: has_helmet
+        tipo: cuadros
+        enunciado: "¿Lleva el casco puesto?"
+        opciones: casco
+        track: 566
+        desde_ms: 12000
+        hasta_ms: 14000
+        paso: 2
+        recorte: cabeza
+
+  - id: c4
+    clip: a_p2_c01
+    titulo: "Chaleco, una persona"
+    contexto: >-
+      Una persona sola. Puesto aunque esté desabrochado cuenta como puesto; en la mano,
+      colgado de un hombro o en el suelo cuenta como no puesto.
+    videos:
+      - {titulo: "2 a 6,5 s", desde_ms: 2000, hasta_ms: 6500}
+    preguntas:
+      - id: q1
+        rol: atributo
+        attr: has_vest
+        tipo: cuadros
+        enunciado: "¿Lleva el chaleco puesto?"
+        opciones: chaleco
+        track: 574
+        desde_ms: 2500
+        hasta_ms: 6000
+        paso: 3
+        recorte: persona
+
+  - id: c5
+    clip: a_p2_c02
+    titulo: "Chaleco, una persona (otra toma)"
+    contexto: >-
+      Una persona sola. Puesto aunque esté desabrochado cuenta como puesto; en la mano,
+      colgado de un hombro o en el suelo cuenta como no puesto.
+    videos:
+      - {titulo: "2,5 a 7 s", desde_ms: 2500, hasta_ms: 7000}
+    preguntas:
+      - id: q1
+        rol: atributo
+        attr: has_vest
+        tipo: cuadros
+        enunciado: "¿Lleva el chaleco puesto?"
+        opciones: chaleco
+        track: 575
+        desde_ms: 3000
+        hasta_ms: 6500
+        paso: 3
+        recorte: persona
+
+  - id: c6
+    clip: a_p9_c08
+    titulo: "Entrada a cuadro (casco)"
+    contexto: >-
+      Una persona entra a cuadro. Una gorra o la cabeza descubierta cuentan como sin casco.
+    videos:
+      - {titulo: "0,5 a 5 s", desde_ms: 500, hasta_ms: 5000}
+    preguntas:
+      - id: q1
+        rol: atributo
+        attr: has_helmet
+        tipo: cuadros
+        enunciado: "¿Se le ve la cabeza? ¿Lleva casco?"
+        opciones: entrada
+        track: 624
+        desde_ms: 1000
+        hasta_ms: 4500
+        paso: 3
+        recorte: cuadro
+
+  - id: c7
+    clip: a_p2_c05
+    titulo: "Chaleco, final de la toma"
+    contexto: >-
+      Una persona sola. Puesto aunque esté desabrochado cuenta como puesto; en la mano,
+      colgado de un hombro o en el suelo cuenta como no puesto.
+    videos:
+      - {titulo: "30,5 a 35,5 s", desde_ms: 30500, hasta_ms: 35500}
+    preguntas:
+      - id: q1
+        rol: atributo
+        attr: has_vest
+        tipo: cuadros
+        enunciado: "¿Lleva el chaleco puesto?"
+        opciones: chaleco
+        track: 578
+        desde_ms: 31000
+        hasta_ms: 35000
+        paso: 3
+        recorte: persona
+
+  - id: c8
+    clip: a_p8_c01
+    persona_p: 616
+    titulo: "Sale de cuadro y vuelve (casco)"
+    contexto: >-
+      La persona P sale de cuadro y después vuelve a entrar. Una gorra o la cabeza
+      descubierta cuentan como sin casco.
+    referencias:
+      - {titulo: "Persona P", track: 616, frames: [150]}
+    videos:
+      - {titulo: "15 a 17,5 s", desde_ms: 15000, hasta_ms: 17500}
+      - {titulo: "28,5 a 32 s", desde_ms: 28500, hasta_ms: 32000}
+    preguntas:
+      - id: q1
+        rol: atributo
+        attr: has_helmet
+        tipo: cuadros
+        enunciado: "Cuando sale: ¿se le ve la cabeza? ¿Lleva casco?"
+        opciones: entrada
+        track: 616
+        desde_ms: 15500
+        hasta_ms: 16600
+        paso: 2
+        recorte: cuadro
+      - id: q2
+        tipo: identidad
+        enunciado: "¿Quién es la persona de cada caja?"
+        tracks: [614, 615]
+      - id: q3
+        rol: atributo
+        attr: has_helmet
+        tipo: cuadros
+        enunciado: "Cuando vuelve: ¿se le ve la cabeza? ¿Lleva casco?"
+        opciones: entrada
+        track: 615
+        desde_ms: 28800
+        hasta_ms: 31600
+        paso: 3
+        recorte: cuadro

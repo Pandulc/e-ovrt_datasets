@@ -14,69 +14,13 @@
       "condition_id": "CR-01",
       "level": "scene",
       "source_id": "a_p7_c02",
-      "start_ms": 13200,
-      "end_ms": 26933,
+      "start_ms": 3033,
+      "end_ms": 29733,
       "subjects_in_evidence": 1,
       "notes": ""
     }
   ],
   "sub_threshold_events": [
-    {
-      "condition_id": "CR-01",
-      "start_ms": 8200,
-      "end_ms": 8233,
-      "reason": "transitorio < persistencia mínima (33 ms < 4000 ms) — NO debe alertar",
-      "track_id": 597
-    },
-    {
-      "condition_id": "CR-02",
-      "start_ms": 8200,
-      "end_ms": 8233,
-      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
-      "track_id": 597
-    },
-    {
-      "condition_id": "CR-01",
-      "start_ms": 8900,
-      "end_ms": 9600,
-      "reason": "transitorio < persistencia mínima (700 ms < 4000 ms) — NO debe alertar",
-      "track_id": 598
-    },
-    {
-      "condition_id": "CR-02",
-      "start_ms": 8900,
-      "end_ms": 8933,
-      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
-      "track_id": 598
-    },
-    {
-      "condition_id": "CR-01",
-      "start_ms": 9600,
-      "end_ms": 9867,
-      "reason": "transitorio < persistencia mínima (267 ms < 4000 ms) — NO debe alertar",
-      "track_id": 599
-    },
-    {
-      "condition_id": "CR-01",
-      "start_ms": 11600,
-      "end_ms": 11900,
-      "reason": "transitorio < persistencia mínima (300 ms < 4000 ms) — NO debe alertar",
-      "track_id": 601
-    },
-    {
-      "condition_id": "CR-01",
-      "start_ms": 11900,
-      "end_ms": 12133,
-      "reason": "transitorio < persistencia mínima (233 ms < 4000 ms) — NO debe alertar",
-      "track_id": 602
-    },
-    {
-      "condition_id": "CR-01",
-      "start_ms": 27000,
-      "end_ms": 29900,
-      "reason": "transitorio < persistencia mínima (2900 ms < 4000 ms) — NO debe alertar",
-      "track_id": 604
-    },
     {
       "condition_id": "CR-01",
       "start_ms": 10400,
@@ -85,28 +29,280 @@
       "track_id": 606
     },
     {
-      "condition_id": "CR-01",
-      "start_ms": 3033,
-      "end_ms": 6533,
-      "reason": "transitorio < persistencia mínima (3500 ms < 4000 ms) — NO debe alertar",
-      "track_id": 607
-    },
-    {
       "condition_id": "CR-02",
       "start_ms": 6400,
       "end_ms": 6433,
       "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
       "track_id": 607
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 8200,
+      "end_ms": 8233,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 607
+    },
+    {
+      "condition_id": "CR-02",
+      "start_ms": 8900,
+      "end_ms": 8933,
+      "reason": "transitorio < persistencia mínima (33 ms < 7000 ms) — NO debe alertar",
+      "track_id": 607
     }
   ],
   "annotation": {
+    "identity_corrections": [
+      {
+        "op": "reassign",
+        "from_track": 597,
+        "to_track": 607,
+        "from_frame": 246,
+        "to_frame": 249,
+        "boxes": 4,
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R1: la caja D (trayectoria 597) fue respondida «P»; es la misma persona, va en la misma trayectoria (protocolo §7.1, regla C1)"
+      },
+      {
+        "op": "reassign",
+        "from_track": 598,
+        "to_track": 607,
+        "from_frame": 267,
+        "to_frame": 287,
+        "boxes": 21,
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R1: la caja E (trayectoria 598) fue respondida «P»; es la misma persona, va en la misma trayectoria (protocolo §7.1, regla C1)"
+      },
+      {
+        "op": "reassign",
+        "from_track": 599,
+        "to_track": 607,
+        "from_frame": 288,
+        "to_frame": 297,
+        "boxes": 10,
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R1: la caja F (trayectoria 599) fue respondida «P»; es la misma persona, va en la misma trayectoria (protocolo §7.1, regla C1)"
+      },
+      {
+        "op": "reassign",
+        "from_track": 601,
+        "to_track": 607,
+        "from_frame": 348,
+        "to_frame": 356,
+        "boxes": 9,
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R1: la caja G (trayectoria 601) fue respondida «P»; es la misma persona, va en la misma trayectoria (protocolo §7.1, regla C1)"
+      },
+      {
+        "op": "reassign",
+        "from_track": 602,
+        "to_track": 607,
+        "from_frame": 357,
+        "to_frame": 363,
+        "boxes": 7,
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R1: la caja H (trayectoria 602) fue respondida «P»; es la misma persona, va en la misma trayectoria (protocolo §7.1, regla C1)"
+      },
+      {
+        "op": "reassign",
+        "from_track": 603,
+        "to_track": 607,
+        "from_frame": 396,
+        "to_frame": 807,
+        "boxes": 412,
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R1: la caja I (trayectoria 603) fue respondida «P»; es la misma persona, va en la misma trayectoria (protocolo §7.1, regla C1)"
+      },
+      {
+        "op": "reassign",
+        "from_track": 604,
+        "to_track": 607,
+        "from_frame": 810,
+        "to_frame": 978,
+        "boxes": 169,
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R2: en la trayectoria 604, las muestras desde 27,60 s son P (antes: «Q»); el cambio de persona se ubica en 27,00 s"
+      },
+      {
+        "op": "fill",
+        "track": 607,
+        "from_frame": 196,
+        "to_frame": 245,
+        "values": {
+          "has_helmet": "false",
+          "has_vest": "true"
+        },
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 6,53 s a 8,17 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»); casco false, chaleco true. Notas del revisor: has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).». Nota del tramo: «Claude: P queda detrás de Q en el mismo lugar; asoma a los 8,2, 8,9–9,9 y 11,6–12,1 s (cajas D a H) y vuelve a aparecer entero a los 13,2 s. No cruza ningún borde de la imagen.»"
+      },
+      {
+        "op": "fill",
+        "track": 607,
+        "from_frame": 250,
+        "to_frame": 266,
+        "values": {
+          "has_helmet": "false",
+          "has_vest": "true"
+        },
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 8,33 s a 8,87 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»); casco false, chaleco true. Notas del revisor: has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).». Nota del tramo: «Claude: P queda detrás de Q en el mismo lugar; asoma a los 8,2, 8,9–9,9 y 11,6–12,1 s (cajas D a H) y vuelve a aparecer entero a los 13,2 s. No cruza ningún borde de la imagen.»"
+      },
+      {
+        "op": "fill",
+        "track": 607,
+        "from_frame": 298,
+        "to_frame": 347,
+        "values": {
+          "has_helmet": "false",
+          "has_vest": "true"
+        },
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 9,93 s a 11,57 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»); casco false, chaleco true. Notas del revisor: has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).». Nota del tramo: «Claude: P queda detrás de Q en el mismo lugar; asoma a los 8,2, 8,9–9,9 y 11,6–12,1 s (cajas D a H) y vuelve a aparecer entero a los 13,2 s. No cruza ningún borde de la imagen.»"
+      },
+      {
+        "op": "fill",
+        "track": 607,
+        "from_frame": 364,
+        "to_frame": 395,
+        "values": {
+          "has_helmet": "false",
+          "has_vest": "true"
+        },
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 12,13 s a 13,17 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»); casco false, chaleco true. Notas del revisor: has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).». Nota del tramo: «Claude: P queda detrás de Q en el mismo lugar; asoma a los 8,2, 8,9–9,9 y 11,6–12,1 s (cajas D a H) y vuelve a aparecer entero a los 13,2 s. No cruza ningún borde de la imagen.»"
+      },
+      {
+        "op": "fill",
+        "track": 607,
+        "from_frame": 808,
+        "to_frame": 809,
+        "values": {
+          "has_helmet": "false",
+          "has_vest": "true"
+        },
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R4: hueco de 2 cuadro(s) entre dos cajas de P con el mismo estado (casco false, chaleco true): oclusión breve, protocolo §7.1"
+      }
+    ],
+    "attribute_corrections": [
+      {
+        "track_id": 607,
+        "attr": "has_helmet",
+        "from_frame": 892,
+        "to_frame": 896,
+        "previous_value": "false",
+        "value": "true",
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R5: q6 «La persona de la caja con borde grueso: ¿lleva el casco puesto?»: 26 muestras de 28,50 s a 31,00 s; en 29,73 s–29,87 s la respuesta fue «Lo lleva puesto» → has_helmet = true"
+      },
+      {
+        "track_id": 607,
+        "attr": "has_helmet",
+        "from_frame": 247,
+        "to_frame": 249,
+        "previous_value": "unknown",
+        "value": "false",
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 6,00 s a 13,70 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»), y el revisor sabe su estado (casco false, chaleco true); has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).»; en 8,23 s–8,30 s la caja de P tenía has_helmet unknown (no se le veía): toma ese estado. No se pisa ningún valor explícito."
+      },
+      {
+        "track_id": 607,
+        "attr": "has_helmet",
+        "from_frame": 296,
+        "to_frame": 297,
+        "previous_value": "unknown",
+        "value": "false",
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 6,00 s a 13,70 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»), y el revisor sabe su estado (casco false, chaleco true); has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).»; en 9,87 s–9,90 s la caja de P tenía has_helmet unknown (no se le veía): toma ese estado. No se pisa ningún valor explícito."
+      },
+      {
+        "track_id": 607,
+        "attr": "has_vest",
+        "from_frame": 193,
+        "to_frame": 195,
+        "previous_value": "unknown",
+        "value": "true",
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 6,00 s a 13,70 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»), y el revisor sabe su estado (casco false, chaleco true); has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).»; en 6,43 s–6,50 s la caja de P tenía has_vest unknown (no se le veía): toma ese estado. No se pisa ningún valor explícito."
+      },
+      {
+        "track_id": 607,
+        "attr": "has_vest",
+        "from_frame": 247,
+        "to_frame": 249,
+        "previous_value": "unknown",
+        "value": "true",
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 6,00 s a 13,70 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»), y el revisor sabe su estado (casco false, chaleco true); has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).»; en 8,23 s–8,30 s la caja de P tenía has_vest unknown (no se le veía): toma ese estado. No se pisa ningún valor explícito."
+      },
+      {
+        "track_id": 607,
+        "attr": "has_vest",
+        "from_frame": 268,
+        "to_frame": 287,
+        "previous_value": "unknown",
+        "value": "true",
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 6,00 s a 13,70 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»), y el revisor sabe su estado (casco false, chaleco true); has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).»; en 8,93 s–9,57 s la caja de P tenía has_vest unknown (no se le veía): toma ese estado. No se pisa ningún valor explícito."
+      },
+      {
+        "track_id": 607,
+        "attr": "has_vest",
+        "from_frame": 290,
+        "to_frame": 297,
+        "previous_value": "unknown",
+        "value": "true",
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 6,00 s a 13,70 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»), y el revisor sabe su estado (casco false, chaleco true); has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).»; en 9,67 s–9,90 s la caja de P tenía has_vest unknown (no se le veía): toma ese estado. No se pisa ningún valor explícito."
+      },
+      {
+        "track_id": 607,
+        "attr": "has_vest",
+        "from_frame": 348,
+        "to_frame": 356,
+        "previous_value": "unknown",
+        "value": "true",
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 6,00 s a 13,70 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»), y el revisor sabe su estado (casco false, chaleco true); has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).»; en 11,60 s–11,87 s la caja de P tenía has_vest unknown (no se le veía): toma ese estado. No se pisa ningún valor explícito."
+      },
+      {
+        "track_id": 607,
+        "attr": "has_vest",
+        "from_frame": 358,
+        "to_frame": 363,
+        "previous_value": "unknown",
+        "value": "true",
+        "decided_by": "simon",
+        "decided_at": "2026-10-26",
+        "rationale": "Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon; registro en datasets/registry/revision_dirigida_2026-10/), caso c1 (a_p7_c02), R3: de 6,00 s a 13,70 s P sigue en cuadro, tapado («Sigue en cuadro, tapado por otra persona o por un objeto»), y el revisor sabe su estado (casco false, chaleco true); has_helmet: «Claude: el casco de P está sobre la mesa, a la vista, durante todo el tramo (lo deja a los ~3,5 s y lo vuelve a tomar a los ~29,5 s).»; has_vest: «Claude: el chaleco naranja se le ve cada vez que asoma (8,2, 8,9–9,9 y 11,6–12,1 s).»; en 11,93 s–12,10 s la caja de P tenía has_vest unknown (no se le veía): toma ese estado. No se pisa ningún valor explícito."
+      }
+    ],
     "double_annotated": false,
     "second_annotator": null,
     "kappa": null,
     "start_end_tolerance_ms": 500
   },
   "provenance": {
-    "xml_sha256": "88d768c741c42c48727dbec687f63a249095cc70b7336a3d7cafb6ac04e93377",
+    "xml_sha256": "e79a155bd823ad0a0fdd787e33783e762d461aaf16be629f4cc3330235888549",
     "pattern_set_ms": {
       "CR-01": 4000,
       "CR-02": 7000

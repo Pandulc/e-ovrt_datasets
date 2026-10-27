@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revisión dirigida del GT</title>
+<style>
+  :root {
+    --bg: #111317; --panel: #191c22; --panel2: #20242c; --line: #2c313b; --tx: #e8eaed; --tx2: #a9b0bb;
+    --acc: #7aa7ff; --ok: #32d74b; --warn: #ffd60a; --bad: #ff6b5f;
+    --c-puesto: #2fb85a; --c-no_puesto: #ff5a4f; --c-tapado: #3d8bfd; --c-no_se_sabe: #7d8590;
+    --c-fuera: #5b6475; --c-sin_cabeza: #e0a400; --c-P: #a97bff; --c-Q: #19b5a8; --c-otra: #ff5fa2;
+    --c-no_persona: #6b7280; --c-cambia: #f59e0b; --c-mixto: #f59e0b;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--tx); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { position: sticky; top: 0; z-index: 20; display: flex; gap: 16px; align-items: center; padding: 10px 18px;
+           background: #0c0e11ee; border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); }
+  header h1 { font-size: 16px; margin: 0; font-weight: 650; }
+  .grow { flex: 1; }
+  header input { background: var(--panel2); border: 1px solid var(--line); color: var(--tx); border-radius: 8px; padding: 7px 10px; width: 170px; font: inherit; }
+  #estado { color: var(--tx2); font-size: 13px; min-width: 150px; text-align: right; }
+  #estado.err { color: var(--bad); }
+  button { font: inherit; color: var(--tx); background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; cursor: pointer; }
+  button:hover { border-color: var(--acc); }
+  button.primary { background: var(--acc); color: #0b1020; border-color: var(--acc); font-weight: 650; }
+  .layout { display: grid; grid-template-columns: 270px 1fr; min-height: calc(100vh - 54px); }
+  nav { border-right: 1px solid var(--line); padding: 14px 10px; position: sticky; top: 54px; align-self: start; max-height: calc(100vh - 54px); overflow: auto; }
+  nav .intro { color: var(--tx2); font-size: 13px; padding: 4px 8px 12px; }
+  nav a { display: block; padding: 9px 10px; border-radius: 8px; color: var(--tx); text-decoration: none; margin-bottom: 4px; }
+  nav a.sel { background: var(--panel2); outline: 1px solid var(--line); }
+  nav a small { display: block; color: var(--tx2); }
+  nav a .bar { height: 4px; background: var(--line); border-radius: 3px; margin-top: 6px; overflow: hidden; }
+  nav a .bar i { display: block; height: 100%; background: var(--ok); }
+  main { padding: 18px 26px 120px; max-width: 1500px; }
+  h2 { margin: 4px 0 6px; font-size: 22px; }
+  .ctx { color: var(--tx2); max-width: 900px; margin: 0 0 16px; }
+  .blind { background: #1d2430; border: 1px solid #2c3a52; color: #c9d6ee; border-radius: 10px; padding: 10px 14px; margin: 0 0 18px; font-size: 14px; max-width: 900px; }
+  .refs { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 16px; }
+  .ref { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; }
+  .ref b { display: block; margin-bottom: 6px; }
+  .ref img { height: 190px; border-radius: 6px; margin-right: 6px; cursor: zoom-in; }
+  .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 14px; margin-bottom: 18px; }
+  .video { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; }
+  .video video { width: 100%; border-radius: 6px; background: #000; }
+  .video .vbar { display: flex; gap: 8px; align-items: center; color: var(--tx2); font-size: 13px; margin-top: 4px; }
+  .q { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; }
+  .q h3 { margin: 0 0 4px; font-size: 16px; }
+  .q .prog { color: var(--tx2); font-size: 13px; margin-bottom: 10px; }
+  .opts { display: flex; flex-direction: column; gap: 8px; max-width: 760px; }
+  .opt { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid var(--line); border-radius: 9px; cursor: pointer; background: var(--panel2); }
+  .opt.sel { border-color: var(--acc); box-shadow: 0 0 0 2px #7aa7ff55 inset; }
+  .opt .dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--tx2); flex: none; }
+  .opt.sel .dot { background: var(--acc); border-color: var(--acc); }
+  textarea { width: 100%; max-width: 760px; min-height: 60px; background: var(--panel2); color: var(--tx); border: 1px solid var(--line); border-radius: 8px; padding: 8px; font: inherit; margin-top: 8px; }
+  .brushes { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 12px; align-items: center; }
+  .brush { display: flex; gap: 8px; align-items: center; padding: 6px 10px; border-radius: 999px; border: 2px solid transparent; cursor: pointer; background: var(--panel2); font-size: 14px; }
+  .brush .k { font-size: 12px; color: var(--tx2); border: 1px solid var(--line); border-radius: 5px; padding: 0 5px; }
+  .brush .sw { width: 12px; height: 12px; border-radius: 3px; }
+  .brush.sel { border-color: var(--tx); }
+  .hint { color: var(--tx2); font-size: 13px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cell { position: relative; border-radius: 8px; overflow: hidden; border: 3px solid var(--line); cursor: pointer; background: #000; outline: none; }
+  .cell img { display: block; }
+  .cell .t { position: absolute; left: 0; bottom: 0; right: 0; font-size: 12px; padding: 2px 6px; background: #000a; color: #fff; }
+  .cell .lab { position: absolute; top: 0; left: 0; right: 0; font-size: 12px; font-weight: 650; padding: 2px 6px; color: #fff; text-shadow: 0 1px 2px #000; }
+  .cell:focus { box-shadow: 0 0 0 3px var(--acc); }
+  .cell.nobox::after { content: "sin caja"; position: absolute; top: 22px; left: 6px; font-size: 11px; color: #ddd; background: #000a; padding: 0 4px; border-radius: 3px; }
+  .ident { display: grid; grid-template-columns: 90px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+  .ident:first-of-type { border-top: 0; }
+  .ident .letter { font-size: 34px; font-weight: 800; line-height: 1; }
+  .ident .meta { color: var(--tx2); font-size: 13px; }
+  .ident .imgs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+  .ident .imgs img { height: 150px; border-radius: 6px; cursor: zoom-in; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { padding: 6px 11px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel2); cursor: pointer; font-size: 14px; }
+  .chip.sel { color: #0b1020; font-weight: 650; border-color: transparent; }
+  #lb { position: fixed; inset: 0; background: #000e; z-index: 50; display: none; flex-direction: column; align-items: center; justify-content: center; }
+  #lb.on { display: flex; }
+  #lb img { max-width: 96vw; max-height: 84vh; }
+  #lb .bar { color: #ddd; margin-top: 10px; display: flex; gap: 14px; align-items: center; }
+  #lb .bar .lab { font-weight: 650; padding: 3px 10px; border-radius: 6px; }
+  .done { border-color: var(--ok) !important; }
+  .warn { color: var(--warn); }
+  footer { color: var(--tx2); font-size: 12px; margin-top: 30px; }
+  .ia { background: #2a2213; border: 1px solid #5c4a1a; color: #f3dfae; border-radius: 10px; padding: 10px 14px; margin: 0 0 16px; font-size: 14px; max-width: 1000px; }
+  .ia b { color: #ffd479; }
+  .valid { display: flex; gap: 12px; align-items: center; margin: 4px 0 20px; }
+  .valid button.on { background: var(--ok); color: #06210d; border-color: var(--ok); font-weight: 700; }
+  nav a .ok { color: var(--ok); font-weight: 700; margin-left: 6px; }
+  .stale { position: fixed; inset: 0 0 auto 0; z-index: 60; background: var(--bad); color: #fff; padding: 12px 18px; font-weight: 650; text-align: center; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="titulo">Revisión dirigida del GT</h1>
+  <div class="grow"></div>
+  <label>Revisa: <input id="revisor" placeholder="tu usuario" autocomplete="off"></label>
+  <span id="estado">—</span>
+  <button id="terminar" class="primary">Terminé</button>
+</header>
+<div class="layout">
+  <nav id="nav"></nav>
+  <main id="main"></main>
+</div>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Cuadro ampliado">
+  <img id="lbimg" alt="">
+  <div class="bar"><span id="lbtxt"></span><span id="lblab" class="lab"></span><span class="hint">← → para moverte · números para responder · Esc para cerrar</span></div>
+</div>
+<script>
+"use strict";
+const S = { casos: null, r: { revision: null, revisor: "", terminado: false, respuestas: {}, notas: {} }, caso: 0,
+            brush: {}, last: {}, focus: null, lb: null, timer: null };
+const $ = (s, el = document) => el.querySelector(s);
+const h = (tag, attrs = {}, ...kids) => {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") el.className = v; else if (k === "style") el.style.cssText = v;
+    else if (k.startsWith("on")) el.addEventListener(k.slice(2), v); else el.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) if (k != null) el.append(k.nodeType ? k : document.createTextNode(k));
+  return el;
+};
+const color = k => getComputedStyle(document.documentElement).getPropertyValue(`--c-${k}`).trim() || "#888";
+
+function itemsCount(q) { return q.tipo === "opcion" ? 1 : q.items.length; }
+function answered(q) {
+  const a = S.r.respuestas[q.id] || {};
+  if (q.tipo === "opcion") return a.valor ? 1 : 0;
+  return q.items.filter(it => a[it.id]).length;
+}
+function casoProg(c) {
+  let n = 0, t = 0;
+  for (const q of c.preguntas) { n += answered(q); t += itemsCount(q); }
+  return [n, t];
+}
+
+function save() {
+  clearTimeout(S.timer);
+  $("#estado").textContent = "guardando…"; $("#estado").className = "";
+  S.timer = setTimeout(async () => {
+    try {
+      S.r.revisor = $("#revisor").value.trim();
+      if (S.stale) return;
+      const res = await fetch("/api/respuestas", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(S.r) });
+      const j = await res.json();
+      if (res.status === 409) {
+        S.stale = true;
+        document.body.append(h("div", { class: "stale" }, "Hay respuestas nuevas guardadas desde otro lado. Recargá la página (F5) antes de seguir: lo último que marcaste no se guardó."));
+        throw new Error(j.error);
+      }
+      if (!res.ok) throw new Error(j.error || res.status);
+      S.r._rev = j._rev;
+      $("#estado").textContent = "guardado " + new Date().toLocaleTimeString();
+    } catch (e) { $("#estado").textContent = "ERROR al guardar: " + e.message; $("#estado").className = "err"; }
+    renderNav();
+  }, 350);
+}
+
+function setAns(qid, iid, val) {
+  const a = S.r.respuestas[qid] || (S.r.respuestas[qid] = {});
+  if (val === null) delete a[iid]; else a[iid] = val;
+  save();
+}
+
+function renderNav() {
+  const nav = $("#nav"); nav.innerHTML = "";
+  nav.append(h("div", { class: "intro" }, "Respondé solo por lo que ves en la imagen. Todo se guarda solo; podés cerrar y volver."));
+  S.casos.casos.forEach((c, i) => {
+    const [n, t] = casoProg(c);
+    nav.append(h("a", { href: "#", class: i === S.caso ? "sel" : "", onclick: e => { e.preventDefault(); S.caso = i; renderCase(); window.scrollTo(0, 0); } },
+      `${i + 1}. ${c.titulo}`, (S.r.validados || {})[c.id] ? h("span", { class: "ok" }, "✓ validado") : null, h("small", {}, `${n} de ${t} respuestas`),
+      h("div", { class: "bar" }, h("i", { style: `width:${t ? 100 * n / t : 0}%` }))));
+  });
+}
+
+function zoom(list, idx, q) { S.lb = { list, idx, q }; showLb(); }
+function showLb() {
+  const { list, idx, q } = S.lb, it = list[idx];
+  $("#lbimg").src = it.full || it.src; $("#lbtxt").textContent = it.t || it.caption || "";
+  const lab = q ? (S.r.respuestas[q.id] || {})[it.id] : null;
+  const o = q && lab ? q.opciones.find(o => o.k === lab) : null;
+  $("#lblab").textContent = o ? o.t : (q ? "sin responder" : "");
+  $("#lblab").style.background = o ? color(o.k) : "transparent";
+  $("#lb").classList.add("on");
+}
+
+function qOpcion(q) {
+  const a = S.r.respuestas[q.id] || {};
+  const box = h("div", { class: "opts" });
+  q.opciones.forEach(o => box.append(h("div", { class: "opt" + (a.valor === o.k ? " sel" : ""), role: "radio", "aria-checked": a.valor === o.k, tabindex: 0,
+    onclick: () => { setAns(q.id, "valor", o.k); render(); } }, h("span", { class: "dot" }), o.t)));
+  const els = [box];
+  if (q.nota) {
+    els.push(h("div", { class: "hint", style: "margin-top:10px" }, q.nota));
+    const ta = h("textarea", { "aria-label": q.nota }); ta.value = a.nota || "";
+    ta.addEventListener("input", () => setAns(q.id, "nota", ta.value || null));
+    els.push(ta);
+  }
+  return els;
+}
+
+function qIdentidad(q) {
+  const a = S.r.respuestas[q.id] || {};
+  return q.items.map(it => {
+    const imgs = it.imgs.map((src, i) => h("img", { src, alt: `caja ${it.letra}`, loading: "lazy",
+      onclick: () => zoom(it.imgs.map(s => ({ src: s, t: `caja ${it.letra}` })), i) }));
+    const chips = h("div", { class: "chips" }, q.opciones.map(o => {
+      const sel = a[it.id] === o.k;
+      return h("button", { class: "chip" + (sel ? " sel" : ""), style: sel ? `background:${color(o.k)}` : "",
+        onclick: () => { setAns(q.id, it.id, sel ? null : o.k); render(); } }, o.t);
+    }));
+    return h("div", { class: "ident" },
+      h("div", {}, h("div", { class: "letter" }, it.letra), h("div", { class: "meta" }, it.rango), h("div", { class: "meta" }, `${it.cuadros} cuadros`),
+        h("button", { style: "margin-top:8px", onclick: () => zoom([{ src: it.ctx, t: `caja ${it.letra} en contexto` }], 0) }, "ver en contexto")),
+      h("div", {}, h("div", { class: "imgs" }, imgs), chips));
+  });
+}
+
+function qCuadros(q) {
+  const a = S.r.respuestas[q.id] || {};
+  if (!S.brush[q.id]) S.brush[q.id] = q.opciones[0].k;
+  const brushes = h("div", { class: "brushes" }, h("span", { class: "hint" }, "Pincel:"),
+    q.opciones.map((o, i) => h("button", { class: "brush" + (S.brush[q.id] === o.k ? " sel" : ""), onclick: () => { S.brush[q.id] = o.k; render(); } },
+      h("span", { class: "sw", style: `background:${color(o.k)}` }), o.t, h("span", { class: "k" }, String(i + 1)))));
+  const grid = h("div", { class: "grid" });
+  const list = q.items;
+  list.forEach((it, idx) => {
+    const lab = a[it.id], o = q.opciones.find(o => o.k === lab);
+    const cell = h("div", { class: "cell" + (it.caja ? "" : " nobox"), tabindex: 0, "data-q": q.id, "data-i": idx,
+      style: o ? `border-color:${color(o.k)}` : "",
+      onclick: e => {
+        const last = S.last[q.id];
+        if (e.shiftKey && last != null) {
+          const [lo, hi] = [Math.min(last, idx), Math.max(last, idx)];
+          for (let k = lo; k <= hi; k++) (S.r.respuestas[q.id] || (S.r.respuestas[q.id] = {}))[list[k].id] = S.brush[q.id];
+          save();
+        } else setAns(q.id, it.id, S.brush[q.id]);
+        S.last[q.id] = idx; S.focus = { q: q.id, i: idx }; render();
+      },
+      ondblclick: () => zoom(list, idx, q),
+      onfocus: () => { S.focus = { q: q.id, i: idx }; } },
+      h("img", { src: it.thumb, alt: `cuadro ${it.t}`, loading: "lazy" }),
+      h("div", { class: "lab", style: o ? `background:${color(o.k)}cc` : "" }, o ? o.t : ""),
+      h("div", { class: "t" }, it.t));
+    grid.append(cell);
+  });
+  const pend = list.filter(it => !a[it.id]).length;
+  const fill = pend ? h("button", { onclick: () => { list.forEach(it => { if (!a[it.id]) (S.r.respuestas[q.id] || (S.r.respuestas[q.id] = {}))[it.id] = S.brush[q.id]; }); save(); render(); } },
+    `Pintar los ${pend} sin responder con el pincel`) : null;
+  return [brushes, h("div", { class: "hint", style: "margin-bottom:10px" },
+    "Clic: pinta un cuadro. Shift+clic: pinta el tramo desde el último cuadro que marcaste. Teclas 1–6: responden el cuadro enfocado. Doble clic: ampliar."), grid,
+    fill ? h("div", { style: "margin-top:10px" }, fill) : null];
+}
+
+function renderCase() {
+  renderNav();
+  const c = S.casos.casos[S.caso], main = $("#main"); main.innerHTML = ""; S.focus = null;
+  main.append(h("div", { class: "hint" }, `Caso ${S.caso + 1} de ${S.casos.casos.length} · clip ${c.clip}`), h("h2", {}, c.titulo),
+    h("p", { class: "ctx" }, c.contexto));
+  const pc = S.r.propuesta_claude;
+  if (pc && pc.justificacion && pc.justificacion[c.id]) main.append(h("div", { class: "ia" },
+    h("b", {}, "Respuestas precargadas por Claude (IA). "), "Revisá cada cuadro y corregí lo que no coincida con lo que ves; después marcá «Validé este caso». ",
+    h("br"), h("b", {}, "Por qué: "), pc.justificacion[c.id]));
+  const vb = h("button", { class: (S.r.validados || {})[c.id] ? "on" : "", onclick: () => {
+    S.r.validados = S.r.validados || {};
+    if (S.r.validados[c.id]) delete S.r.validados[c.id]; else S.r.validados[c.id] = new Date().toISOString();
+    save(); renderCase(); } }, (S.r.validados || {})[c.id] ? "✓ Validé este caso" : "Validé este caso");
+  main.append(h("div", { class: "valid" }, vb, h("span", { class: "hint" }, "Marcalo cuando hayas revisado todas las respuestas del caso.")));
+  if (S.caso === 0) main.append(h("div", { class: "blind" },
+    "Esta vista no muestra lo que dice hoy la anotación, ni lo que hizo el sistema, ni ninguna métrica. Respondé solo por lo que ves. Si no se puede saber, decilo: es una respuesta válida."));
+  if (c.referencias.length) main.append(h("div", { class: "refs" }, c.referencias.map(r => h("div", { class: "ref" }, h("b", {}, r.titulo),
+    r.imgs.map((src, i) => h("img", { src, alt: r.titulo, onclick: () => zoom(r.imgs.map(s => ({ src: s, t: r.titulo })), i) }))))));
+  if (c.videos.length) main.append(h("div", { class: "videos" }, c.videos.map(v => {
+    const vid = h("video", { src: v.src, controls: "", loop: "", muted: "", playsinline: "", preload: "metadata" });
+    const speed = h("select", { onchange: e => { vid.playbackRate = Number(e.target.value); } },
+      ["0.25", "0.5", "1"].map(x => { const o = h("option", { value: x }, `${x}×`); if (x === "0.5") o.selected = true; return o; }));
+    vid.addEventListener("loadedmetadata", () => { vid.playbackRate = 0.5; });
+    return h("div", { class: "video" }, vid, h("div", { class: "vbar" }, v.titulo, h("span", { class: "grow" }), "velocidad", speed));
+  })));
+  main.append(h("div", { id: "qs" }));
+  renderQs();
+}
+
+function render() { renderQs(); }
+
+function renderQs() {
+  renderNav();
+  const c = S.casos.casos[S.caso], main = $("#qs"); main.innerHTML = "";
+  c.preguntas.forEach((q, i) => {
+    const n = answered(q), t = itemsCount(q);
+    const body = q.tipo === "opcion" ? qOpcion(q) : q.tipo === "identidad" ? qIdentidad(q) : qCuadros(q);
+    main.append(h("section", { class: "q" + (n === t ? " done" : "") }, h("h3", {}, `${i + 1}. ${q.enunciado}`),
+      h("div", { class: "prog" }, n === t ? "completa" : `${n} de ${t}`), body));
+  });
+  const ta = h("textarea", { placeholder: "Notas sobre este caso (opcional)", "aria-label": "Notas del caso" });
+  ta.value = S.r.notas[c.id] || "";
+  ta.addEventListener("input", () => { S.r.notas[c.id] = ta.value; save(); });
+  main.append(h("section", { class: "q" }, h("h3", {}, "Notas"), ta));
+  const nav = h("div", { style: "display:flex;gap:10px" });
+  if (S.caso > 0) nav.append(h("button", { onclick: () => { S.caso--; renderCase(); window.scrollTo(0, 0); } }, "← Caso anterior"));
+  if (S.caso < S.casos.casos.length - 1) nav.append(h("button", { class: "primary", onclick: () => { S.caso++; renderCase(); window.scrollTo(0, 0); } }, "Caso siguiente →"));
+  main.append(nav, h("footer", {}, `${S.casos.revision} · generado ${S.casos.generado}`));
+  if (S.focus) { const el = document.querySelector(`.cell[data-q="${S.focus.q}"][data-i="${S.focus.i}"]`); if (el) el.focus({ preventScroll: true }); }
+}
+
+document.addEventListener("keydown", e => {
+  if (e.target.matches("input, textarea, select")) return;
+  if ($("#lb").classList.contains("on")) {
+    const { list, q } = S.lb;
+    if (e.key === "Escape") { $("#lb").classList.remove("on"); S.lb = null; render(); return; }
+    if (e.key === "ArrowRight") { S.lb.idx = Math.min(list.length - 1, S.lb.idx + 1); showLb(); }
+    if (e.key === "ArrowLeft") { S.lb.idx = Math.max(0, S.lb.idx - 1); showLb(); }
+    const n = Number(e.key);
+    if (q && n >= 1 && n <= q.opciones.length) { setAns(q.id, list[S.lb.idx].id, q.opciones[n - 1].k); showLb(); }
+    return;
+  }
+  if (!S.focus) return;
+  const c = S.casos.casos[S.caso], q = c.preguntas.find(q => q.id === S.focus.q);
+  if (!q || q.tipo !== "cuadros") return;
+  const n = Number(e.key);
+  if (n >= 1 && n <= q.opciones.length) {
+    setAns(q.id, q.items[S.focus.i].id, q.opciones[n - 1].k); S.last[q.id] = S.focus.i;
+    S.focus.i = Math.min(q.items.length - 1, S.focus.i + 1); render(); e.preventDefault();
+  } else if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+    S.focus.i = Math.max(0, Math.min(q.items.length - 1, S.focus.i + (e.key === "ArrowRight" ? 1 : -1))); render(); e.preventDefault();
+  } else if (e.key === "Enter") { zoom(q.items, S.focus.i, q); }
+});
+$("#lb").addEventListener("click", e => { if (e.target.id === "lb") { $("#lb").classList.remove("on"); S.lb = null; render(); } });
+$("#revisor").addEventListener("input", save);
+$("#terminar").addEventListener("click", () => {
+  let pend = 0;
+  for (const c of S.casos.casos) { const [n, t] = casoProg(c); pend += t - n; }
+  if (!$("#revisor").value.trim()) { alert("Poné tu usuario en «Revisa:» antes de terminar: firma las correcciones."); return; }
+  if (pend && !confirm(`Quedan ${pend} respuestas sin dar. ¿Terminar igual?`)) return;
+  const sinValidar = S.casos.casos.filter(c => !(S.r.validados || {})[c.id]).map((c, i) => c.titulo);
+  if (sinValidar.length && !confirm(`Hay ${sinValidar.length} caso(s) sin marcar como validados. ¿Terminar igual?`)) return;
+  S.r.terminado = true; S.r.terminado_en = new Date().toISOString(); save();
+  alert("Listo. Avisale a Claude que terminaste.");
+});
+
+(async () => {
+  S.casos = await (await fetch("/casos.json")).json();
+  const prev = await (await fetch("/api/respuestas")).json();
+  S.r = Object.assign({ revision: S.casos.revision, revisor: "", terminado: false, respuestas: {}, notas: {} }, prev);
+  $("#revisor").value = S.r.revisor || "";
+  $("#titulo").textContent = `Revisión dirigida del GT · ${S.casos.casos.length} casos`;
+  renderCase();
+})();
+</script>
+</body>
+</html>

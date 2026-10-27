@@ -282,6 +282,11 @@ Debe decir `✓ validate_clip_gt: 0 error(es)`. Errores comunes y qué significa
 
 ## 8. Doble anotación (para ≥20% de los clips del banco)
 
+> **No se ejecutó sobre el banco.** En su lugar se hizo una revisión dirigida de los clips
+> con discrepancias (registro `datasets/registry/clip_bench.md` §L2 y
+> `datasets/registry/revision_dirigida_2026-10/`). El procedimiento queda descripto por si
+> se quiere hacer.
+
 Un segundo anotador corrige **la misma pre-anotación** de forma independiente,
 exporta su XML, y se deriva por separado. Después:
 

@@ -1,0 +1,25 @@
+# Revisión dirigida 2026-10 — caso c7 (a_p2_c05). Generado por convertir.py.
+# Agregar estas listas bajo `annotation:` en el clip.yaml (sin pisar lo que ya haya).
+attribute_corrections:
+- track_id: 578
+  attr: has_vest
+  from_frame: 954
+  to_frame: 967
+  previous_value: 'true'
+  value: 'false'
+  decided_by: simon
+  decided_at: '2026-10-26'
+  rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+    registro en datasets/registry/revision_dirigida_2026-10/), caso c7 (a_p2_c05), R5: q1 «¿Lleva el chaleco puesto?»:
+    41 muestras de 31,00 s a 35,00 s; en 31,80 s–32,23 s la respuesta fue «No lo lleva» → has_vest = false'
+- track_id: 578
+  attr: has_vest
+  from_frame: 1027
+  to_frame: 1028
+  previous_value: 'false'
+  value: 'true'
+  decided_by: simon
+  decided_at: '2026-10-26'
+  rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+    registro en datasets/registry/revision_dirigida_2026-10/), caso c7 (a_p2_c05), R5: q1 «¿Lleva el chaleco puesto?»:
+    41 muestras de 31,00 s a 35,00 s; en 34,23 s–34,27 s la respuesta fue «Lo lleva puesto» → has_vest = true'

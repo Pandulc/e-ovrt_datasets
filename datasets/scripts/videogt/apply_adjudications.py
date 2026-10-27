@@ -17,7 +17,8 @@ sobrevive, viaja al GT (`assemble_clip_gt` propaga el bloque `annotation`) y
 queda auditable en el banco.
 
 **El flujo, entonces, es idempotente y re-aplicable:**
-    split_cvat_project.py  →  apply_adjudications.py  →  derive_clip_gt.py
+    split_cvat_project.py  →  apply_adjudications.py  →  apply_identity_corrections.py
+    →  apply_attribute_corrections.py  →  derive_clip_gt.py
 
 Esquema de cada adjudicación (los 6 campos son obligatorios):
 

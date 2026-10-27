@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <annotations>
   <version>1.1</version>
   <meta>
@@ -33,31 +33,31 @@
       <attribute name="has_vest">true</attribute>
     </box>
     <box frame="69" keyframe="1" outside="0" occluded="0" xtl="1660.38" ytl="209.11" xbr="1918.96" ybr="976.04" z_order="0">
-      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_helmet">unknown</attribute>
       <attribute name="has_vest">true</attribute>
     </box>
     <box frame="70" keyframe="0" outside="0" occluded="0" xtl="1657.53" ytl="248.53" xbr="1917.21" ybr="981.27" z_order="0">
-      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_helmet">unknown</attribute>
       <attribute name="has_vest">true</attribute>
     </box>
     <box frame="71" keyframe="0" outside="0" occluded="0" xtl="1654.67" ytl="287.95" xbr="1915.45" ybr="986.50" z_order="0">
-      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_helmet">unknown</attribute>
       <attribute name="has_vest">true</attribute>
     </box>
     <box frame="72" keyframe="1" outside="0" occluded="0" xtl="1651.82" ytl="327.37" xbr="1913.70" ybr="991.73" z_order="0">
-      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_helmet">unknown</attribute>
       <attribute name="has_vest">true</attribute>
     </box>
     <box frame="73" keyframe="0" outside="0" occluded="0" xtl="1650.13" ytl="289.02" xbr="1914.03" ybr="998.77" z_order="0">
-      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_helmet">unknown</attribute>
       <attribute name="has_vest">true</attribute>
     </box>
     <box frame="74" keyframe="0" outside="0" occluded="0" xtl="1648.45" ytl="250.66" xbr="1914.36" ybr="1005.80" z_order="0">
-      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_helmet">unknown</attribute>
       <attribute name="has_vest">true</attribute>
     </box>
     <box frame="75" keyframe="1" outside="0" occluded="0" xtl="1646.76" ytl="212.31" xbr="1914.69" ybr="1012.84" z_order="0">
-      <attribute name="has_helmet">false</attribute>
+      <attribute name="has_helmet">unknown</attribute>
       <attribute name="has_vest">true</attribute>
     </box>
     <box frame="76" keyframe="0" outside="0" occluded="0" xtl="1644.42" ytl="207.27" xbr="1914.76" ybr="1006.55" z_order="0">

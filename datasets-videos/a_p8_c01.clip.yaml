@@ -12,3 +12,102 @@ episode_draft:
   end_ms: 44179
   condition: CR-01
 warnings: []
+annotation:
+  # Revisión dirigida 2026-10 (asistida por IA, validada por el revisor): ver
+  # datasets/registry/revision_dirigida_2026-10/. Correcciones de identidad y de atributos firmadas.
+  identity_corrections:
+  - op: reassign
+    from_track: 614
+    to_track: 616
+    from_frame: 873
+    to_frame: 918
+    boxes: 17
+    decided_by: simon
+    decided_at: '2026-10-26'
+    rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+      registro en datasets/registry/revision_dirigida_2026-10/), caso c8 (a_p8_c01), R1: la caja B (trayectoria 614)
+      fue respondida «P»; es la misma persona, va en la misma trayectoria (protocolo §7.1, regla C1)'
+  - op: reassign
+    from_track: 615
+    to_track: 616
+    from_frame: 924
+    to_frame: 1413
+    boxes: 490
+    decided_by: simon
+    decided_at: '2026-10-26'
+    rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+      registro en datasets/registry/revision_dirigida_2026-10/), caso c8 (a_p8_c01), R1: la caja C (trayectoria 615)
+      fue respondida «P»; es la misma persona, va en la misma trayectoria (protocolo §7.1, regla C1)'
+  attribute_corrections:
+  - track_id: 616
+    attr: has_helmet
+    from_frame: 476
+    to_frame: 480
+    previous_value: 'false'
+    value: unknown
+    decided_by: simon
+    decided_at: '2026-10-26'
+    rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+      registro en datasets/registry/revision_dirigida_2026-10/), caso c8 (a_p8_c01), R5: q1 «Cuando sale: ¿se le ve
+      la cabeza? ¿Lleva casco?»: 17 muestras de 15,50 s a 16,57 s; en 15,87 s–16,00 s la respuesta fue «Está, pero
+      no se le ve la cabeza» → has_helmet = unknown'
+  - track_id: 616
+    attr: has_helmet
+    from_frame: 492
+    to_frame: 492
+    previous_value: 'false'
+    value: unknown
+    decided_by: simon
+    decided_at: '2026-10-26'
+    rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+      registro en datasets/registry/revision_dirigida_2026-10/), caso c8 (a_p8_c01), R5: q1 «Cuando sale: ¿se le ve
+      la cabeza? ¿Lleva casco?»: 17 muestras de 15,50 s a 16,57 s; en 16,40 s–16,40 s la respuesta fue «Está, pero
+      no se le ve la cabeza» → has_helmet = unknown'
+  - track_id: 616
+    attr: has_helmet
+    from_frame: 888
+    to_frame: 888
+    previous_value: 'false'
+    value: unknown
+    decided_by: simon
+    decided_at: '2026-10-26'
+    rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+      registro en datasets/registry/revision_dirigida_2026-10/), caso c8 (a_p8_c01), R5: q3 «Cuando vuelve: ¿se le
+      ve la cabeza? ¿Lleva casco?»: 29 muestras de 28,80 s a 31,60 s; en 29,60 s–29,60 s la respuesta fue «Está, pero
+      no se le ve la cabeza» → has_helmet = unknown'
+  - track_id: 616
+    attr: has_helmet
+    from_frame: 918
+    to_frame: 918
+    previous_value: 'false'
+    value: unknown
+    decided_by: simon
+    decided_at: '2026-10-26'
+    rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+      registro en datasets/registry/revision_dirigida_2026-10/), caso c8 (a_p8_c01), R5: q3 «Cuando vuelve: ¿se le
+      ve la cabeza? ¿Lleva casco?»: 29 muestras de 28,80 s a 31,60 s; en 30,60 s–30,60 s la respuesta fue «Está, pero
+      no se le ve la cabeza» → has_helmet = unknown'
+  - track_id: 616
+    attr: has_helmet
+    from_frame: 927
+    to_frame: 929
+    previous_value: 'false'
+    value: unknown
+    decided_by: simon
+    decided_at: '2026-10-26'
+    rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+      registro en datasets/registry/revision_dirigida_2026-10/), caso c8 (a_p8_c01), R5: q3 «Cuando vuelve: ¿se le
+      ve la cabeza? ¿Lleva casco?»: 29 muestras de 28,80 s a 31,60 s; en 30,90 s–30,97 s la respuesta fue «Está, pero
+      no se le ve la cabeza» → has_helmet = unknown'
+  - track_id: 616
+    attr: has_helmet
+    from_frame: 931
+    to_frame: 932
+    previous_value: unknown
+    value: 'false'
+    decided_by: simon
+    decided_at: '2026-10-26'
+    rationale: 'Revisión dirigida 2026-10 (asistida por IA: respuestas propuestas por Claude y validadas por simon;
+      registro en datasets/registry/revision_dirigida_2026-10/), caso c8 (a_p8_c01), R5: q3 «Cuando vuelve: ¿se le
+      ve la cabeza? ¿Lleva casco?»: 29 muestras de 28,80 s a 31,60 s; en 31,03 s–31,07 s la respuesta fue «Se le ve
+      la cabeza: sin casco» → has_helmet = false'
