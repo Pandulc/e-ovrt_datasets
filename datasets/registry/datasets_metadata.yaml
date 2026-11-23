@@ -367,8 +367,8 @@
   notes: >-
     Estrato `shel5k` de bench_v3 (5.000 imgs, doc 66 B4/B5): 3ª fuente independiente,
     única con `bare_head` nativo (6.120 instancias vs 61 del núcleo) +
-    `person_gt_shel5k.json` (5.248 violadores CR-01 — el n grande que separó al
-    especialista gdino-base-560, doc 64 §B5). Mitades A/B para calibrar/reportar en
+    `person_gt_shel5k.json` (5.248 violadores CR-01 — el n grande donde gdino-base-560
+    duplica el recall directo del campeón; en bench_obra empatan, ver bench_v3.md). Mitades A/B para calibrar/reportar en
     Nivel A (doc 83). Congelado con sha256 en bench_v3_manifest.json.
   conversion_status: converted_coco_yolo_odvg
   conversion_views:
